@@ -203,6 +203,14 @@ section {
   color: var(--color-muted-500);
 }
 
+.feature {
+  margin-bottom: var(--space-lg);
+}
+
+.challenge {
+  margin-bottom: var(--space-md);
+}
+
 /* =========================
    Links & CTAs
 ========================= */
