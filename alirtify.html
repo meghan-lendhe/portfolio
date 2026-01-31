@@ -1,295 +1,305 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alirtify — Designing a Data-Driven UX for News Validation</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alirtify — Designing a Data-Driven UX for News Validation</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-<header>
-  <div class="header-inner">
-    <strong><a href="index.html">Meghan Lendhe</a></strong>
-    <nav>
-      <a href="index.html#work">Work</a>
-      <a href="mailto:meghanlendhe@gmail.com">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <!-- Hero -->
-  <section class="case-hero">
-    <img src="assets/alirtify/cover.png" alt="" />
-    <div class="section-inner">
-      <h1>Designing a Data-Driven UX for News Validation</h1>
-    </div>
-  </section>
-
-  <!-- Overview -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Overview</div>
-
-      <div class="meta">
-        <div class="meta-item">
-          <span>Problem</span>
-          How might Alirtify help users validate news more easily?
-        </div>
-        <div class="meta-item">
-          <span>Time</span>
-          5 weeks
-        </div>
-        <div class="meta-item">
-          <span>Team</span>
-          5 Product Designers
-        </div>
-        <div class="meta-item">
-          <span>Stakeholders</span>
-          Alirtify CEO
-        </div>
-        <div class="meta-item">
-          <span>My Role</span>
-          Research, synthesis, UX strategy, UI design
-        </div>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <strong><a href="index.html">Meghan Lendhe</a></strong>
+        <nav>
+          <a href="index.html#work">Work</a>
+          <a href="mailto:meghanlendhe@gmail.com">Contact</a>
+        </nav>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Context -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Context</div>
-
-      <p>
-        Alirtify is a news aggregator and discussion platform where users interact
-        with articles through likes, reactions, and comments.
-      </p>
-
-      <p>
-        The founding idea was that engagement signals could help people identify
-        trustworthy news.
-      </p>
-
-      <p>
-        My team was brought in to validate this assumption before building further.
-      </p>
-    </div>
-  </section>
-
-  <!-- Research goal -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Research goal</div>
-
-      <p>
-        Understand how people currently validate news and identify what signals
-        genuinely help them decide whether a story is trustworthy—without telling
-        them what to believe.
-      </p>
-    </div>
-  </section>
-
-  <!-- Research methodology -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Research methodology</div>
-
-      <h3>User interviews</h3>
-      <ul>
-        <li>7 participants</li>
-        <li>Diverse age groups and occupations</li>
-        <li>
-          We assumed that age and profession significantly influence news
-          consumption and trust behaviors, so we intentionally recruited across
-          these dimensions.
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Key findings & design decisions -->
-  <section>
-    <div class="section-inner">
-        <div class="label">Key findings & design decisions</div>
-
-        <!-- 1 -->
-        <div class="margin-btm-lg">
-          <h3>Social validation matters, but who matters more</h3>
-          <p><strong>Research insight</strong></p>
-          <p>
-          Users care more about whether people they know and trust engaged with an
-          article than abstract global engagement numbers.
-          </p>
-          <p><strong>UX decision</strong></p>
-          <p>
-          Surface engagement from a user’s social circle (friends, family, trusted
-          connections) alongside broader engagement metrics to provide more
-          meaningful validation.
-          </p>
-          <img
-          src="assets/alirtify/Specific news feed.png"
-          alt="News feed showing social-circle engagement signals alongside global metrics"
-          />
+    <main>
+      <!-- Hero -->
+      <section class="case-hero">
+        <img src="assets/alirtify/cover.png" alt="" />
+        <div class="section-inner">
+          <h1>Designing a Data-Driven UX for News Validation</h1>
         </div>
+      </section>
 
-        <!-- 2 -->
-        <div class="margin-btm-lg">
-          <h3>Headlines strongly influence trust</h3>
-          <p><strong>Research insight</strong></p>
-          <p>
-          Clickbait headlines consistently reduced credibility. Many users decided
-          whether to trust or ignore an article based on the headline alone.
-          </p>
-          <p><strong>UX decision</strong></p>
-          <p>
-          Introduce AI-generated neutral headline alternatives, allowing users to
-          quickly understand the article without emotional manipulation—reducing
-          misinformation spread driven by sensational headlines.
-          </p>
-          <img
-          src="assets/alirtify/Specific news feed.png"
-          alt="Article view showing neutral AI-generated headline alongside original headline"
-          />
+      <!-- Overview -->
+      <section>
+        <div class="section-inner">
+          <div class="label">Overview</div>
+
+          <div class="meta">
+            <div class="meta-item">
+              <span>Problem</span>
+              How might Alirtify help users validate news more easily?
+            </div>
+            <div class="meta-item">
+              <span>Time</span>
+              5 weeks
+            </div>
+            <div class="meta-item">
+              <span>Team</span>
+              5 Product Designers
+            </div>
+            <div class="meta-item">
+              <span>Stakeholders</span>
+              Alirtify CEO
+            </div>
+            <div class="meta-item">
+              <span>My Role</span>
+              Research, synthesis, UX strategy, UI design
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- 3 -->
-        <div class="margin-btm-lg">
-          <h3>News source is a primary trust signal</h3>
-          <p><strong>Research insight</strong></p>
+      <!-- Context -->
+      <section>
+        <div class="section-inner">
+          <div class="label">Context</div>
+
           <p>
-          Participants relied heavily on news sources to judge credibility, often
-          more than reactions or comments. However, the existing interface
-          underemphasized the source.
+            Alirtify is a news aggregator and discussion platform where users
+            interact with articles through likes, reactions, and comments.
           </p>
-          <p><strong>UX decision</strong></p>
+
           <p>
-          Visually prioritize the news source in both feed and article views, making
-          credibility checks faster and more intuitive.
+            The founding idea was that engagement signals could help people
+            identify trustworthy news.
           </p>
-          <img
-          src="assets/alirtify/Specific news feed.png"
-          alt="News feed and article layout emphasizing source attribution"
-          />
+
+          <p>
+            My team was brought in to validate this assumption before building
+            further.
+          </p>
         </div>
+      </section>
 
-        <!-- 4 -->
-        <div class="margin-btm-lg">
-          <h3>Users seek context outside the app</h3>
-          <p><strong>Research insight</strong></p>
+      <!-- Research goal -->
+      <section>
+        <div class="section-inner">
+          <div class="label">Research goal</div>
+
           <p>
-          Many users cross-checked articles using Google or other platforms to
-          understand broader context or multiple perspectives.
+            Understand how people currently validate news and identify what
+            signals genuinely help them decide whether a story is
+            trustworthy—without telling them what to believe.
           </p>
-          <p><strong>UX decision</strong></p>
-          <p>
-          Embed related and trending articles directly below the article summary,
-          enabling users to compare perspectives without leaving Alirtify.
-          </p>
-          <img
-          src="assets/alirtify/Specific news feed-1.png"
-          alt="Related and trending articles embedded below article summary"
-          />
         </div>
+      </section>
 
-        <!-- 5 -->
-        <div class="margin-btm-lg">
-          <h3>Official data builds confidence</h3>
-          <p><strong>Research insight</strong></p>
-          <p>
-          When topics involved policy, public health, or civic issues, users actively
-          looked for government or verified data sources.
-          </p>
-          <p><strong>UX decision</strong></p>
-          <p>
-          Supplement articles with government-backed or verified public datasets
-          where relevant, supporting informed interpretation rather than
-          opinion-driven discussion.
-          </p>
-          <img
-          src="assets/alirtify/Specific news feed-1.png"
-          alt="Article supplemented with verified government or public datasets"
-          />
+      <!-- Research methodology -->
+      <section>
+        <div class="section-inner">
+          <div class="label">Research methodology</div>
+
+          <h3>User interviews</h3>
+          <ul>
+            <li>7 participants</li>
+            <li>Diverse age groups and occupations</li>
+            <li>
+              We assumed that age and profession significantly influence news
+              consumption and trust behaviors, so we intentionally recruited
+              across these dimensions.
+            </li>
+          </ul>
         </div>
+      </section>
 
-    </div>
-  </section>
+      <!-- Key findings & design decisions -->
+      <section>
+        <div class="section-inner">
+          <div class="label">Key findings & design decisions</div>
 
+          <!-- 1 -->
+          <div class="col-2-grid margin-top-btm-lg">
+            <img
+              src="assets/alirtify/Specific news feed.png"
+              alt="News feed showing social-circle engagement signals alongside global metrics"
+            />
+            <div>
+              <h3>Social validation matters, but who matters more</h3>
+              <p><strong>Research insight</strong></p>
+              <p>
+                Users care more about whether people they know and trust engaged
+                with an article than abstract global engagement numbers.
+              </p>
+              <p><strong>UX decision</strong></p>
+              <p>
+                Surface engagement from a user’s social circle (friends, family,
+                trusted connections) alongside broader engagement metrics to
+                provide more meaningful validation.
+              </p>
+            </div>
+          </div>
 
-  <!-- Design direction summary -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Design direction summary</div>
+          <!-- 2 -->
+          <div class="col-2-grid margin-top-btm-lg">
+            <img
+              src="assets/alirtify/Specific news feed.png"
+              alt="Article view showing neutral AI-generated headline alongside original headline"
+            />
+            <div>
+              <h3>Headlines strongly influence trust</h3>
+              <p><strong>Research insight</strong></p>
+              <p>
+                Clickbait headlines consistently reduced credibility. Many users
+                decided whether to trust or ignore an article based on the
+                headline alone.
+              </p>
+              <p><strong>UX decision</strong></p>
+              <p>
+                Introduce AI-generated neutral headline alternatives, allowing
+                users to quickly understand the article without emotional
+                manipulation—reducing misinformation spread driven by sensational
+                headlines.
+              </p>
+            </div>
+          </div>
 
-      <p>
-        Instead of relying solely on engagement metrics, the proposed UX supports
-        validation through multiple complementary signals:
-      </p>
+          <!-- 3 -->
+          <div class="col-2-grid margin-top-btm-lg">
+            <img
+              src="assets/alirtify/Specific news feed.png"
+              alt="News feed and article layout emphasizing source attribution"
+            />
+            <div>
+              <h3>News source is a primary trust signal</h3>
+              <p><strong>Research insight</strong></p>
+              <p>
+                Participants relied heavily on news sources to judge credibility,
+                often more than reactions or comments. However, the existing
+                interface underemphasized the source.
+              </p>
+              <p><strong>UX decision</strong></p>
+              <p>
+                Visually prioritize the news source in both feed and article
+                views, making credibility checks faster and more intuitive.
+              </p>
+            </div>
+          </div>
 
-      <ul>
-        <li>Trusted social engagement</li>
-        <li>Clear source attribution</li>
-        <li>Neutral headline framing</li>
-        <li>Contextual related articles</li>
-        <li>Verified public data</li>
-      </ul>
-    </div>
-  </section>
+          <!-- 4 -->
+          <div class="col-2-grid margin-top-btm-lg">
+            <img
+              src="assets/alirtify/Specific news feed-1.png"
+              alt="Related and trending articles embedded below article summary"
+            />
+            <div>
+              <h3>Users seek context outside the app</h3>
+              <p><strong>Research insight</strong></p>
+              <p>
+                Many users cross-checked articles using Google or other platforms
+                to understand broader context or multiple perspectives.
+              </p>
+              <p><strong>UX decision</strong></p>
+              <p>
+                Embed related and trending articles directly below the article
+                summary, enabling users to compare perspectives without leaving
+                Alirtify.
+              </p>
+            </div>
+          </div>
 
-  <!-- Outcome -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Outcome</div>
+          <!-- 5 -->
+          <div class="col-2-grid margin-top-btm-lg">
+            <img
+              src="assets/alirtify/Specific news feed-1.png"
+              alt="Article supplemented with verified government or public datasets"
+            />
+            <div>
+              <h3>Official data builds confidence</h3>
+              <p><strong>Research insight</strong></p>
+              <p>
+                When topics involved policy, public health, or civic issues, users
+                actively looked for government or verified data sources.
+              </p>
+              <p><strong>UX decision</strong></p>
+              <p>
+                Supplement articles with government-backed or verified public
+                datasets where relevant, supporting informed interpretation rather
+                than opinion-driven discussion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <p>
-        The CEO shared that the engagement provided valuable clarity on validating
-        assumptions early, particularly around research-driven UX decision making.
-      </p>
-    </div>
-  </section>
+      <!-- Design direction summary -->
+      <section>
+        <div class="section-inner">
+          <div class="label">Design direction summary</div>
 
-  <!-- Reflection -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Reflection</div>
+          <p>
+            Instead of relying solely on engagement metrics, the proposed UX
+            supports validation through multiple complementary signals:
+          </p>
 
-      <p>
-        Conducting in-person interviews was initially intimidating, requiring me
-        to adapt my research plan in real time while staying focused on the
-        research objective.
-      </p>
+          <ul>
+            <li>Trusted social engagement</li>
+            <li>Clear source attribution</li>
+            <li>Neutral headline framing</li>
+            <li>Contextual related articles</li>
+            <li>Verified public data</li>
+          </ul>
+        </div>
+      </section>
 
-      <p>
-        In hindsight, involving journalists and academic researchers earlier
-        could have strengthened:
-      </p>
+      <!-- Outcome -->
+      <section>
+        <div class="section-inner">
+          <div class="label">Outcome</div>
 
-      <ul>
-        <li>Problem framing</li>
-        <li>Validation criteria</li>
-        <li>Long-term product credibility</li>
-      </ul>
+          <p>
+            The CEO shared that the engagement provided valuable clarity on
+            validating assumptions early, particularly around research-driven UX
+            decision making.
+          </p>
+        </div>
+      </section>
 
-      <p>
-        Together, these reduce cognitive effort and help users form their own
-        judgments.
-      </p>
-    </div>
-  </section>
+      <!-- Reflection -->
+      <section>
+        <div class="section-inner">
+          <div class="label">Reflection</div>
 
-</main>
+          <p>
+            Conducting in-person interviews was initially intimidating,
+            requiring me to adapt my research plan in real time while staying
+            focused on the research objective.
+          </p>
 
-<footer>
-  © 2026 Meghan Lendhe
-</footer>
+          <p>
+            In hindsight, involving journalists and academic researchers earlier
+            could have strengthened:
+          </p>
 
-</body>
+          <ul>
+            <li>Problem framing</li>
+            <li>Validation criteria</li>
+            <li>Long-term product credibility</li>
+          </ul>
+
+          <p>
+            Together, these reduce cognitive effort and help users form their
+            own judgments.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 Meghan Lendhe</footer>
+  </body>
 </html>

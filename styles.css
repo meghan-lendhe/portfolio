@@ -159,8 +159,9 @@ section {
   padding: var(--space-md);
   text-decoration: none;
   color: inherit;
-  transition: border-color var(--transition-fast),
-              transform var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .case-card:hover {
@@ -203,7 +204,8 @@ section {
   color: var(--color-muted-500);
 }
 
-.margin-btm-lg {
+.margin-top-btm-lg {
+  margin-top: var(--space-lg);
   margin-bottom: var(--space-lg);
 }
 
@@ -211,6 +213,11 @@ section {
   margin-bottom: var(--space-md);
 }
 
+.col-2-grid {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: var(--space-md);
+}
 /* =========================
    Links & CTAs
 ========================= */
