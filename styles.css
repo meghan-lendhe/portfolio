@@ -203,11 +203,11 @@ section {
   color: var(--color-muted-500);
 }
 
-.feature {
+.margin-btm-lg {
   margin-bottom: var(--space-lg);
 }
 
-.challenge {
+.margin-btm-md {
   margin-bottom: var(--space-md);
 }
 
