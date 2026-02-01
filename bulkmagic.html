@@ -1,237 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BulkMagic — Seller Onboarding Case Study</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BulkMagic — Streamlining Seller Onboarding</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              accent: "#C35200",
+            },
+            fontFamily: {
+              sans: ["Public Sans", "system-ui", "sans-serif"],
+              display: ["Space Grotesk", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
 
-<header>
-  <div class="header-inner">
-    <strong><a href="index.html">Meghan Lendhe</a></strong>
-    <nav>
-      <a href="index.html#work">Work</a>
-      <a href="mailto:meghanlendhe@gmail.com">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <!-- Case hero -->
-  <section class="case-hero">
-    <img src="assets/bulkmagic/cover.png" alt="" />
-    <div class="section-inner">
-      <h1>Streamlining Seller Onboarding for an E-Commerce Marketplace</h1>
-      <p>
-        Designing a personalized onboarding flow to reduce friction,
-        improve compliance clarity, and help sellers complete onboarding with confidence.
-      </p>
-    </div>
-  </section>
-
-  <!-- Overview -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Overview</div>
-
-      <div class="meta">
-        <div class="meta-item">
-          <span>Time</span>
-          3 days
-        </div>
-        <div class="meta-item">
-          <span>Team</span>
-          Solo project
-        </div>
-        <div class="meta-item">
-          <span>Product</span>
-          BulkMagic e-commerce marketplace
-        </div>
-        <div class="meta-item">
-          <span>Focus</span>
-          Seller onboarding, compliance UX
-        </div>
+  <body class="bg-white text-black font-sans">
+    <!-- Header -->
+    <header class="border-b border-neutral-300">
+      <div class="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between">
+        <strong class="text-base">
+          <a href="index.html" class="hover:text-accent transition-colors">Meghan Lendhe</a>
+        </strong>
+        <nav class="space-x-6">
+          <a href="index.html#work" class="hover:text-accent transition-colors">Work</a>
+          <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors">Contact</a>
+        </nav>
       </div>
+    </header>
 
-      <p>
-        Online marketplaces face significant challenges when onboarding sellers.
-        The process is often long, confusing, and filled with compliance requirements
-        that vary by location — leading to frustration, drop-offs, and operational risk.
-      </p>
-    </div>
-  </section>
+    <main class="max-w-[1100px] mx-auto px-6 py-24">
+      <!-- Hero -->
+      <section class="mb-24">
+        <img
+          src="assets/bulkmagic/cover.png"
+          alt="BulkMagic seller onboarding interface"
+          class="w-full aspect-video object-cover bg-neutral-100 mb-6"
+        />
+        <div class="max-w-[720px]">
+          <h1 class="text-4xl font-semibold leading-tight mb-4">
+            Streamlining Seller Onboarding for an E-Commerce Marketplace
+          </h1>
+          <p class="text-neutral-700">
+            Designing a personalized onboarding flow to reduce friction, improve compliance clarity,
+            and help sellers complete onboarding with confidence.
+          </p>
+        </div>
+      </section>
 
-  <!-- Problem -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Problem</div>
+      <!-- Overview -->
+      <section class="max-w-[720px] mb-24">
+        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+          Overview
+        </div>
 
-      <p>Sellers struggled with:</p>
-      <ul>
-        <li>Navigating lengthy, confusing onboarding processes</li>
-        <li>Understanding which documents were required (W-9s, tax permits, licenses)</li>
-        <li>Meeting federal and state compliance requirements across multiple states</li>
-      </ul>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 text-sm">
+          <div>
+            <span class="block text-neutral-500">Time</span>
+            3 days
+          </div>
+          <div>
+            <span class="block text-neutral-500">Team</span>
+            Solo project
+          </div>
+          <div>
+            <span class="block text-neutral-500">Product</span>
+            BulkMagic marketplace
+          </div>
+          <div>
+            <span class="block text-neutral-500">Focus</span>
+            Seller onboarding, compliance UX
+          </div>
+        </div>
 
-      <p>
-        For BulkMagic, incomplete or incorrect submissions increased manual review effort
-        and introduced compliance risk.
-      </p>
-    </div>
-  </section>
-
-  <!-- Solution -->
-  <section>
-  <div class="section-inner">
-    <div class="label">Solution</div>
-
-    <p>
-      I designed a personalized, step-by-step onboarding flow that adapts to each seller’s
-      business structure and location, reducing cognitive load and guiding them toward
-      successful completion.
-    </p>
-
-    <!-- Feature 1 -->
-    <div class="margin-top-btm-lg"> 
-      <h3>Progressive disclosure</h3>
-      <p>
-        The onboarding begins by understanding the seller’s business structure and locations
-        of operation. Only fields and documents relevant to their inputs appear in later steps,
-        preventing unnecessary complexity.
-      </p>
-      <img
-        src="assets/bulkmagic/progressive-disclosure.png"
-        alt="Progressive disclosure in seller onboarding flow"
-      />
-    </div>
-
-    <!-- Feature 2 -->
-    <div class="margin-top-btm-lg"> 
-      <h3>Dynamic document checklists</h3>
-      <p>
-        A personalized checklist dynamically updates based on seller inputs,
-        clearly communicating which documents are required at each stage.
-      </p>
-      <img
-        src="assets/bulkmagic/dynamic-document-checklist.png"
-        alt="Dynamic document checklist adapting to seller inputs"
-      />
-    </div>
-
-    <!-- Feature 3 -->
-    <div class="margin-top-btm-lg">
-      <h3>Bulk upload hub</h3>
-      <p>
-        Sellers can upload multiple documents at once—such as W-9 forms,
-        tax permits, and business licenses—reducing repetitive actions and errors.
-      </p>
-      <img
-        src="assets/bulkmagic/bulk-upload-hub.png"
-        alt="Bulk document upload interface for seller onboarding"
-      />
-    </div>
-
-    <!-- Feature 4 -->
-    <div class="margin-top-btm-lg">
-      <h3>Automated validation</h3>
-      <p>
-        Real-time validation checks submissions against federal and state
-        compliance requirements, including physical and economic nexus thresholds.
-      </p>
-      <img
-        src="assets/bulkmagic/automated-validation.png"
-        alt="Real-time document validation and error handling UI"
-      />
-    </div>
-
-    <!-- Feature 5 -->
-    <div class="margin-top-btm-lg">
-      <h3>Save & resume</h3>
-      <p>
-        Sellers can save their progress and return later,
-      making long onboarding flows more forgiving and reducing abandonment.
-      </p>
-      <img
-        src="assets/bulkmagic/save-resume.png"
-        alt="Save and resume onboarding progress interface"
-      />
-    </div>
-  </div>
-</section>
-
-
-  <!-- Challenges addressed -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Key challenges addressed</div>
-
-      <div class="margin-btm-md">
-        <h3>Complex compliance requirements</h3>
-        <p>
-          Sellers must comply with varying federal and state tax laws,
-          including physical and economic nexus thresholds.
+        <p class="text-neutral-700">
+          Online marketplaces face significant challenges when onboarding sellers. The process is
+          often long, confusing, and filled with compliance requirements that vary by location —
+          leading to frustration, drop-offs, and operational risk.
         </p>
-        <p>
-          <strong>Design response:</strong>  
-          Personalized checklists ensured sellers submitted only the documents
-          relevant to their situation.
-        </p>
-      </div>
+      </section>
 
-      <div class="margin-btm-md">
-        <h3>Seller frustration and drop-off</h3>
-        <p>
+      <!-- Problem -->
+      <section class="max-w-[720px] mb-24">
+        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+          Problem
+        </div>
+
+        <p class="text-neutral-700 mb-4">Sellers struggled with:</p>
+        <ul class="list-disc list-inside text-neutral-700 mb-4">
+          <li>Navigating lengthy, confusing onboarding processes</li>
+          <li>Understanding which documents were required (W-9s, tax permits, licenses)</li>
+          <li>Meeting federal and state compliance requirements across multiple states</li>
+        </ul>
+        <p class="text-neutral-700">
+          For BulkMagic, incomplete or incorrect submissions increased manual review effort and
+          introduced compliance risk.
+        </p>
+      </section>
+
+      <!-- Solution -->
+      <section class="mb-24">
+        <div class="max-w-[720px]">
+          <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+            Solution
+          </div>
+          <p class="text-neutral-700 mb-8">
+            I designed a personalized, step-by-step onboarding flow that adapts to each seller’s
+            business structure and location, reducing cognitive load and guiding them toward
+            successful completion.
+          </p>
+        </div>
+
+        <!-- Feature 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+          <div>
+            <h3 class="font-semibold mb-2">Progressive disclosure</h3>
+            <p class="text-neutral-700">
+              The onboarding begins by understanding the seller’s business structure and locations of
+              operation. Only relevant fields and documents appear in later steps, preventing
+              unnecessary complexity.
+            </p>
+          </div>
+          <img
+            src="assets/bulkmagic/progressive-disclosure.png"
+            alt="Progressive disclosure in seller onboarding flow"
+            class="w-full aspect-video object-cover bg-neutral-100"
+          />
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+          <div>
+            <h3 class="font-semibold mb-2">Dynamic document checklists</h3>
+            <p class="text-neutral-700">
+              A personalized checklist dynamically updates based on seller inputs, clearly
+              communicating which documents are required at each stage.
+            </p>
+          </div>
+          <img
+            src="assets/bulkmagic/document-checklist.png"
+            alt="Dynamic document checklist adapting to seller inputs"
+            class="w-full aspect-video object-cover bg-neutral-100"
+          />
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+          <div>
+            <h3 class="font-semibold mb-2">Bulk upload hub</h3>
+            <p class="text-neutral-700">
+              Sellers can upload multiple documents at once—such as W-9 forms, tax permits, and
+              business licenses—reducing repetitive actions and errors.
+            </p>
+          </div>
+          <img
+            src="assets/bulkmagic/bulk-upload.png"
+            alt="Bulk document upload interface"
+            class="w-full aspect-video object-cover bg-neutral-100"
+          />
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+          <div>
+            <h3 class="font-semibold mb-2">Automated validation</h3>
+            <p class="text-neutral-700">
+              Real-time validation checks submissions against federal and state compliance
+              requirements, including economic nexus thresholds.
+            </p>
+          </div>
+          <img
+            src="assets/bulkmagic/validation.png"
+            alt="Real-time document validation and error handling"
+            class="w-full aspect-video object-cover bg-neutral-100"
+          />
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h3 class="font-semibold mb-2">Save & resume</h3>
+            <p class="text-neutral-700">
+              Sellers can save their progress and return later, making long onboarding flows more
+              forgiving and reducing abandonment.
+            </p>
+          </div>
+          <img
+            src="assets/bulkmagic/save-resume.png"
+            alt="Save and resume onboarding progress"
+            class="w-full aspect-video object-cover bg-neutral-100"
+          />
+        </div>
+      </section>
+
+      <!-- Key challenges addressed -->
+      <section class="max-w-[720px] mb-24">
+        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+          Key challenges addressed
+        </div>
+
+        <h3 class="font-semibold mb-2">Complex compliance requirements</h3>
+        <p class="text-neutral-700 mb-4">
+          Sellers must comply with varying federal and state tax laws, including physical and
+          economic nexus thresholds.
+        </p>
+        <p class="text-neutral-700 mb-6">
+          <strong>Design response:</strong> Personalized checklists ensured sellers submitted only the
+          documents relevant to their situation.
+        </p>
+
+        <h3 class="font-semibold mb-2">Seller frustration and drop-off</h3>
+        <p class="text-neutral-700 mb-4">
           Long, unclear onboarding flows often lead to abandonment.
         </p>
-        <p>
-          <strong>Design response:</strong>  
-          Clear step-by-step progression, helper text, and bulk upload options
-          reduced friction and cognitive load.
+        <p class="text-neutral-700 mb-6">
+          <strong>Design response:</strong> Clear step-by-step progression, helper text, and bulk upload
+          options reduced friction and cognitive load.
         </p>
-      </div>
 
-      <div class="margin-btm-md">
-        <h3>Document management and validation</h3>
-        <p>
+        <h3 class="font-semibold mb-2">Document management and validation</h3>
+        <p class="text-neutral-700 mb-4">
           Sellers struggled to track which documents were missing or incorrect.
         </p>
-        <p>
-          <strong>Design response:</strong>  
-          A unified upload hub with real-time validation and error handling
-          ensured all required documents were collected correctly.
+        <p class="text-neutral-700">
+          <strong>Design response:</strong> A unified upload hub with real-time validation and error
+          handling ensured all required documents were collected correctly.
         </p>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Reflection -->
-  <section>
-    <div class="section-inner">
-      <div class="label">Reflection</div>
+      <!-- Reflection -->
+      <section class="max-w-[720px] mb-24">
+        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+          Reflection
+        </div>
+        <p class="text-neutral-700">
+          This project reinforced how quickly onboarding complexity compounds in compliance-heavy
+          systems. Small design decisions—such as when to ask for information and how clearly
+          expectations are framed—can significantly impact completion rates and trust.
+        </p>
+      </section>
+    </main>
 
-      <p>
-        This project reinforced how quickly onboarding complexity compounds
-        in compliance-heavy systems. Small design decisions —
-        such as when to ask for information and how clearly expectations are framed —
-        can significantly impact completion rates and trust.
-      </p>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © 2026 Meghan Lendhe
-</footer>
-
-</body>
+    <footer class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm">
+      © 2026 Meghan Lendhe
+    </footer>
+  </body>
 </html>
