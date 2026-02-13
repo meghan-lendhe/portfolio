@@ -1,292 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vitals — Reducing Friction, Boosting Subscriptions</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vitals — Reducing Friction, Boosting Subscriptions</title>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              accent: "#C35200",
-            },
-            fontFamily: {
-              sans: ["Public Sans", "system-ui", "sans-serif"],
-              display: ["Space Grotesk", "sans-serif"],
-            },
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#C35200",
+          },
+          fontFamily: {
+            sans: ["Public Sans", "system-ui", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
           },
         },
-      };
-    </script>
-  </head>
+      },
+    };
+  </script>
+</head>
 
-  <body class="bg-white text-black font-sans">
-    <!-- Header -->
-    <header class="border-b border-neutral-300">
-      <div class="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between">
-        <strong class="text-base">
-          <a href="index.html" class="hover:text-accent transition-colors">Meghan Lendhe</a>
-        </strong>
-        <nav class="space-x-6">
-          <a href="index.html#work" class="hover:text-accent transition-colors">Work</a>
-          <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors">Contact</a>
-        </nav>
+<body class="bg-white text-black font-sans">
+  <!-- Header -->
+  <header class="border-b border-neutral-300">
+    <div class="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between">
+      <strong class="text-base">
+        <a href="index.html" class="hover:text-accent transition-colors">Meghan Lendhe</a>
+      </strong>
+      <nav class="space-x-6">
+        <a href="index.html#work" class="hover:text-accent transition-colors">Work</a>
+        <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-[1100px] mx-auto px-6 py-24">
+    <!-- Hero -->
+    <section class="mb-24">
+      <img src="assets/vitals/cover.png" alt="Vitals app interface"
+        class="w-full aspect-video object-contain bg-neutral-100 mb-6" />
+      <div class="max-w-[720px]">
+        <h1 class="text-4xl font-semibold leading-tight">
+          Reducing Friction, Boosting Vitals Subscriptions
+        </h1>
       </div>
-    </header>
+    </section>
 
-    <main class="max-w-[1100px] mx-auto px-6 py-24">
-      <!-- Hero -->
-      <section class="mb-24">
-        <img
-          src="assets/vitals/cover.png"
-          alt="Vitals app interface"
-          class="w-full aspect-video object-contain bg-neutral-100 mb-6"
-        />
-        <div class="max-w-[720px]">
-          <h1 class="text-4xl font-semibold leading-tight">
-            Reducing Friction, Boosting Vitals Subscriptions
-          </h1>
+    <!-- Overview -->
+    <section class="max-w-[720px] mb-24">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+        Overview
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 text-sm">
+        <div>
+          <span class="block text-neutral-500">Problem</span>
+          92% of users who created an account didn’t purchase a subscription
         </div>
-      </section>
+        <div>
+          <span class="block text-neutral-500">Time</span>
+          14 weeks
+        </div>
+        <div>
+          <span class="block text-neutral-500">Team</span>
+          1 Product Designer
+        </div>
+        <div>
+          <span class="block text-neutral-500">Stakeholders</span>
+          C-Suite
+        </div>
+        <div class="md:col-span-2">
+          <span class="block text-neutral-500">Contribution</span>
+          Heuristic evaluation · Screener survey design · Interview plan · User interviews · UI design
+        </div>
+      </div>
+    </section>
 
-      <!-- Overview -->
-      <section class="max-w-[720px] mb-24">
+    <!-- About Vitals -->
+    <section class="max-w-[720px] mb-24">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        About Vitals
+      </div>
+      <p class="text-neutral-700">
+        Vitals is a digital medical ID for vulnerable individuals in emergencies. It creates secure digital medical
+        profiles containing essential information about a person’s conditions, behaviors, and care needs.
+      </p>
+    </section>
+
+    <!-- How it works -->
+    <section class="max-w-[720px] mb-24">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        How it works
+      </div>
+      <p class="text-neutral-700 mb-4">
+        During emergencies, first responders can instantly access these profiles, enabling them to understand and
+        respond appropriately to individuals who may have difficulty communicating.
+      </p>
+      <p class="text-neutral-700 mb-6">
+        This bridges critical information gaps when it matters most.
+      </p>
+      <img src="assets/vitals/sample-id.svg" alt="Sample Vitals medical ID profile accessed during an emergency"
+        class="w-full aspect-7/4 object-contain bg-neutral-100" />
+    </section>
+
+    <!-- Problem -->
+    <section class="max-w-[720px] mb-24">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        The problem
+      </div>
+      <p class="text-neutral-700 mb-4">
+        Despite its usefulness, 92% of users don’t subscribe after signing up.
+      </p>
+      <p class="text-neutral-700">
+        We interviewed users from this 92% to understand why they chose not to subscribe.
+      </p>
+    </section>
+
+    <!-- Research findings -->
+    <section class="mb-24">
+      <div class="max-w-[720px]">
         <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
-          Overview
+          Research findings
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 text-sm">
-          <div>
-            <span class="block text-neutral-500">Problem</span>
-            92% of users who created an account didn’t purchase a subscription
-          </div>
-          <div>
-            <span class="block text-neutral-500">Time</span>
-            14 weeks
-          </div>
-          <div>
-            <span class="block text-neutral-500">Team</span>
-            1 Product Designer
-          </div>
-          <div>
-            <span class="block text-neutral-500">Stakeholders</span>
-            C-Suite
-          </div>
-          <div class="md:col-span-2">
-            <span class="block text-neutral-500">Contribution</span>
-            Heuristic evaluation · Screener survey design · Interview plan · User interviews · UI design
-          </div>
-        </div>
-      </section>
-
-      <!-- About Vitals -->
-      <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
-          About Vitals
-        </div>
-        <p class="text-neutral-700">
-          Vitals is a digital medical ID for vulnerable individuals in emergencies. It creates secure digital medical profiles containing essential information about a person’s conditions, behaviors, and care needs.
-        </p>
-      </section>
-
-      <!-- How it works -->
-      <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
-          How it works
-        </div>
-        <p class="text-neutral-700 mb-4">
-          During emergencies, first responders can instantly access these profiles, enabling them to understand and respond appropriately to individuals who may have difficulty communicating.
+        <h3 class="font-semibold mb-2">Lack of trust</h3>
+        <p class="text-neutral-700 mb-2">
+          Users didn’t trust the product enough to commit before understanding its value.
         </p>
         <p class="text-neutral-700 mb-6">
-          This bridges critical information gaps when it matters most.
+          70% of participants expressed discomfort sharing personal medical information before fully understanding the
+          app’s purpose and value.
         </p>
-        <img
-          src="assets/vitals/sample-id.svg"
-          alt="Sample Vitals medical ID profile accessed during an emergency"
-          class="w-full aspect-video object-contain bg-neutral-100"
-        />
-      </section>
+        <img src="assets/vitals/findings/trust-issue.png" alt="Signup screen lacking trust signals"
+          class="w-full aspect-video object-contain bg-neutral-100 mb-12" />
 
-      <!-- Problem -->
-      <section class="max-w-[720px] mb-24">
+        <h3 class="font-semibold mb-2">Confusing plan selection</h3>
+        <p class="text-neutral-700 mb-6">
+          Participants struggled with unclear terminology and weren’t informed upfront that some plans were only
+          available in certain states.
+        </p>
+        <img src="assets/vitals/findings/plan-confusion.png" alt="Subscription plan selection confusion"
+          class="w-full aspect-video object-contain bg-neutral-100 mb-12" />
+
+        <h3 class="font-semibold mb-2">Poor visual design</h3>
+        <p class="text-neutral-700 mb-6">
+          Key elements like sample profiles and free trial information were frequently missed due to weak visual
+          hierarchy.
+        </p>
+        <img src="assets/vitals/findings/visual-hierarchy.png" alt="Poor visual hierarchy hiding important affordances"
+          class="w-full aspect-video object-contain bg-neutral-100" />
+      </div>
+    </section>
+
+    <!-- Redesigned journey -->
+    <section class="mb-24">
+      <div class="max-w-[720px]">
         <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
-          The problem
+          Trust. Subscribe. Sign up.
         </div>
-        <p class="text-neutral-700 mb-4">
-          Despite its usefulness, 92% of users don’t subscribe after signing up.
+        <p class="text-neutral-700 mb-8">
+          A redesigned signup journey focused on trust, clarity, and momentum—helping users understand value before
+          committing.
         </p>
-        <p class="text-neutral-700">
-          We interviewed users from this 92% to understand why they chose not to subscribe.
-        </p>
-      </section>
+      </div>
 
-      <!-- Research findings -->
-      <section class="mb-24">
-        <div class="max-w-[720px]">
-          <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
-            Research findings
-          </div>
-
-          <h3 class="font-semibold mb-2">Lack of trust</h3>
-          <p class="text-neutral-700 mb-2">
-            Users didn’t trust the product enough to commit before understanding its value.
-          </p>
-          <p class="text-neutral-700 mb-6">
-            70% of participants expressed discomfort sharing personal medical information before fully understanding the app’s purpose and value.
-          </p>
-          <img
-            src="assets/vitals/findings/trust-issue.png"
-            alt="Signup screen lacking trust signals"
-            class="w-full aspect-video object-contain bg-neutral-100 mb-12"
-          />
-
-          <h3 class="font-semibold mb-2">Confusing plan selection</h3>
-          <p class="text-neutral-700 mb-6">
-            Participants struggled with unclear terminology and weren’t informed upfront that some plans were only available in certain states.
-          </p>
-          <img
-            src="assets/vitals/findings/plan-confusion.png"
-            alt="Subscription plan selection confusion"
-            class="w-full aspect-video object-contain bg-neutral-100 mb-12"
-          />
-
-          <h3 class="font-semibold mb-2">Poor visual design</h3>
-          <p class="text-neutral-700 mb-6">
-            Key elements like sample profiles and free trial information were frequently missed due to weak visual hierarchy.
-          </p>
-          <img
-            src="assets/vitals/findings/visual-hierarchy.png"
-            alt="Poor visual hierarchy hiding important affordances"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
-        </div>
-      </section>
-
-      <!-- Redesigned journey -->
-      <section class="mb-24">
-        <div class="max-w-[720px]">
-          <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
-            Trust. Subscribe. Sign up.
-          </div>
-          <p class="text-neutral-700 mb-8">
-            A redesigned signup journey focused on trust, clarity, and momentum—helping users understand value before committing.
-          </p>
-        </div>
-
-        <!-- <img
+      <!-- <img
           src="assets/vitals/redesigned-flow.png"
           alt="Redesigned signup journey"
           class="w-full aspect-video object-cover bg-neutral-100 mb-16"
         /> -->
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1100px]">
-          <div>
-            <h3 class="font-semibold mb-2">Building trust</h3>
-            <p class="text-neutral-700 mb-4">
-              The redesigned welcome screen pairs a clear value proposition with visible privacy and data protection standards.
-            </p>
-            <p class="text-neutral-700">
-              Privacy Policy and About Us links are surfaced early for reassurance.
-            </p>
-          </div>
-          <img
-            src="assets/vitals/solutions/trust-screen.png"
-            alt="Welcome screen emphasizing trust"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
-
-          <div>
-            <h3 class="font-semibold mb-2">Easier plan selection</h3>
-            <p class="text-neutral-700 mb-4">
-              Plans are shown side-by-side using plain language, with clear state availability and a prominent free trial.
-            </p>
-          </div>
-          <img
-            src="assets/vitals/solutions/plan-selection.svg"
-            alt="Simplified plan selection"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
-
-          <div>
-            <h3 class="font-semibold mb-2">Streamlined data collection</h3>
-            <p class="text-neutral-700 mb-4">
-              Long forms are broken into small steps, each explaining why the information is required and how it will be used.
-            </p>
-          </div>
-          <img
-            src="assets/vitals/solutions/data-collection.svg"
-            alt="Step-by-step data collection"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
-
-          <div>
-            <h3 class="font-semibold mb-2">Quick access to help</h3>
-            <p class="text-neutral-700">
-              Help options remain visible throughout the flow to reduce anxiety and drop-off.
-            </p>
-          </div>
-          <img
-            src="assets/vitals/solutions/help-access.png"
-            alt="Persistent help access during signup"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1100px]">
+        <div>
+          <h3 class="font-semibold mb-2">Building trust</h3>
+          <p class="text-neutral-700 mb-4">
+            The redesigned welcome screen pairs a clear value proposition with visible privacy and data protection
+            standards.
+          </p>
+          <p class="text-neutral-700">
+            Privacy Policy and About Us links are surfaced early for reassurance.
+          </p>
         </div>
-      </section>
+        <img src="assets/vitals/solutions/trust-screen.png" alt="Welcome screen emphasizing trust"
+          class="w-full aspect-7/4 object-contain bg-neutral-100" />
 
-      <!-- Expected impact -->
-      <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
-          Expected impact
+        <div>
+          <h3 class="font-semibold mb-2">Easier plan selection</h3>
+          <p class="text-neutral-700 mb-4">
+            Plans are shown side-by-side using plain language, with clear state availability and a prominent free trial.
+          </p>
         </div>
-        <p class="text-neutral-700">
-          Based on usability testing and behavior analysis, the redesigned journey was estimated to increase subscriptions by 16%.
-        </p>
-      </section>
+        <img src="assets/vitals/solutions/plan-selection.png" alt="Simplified plan selection"
+          class="w-full aspect-video object-contain bg-neutral-100" />
 
-      <!-- Research & Strategy -->
-      <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
-          Research & Strategy
+        <div>
+          <h3 class="font-semibold mb-2">Streamlined data collection</h3>
+          <p class="text-neutral-700 mb-4">
+            Long forms are broken into small steps, each explaining why the information is required and how it will be
+            used.
+          </p>
         </div>
+        <img src="assets/vitals/solutions/data-collection.png" alt="Step-by-step data collection"
+          class="w-full aspect-video object-contain bg-neutral-100" />
 
-        <h3 class="font-semibold mb-2">Methods</h3>
-        <ul class="list-disc list-inside text-neutral-700 mb-6">
-          <li>Heuristic evaluation of signup and subscription flows</li>
-          <li>Usability testing with think-aloud session</li>
-          <li>Post-test interviews focused on subscription intent</li>
-        </ul>
+        <div>
+          <h3 class="font-semibold mb-2">Quick access to help</h3>
+          <p class="text-neutral-700">
+            Help options remain visible throughout the flow to reduce anxiety and drop-off.
+          </p>
+        </div>
+        <img src="assets/vitals/solutions/help-access.png" alt="Persistent help access during signup"
+          class="w-full aspect-video object-contain bg-neutral-100" />
+      </div>
+    </section>
 
-        <h3 class="font-semibold mb-2">Participant Pool</h3>
-        <ul class="list-disc list-inside text-neutral-700 mb-6">
-          <li>Patients, caregivers, and users who identify as both</li>
-          <li>Diverse age groups, races, and ethnicities</li>
-          <li>Varied levels of technical proficiency</li>
-          <li>Experience interacting with emergency service personnel</li>
-        </ul>
+    <!-- Expected impact -->
+    <section class="max-w-[720px] mb-24">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        Expected impact
+      </div>
+      <p class="text-neutral-700">
+        Based on usability testing and behavior analysis, the redesigned journey was estimated to increase subscriptions
+        by 16%.
+      </p>
+    </section>
 
-        <h3 class="font-semibold mb-2">Key Sources of Insight</h3>
-        <ul class="list-disc list-inside text-neutral-700">
-          <li><strong>User Research Findings:</strong> Actionable insights from usability tests and evaluations</li>
-          <li><strong>Business Model Analysis:</strong> Review of how Vitals converts users beyond app signups</li>
-          <li><strong>Design Best Practices:</strong> Applied principles around trust, persuasion, and emotional design</li>
-        </ul>
-      </section>
-    </main>
+    <!-- Research & Strategy -->
+    <section class="max-w-[720px] mb-24">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+        Research & Strategy
+      </div>
 
-    <footer class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm">
-      © 2026 Meghan Lendhe
-    </footer>
-  </body>
+      <h3 class="font-semibold mb-2">Methods</h3>
+      <ul class="list-disc list-inside text-neutral-700 mb-6">
+        <li>Heuristic evaluation of signup and subscription flows</li>
+        <li>Usability testing with think-aloud session</li>
+        <li>Post-test interviews focused on subscription intent</li>
+      </ul>
+
+      <h3 class="font-semibold mb-2">Participant Pool</h3>
+      <ul class="list-disc list-inside text-neutral-700 mb-6">
+        <li>Patients, caregivers, and users who identify as both</li>
+        <li>Diverse age groups, races, and ethnicities</li>
+        <li>Varied levels of technical proficiency</li>
+        <li>Experience interacting with emergency service personnel</li>
+      </ul>
+
+      <h3 class="font-semibold mb-2">Key Sources of Insight</h3>
+      <ul class="list-disc list-inside text-neutral-700">
+        <li><strong>User Research Findings:</strong> Actionable insights from usability tests and evaluations</li>
+        <li><strong>Business Model Analysis:</strong> Review of how Vitals converts users beyond app signups</li>
+        <li><strong>Design Best Practices:</strong> Applied principles around trust, persuasion, and emotional design
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm">
+    © 2026 Meghan Lendhe
+  </footer>
+</body>
+
 </html>

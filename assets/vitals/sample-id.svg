@@ -1,11 +1,11 @@
-<svg width="1588" height="2400" viewBox="0 0 1588 2400" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="1588" height="2400" fill="url(#paint0_radial_88_202)"/>
-<rect x="178" y="100" width="1232" height="2200" fill="url(#pattern0_88_202)"/>
+<svg width="452" height="540" viewBox="0 0 452 540" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="452" height="540" fill="url(#paint0_radial_88_202)"/>
+<rect x="97" y="40" width="257" height="460" fill="url(#pattern0_88_202)"/>
 <defs>
 <pattern id="pattern0_88_202" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_88_202" transform="matrix(0.00243902 0 0 0.00136612 -0.268293 -0.434426)"/>
 </pattern>
-<radialGradient id="paint0_radial_88_202" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(794 1102.08) rotate(-142.74) scale(1081.17 1311.45)">
+<radialGradient id="paint0_radial_88_202" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(226 247.968) rotate(180) scale(323.06 247.968)">
 <stop stop-color="#4C67AC"/>
 <stop offset="1" stop-color="#1F2A46"/>
 </radialGradient>
