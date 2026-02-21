@@ -1,174 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Meghan Lendhe — Product Designer</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meghan Lendhe — Product Designer</title>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              accent: "#C35200",
-            },
-            fontFamily: {
-              sans: ["Public Sans", "system-ui", "sans-serif"],
-              display: ["Space Grotesk", "sans-serif"],
-            },
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#C35200",
+          },
+          fontFamily: {
+            sans: ["Public Sans", "system-ui", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
           },
         },
-      };
-    </script>
-  </head>
+      },
+    };
+  </script>
+</head>
 
-  <body class="bg-white text-black font-sans">
-    <!-- Header -->
-    <header class="border-b border-neutral-300">
-      <div
-        class="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between"
-      >
-        <strong class="text-base">Meghan Lendhe</strong>
-        <nav class="space-x-6">
-          <a
-            href="#work"
-            class="text-black hover:text-accent transition-colors"
-            >Work</a
-          >
-          <a
-            href="mailto:meghanlendhe@gmail.com"
-            class="text-black hover:text-accent transition-colors"
-            >Contact</a
-          >
-        </nav>
+<body class="bg-white text-black font-sans">
+  <!-- Header -->
+  <header class="border-b border-neutral-300">
+    <div class="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between">
+      <strong class="text-base">Meghan Lendhe</strong>
+      <nav class="space-x-6">
+        <a href="#work" class="text-black hover:text-accent transition-colors">Work</a>
+        <a href="mailto:meghanlendhe@gmail.com" class="text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-[1100px] mx-auto px-6 py-24">
+    <!-- Hero -->
+    <section class="max-w-[720px] mb-24">
+      <h1 class="text-4xl font-semibold leading-tight max-w-[28ch]">
+        I design systems that help people make better decisions.
+      </h1>
+      <p class="mt-4 text-neutral-700 text-lg">
+        Product Designer with 2+ years of experience designing products across
+        marketplaces, healthcare, education, and news. I focus on research-led
+        UX, interaction design, and clear interfaces.
+      </p>
+    </section>
+
+    <!-- Currently -->
+    <section class="max-w-[720px] mb-24">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-2">
+        Currently
       </div>
-    </header>
+      <p class="text-neutral-700">
+        Designing welfare scheme management platforms for state governments
+        at Omara Technologies.
+      </p>
+    </section>
 
-    <main class="max-w-[1100px] mx-auto px-6 py-24">
-      <!-- Hero -->
-      <section class="max-w-[720px] mb-24">
-        <h1 class="text-4xl font-semibold leading-tight max-w-[28ch]">
-          I design systems that help people make better decisions.
-        </h1>
-        <p class="mt-4 text-neutral-700 text-lg">
-          Product Designer with 2+ years of experience designing products across
-          marketplaces, healthcare, education, and news. I focus on research-led
-          UX, interaction design, and clear interfaces.
-        </p>
-      </section>
+    <!-- Work -->
+    <section id="work" class="max-w-[720px] mb-24">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+        Selected case studies
+      </div>
 
-      <!-- Currently -->
-      <section class="max-w-[720px] mb-24">
-        <div
-          class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-2"
-        >
-          Currently
-        </div>
-        <p class="text-neutral-700">
-          Visiting Faculty at École Intuit Lab, teaching advanced prototyping to
-          3rd-year digital product design students.
-        </p>
-      </section>
-
-      <!-- Work -->
-      <section id="work" class="max-w-[720px] mb-24">
-        <div
-          class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6"
-        >
-          Selected case studies
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Vitals -->
-          <a
-            href="vitals.html"
-            class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5"
-          >
-            <img
-              src="assets/vitals/cover.png"
-              alt=""
-              class="aspect-video object-contain bg-neutral-100 mb-3"
-            />
-            <h3 class="text-lg font-semibold mb-1">
-              Reducing Friction, Boosting Vitals Subscriptions
-            </h3>
-            <p class="text-neutral-700 text-sm">
-              Designing for trust and conversion in a sensitive medical product.
-            </p>
-          </a>
-
-          <!-- BulkMagic -->
-          <a
-            href="bulkmagic.html"
-            class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5"
-          >
-            <img
-              src="assets/bulkmagic/cover.png"
-              alt=""
-              class="aspect-video object-contain bg-neutral-100 mb-3"
-            />
-            <h3 class="text-lg font-semibold mb-1">
-              Seller Onboarding for BulkMagic
-            </h3>
-            <p class="text-neutral-700 text-sm">
-              Reducing friction in a compliance-heavy workflow.
-            </p>
-          </a>
-
-          <!-- Alirtify -->
-          <a
-            href="alirtify.html"
-            class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5"
-          >
-            <img
-              src="assets/alirtify/cover.png"
-              alt=""
-              class="aspect-video object-contain bg-neutral-100 mb-3"
-            />
-            <h3 class="text-lg font-semibold mb-1">
-              Designing a Data-Driven UX for News Validation
-            </h3>
-            <p class="text-neutral-700 text-sm">
-              Translating research insights into ethical UX decisions.
-            </p>
-          </a>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section class="max-w-[720px]">
-        <div
-          class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-2"
-        >
-          Let’s talk
-        </div>
-        <p class="text-neutral-700 mb-2">
-          If you're working on complex products, early ideas, or systems that
-          need clarity, I'd love to connect.
-        </p>
-        <a
-          href="mailto:meghanlendhe@gmail.com"
-          class="text-accent hover:underline"
-        >
-          meghanlendhe@gmail.com
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Vitals -->
+        <a href="vitals.html"
+          class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5">
+          <img src="assets/vitals/cover.png" alt="" class="aspect-video object-contain bg-neutral-100 mb-3" />
+          <h3 class="text-lg font-semibold mb-1">
+            Reducing Friction, Boosting Vitals Subscriptions
+          </h3>
+          <p class="text-neutral-700 text-sm">
+            Designing for trust and conversion in a sensitive medical product.
+          </p>
         </a>
-      </section>
-    </main>
 
-    <footer
-      class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm"
-    >
-      © 2026 Meghan Lendhe
-    </footer>
-  </body>
+        <!-- BulkMagic -->
+        <a href="bulkmagic.html"
+          class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5">
+          <img src="assets/bulkmagic/cover.png" alt="" class="aspect-video object-contain bg-neutral-100 mb-3" />
+          <h3 class="text-lg font-semibold mb-1">
+            Seller Onboarding for BulkMagic
+          </h3>
+          <p class="text-neutral-700 text-sm">
+            Reducing friction in a compliance-heavy workflow.
+          </p>
+        </a>
+
+        <!-- Alirtify -->
+        <a href="alirtify.html"
+          class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5">
+          <img src="assets/alirtify/cover.png" alt="" class="aspect-video object-contain bg-neutral-100 mb-3" />
+          <h3 class="text-lg font-semibold mb-1">
+            Designing a Data-Driven UX for News Validation
+          </h3>
+          <p class="text-neutral-700 text-sm">
+            Translating research insights into ethical UX decisions.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="max-w-[720px]">
+      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-2">
+        Let’s talk
+      </div>
+      <p class="text-neutral-700 mb-2">
+        If you're working on complex products, early ideas, or systems that
+        need clarity, I'd love to connect.
+      </p>
+      <a href="mailto:meghanlendhe@gmail.com" class="text-accent hover:underline">
+        meghanlendhe@gmail.com
+      </a>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm">
+    © 2026 Meghan Lendhe
+  </footer>
+</body>
+
 </html>
