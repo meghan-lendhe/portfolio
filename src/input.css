@@ -1,3 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../**/*.html";
+
+@theme {
+  --color-accent: #C35200;
+  --font-sans: "Public Sans", system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
