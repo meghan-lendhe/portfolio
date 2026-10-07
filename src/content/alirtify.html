@@ -46,15 +46,21 @@
       </div>
     </header>
 
-    <main id="main" class="max-w-page mx-auto px-6 py-24">
+    <main id="main" class="max-w-page mx-auto px-6 py-16 md:py-24">
       <!-- Hero -->
-      <section class="mb-24">
-        <figure class="group mb-6">
-          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Alirtify product interface">
+      <section class="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-center mb-20 md:mb-32">
+        <div>
+          <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-5">Alirtify · News platform</p>
+          <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-[15ch]">
+            Designing a Data-Driven UX for News Validation
+          </h1>
+        </div>
+        <figure class="group">
+          <button type="button" class="lightbox-trigger relative flex justify-center w-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Alirtify product interface">
             <img
               src="assets/alirtify/cover.png"
               alt="Alirtify product interface"
-              class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+              class="w-full max-h-[80vh] h-auto border-b border-neutral-300 pb-4 transition duration-300 group-hover:border-accent group-hover:scale-[1.01]"
             />
             <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -63,57 +69,52 @@
               <span>Enlarge</span>
             </span>
           </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
             <span class="caption-text">Alirtify news validation and engagement interface</span>
             <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
           </figcaption>
         </figure>
-        <div class="max-w-content">
-          <h1 class="text-4xl font-semibold leading-tight mb-4">
-            Designing a Data-Driven UX for News Validation
-          </h1>
-        </div>
       </section>
 
       <!-- Overview -->
-      <section class="max-w-content mb-24">
+      <section class="max-w-page mb-20 md:mb-32">
         <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
           Overview
         </h2>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-6 pb-8 border-b border-neutral-300 text-sm">
           <div>
-            <span class="block text-neutral-500">Problem</span>
+            <span class="block text-neutral-500 mb-1">Problem</span>
             How might Alirtify help users validate news more easily?
           </div>
           <div>
-            <span class="block text-neutral-500">Time</span>
+            <span class="block text-neutral-500 mb-1">Time</span>
             5 weeks
           </div>
           <div>
-            <span class="block text-neutral-500">Team</span>
+            <span class="block text-neutral-500 mb-1">Team</span>
             5 Product Designers
           </div>
           <div>
-            <span class="block text-neutral-500">Stakeholder</span>
+            <span class="block text-neutral-500 mb-1">Stakeholder</span>
             Alirtify CEO
           </div>
         </div>
 
         <!-- Metric Stat Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
-          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
-            <div class="text-3xl font-semibold font-display text-accent mb-1">7</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
+          <div class="border-t border-neutral-300 pt-4">
+            <div class="text-4xl font-semibold font-display text-accent mb-2">7</div>
             <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">In-Depth Interviews</div>
             <div class="text-xs text-neutral-500">Recruited across diverse ages and professions to evaluate news trust behaviors</div>
           </div>
-          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
-            <div class="text-3xl font-semibold font-display text-accent mb-1">5 Weeks</div>
+          <div class="border-t border-neutral-300 pt-4">
+            <div class="text-4xl font-semibold font-display text-accent mb-2">5 Weeks</div>
             <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Research Sprint</div>
             <div class="text-xs text-neutral-500">Discovery sprint partnering with the CEO to test core product assumptions</div>
           </div>
-          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
-            <div class="text-3xl font-semibold font-display text-accent mb-1">5 Insights</div>
+          <div class="border-t border-neutral-300 pt-4">
+            <div class="text-4xl font-semibold font-display text-accent mb-2">5 Insights</div>
             <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">UX Interventions</div>
             <div class="text-xs text-neutral-500">Key design decisions from AI neutral headlines to verified public data</div>
           </div>
@@ -121,7 +122,7 @@
       </section>
 
       <!-- Context -->
-      <section class="max-w-content mb-24">
+      <section class="max-w-content mb-20 md:mb-32">
         <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Context
         </h2>
@@ -137,7 +138,7 @@
       </section>
 
       <!-- Research Goal -->
-      <section class="max-w-content mb-24">
+      <section class="max-w-content mb-20 md:mb-32">
         <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Research goal
         </h2>
@@ -147,7 +148,7 @@
       </section>
 
       <!-- Research Methodology -->
-      <section class="max-w-content mb-24">
+      <section class="max-w-content mb-20 md:mb-32">
         <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Research methodology
         </h2>
@@ -162,16 +163,16 @@
       </section>
 
       <!-- Key Findings & Design Decisions -->
-      <section class="mb-24">
-        <div class="max-w-content">
+      <section class="mb-20 md:mb-32">
+        <div class="max-w-page mb-10">
           <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
             Key findings & design decisions
           </h2>
         </div>
 
         <!-- Item 1 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 mb-12 md:mb-20 items-center">
+          <div class="max-w-md">
             <h3 class="font-semibold mb-2">Social validation matters, but who matters more</h3>
             <p class="font-semibold mb-1">Research insight</p>
             <p class="text-neutral-700 mb-4">
@@ -183,11 +184,11 @@
             </p>
           </div>
           <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: News feed showing social-circle engagement signals">
+            <button type="button" class="lightbox-trigger relative flex justify-center w-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: News feed showing social-circle engagement signals">
               <img
                 src="assets/alirtify/news-feed.svg"
                 alt="News feed showing social-circle engagement signals"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-w-[22rem] max-h-[80vh] h-auto mx-auto border-b border-neutral-300 pb-4 transition duration-300 group-hover:border-accent group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -196,7 +197,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Social-circle validation signals surfaced alongside global counts</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
@@ -204,8 +205,8 @@
         </div>
 
         <!-- Item 2 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 mb-12 md:mb-20 items-center">
+          <div class="max-w-md md:order-2">
             <h3 class="font-semibold mb-2">Headlines strongly influence trust</h3>
             <p class="font-semibold mb-1">Research insight</p>
             <p class="text-neutral-700 mb-4">
@@ -216,12 +217,12 @@
               Introduce AI-generated neutral headline alternatives, allowing users to quickly understand the article without emotional manipulation.
             </p>
           </div>
-          <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Neutral AI-generated headline alternative">
+          <figure class="group md:order-1">
+            <button type="button" class="lightbox-trigger relative flex justify-center w-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Neutral AI-generated headline alternative">
               <img
                 src="assets/alirtify/news-feed.svg"
                 alt="Neutral AI-generated headline alternative"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-w-[22rem] max-h-[80vh] h-auto mx-auto border-b border-neutral-300 pb-4 transition duration-300 group-hover:border-accent group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -230,7 +231,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">AI-generated neutral headline alternative reducing sensationalism</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
@@ -238,8 +239,8 @@
         </div>
 
         <!-- Item 3 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 mb-12 md:mb-20 items-center">
+          <div class="max-w-md">
             <h3 class="font-semibold mb-2">News source is a primary trust signal</h3>
             <p class="font-semibold mb-1">Research insight</p>
             <p class="text-neutral-700 mb-4">
@@ -251,11 +252,11 @@
             </p>
           </div>
           <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: News source emphasized in feed and article views">
+            <button type="button" class="lightbox-trigger relative flex justify-center w-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: News source emphasized in feed and article views">
               <img
                 src="assets/alirtify/news-feed.svg"
                 alt="News source emphasized in feed and article views"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-w-[22rem] max-h-[80vh] h-auto mx-auto border-b border-neutral-300 pb-4 transition duration-300 group-hover:border-accent group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -264,7 +265,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Prominent publisher branding and credibility badges</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
@@ -272,8 +273,8 @@
         </div>
 
         <!-- Item 4 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 mb-12 md:mb-20 items-center">
+          <div class="max-w-md md:order-2">
             <h3 class="font-semibold mb-2">Users seek context outside the app</h3>
             <p class="font-semibold mb-1">Research insight</p>
             <p class="text-neutral-700 mb-4">
@@ -284,12 +285,12 @@
               Embed related and trending articles directly below the article summary.
             </p>
           </div>
-          <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Related and trending articles embedded below content">
+          <figure class="group md:order-1">
+            <button type="button" class="lightbox-trigger relative flex justify-center w-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Related and trending articles embedded below content">
               <img
                 src="assets/alirtify/related-articles.svg"
                 alt="Related and trending articles embedded below content"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-w-[22rem] max-h-[80vh] h-auto mx-auto border-b border-neutral-300 pb-4 transition duration-300 group-hover:border-accent group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -298,7 +299,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Contextual cross-checking with related multi-perspective coverage</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
@@ -306,8 +307,8 @@
         </div>
 
         <!-- Item 5 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-center">
+          <div class="max-w-md">
             <h3 class="font-semibold mb-2">Official data builds confidence</h3>
             <p class="font-semibold mb-1">Research insight</p>
             <p class="text-neutral-700 mb-4">
@@ -319,11 +320,11 @@
             </p>
           </div>
           <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Verified public datasets supplementing articles">
+            <button type="button" class="lightbox-trigger relative flex justify-center w-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Verified public datasets supplementing articles">
               <img
                 src="assets/alirtify/verified-data.svg"
                 alt="Verified public datasets supplementing articles"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-w-[22rem] max-h-[80vh] h-auto mx-auto border-b border-neutral-300 pb-4 transition duration-300 group-hover:border-accent group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -332,7 +333,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Authoritative public data feeds embedded for civic transparency</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>

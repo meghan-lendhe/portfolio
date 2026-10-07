@@ -46,15 +46,25 @@
       </div>
     </header>
 
-    <main id="main" class="max-w-page mx-auto px-6 py-24">
+    <main id="main" class="max-w-page mx-auto px-6 py-16 md:py-24">
       <!-- Hero -->
-      <section class="mb-24">
-        <figure class="group mb-6">
-          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: BulkMagic seller onboarding interface">
+      <section class="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-center mb-20 md:mb-32">
+        <div>
+          <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-5">BulkMagic · E-commerce marketplace</p>
+          <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-[15ch] mb-5">
+            Streamlining Seller Onboarding
+          </h1>
+          <p class="text-neutral-700 max-w-prose">
+            Designing a personalized onboarding flow to reduce friction, improve compliance clarity,
+            and help sellers complete onboarding with confidence.
+          </p>
+        </div>
+        <figure class="group">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: BulkMagic seller onboarding interface">
             <img
               src="assets/bulkmagic/cover.png"
               alt="BulkMagic seller onboarding interface"
-              class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+              class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]"
             />
             <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -63,61 +73,52 @@
               <span>Enlarge</span>
             </span>
           </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
             <span class="caption-text">BulkMagic seller onboarding interface overview</span>
             <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
           </figcaption>
         </figure>
-        <div class="max-w-content">
-          <h1 class="text-4xl font-semibold leading-tight mb-4">
-            Streamlining Seller Onboarding for an E-Commerce Marketplace
-          </h1>
-          <p class="text-neutral-700">
-            Designing a personalized onboarding flow to reduce friction, improve compliance clarity,
-            and help sellers complete onboarding with confidence.
-          </p>
-        </div>
       </section>
 
       <!-- Overview -->
-      <section class="max-w-content mb-24">
+      <section class="max-w-page mb-20 md:mb-32">
         <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
           Overview
         </h2>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-6 pb-8 border-b border-neutral-300 text-sm">
           <div>
-            <span class="block text-neutral-500">Time</span>
+            <span class="block text-neutral-500 mb-1">Time</span>
             3 days
           </div>
           <div>
-            <span class="block text-neutral-500">Team</span>
+            <span class="block text-neutral-500 mb-1">Team</span>
             Solo project
           </div>
           <div>
-            <span class="block text-neutral-500">Product</span>
+            <span class="block text-neutral-500 mb-1">Product</span>
             BulkMagic marketplace
           </div>
           <div>
-            <span class="block text-neutral-500">Focus</span>
+            <span class="block text-neutral-500 mb-1">Focus</span>
             Seller onboarding, compliance UX
           </div>
         </div>
 
         <!-- Metric Stat Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
-          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
-            <div class="text-3xl font-semibold font-display text-accent mb-1">3 Days</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8 mb-8">
+          <div class="border-t border-neutral-300 pt-4">
+            <div class="text-4xl font-semibold font-display text-accent mb-2">3 Days</div>
             <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Solo Design Sprint</div>
             <div class="text-xs text-neutral-500">Rapid turnaround from compliance analysis to high-fidelity onboarding flow</div>
           </div>
-          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
-            <div class="text-3xl font-semibold font-display text-accent mb-1">50 States</div>
+          <div class="border-t border-neutral-300 pt-4">
+            <div class="text-4xl font-semibold font-display text-accent mb-2">50 States</div>
             <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Compliance Scope</div>
             <div class="text-xs text-neutral-500">Dynamic nexus threshold validation & multi-state tax document checklist</div>
           </div>
-          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
-            <div class="text-3xl font-semibold font-display text-accent mb-1">5 Steps</div>
+          <div class="border-t border-neutral-300 pt-4">
+            <div class="text-4xl font-semibold font-display text-accent mb-2">5 Steps</div>
             <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Progressive Flow</div>
             <div class="text-xs text-neutral-500">Context-aware step progression replacing long, monolithic application forms</div>
           </div>
@@ -131,7 +132,7 @@
       </section>
 
       <!-- Problem -->
-      <section class="max-w-content mb-24">
+      <section class="max-w-content mb-20 md:mb-32">
         <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Problem
         </h2>
@@ -149,8 +150,8 @@
       </section>
 
       <!-- Solution -->
-      <section class="mb-24">
-        <div class="max-w-content">
+      <section class="mb-20 md:mb-32">
+        <div class="max-w-content mb-12 md:mb-16">
           <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
             Solution
           </h2>
@@ -162,8 +163,8 @@
         </div>
 
         <!-- Feature 1 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 mb-12 md:mb-20 items-center">
+          <div class="max-w-md">
             <h3 class="font-semibold mb-2">Progressive disclosure</h3>
             <p class="text-neutral-700">
               The onboarding begins by understanding the seller’s business structure and locations of
@@ -172,11 +173,11 @@
             </p>
           </div>
           <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Progressive disclosure in seller onboarding flow">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Progressive disclosure in seller onboarding flow">
               <img
                 src="assets/bulkmagic/progressive-disclosure.png"
                 alt="Progressive disclosure in seller onboarding flow"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -185,7 +186,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Step-by-step business structure identification</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
@@ -193,20 +194,20 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 mb-12 md:mb-20 items-center">
+          <div class="max-w-md md:order-2">
             <h3 class="font-semibold mb-2">Dynamic document checklists</h3>
             <p class="text-neutral-700">
               A personalized checklist dynamically updates based on seller inputs, clearly
               communicating which documents are required at each stage.
             </p>
           </div>
-          <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Dynamic document checklist adapting to seller inputs">
+          <figure class="group md:order-1">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Dynamic document checklist adapting to seller inputs">
               <img
                 src="assets/bulkmagic/document-checklist.png"
                 alt="Dynamic document checklist adapting to seller inputs"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -215,7 +216,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Dynamic requirements checklist based on seller profile</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
@@ -223,8 +224,8 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 mb-12 md:mb-20 items-center">
+          <div class="max-w-md">
             <h3 class="font-semibold mb-2">Bulk upload hub</h3>
             <p class="text-neutral-700">
               Sellers can upload multiple documents at once—such as W-9 forms, tax permits, and
@@ -232,11 +233,11 @@
             </p>
           </div>
           <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Bulk document upload interface">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Bulk document upload interface">
               <img
                 src="assets/bulkmagic/bulk-upload.png"
                 alt="Bulk document upload interface"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -245,7 +246,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Centralized batch file uploader for certificates & permits</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
@@ -253,20 +254,20 @@
         </div>
 
         <!-- Feature 4 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 mb-12 md:mb-20 items-center">
+          <div class="max-w-md md:order-2">
             <h3 class="font-semibold mb-2">Automated validation</h3>
             <p class="text-neutral-700">
               Real-time validation checks submissions against federal and state compliance
               requirements, including economic nexus thresholds.
             </p>
           </div>
-          <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Real-time document validation and error handling">
+          <figure class="group md:order-1">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Real-time document validation and error handling">
               <img
                 src="assets/bulkmagic/validation.png"
                 alt="Real-time document validation and error handling"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -275,7 +276,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Instant error resolution & nexus compliance validation</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
@@ -283,8 +284,8 @@
         </div>
 
         <!-- Feature 5 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div class="max-w-md">
             <h3 class="font-semibold mb-2">Save & resume</h3>
             <p class="text-neutral-700">
               Sellers can save their progress and return later, making long onboarding flows more
@@ -292,11 +293,11 @@
             </p>
           </div>
           <figure class="group">
-            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Save and resume onboarding progress">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Save and resume onboarding progress">
               <img
                 src="assets/bulkmagic/save-resume.png"
                 alt="Save and resume onboarding progress"
-                class="w-full h-auto transition duration-300 group-hover:scale-[1.01]"
+                class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]"
               />
               <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -305,7 +306,7 @@
                 <span>Enlarge</span>
               </span>
             </button>
-            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <span class="caption-text">Persistent progress saving with multi-session continuity</span>
               <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-xs uppercase">Click to zoom</span>
             </figcaption>
