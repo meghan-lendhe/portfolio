@@ -117,7 +117,7 @@
         </div>
 
         <!-- Main Image Display + Prev/Next Buttons -->
-        <div class="relative w-full flex items-center justify-center min-h-[200px]">
+        <div class="relative w-full flex items-center justify-center min-h-50">
           <!-- Prev Button -->
           <button id="lightbox-prev" type="button" aria-label="Previous image"
             class="absolute left-2 sm:-left-4 z-20 p-2 sm:p-3 rounded-full bg-black/60 text-white hover:bg-black/90 hover:text-accent transition-all transform hover:scale-105 backdrop-blur-xs focus-visible:outline-2 focus-visible:outline-accent shadow-lg">
