@@ -7,4 +7,6 @@
   --color-accent: #C35200;
   --font-sans: "Public Sans", system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
+  --container-page: calc(var(--spacing) * 275);
+  --container-content: calc(var(--spacing) * 180);
 }
