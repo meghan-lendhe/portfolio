@@ -27,20 +27,26 @@
   </head>
 
   <body class="bg-white text-black font-sans">
+    <!-- Skip Link -->
+    <a href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:outline-2 focus:outline-accent">
+      Skip to main content
+    </a>
+
     <!-- Header -->
     <header class="border-b border-neutral-300">
       <div class="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between">
         <strong class="text-base">
-          <a href="index.html" class="hover:text-accent transition-colors">Meghan Lendhe</a>
+          <a href="index.html" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Meghan Lendhe</a>
         </strong>
-        <nav class="space-x-6">
-          <a href="index.html#work" class="hover:text-accent transition-colors">Work</a>
-          <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors">Contact</a>
+        <nav aria-label="Main navigation" class="space-x-6">
+          <a href="index.html#work" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Work</a>
+          <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main class="max-w-[1100px] mx-auto px-6 py-24">
+    <main id="main" class="max-w-[1100px] mx-auto px-6 py-24">
       <!-- Hero -->
       <section class="mb-24">
         <img
@@ -61,9 +67,9 @@
 
       <!-- Overview -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
           Overview
-        </div>
+        </h2>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 text-sm">
           <div>
@@ -93,9 +99,9 @@
 
       <!-- Problem -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Problem
-        </div>
+        </h2>
 
         <p class="text-neutral-700 mb-4">Sellers struggled with:</p>
         <ul class="list-disc list-inside text-neutral-700 mb-4">
@@ -112,9 +118,9 @@
       <!-- Solution -->
       <section class="mb-24">
         <div class="max-w-[720px]">
-          <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+          <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
             Solution
-          </div>
+          </h2>
           <p class="text-neutral-700 mb-8">
             I designed a personalized, step-by-step onboarding flow that adapts to each seller’s
             business structure and location, reducing cognitive load and guiding them toward
@@ -206,9 +212,9 @@
 
       <!-- Key challenges addressed -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Key challenges addressed
-        </div>
+        </h2>
 
         <h3 class="font-semibold mb-2">Complex compliance requirements</h3>
         <p class="text-neutral-700 mb-4">
@@ -241,9 +247,9 @@
 
       <!-- Reflection -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Reflection
-        </div>
+        </h2>
         <p class="text-neutral-700">
           This project reinforced how quickly onboarding complexity compounds in compliance-heavy
           systems. Small design decisions—such as when to ask for information and how clearly

@@ -27,20 +27,26 @@
   </head>
 
   <body class="bg-white text-black font-sans">
+    <!-- Skip Link -->
+    <a href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:outline-2 focus:outline-accent">
+      Skip to main content
+    </a>
+
     <!-- Header -->
     <header class="border-b border-neutral-300">
       <div class="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between">
         <strong class="text-base">
-          <a href="index.html" class="hover:text-accent transition-colors">Meghan Lendhe</a>
+          <a href="index.html" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Meghan Lendhe</a>
         </strong>
-        <nav class="space-x-6">
-          <a href="index.html#work" class="hover:text-accent transition-colors">Work</a>
-          <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors">Contact</a>
+        <nav aria-label="Main navigation" class="space-x-6">
+          <a href="index.html#work" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Work</a>
+          <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main class="max-w-[1100px] mx-auto px-6 py-24">
+    <main id="main" class="max-w-[1100px] mx-auto px-6 py-24">
       <!-- Hero -->
       <section class="mb-24">
         <img
@@ -57,9 +63,9 @@
 
       <!-- Overview -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
           Overview
-        </div>
+        </h2>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 text-sm">
           <div>
@@ -83,9 +89,9 @@
 
       <!-- Context -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Context
-        </div>
+        </h2>
         <p class="text-neutral-700 mb-4">
           Alirtify is a news aggregator and discussion platform where users interact with articles through likes, reactions, and comments.
         </p>
@@ -99,9 +105,9 @@
 
       <!-- Research Goal -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Research goal
-        </div>
+        </h2>
         <p class="text-neutral-700">
           Understand how people currently validate news and identify what signals genuinely help them decide whether a story is trustworthy—without telling them what to believe.
         </p>
@@ -109,9 +115,9 @@
 
       <!-- Research Methodology -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Research methodology
-        </div>
+        </h2>
         <h3 class="font-semibold mb-2">User interviews</h3>
         <ul class="list-disc list-inside text-neutral-700 space-y-1">
           <li>7 participants</li>
@@ -125,9 +131,9 @@
       <!-- Key Findings & Design Decisions -->
       <section class="mb-24">
         <div class="max-w-[720px]">
-          <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+          <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
             Key findings & design decisions
-          </div>
+          </h2>
         </div>
 
         <!-- Item 1 -->
@@ -233,9 +239,9 @@
 
       <!-- Outcome & Reflection -->
       <section class="max-w-[720px] mb-24">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Outcome & reflection
-        </div>
+        </h2>
         <p class="text-neutral-700 mb-4">
           The CEO shared that the engagement provided valuable clarity on validating assumptions early, particularly around research-driven UX decision making.
         </p>

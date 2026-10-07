@@ -27,20 +27,26 @@
 </head>
 
 <body class="bg-white text-black font-sans">
+  <!-- Skip Link -->
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:outline-2 focus:outline-accent">
+    Skip to main content
+  </a>
+
   <!-- Header -->
   <header class="border-b border-neutral-300">
     <div class="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between">
       <strong class="text-base">
-        <a href="index.html" class="hover:text-accent transition-colors">Meghan Lendhe</a>
+        <a href="index.html" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Meghan Lendhe</a>
       </strong>
-      <nav class="space-x-6">
-        <a href="index.html#work" class="hover:text-accent transition-colors">Work</a>
-        <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors">Contact</a>
+      <nav aria-label="Main navigation" class="space-x-6">
+        <a href="index.html#work" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Work</a>
+        <a href="mailto:meghanlendhe@gmail.com" class="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-[1100px] mx-auto px-6 py-24">
+  <main id="main" class="max-w-[1100px] mx-auto px-6 py-24">
     <!-- Hero -->
     <section class="mb-24">
       <img src="assets/vitals/cover.png" alt="Vitals app interface"
@@ -54,9 +60,9 @@
 
     <!-- Overview -->
     <section class="max-w-[720px] mb-24">
-      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
         Overview
-      </div>
+      </h2>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 text-sm">
         <div>
@@ -84,9 +90,9 @@
 
     <!-- About Vitals -->
     <section class="max-w-[720px] mb-24">
-      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
         About Vitals
-      </div>
+      </h2>
       <p class="text-neutral-700">
         Vitals is a digital medical ID for vulnerable individuals in emergencies. It creates secure digital medical
         profiles containing essential information about a person’s conditions, behaviors, and care needs.
@@ -95,9 +101,9 @@
 
     <!-- How it works -->
     <section class="max-w-[720px] mb-24">
-      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
         How it works
-      </div>
+      </h2>
       <p class="text-neutral-700 mb-4">
         During emergencies, first responders can instantly access these profiles, enabling them to understand and
         respond appropriately to individuals who may have difficulty communicating.
@@ -111,9 +117,9 @@
 
     <!-- Problem -->
     <section class="max-w-[720px] mb-24">
-      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
         The problem
-      </div>
+      </h2>
       <p class="text-neutral-700 mb-4">
         Despite its usefulness, 92% of users don’t subscribe after signing up.
       </p>
@@ -125,9 +131,9 @@
     <!-- Research findings -->
     <section class="mb-24">
       <div class="max-w-[720px]">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
           Research findings
-        </div>
+        </h2>
 
         <h3 class="font-semibold mb-2">Lack of trust</h3>
         <p class="text-neutral-700 mb-2">
@@ -161,9 +167,9 @@
     <!-- Redesigned journey -->
     <section class="mb-24">
       <div class="max-w-[720px]">
-        <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
           Trust. Subscribe. Sign up.
-        </div>
+        </h2>
         <p class="text-neutral-700 mb-8">
           A redesigned signup journey focused on trust, clarity, and momentum—helping users understand value before
           committing.
@@ -222,9 +228,9 @@
 
     <!-- Expected impact -->
     <section class="max-w-[720px] mb-24">
-      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
+      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">
         Expected impact
-      </div>
+      </h2>
       <p class="text-neutral-700">
         Based on usability testing and behavior analysis, the redesigned journey was estimated to increase subscriptions
         by 16%.
@@ -233,9 +239,9 @@
 
     <!-- Research & Strategy -->
     <section class="max-w-[720px] mb-24">
-      <div class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
+      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
         Research & Strategy
-      </div>
+      </h2>
 
       <h3 class="font-semibold mb-2">Methods</h3>
       <ul class="list-disc list-inside text-neutral-700 mb-6">
