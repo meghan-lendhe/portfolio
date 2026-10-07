@@ -1,5 +1,5 @@
 ---
-const linkClass = 'hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
+const linkClass = 'hover:text-secondary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary';
 ---
 
 <header class="border-b border-neutral-300">
@@ -12,7 +12,7 @@ const linkClass = 'hover:text-accent transition-colors focus-visible:outline-2 f
       <div class="relative">
         <button
           type="button"
-          class={linkClass}
+          class={`${linkClass} aria-expanded:text-secondary aria-expanded:underline aria-expanded:decoration-dotted aria-expanded:underline-offset-4`}
           data-contact-toggle
           aria-expanded="false"
           aria-controls="contact-panel"
@@ -22,29 +22,29 @@ const linkClass = 'hover:text-accent transition-colors focus-visible:outline-2 f
           data-contact-panel
           aria-label="Contact options"
           hidden
-          class="absolute right-0 top-full z-50 mt-3 max-h-[calc(100dvh-6rem)] w-[min(22rem,calc(100vw-3rem))] overflow-y-auto rounded border border-neutral-300 bg-white p-5 text-left shadow-lg"
+          class="absolute right-0 top-full z-50 mt-3 max-h-[calc(100dvh-6rem)] w-[min(22rem,calc(100vw-3rem))] overflow-y-auto rounded bg-neutral-100 p-5 text-left shadow-xl"
         >
           <p class="text-sm text-neutral-700">Reach out to me at</p>
           <div class="mt-2 flex items-center justify-between gap-3">
               <a
                 href="mailto:meghanlendhe@gmail.com"
-                class="min-w-0 break-all text-sm text-black underline decoration-neutral-300 underline-offset-4 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                class="min-w-0 break-all text-sm text-black underline decoration-neutral-300 underline-offset-4 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
               >meghanlendhe@gmail.com</a>
               <button
                 type="button"
                 data-copy-email
-                data-default-label="Copy"
-                class="shrink-0 border border-neutral-300 px-3 py-2 text-sm hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-              ><span data-copy-label>Copy</span><span class="sr-only" data-copy-status role="status"></span></button>
+                data-default-label="Copy email"
+                class="shrink-0 rounded bg-secondary/10 px-3 py-2 text-sm font-medium text-secondary hover:bg-secondary/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+              ><span data-copy-label>Copy email</span><span class="sr-only" data-copy-status role="status"></span></button>
           </div>
           <p class="mt-5 text-sm text-neutral-700">Or connect with me on LinkedIn</p>
           <a
             href="https://www.linkedin.com/in/meghanlendhe/"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-2 flex items-center gap-3 border border-neutral-300 px-3 py-2 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            class="mt-2 flex items-center gap-3 rounded bg-secondary/5 px-3 py-2 hover:bg-secondary/10 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
           >
-            <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5 shrink-0 text-[#0A66C2]" fill="currentColor">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5 shrink-0 text-secondary" fill="currentColor">
               <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.97V9.06h2.96v9.28ZM6.45 7.79a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.55h-2.96v-4.51c0-1.08-.02-2.47-1.51-2.47-1.51 0-1.74 1.18-1.74 2.39v4.59H9.17V9.06h2.84v1.27h.04c.4-.73 1.36-1.51 2.79-1.51 2.99 0 3.55 1.97 3.55 4.53v4.99Z"/>
             </svg>
             <span class="text-sm font-medium">Visit LinkedIn profile</span>

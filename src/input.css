@@ -5,7 +5,21 @@
 @source "../public/assets/js/**/*.js";
 
 @theme {
-  --color-accent: #C35200;
+  --color-accent: #930404;
+  --color-secondary: #2A7B7E;
+  --color-black: #001514;
+  --color-white: #FFFEF7;
+  --color-neutral-50: #FFFEF7;
+  --color-neutral-100: #F7F5EC;
+  --color-neutral-200: #E7E5DC;
+  --color-neutral-300: #D4D2C9;
+  --color-neutral-400: #848586;
+  --color-neutral-500: #6B6D6A;
+  --color-neutral-600: #515653;
+  --color-neutral-700: #383F3D;
+  --color-neutral-800: #212A28;
+  --color-neutral-900: #001514;
+  --color-neutral-950: #001514;
   --font-sans: "Public Sans", system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   --container-page: calc(var(--spacing) * 275);
