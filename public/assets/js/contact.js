@@ -1,6 +1,5 @@
 /**
- * Contact utilities
- * - Copies the portfolio email address from any element using data-copy-email
+ * Contact utilities for the navbar popover and email copy actions.
  */
 
 (function () {
@@ -43,6 +42,45 @@
       label.textContent = button.dataset.defaultLabel || 'Copy email';
       status.textContent = '';
     }, 2200);
+  }
+
+  const contactToggle = document.querySelector('[data-contact-toggle]');
+  const contactPanel = document.querySelector('[data-contact-panel]');
+
+  if (contactToggle && contactPanel) {
+    function setContactPanelOpen(open) {
+      contactPanel.hidden = !open;
+      contactToggle.setAttribute('aria-expanded', String(open));
+    }
+
+    contactToggle.addEventListener('click', function () {
+      setContactPanelOpen(contactPanel.hidden);
+    });
+
+    document.addEventListener('click', function (event) {
+      if (
+        !contactPanel.hidden &&
+        event.target instanceof Node &&
+        !contactToggle.parentElement.contains(event.target)
+      ) {
+        setContactPanelOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (!contactPanel.hidden && event.key === 'Escape') {
+        setContactPanelOpen(false);
+        contactToggle.focus();
+      }
+    });
+
+    contactToggle.parentElement.addEventListener('focusout', function () {
+      window.setTimeout(function () {
+        if (!contactToggle.parentElement.contains(document.activeElement)) {
+          setContactPanelOpen(false);
+        }
+      });
+    });
   }
 
   document.querySelectorAll('[data-copy-email]').forEach(function (button) {

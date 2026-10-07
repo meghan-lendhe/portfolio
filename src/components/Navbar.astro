@@ -7,11 +7,54 @@ const linkClass = 'hover:text-accent transition-colors focus-visible:outline-2 f
     <strong class="text-base">
       <a href="/" class={linkClass}>Meghan Lendhe</a>
     </strong>
-    <nav aria-label="Main navigation" class="space-x-6">
+    <nav aria-label="Main navigation" class="flex items-center gap-6">
       <a href="/#work" class={linkClass}>Work</a>
-      <button type="button" data-copy-email data-default-label="Copy email" class={linkClass}>
-        <span data-copy-label>Copy email</span><span class="sr-only" data-copy-status role="status"></span>
-      </button>
+      <div class="relative">
+        <button
+          type="button"
+          class={linkClass}
+          data-contact-toggle
+          aria-expanded="false"
+          aria-controls="contact-panel"
+        >Contact</button>
+        <section
+          id="contact-panel"
+          data-contact-panel
+          aria-label="Contact options"
+          hidden
+          class="absolute right-0 top-full z-50 mt-3 max-h-[calc(100dvh-6rem)] w-[min(22rem,calc(100vw-3rem))] overflow-y-auto rounded border border-neutral-300 bg-white p-5 text-left shadow-lg"
+        >
+          <h2 class="font-display text-xs uppercase tracking-widest text-neutral-500">Get in touch</h2>
+          <div class="mt-4">
+            <p class="text-xs text-neutral-500">Email</p>
+            <div class="mt-1 flex items-center gap-3">
+              <a
+                href="mailto:meghanlendhe@gmail.com"
+                class="min-w-0 break-all text-sm text-black underline decoration-neutral-300 underline-offset-4 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              >meghanlendhe@gmail.com</a>
+              <button
+                type="button"
+                data-copy-email
+                data-default-label="Copy"
+                class="shrink-0 border border-neutral-300 px-3 py-2 text-sm hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              ><span data-copy-label>Copy</span><span class="sr-only" data-copy-status role="status"></span></button>
+            </div>
+          </div>
+          <a
+            href="https://www.linkedin.com/in/meghanlendhe/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 flex items-center justify-between gap-4 border border-neutral-300 p-3 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            <span>
+              <span class="block text-sm font-semibold">LinkedIn</span>
+              <span class="mt-1 block text-xs text-neutral-600">View my profile and connect</span>
+            </span>
+            <span aria-hidden="true" class="shrink-0 text-accent">Open ↗</span>
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        </section>
+      </div>
     </nav>
   </div>
 </header>
