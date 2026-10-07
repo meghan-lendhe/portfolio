@@ -5,13 +5,9 @@
   "description": "Portfolio for Meghan Lendhe",
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
-    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui"
+    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch"
   },
   "devDependencies": {
-    "@playwright/test": "^1.63.0",
     "@tailwindcss/cli": "^4.3.3",
     "tailwindcss": "^4.3.3"
   }
