@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @source "../**/*.html";
+@source "../assets/js/**/*.js";
 
 @theme {
   --color-accent: #C35200;

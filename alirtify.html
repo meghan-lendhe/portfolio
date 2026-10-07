@@ -49,11 +49,25 @@
     <main id="main" class="max-w-[1100px] mx-auto px-6 py-24">
       <!-- Hero -->
       <section class="mb-24">
-        <img
-          src="assets/alirtify/cover.png"
-          alt="Alirtify product interface"
-          class="w-full aspect-video object-contain bg-neutral-100 mb-6"
-        />
+        <figure class="group mb-6">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Alirtify product interface">
+            <img
+              src="assets/alirtify/cover.png"
+              alt="Alirtify product interface"
+              class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+            />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">Alirtify news validation and engagement interface</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
         <div class="max-w-[720px]">
           <h1 class="text-4xl font-semibold leading-tight mb-4">
             Designing a Data-Driven UX for News Validation
@@ -83,6 +97,25 @@
           <div>
             <span class="block text-neutral-500">Stakeholder</span>
             Alirtify CEO
+          </div>
+        </div>
+
+        <!-- Metric Stat Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+            <div class="text-3xl font-semibold font-display text-accent mb-1">7</div>
+            <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">In-Depth Interviews</div>
+            <div class="text-xs text-neutral-500">Recruited across diverse ages and professions to evaluate news trust behaviors</div>
+          </div>
+          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+            <div class="text-3xl font-semibold font-display text-accent mb-1">5 Weeks</div>
+            <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Research Sprint</div>
+            <div class="text-xs text-neutral-500">Discovery sprint partnering with the CEO to test core product assumptions</div>
+          </div>
+          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+            <div class="text-3xl font-semibold font-display text-accent mb-1">5 Insights</div>
+            <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">UX Interventions</div>
+            <div class="text-xs text-neutral-500">Key design decisions from AI neutral headlines to verified public data</div>
           </div>
         </div>
       </section>
@@ -137,7 +170,7 @@
         </div>
 
         <!-- Item 1 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
           <div>
             <h3 class="font-semibold mb-2">Social validation matters, but who matters more</h3>
             <p class="font-semibold mb-1">Research insight</p>
@@ -149,15 +182,29 @@
               Surface engagement from a user’s social circle (friends, family, trusted connections) alongside broader engagement metrics to provide more meaningful validation.
             </p>
           </div>
-          <img
-            src="assets/alirtify/news-feed.svg"
-            alt="News feed showing social-circle engagement signals"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: News feed showing social-circle engagement signals">
+              <img
+                src="assets/alirtify/news-feed.svg"
+                alt="News feed showing social-circle engagement signals"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Social-circle validation signals surfaced alongside global counts</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Item 2 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
           <div>
             <h3 class="font-semibold mb-2">Headlines strongly influence trust</h3>
             <p class="font-semibold mb-1">Research insight</p>
@@ -169,15 +216,29 @@
               Introduce AI-generated neutral headline alternatives, allowing users to quickly understand the article without emotional manipulation.
             </p>
           </div>
-          <img
-            src="assets/alirtify/news-feed.svg"
-            alt="Neutral AI-generated headline alternative"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Neutral AI-generated headline alternative">
+              <img
+                src="assets/alirtify/news-feed.svg"
+                alt="Neutral AI-generated headline alternative"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">AI-generated neutral headline alternative reducing sensationalism</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Item 3 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
           <div>
             <h3 class="font-semibold mb-2">News source is a primary trust signal</h3>
             <p class="font-semibold mb-1">Research insight</p>
@@ -189,15 +250,29 @@
               Visually prioritize the news source in both feed and article views.
             </p>
           </div>
-          <img
-            src="assets/alirtify/news-feed.svg"
-            alt="News source emphasized in feed and article views"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: News source emphasized in feed and article views">
+              <img
+                src="assets/alirtify/news-feed.svg"
+                alt="News source emphasized in feed and article views"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Prominent publisher branding and credibility badges</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Item 4 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
           <div>
             <h3 class="font-semibold mb-2">Users seek context outside the app</h3>
             <p class="font-semibold mb-1">Research insight</p>
@@ -209,15 +284,29 @@
               Embed related and trending articles directly below the article summary.
             </p>
           </div>
-          <img
-            src="assets/alirtify/related-articles.svg"
-            alt="Related and trending articles embedded below content"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Related and trending articles embedded below content">
+              <img
+                src="assets/alirtify/related-articles.svg"
+                alt="Related and trending articles embedded below content"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Contextual cross-checking with related multi-perspective coverage</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Item 5 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h3 class="font-semibold mb-2">Official data builds confidence</h3>
             <p class="font-semibold mb-1">Research insight</p>
@@ -229,11 +318,25 @@
               Supplement articles with government-backed or verified public datasets where relevant.
             </p>
           </div>
-          <img
-            src="assets/alirtify/verified-data.svg"
-            alt="Verified public datasets supplementing articles"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Verified public datasets supplementing articles">
+              <img
+                src="assets/alirtify/verified-data.svg"
+                alt="Verified public datasets supplementing articles"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Authoritative public data feeds embedded for civic transparency</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -249,10 +352,29 @@
           This project strengthened my ability to conduct in-person research, adapt interview plans in real time, and translate qualitative insights into ethical product decisions.
         </p>
       </section>
+
+      <!-- Project Navigation -->
+      <section class="border-t border-neutral-300 pt-16 mb-24">
+        <div class="flex flex-col sm:flex-row items-stretch justify-between gap-6">
+          <a href="bulkmagic.html" class="flex-1 border border-neutral-300 p-6 hover:border-accent transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">← Previous Project</span>
+            <h3 class="font-semibold text-lg group-hover:text-accent transition-colors mb-1">Seller Onboarding for BulkMagic</h3>
+            <p class="text-sm text-neutral-600">Reducing friction in a compliance-heavy e-commerce workflow.</p>
+          </a>
+          <a href="vitals.html" class="flex-1 border border-neutral-300 p-6 hover:border-accent transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-right">
+            <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">Next Project →</span>
+            <h3 class="font-semibold text-lg group-hover:text-accent transition-colors mb-1">Reducing Friction, Boosting Vitals Subscriptions</h3>
+            <p class="text-sm text-neutral-600">Designing for trust and conversion in a sensitive medical ID product.</p>
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm">
       © 2026 Meghan Lendhe
     </footer>
+
+    <!-- Interactive Script -->
+    <script src="assets/js/case-study.js" defer></script>
   </body>
 </html>

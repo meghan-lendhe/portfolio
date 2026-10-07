@@ -49,11 +49,25 @@
     <main id="main" class="max-w-[1100px] mx-auto px-6 py-24">
       <!-- Hero -->
       <section class="mb-24">
-        <img
-          src="assets/bulkmagic/cover.png"
-          alt="BulkMagic seller onboarding interface"
-          class="w-full aspect-video object-contain bg-neutral-100 mb-6"
-        />
+        <figure class="group mb-6">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: BulkMagic seller onboarding interface">
+            <img
+              src="assets/bulkmagic/cover.png"
+              alt="BulkMagic seller onboarding interface"
+              class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+            />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">BulkMagic seller onboarding interface overview</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
         <div class="max-w-[720px]">
           <h1 class="text-4xl font-semibold leading-tight mb-4">
             Streamlining Seller Onboarding for an E-Commerce Marketplace
@@ -87,6 +101,25 @@
           <div>
             <span class="block text-neutral-500">Focus</span>
             Seller onboarding, compliance UX
+          </div>
+        </div>
+
+        <!-- Metric Stat Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+            <div class="text-3xl font-semibold font-display text-accent mb-1">3 Days</div>
+            <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Solo Design Sprint</div>
+            <div class="text-xs text-neutral-500">Rapid turnaround from compliance analysis to high-fidelity onboarding flow</div>
+          </div>
+          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+            <div class="text-3xl font-semibold font-display text-accent mb-1">50 States</div>
+            <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Compliance Scope</div>
+            <div class="text-xs text-neutral-500">Dynamic nexus threshold validation & multi-state tax document checklist</div>
+          </div>
+          <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+            <div class="text-3xl font-semibold font-display text-accent mb-1">5 Steps</div>
+            <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Progressive Flow</div>
+            <div class="text-xs text-neutral-500">Context-aware step progression replacing long, monolithic application forms</div>
           </div>
         </div>
 
@@ -129,7 +162,7 @@
         </div>
 
         <!-- Feature 1 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
           <div>
             <h3 class="font-semibold mb-2">Progressive disclosure</h3>
             <p class="text-neutral-700">
@@ -138,15 +171,29 @@
               unnecessary complexity.
             </p>
           </div>
-          <img
-            src="assets/bulkmagic/progressive-disclosure.png"
-            alt="Progressive disclosure in seller onboarding flow"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Progressive disclosure in seller onboarding flow">
+              <img
+                src="assets/bulkmagic/progressive-disclosure.png"
+                alt="Progressive disclosure in seller onboarding flow"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Step-by-step business structure identification</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Feature 2 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
           <div>
             <h3 class="font-semibold mb-2">Dynamic document checklists</h3>
             <p class="text-neutral-700">
@@ -154,15 +201,29 @@
               communicating which documents are required at each stage.
             </p>
           </div>
-          <img
-            src="assets/bulkmagic/document-checklist.png"
-            alt="Dynamic document checklist adapting to seller inputs"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Dynamic document checklist adapting to seller inputs">
+              <img
+                src="assets/bulkmagic/document-checklist.png"
+                alt="Dynamic document checklist adapting to seller inputs"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Dynamic requirements checklist based on seller profile</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Feature 3 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
           <div>
             <h3 class="font-semibold mb-2">Bulk upload hub</h3>
             <p class="text-neutral-700">
@@ -170,15 +231,29 @@
               business licenses—reducing repetitive actions and errors.
             </p>
           </div>
-          <img
-            src="assets/bulkmagic/bulk-upload.png"
-            alt="Bulk document upload interface"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Bulk document upload interface">
+              <img
+                src="assets/bulkmagic/bulk-upload.png"
+                alt="Bulk document upload interface"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Centralized batch file uploader for certificates & permits</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Feature 4 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-center">
           <div>
             <h3 class="font-semibold mb-2">Automated validation</h3>
             <p class="text-neutral-700">
@@ -186,15 +261,29 @@
               requirements, including economic nexus thresholds.
             </p>
           </div>
-          <img
-            src="assets/bulkmagic/validation.png"
-            alt="Real-time document validation and error handling"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Real-time document validation and error handling">
+              <img
+                src="assets/bulkmagic/validation.png"
+                alt="Real-time document validation and error handling"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Instant error resolution & nexus compliance validation</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Feature 5 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h3 class="font-semibold mb-2">Save & resume</h3>
             <p class="text-neutral-700">
@@ -202,11 +291,25 @@
               forgiving and reducing abandonment.
             </p>
           </div>
-          <img
-            src="assets/bulkmagic/save-resume.png"
-            alt="Save and resume onboarding progress"
-            class="w-full aspect-video object-contain bg-neutral-100"
-          />
+          <figure class="group">
+            <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Save and resume onboarding progress">
+              <img
+                src="assets/bulkmagic/save-resume.png"
+                alt="Save and resume onboarding progress"
+                class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]"
+              />
+              <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>Enlarge</span>
+              </span>
+            </button>
+            <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+              <span class="caption-text">Persistent progress saving with multi-session continuity</span>
+              <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -256,10 +359,29 @@
           expectations are framed—can significantly impact completion rates and trust.
         </p>
       </section>
+
+      <!-- Project Navigation -->
+      <section class="border-t border-neutral-300 pt-16 mb-24">
+        <div class="flex flex-col sm:flex-row items-stretch justify-between gap-6">
+          <a href="vitals.html" class="flex-1 border border-neutral-300 p-6 hover:border-accent transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">← Previous Project</span>
+            <h3 class="font-semibold text-lg group-hover:text-accent transition-colors mb-1">Reducing Friction, Boosting Vitals Subscriptions</h3>
+            <p class="text-sm text-neutral-600">Designing for trust and conversion in a sensitive medical ID product.</p>
+          </a>
+          <a href="alirtify.html" class="flex-1 border border-neutral-300 p-6 hover:border-accent transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-right">
+            <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">Next Project →</span>
+            <h3 class="font-semibold text-lg group-hover:text-accent transition-colors mb-1">Designing a Data-Driven UX for News Validation</h3>
+            <p class="text-sm text-neutral-600">Translating qualitative research into ethical UX validation signals.</p>
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm">
       © 2026 Meghan Lendhe
     </footer>
+
+    <!-- Interactive Script -->
+    <script src="assets/js/case-study.js" defer></script>
   </body>
 </html>

@@ -49,8 +49,22 @@
   <main id="main" class="max-w-[1100px] mx-auto px-6 py-24">
     <!-- Hero -->
     <section class="mb-24">
-      <img src="assets/vitals/cover.png" alt="Vitals app interface"
-        class="w-full aspect-video object-contain bg-neutral-100 mb-6" />
+      <figure class="group mb-6">
+        <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Vitals app interface">
+          <img src="assets/vitals/cover.png" alt="Vitals app interface"
+            class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+          <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+            </svg>
+            <span>Enlarge</span>
+          </span>
+        </button>
+        <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+          <span class="caption-text">Vitals digital medical ID mobile experience</span>
+          <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+        </figcaption>
+      </figure>
       <div class="max-w-[720px]">
         <h1 class="text-4xl font-semibold leading-tight">
           Reducing Friction, Boosting Vitals Subscriptions
@@ -86,6 +100,25 @@
           Heuristic evaluation · Screener survey design · Interview plan · User interviews · UI design
         </div>
       </div>
+
+      <!-- Metric Stat Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+        <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+          <div class="text-3xl font-semibold font-display text-accent mb-1">92%</div>
+          <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Initial Drop-off</div>
+          <div class="text-xs text-neutral-500">Account creators who left before purchasing an emergency medical profile subscription</div>
+        </div>
+        <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+          <div class="text-3xl font-semibold font-display text-accent mb-1">70%</div>
+          <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Trust Barrier</div>
+          <div class="text-xs text-neutral-500">Participants uncomfortable sharing personal medical data before seeing clear value upfront</div>
+        </div>
+        <div class="border border-neutral-300 p-5 bg-neutral-50/50">
+          <div class="text-3xl font-semibold font-display text-accent mb-1">+16%</div>
+          <div class="text-xs text-neutral-600 font-medium uppercase tracking-wider mb-1">Projected Conversion</div>
+          <div class="text-xs text-neutral-500">Estimated increase in paid subscriptions from trust-centered redesigned onboarding</div>
+        </div>
+      </div>
     </section>
 
     <!-- About Vitals -->
@@ -111,8 +144,22 @@
       <p class="text-neutral-700 mb-6">
         This bridges critical information gaps when it matters most.
       </p>
-      <img src="assets/vitals/sample-id.svg" alt="Sample Vitals medical ID profile accessed during an emergency"
-        class="w-full aspect-7/4 object-contain bg-neutral-100" />
+      <figure class="group">
+        <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Sample Vitals medical ID profile accessed during an emergency">
+          <img src="assets/vitals/sample-id.svg" alt="Sample Vitals medical ID profile accessed during an emergency"
+            class="w-full aspect-7/4 object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+          <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+            </svg>
+            <span>Enlarge</span>
+          </span>
+        </button>
+        <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+          <span class="caption-text">Sample emergency medical profile viewed by first responders</span>
+          <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+        </figcaption>
+      </figure>
     </section>
 
     <!-- Problem -->
@@ -143,24 +190,66 @@
           70% of participants expressed discomfort sharing personal medical information before fully understanding the
           app’s purpose and value.
         </p>
-        <img src="assets/vitals/findings/trust-issue.png" alt="Signup screen lacking trust signals"
-          class="w-full aspect-video object-contain bg-neutral-100 mb-12" />
+        <figure class="group mb-12">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Signup screen lacking trust signals">
+            <img src="assets/vitals/findings/trust-issue.png" alt="Signup screen lacking trust signals"
+              class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">Initial signup UI asking for sensitive medical data prematurely</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
 
         <h3 class="font-semibold mb-2">Confusing plan selection</h3>
         <p class="text-neutral-700 mb-6">
           Participants struggled with unclear terminology and weren’t informed upfront that some plans were only
           available in certain states.
         </p>
-        <img src="assets/vitals/findings/plan-confusion.png" alt="Subscription plan selection confusion"
-          class="w-full aspect-video object-contain bg-neutral-100 mb-12" />
+        <figure class="group mb-12">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Subscription plan selection confusion">
+            <img src="assets/vitals/findings/plan-confusion.png" alt="Subscription plan selection confusion"
+              class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">Original subscription pricing table causing choice paralysis</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
 
         <h3 class="font-semibold mb-2">Poor visual design</h3>
         <p class="text-neutral-700 mb-6">
           Key elements like sample profiles and free trial information were frequently missed due to weak visual
           hierarchy.
         </p>
-        <img src="assets/vitals/findings/visual-hierarchy.png" alt="Poor visual hierarchy hiding important affordances"
-          class="w-full aspect-video object-contain bg-neutral-100" />
+        <figure class="group">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Poor visual hierarchy hiding important affordances">
+            <img src="assets/vitals/findings/visual-hierarchy.png" alt="Poor visual hierarchy hiding important affordances"
+              class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">Weak CTA affordance and missed free trial messaging</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -176,13 +265,7 @@
         </p>
       </div>
 
-      <!-- <img
-          src="assets/vitals/redesigned-flow.png"
-          alt="Redesigned signup journey"
-          class="w-full aspect-video object-cover bg-neutral-100 mb-16"
-        /> -->
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1100px]">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1100px] items-center">
         <div>
           <h3 class="font-semibold mb-2">Building trust</h3>
           <p class="text-neutral-700 mb-4">
@@ -193,8 +276,22 @@
             Privacy Policy and About Us links are surfaced early for reassurance.
           </p>
         </div>
-        <img src="assets/vitals/solutions/trust-screen.png" alt="Welcome screen emphasizing trust"
-          class="w-full aspect-7/4 object-contain bg-neutral-100" />
+        <figure class="group">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Welcome screen emphasizing trust">
+            <img src="assets/vitals/solutions/trust-screen.png" alt="Welcome screen emphasizing trust"
+              class="w-full aspect-7/4 object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">Trust-centered welcome screen with security assurances</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
 
         <div>
           <h3 class="font-semibold mb-2">Easier plan selection</h3>
@@ -202,8 +299,22 @@
             Plans are shown side-by-side using plain language, with clear state availability and a prominent free trial.
           </p>
         </div>
-        <img src="assets/vitals/solutions/plan-selection.png" alt="Simplified plan selection"
-          class="w-full aspect-video object-contain bg-neutral-100" />
+        <figure class="group">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Simplified plan selection">
+            <img src="assets/vitals/solutions/plan-selection.png" alt="Simplified plan selection"
+              class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">Side-by-side plan comparison with transparent pricing</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
 
         <div>
           <h3 class="font-semibold mb-2">Streamlined data collection</h3>
@@ -212,8 +323,22 @@
             used.
           </p>
         </div>
-        <img src="assets/vitals/solutions/data-collection.png" alt="Step-by-step data collection"
-          class="w-full aspect-video object-contain bg-neutral-100" />
+        <figure class="group">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Step-by-step data collection">
+            <img src="assets/vitals/solutions/data-collection.png" alt="Step-by-step data collection"
+              class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">Step-by-step form progression with rationale callouts</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
 
         <div>
           <h3 class="font-semibold mb-2">Quick access to help</h3>
@@ -221,8 +346,22 @@
             Help options remain visible throughout the flow to reduce anxiety and drop-off.
           </p>
         </div>
-        <img src="assets/vitals/solutions/help-access.png" alt="Persistent help access during signup"
-          class="w-full aspect-video object-contain bg-neutral-100" />
+        <figure class="group">
+          <button type="button" class="lightbox-trigger relative block w-full overflow-hidden border border-neutral-300 bg-neutral-100 hover:border-accent transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent text-left cursor-zoom-in" aria-label="Enlarge image: Persistent help access during signup">
+            <img src="assets/vitals/solutions/help-access.png" alt="Persistent help access during signup"
+              class="w-full aspect-video object-contain bg-neutral-100 transition duration-300 group-hover:scale-[1.01]" />
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>Enlarge</span>
+            </span>
+          </button>
+          <figcaption class="mt-2 text-xs text-neutral-500 flex items-center justify-between">
+            <span class="caption-text">Persistent help drawer reducing user drop-off anxiety</span>
+            <span class="text-neutral-400 group-hover:text-accent transition-colors font-display tracking-wider text-[11px] uppercase">Click to zoom</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -266,11 +405,30 @@
         </li>
       </ul>
     </section>
+
+    <!-- Project Navigation -->
+    <section class="border-t border-neutral-300 pt-16 mb-24">
+      <div class="flex flex-col sm:flex-row items-stretch justify-between gap-6">
+        <a href="alirtify.html" class="flex-1 border border-neutral-300 p-6 hover:border-accent transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">← Previous Project</span>
+          <h3 class="font-semibold text-lg group-hover:text-accent transition-colors mb-1">Designing a Data-Driven UX for News Validation</h3>
+          <p class="text-sm text-neutral-600">Translating qualitative research into ethical UX validation signals.</p>
+        </a>
+        <a href="bulkmagic.html" class="flex-1 border border-neutral-300 p-6 hover:border-accent transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-right">
+          <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">Next Project →</span>
+          <h3 class="font-semibold text-lg group-hover:text-accent transition-colors mb-1">Seller Onboarding for BulkMagic</h3>
+          <p class="text-sm text-neutral-600">Reducing friction in a compliance-heavy e-commerce workflow.</p>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm">
     © 2026 Meghan Lendhe
   </footer>
+
+  <!-- Interactive Script -->
+  <script src="assets/js/case-study.js" defer></script>
 </body>
 
 </html>
