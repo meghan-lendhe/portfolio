@@ -1,0 +1,17 @@
+---
+const linkClass = 'hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
+---
+
+<header class="border-b border-neutral-300">
+  <div class="max-w-page mx-auto px-6 py-4 flex items-center justify-between">
+    <strong class="text-base">
+      <a href="/" class={linkClass}>Meghan Lendhe</a>
+    </strong>
+    <nav aria-label="Main navigation" class="space-x-6">
+      <a href="/#work" class={linkClass}>Work</a>
+      <button type="button" data-copy-email data-default-label="Copy email" class={linkClass}>
+        <span data-copy-label>Copy email</span><span class="sr-only" data-copy-status role="status"></span>
+      </button>
+    </nav>
+  </div>
+</header>

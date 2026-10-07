@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import source from '../content/alirtify.html?raw';
+
+const main = source.match(new RegExp('<main[\\s\\S]*?</main>'))?.[0].replaceAll('assets/', '/assets/') ?? '';
+---
+
+<BaseLayout title="Alirtify — Designing a Data-Driven UX for News Validation" includeCaseStudyScript>
+  <Fragment set:html={main} />
+</BaseLayout>

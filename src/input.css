@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
-@source "../**/*.html";
-@source "../assets/js/**/*.js";
+@source "./**/*.astro";
+@source "./content/**/*.html";
+@source "../public/assets/js/**/*.js";
 
 @theme {
   --color-accent: #C35200;

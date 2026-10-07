@@ -4,11 +4,13 @@
   "private": true,
   "description": "Portfolio for Meghan Lendhe",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
-    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch"
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.6",
     "tailwindcss": "^4.3.3"
   }
 }

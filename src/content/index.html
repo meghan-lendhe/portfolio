@@ -39,7 +39,7 @@
       <strong class="text-base">Meghan Lendhe</strong>
       <nav aria-label="Main navigation" class="space-x-6">
         <a href="#work" class="text-black hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Work</a>
-        <a href="mailto:meghanlendhe@gmail.com" class="text-black hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Contact</a>
+        <button type="button" data-copy-email data-default-label="Copy email" class="text-black hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"><span data-copy-label>Copy email</span><span class="sr-only" data-copy-status role="status"></span></button>
       </nav>
     </div>
   </header>
@@ -76,7 +76,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Vitals -->
-        <a href="vitals.html"
+        <a href="/vitals"
           class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
           <img src="assets/vitals/cover.png" alt="" aria-hidden="true" class="aspect-video object-contain bg-neutral-100 mb-3" />
           <h3 class="text-lg font-semibold mb-1">
@@ -88,7 +88,7 @@
         </a>
 
         <!-- BulkMagic -->
-        <a href="bulkmagic.html"
+        <a href="/bulkmagic"
           class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
           <img src="assets/bulkmagic/cover.png" alt="" aria-hidden="true" class="aspect-video object-contain bg-neutral-100 mb-3" />
           <h3 class="text-lg font-semibold mb-1">
@@ -100,7 +100,7 @@
         </a>
 
         <!-- Alirtify -->
-        <a href="alirtify.html"
+        <a href="/alirtify"
           class="border border-neutral-300 p-4 hover:border-accent transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
           <img src="assets/alirtify/cover.png" alt="" aria-hidden="true" class="aspect-video object-contain bg-neutral-100 mb-3" />
           <h3 class="text-lg font-semibold mb-1">
@@ -122,15 +122,19 @@
         If you're working on complex products, early ideas, or systems that
         need clarity, I'd love to connect.
       </p>
-      <a href="mailto:meghanlendhe@gmail.com" class="text-accent underline underline-offset-4 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-        meghanlendhe@gmail.com
-      </a>
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        <button type="button" data-copy-email data-default-label="Copy email address" class="text-accent underline underline-offset-4 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <span data-copy-label>Copy email address</span><span class="sr-only" data-copy-status role="status"></span>
+        </button>
+        <a href="https://www.linkedin.com/in/meghanlendhe/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-4 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">LinkedIn <span class="sr-only">(opens in a new tab)</span></a>
+      </div>
     </section>
   </main>
 
   <footer class="border-t border-neutral-300 py-6 text-center text-neutral-500 text-sm">
     © 2026 Meghan Lendhe
   </footer>
+  <script src="assets/js/contact.js" defer></script>
 </body>
 
 </html>
