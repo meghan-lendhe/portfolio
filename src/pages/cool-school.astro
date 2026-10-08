@@ -8,3 +8,27 @@ const main = source.match(new RegExp('<main[\\s\\S]*?</main>'))?.[0].replaceAll(
 <BaseLayout title="Cool School — Reimagining a Conflict-Resolution Game" includeCaseStudyScript>
   <Fragment set:html={main} />
 </BaseLayout>
+
+<script>
+  const loadButton = document.querySelector<HTMLButtonElement>('[data-load-prototype]');
+  const placeholder = document.querySelector<HTMLElement>('[data-prototype-placeholder]');
+  const frameContainer = document.querySelector<HTMLElement>('[data-prototype-frame]');
+
+  if (loadButton && placeholder && frameContainer) {
+    loadButton.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      const prototypeUrl =
+        'https://www.figma.com/proto/KvYJ7MyuaJeb8vZejYV0XJ/Sprint-5-Final-Prototype-Copy?node-id=202-27991&t=xEFnCj4QRz8vnQLv-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=202%3A27991&show-proto-sidebar=1';
+      iframe.src = `https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(prototypeUrl)}`;
+      iframe.title = 'Interactive Cool School Figma prototype';
+      iframe.className = 'h-full w-full border-0';
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.loading = 'eager';
+
+      frameContainer.replaceChildren(iframe);
+      frameContainer.hidden = false;
+      placeholder.hidden = true;
+    }, { once: true });
+  }
+</script>
