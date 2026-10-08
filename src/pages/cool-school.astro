@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import source from '../content/cool-school.html?raw';
+
+const main = source.match(new RegExp('<main[\\s\\S]*?</main>'))?.[0].replaceAll('assets/', '/assets/') ?? '';
+---
+
+<BaseLayout title="Cool School — Reimagining a Conflict-Resolution Game" includeCaseStudyScript>
+  <Fragment set:html={main} />
+</BaseLayout>
