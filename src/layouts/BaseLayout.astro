@@ -27,6 +27,7 @@ const { title, includeCaseStudyScript = false } = Astro.props;
   <body class="bg-white text-black font-sans">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:outline-2 focus:outline-secondary">Skip to main content</a>
     <Navbar />
+    <div aria-hidden="true" class="h-8 md:h-12"></div>
     <slot />
     <Footer />
     <script is:inline src="/assets/js/contact.js"></script>
