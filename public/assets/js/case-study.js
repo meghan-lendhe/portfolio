@@ -16,7 +16,7 @@
       progressBar = document.createElement('div');
       progressBar.id = 'reading-progress';
       progressBar.className =
-        'fixed top-0 left-0 h-[3px] bg-accent z-50 transition-[width] duration-75 pointer-events-none';
+        'fixed top-0 left-0 h-[3px] bg-neutral-500 z-50 transition-[width] duration-75 pointer-events-none';
       progressBar.setAttribute('role', 'progressbar');
       progressBar.setAttribute('aria-label', 'Reading progress');
       progressBar.setAttribute('aria-valuenow', '0');

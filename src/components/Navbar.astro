@@ -2,13 +2,12 @@
 const linkClass = 'hover:text-secondary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary';
 ---
 
-<header class="border-b border-neutral-300">
-  <div class="max-w-page mx-auto px-6 py-4 flex items-center justify-between">
+<header class="navbar-fade sticky top-0 z-40 isolate">
+  <div class="relative z-10 max-w-page mx-auto bg-white px-6 py-4 flex items-center justify-between">
     <strong class="text-base">
       <a href="/" class={linkClass}>Meghan Lendhe</a>
     </strong>
     <nav aria-label="Main navigation" class="flex items-center gap-6">
-      <a href="/#work" class={linkClass}>Work</a>
       <div class="relative">
         <button
           type="button"
@@ -56,3 +55,27 @@ const linkClass = 'hover:text-secondary transition-colors focus-visible:outline-
     </nav>
   </div>
 </header>
+
+<style>
+  .navbar-fade::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    inset-inline: 0;
+    top: calc(100% - 8px);
+    height: 7rem;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      #fffef7 0%,
+      rgba(255, 254, 247, 0.96) 34%,
+      rgba(255, 254, 247, 0.72) 62%,
+      rgba(255, 254, 247, 0.28) 82%,
+      transparent 100%
+    );
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 100%);
+  }
+</style>

@@ -10,50 +10,29 @@
 <body class="bg-white text-black font-sans">
   <main id="main" class="max-w-page mx-auto px-6 py-16 md:py-24">
     <!-- Hero -->
-    <section class="max-w-content mb-20 md:mb-32">
-      <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-5">Cool School · Game redesign</p>
-      <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-[18ch] mb-5">
-        Reimagining Cool School for a New Generation
-      </h1>
-      <p class="text-neutral-700 text-lg max-w-prose">
-        Revamping a school conflict-resolution game for children ages 4–7, with a more exploratory and
-        engaging experience designed to stay relevant over time.
-      </p>
-    </section>
-
-    <!-- Interactive Prototype -->
-    <section class="mb-20 md:mb-32">
-      <div class="mb-5">
-        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-2">Try the prototype</h2>
-        <p class="text-sm text-neutral-600">
-          Heads up: This prototype includes many assets, music, and videos, so it may take a while to load and run smoothly.
+    <section class="mb-12 md:mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] items-end gap-6 md:gap-12 mb-8">
+        <div>
+          <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-5">Cool School · Game redesign</p>
+          <h1 class="text-4xl md:text-6xl font-semibold leading-tight max-w-[14ch]">
+            A school game made for today’s kids
+          </h1>
+        </div>
+        <p class="text-neutral-700 text-lg max-w-prose md:pb-1">
+          Reimagining a conflict-resolution game for ages 4–7 as a playful school world kids can explore, shape, and return to.
         </p>
       </div>
-      <div class="aspect-video w-full overflow-hidden bg-neutral-100">
-        <div data-prototype-placeholder class="flex h-full flex-col items-center justify-center gap-4 px-6 text-center">
-          <p class="text-sm text-neutral-600">Ready to explore the Cool School prototype?</p>
-          <button type="button" data-load-prototype
-            class="inline-flex items-center bg-black px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
-            <span aria-hidden="true" class="mr-2">▶</span> Play prototype
-          </button>
-        </div>
-        <div data-prototype-frame class="h-full w-full" hidden></div>
-      </div>
-      <p class="mt-3 text-sm text-neutral-600">
-        If the embedded prototype asks you to sign in,
-        <a href="https://www.figma.com/proto/KvYJ7MyuaJeb8vZejYV0XJ/Sprint-5-Final-Prototype-Copy?node-id=202-27991&amp;t=xEFnCj4QRz8vnQLv-0&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=202%3A27991&amp;show-proto-sidebar=1"
-          target="_blank" rel="noopener noreferrer"
-          class="underline underline-offset-4 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
-          open the prototype directly in Figma <span aria-hidden="true">↗</span>
-          <span class="sr-only">(opens in a new tab)</span>
-        </a>.
-      </p>
     </section>
 
+    <figure class="mb-16 md:mb-24">
+      <img src="assets/cool-school/music-room-npc.png" alt="Characters interacting in the Cool School music room"
+        class="w-full h-auto" />
+      <figcaption class="mt-3 text-xs text-neutral-500">A lively school world, with characters and places to discover.</figcaption>
+    </figure>
+
     <!-- Overview -->
-    <section class="max-w-page mb-20 md:mb-32">
-      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">Overview</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-6 text-sm">
+    <section class="py-2 mb-20 md:mb-28">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 text-sm">
         <div>
           <span class="block text-neutral-500 mb-1">Audience</span>
           Children ages 4–7
@@ -62,108 +41,168 @@
           <span class="block text-neutral-500 mb-1">Team</span>
           Four-person design research team
         </div>
-        <div class="sm:col-span-2 lg:col-span-1">
-          <span class="block text-neutral-500 mb-1">Focus</span>
-          Kids' game design · Co-design · Game environment
+        <div>
+          <span class="block text-neutral-500 mb-1">My role</span>
+          Research · Co-design · Environment design
         </div>
-        <div class="sm:col-span-2 lg:col-span-3">
-          <span class="block text-neutral-500 mb-1">My contributions</span>
-          Competitive research · Co-design planning and facilitation · Research synthesis · Environment assets · Figma prototype
+        <div>
+          <span class="block text-neutral-500 mb-1">Focus</span>
+          Game redesign · Co-design · Research
         </div>
       </div>
     </section>
 
     <!-- Context -->
-    <section class="max-w-content mb-20 md:mb-32">
-      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">Context</h2>
-      <p class="text-neutral-700 mb-4">
-        The original Cool School game taught young children how to handle conflicts at school. Players resolved
-        26 conflicts, each associated with a letter-based trophy from A to Z; resolving them all completed the game.
-      </p>
-      <p class="text-neutral-700">
-        Developed as a U.S. government initiative in response to school violence in the early 2000s, the game had
-        become dated. Our team set out to refresh the experience for a new generation while preserving its
-        research-backed conflict-resolution learning mechanism.
-      </p>
+    <section class="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-8 md:gap-16 mb-20 md:mb-28">
+      <div>
+        <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">The starting point</p>
+        <h2 class="text-2xl md:text-3xl font-semibold leading-tight max-w-[16ch]">A meaningful lesson in an outdated game</h2>
+      </div>
+      <div class="max-w-content">
+        <p class="text-neutral-700 mb-4">
+          Cool School was created to teach young children how to handle conflicts at school. Players resolved 26
+          conflicts, each linked to a letter-based trophy; collecting A through Z meant the game was complete.
+        </p>
+        <p class="text-neutral-700">
+          The game had become dated. Our four-person design research team set out to make it engaging for today’s
+          children and relevant for longer, while keeping its extensively researched learning mechanism.
+        </p>
+      </div>
     </section>
 
     <!-- Design direction -->
-    <section class="max-w-content mb-20 md:mb-32">
-      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">Design direction</h2>
-      <p class="text-neutral-700">
-        Rather than making conflict resolution the only reason to play, we reimagined the school as a place children
-        could explore, interact, and return to. The learning core stayed in place, while the surrounding game world
-        became more open-ended.
-      </p>
+    <section class="bg-neutral-100 px-6 py-8 md:px-12 md:py-10 mb-20 md:mb-28">
+      <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">The design shift</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 items-start">
+        <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Keep the learning. Give kids more reasons to play.</h2>
+        <p class="text-neutral-700">
+          We expanded the experience around conflict resolution: an open school to explore, characters and places
+          to discover, and playful activities that make the world feel alive between learning moments.
+        </p>
+      </div>
     </section>
 
     <!-- Redesign -->
     <section class="mb-20 md:mb-32">
-      <div class="max-w-content mb-10">
-        <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">The redesigned experience</h2>
-        <p class="text-neutral-700">
-          The new direction turns a finite sequence of conflict scenarios into a broader school-world experience.
-        </p>
+      <div class="mb-10 md:mb-14">
+        <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">Inside the redesign</p>
+        <h2 class="text-3xl md:text-4xl font-semibold leading-tight max-w-[18ch]">A world to explore. A character to make your own.</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-        <article class="border-t border-neutral-300 pt-5">
-          <h3 class="font-semibold mb-2">Explore the school</h3>
+      <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16 items-center mb-14 md:mb-20">
+        <div class="max-w-md">
+          <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">01 · Explore & play</p>
+          <h3 class="text-2xl font-semibold mb-3">Make the whole school part of the game.</h3>
           <p class="text-neutral-700">
-            Children can move between and inside school buildings. The environment and its characters offer
-            spontaneous interactions, some connected to conflicts and others simply part of exploring.
+            Children can move between and inside school buildings, meet characters, and discover spontaneous
+            interactions—some tied to conflicts, some just for fun. Mini-games like playing fetch add more to do.
           </p>
-        </article>
-        <article class="border-t border-neutral-300 pt-5">
-          <h3 class="font-semibold mb-2">Play beyond the conflicts</h3>
-          <p class="text-neutral-700">
-            Mini-games, including playing fetch, add activities around the core learning experience.
+        </div>
+        <div class="bg-neutral-100 px-6 py-8 md:px-10 md:py-12">
+          <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-5">A school with room to roam</p>
+          <p class="text-2xl md:text-3xl font-semibold leading-snug">
+            Explore between buildings.<br />
+            Meet someone new.<br />
+            Stop and play.
           </p>
-        </article>
-        <article class="border-t border-neutral-300 pt-5">
-          <h3 class="font-semibold mb-2">Make an avatar their own</h3>
-          <p class="text-neutral-700">
-            Customizable avatars give children a way to express themselves. XP and coins can unlock accessories
-            in an in-game store.
-          </p>
-        </article>
-        <article class="border-t border-neutral-300 pt-5">
-          <h3 class="font-semibold mb-2">Create reasons to return</h3>
-          <p class="text-neutral-700">
-            Daily achievements and an open-ended number of conflicts move the game beyond its original fixed
-            A-to-Z completion structure.
-          </p>
-        </article>
+        </div>
       </div>
-      <p class="max-w-content text-neutral-700 mt-10">
-        Throughout these changes, we retained the original conflict-resolution learning mechanism, which was
-        grounded in extensive research.
-      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-8 md:gap-16 items-center mb-14 md:mb-20">
+        <figure class="md:order-1">
+          <img src="assets/cool-school/avatar-customization.png" alt="Avatar customization screen with clothing and appearance options"
+            class="w-full h-auto" />
+          <figcaption class="mt-3 text-xs text-neutral-500">Choose an avatar and customize its look.</figcaption>
+        </figure>
+        <div class="max-w-md md:order-2">
+          <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">02 · Make it yours</p>
+          <h3 class="text-2xl font-semibold mb-3">A character that feels like their own.</h3>
+          <p class="text-neutral-700">
+            Customizable avatars let children express themselves. Accessories earned with XP and coins extend that
+            sense of ownership as they play.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-2">
+        <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16 items-start">
+          <div class="max-w-md">
+            <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">03 · Keep progressing</p>
+            <h3 class="text-2xl font-semibold mb-3">Give every visit a new goal.</h3>
+            <p class="text-neutral-700">
+              Daily achievements and an open-ended number of conflicts replace the original fixed A-to-Z finish line.
+              Players earn XP and coins, then spend coins on avatar accessories.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <figure>
+              <img src="assets/cool-school/achievements.png" alt="Cool School achievements screen showing goals and rewards"
+                class="w-full h-auto" />
+              <figcaption class="mt-3 text-xs text-neutral-500">Achievements make progress visible.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/cool-school/accessories-shop.png" alt="In-game shop where players can spend coins on avatar accessories"
+                class="w-full h-auto" />
+              <figcaption class="mt-3 text-xs text-neutral-500">Coins unlock items in the shop.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Prototype -->
+    <section class="mb-20 md:mb-28">
+      <div class="py-6 mb-4">
+        <div data-prototype-placeholder class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-2">Try the prototype</h2>
+            <p class="text-sm text-neutral-600 max-w-prose">
+              This prototype includes many assets, music, and videos. It may take a while to load and run smoothly.
+            </p>
+          </div>
+          <div class="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+            <button type="button" data-load-prototype
+              class="inline-flex items-center gap-2 bg-black px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+              <span aria-hidden="true">▶</span> Play prototype
+            </button>
+            <a href="https://www.figma.com/proto/KvYJ7MyuaJeb8vZejYV0XJ/Sprint-5-Final-Prototype-Copy?node-id=202-27991&amp;t=xEFnCj4QRz8vnQLv-0&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=202%3A27991&amp;show-proto-sidebar=1"
+              target="_blank" rel="noopener noreferrer"
+              class="text-xs text-neutral-600 underline underline-offset-4 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+              Open in Figma <span aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div data-prototype-frame class="aspect-video w-full" hidden></div>
     </section>
 
     <!-- Process -->
-    <section class="max-w-content mb-20 md:mb-32">
-      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">Process & contribution</h2>
-      <ol class="space-y-6 text-neutral-700">
-        <li>
-          <h3 class="font-semibold text-black mb-1">Research kids' games</h3>
-          <p>I researched game-design patterns in children's games to inform the redesign direction.</p>
+    <section class="mb-20 md:mb-28">
+      <div class="max-w-content mb-8">
+        <p class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-4">My role · Team of four</p>
+        <h2 class="text-3xl md:text-4xl font-semibold leading-tight">Research with kids. Design with purpose.</h2>
+      </div>
+      <ol class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
+        <li class="pt-5">
+          <span class="font-display text-sm text-neutral-500">01</span>
+          <h3 class="font-semibold mt-3 mb-2">Research game patterns</h3>
+          <p class="text-sm text-neutral-700">Competitive research into game-design patterns in kids’ games.</p>
         </li>
-        <li>
-          <h3 class="font-semibold text-black mb-1">Co-design with children</h3>
-          <p>
-            I planned and facilitated co-design sessions with the KidsTeam co-design group, then synthesized
-            insights from those sessions and expert feedback.
-          </p>
+        <li class="pt-5">
+          <span class="font-display text-sm text-neutral-500">02</span>
+          <h3 class="font-semibold mt-3 mb-2">Co-design with children</h3>
+          <p class="text-sm text-neutral-700">Planned and facilitated KidsTeam sessions; synthesized child and expert feedback.</p>
         </li>
-        <li>
-          <h3 class="font-semibold text-black mb-1">Bring the school world to life</h3>
-          <p>
-            I designed assets for the game environment and created the Figma prototype to communicate the
-            redesigned experience.
-          </p>
+        <li class="pt-5">
+          <span class="font-display text-sm text-neutral-500">03</span>
+          <h3 class="font-semibold mt-3 mb-2">Make the ideas tangible</h3>
+          <p class="text-sm text-neutral-700">Designed environment assets and built the Figma prototype.</p>
         </li>
       </ol>
+      <p class="text-neutral-700 mt-10 max-w-content">
+        Through the redesign, we kept the original, extensively researched approach to teaching conflict resolution.
+      </p>
     </section>
 
     <!-- Reflection -->
