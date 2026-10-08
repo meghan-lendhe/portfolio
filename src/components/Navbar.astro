@@ -1,52 +1,53 @@
 ---
-const linkClass = 'hover:text-secondary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary';
+const controlClass = 'rounded-full bg-neutral-100 px-4 py-2 text-sm font-normal text-neutral-900 shadow-sm transition-colors hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary';
 ---
 
 <header class="pointer-events-none fixed inset-x-0 top-4 z-40">
   <nav aria-label="Main navigation" class="mx-auto flex max-w-page items-start justify-between px-6">
     <a
       href="/"
-      class={`${linkClass} pointer-events-auto text-sm font-semibold`}
+      class={`${controlClass} pointer-events-auto`}
     >Meghan Lendhe</a>
     <div class="pointer-events-auto relative">
       <button
         type="button"
-        class={`${linkClass} text-sm`}
+        class={`${controlClass} relative z-10 transition-transform aria-expanded:-translate-x-2 aria-expanded:translate-y-2 aria-expanded:rounded-t-2xl aria-expanded:rounded-b-none aria-expanded:bg-transparent aria-expanded:text-secondary aria-expanded:shadow-none aria-expanded:hover:bg-transparent`}
         data-contact-toggle
         aria-expanded="false"
         aria-controls="contact-panel"
-      >Contact</button>
+      >
+        <span data-contact-label>Contact</span>
+        <svg data-contact-close-icon aria-hidden="true" hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" class="size-4">
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </button>
       <section
         id="contact-panel"
         data-contact-panel
         aria-label="Contact options"
         hidden
-        class="absolute right-0 top-full z-50 mt-3 max-h-[calc(100dvh-6rem)] w-[min(22rem,calc(100vw-3rem))] overflow-y-auto rounded bg-neutral-100 p-5 text-left shadow-xl"
+        class="absolute right-0 top-0 -z-0 overflow-y-auto bg-neutral-100 text-left shadow-xl"
       >
-        <p class="text-sm text-neutral-700">Reach out to me at</p>
-        <div class="mt-2 flex items-center justify-between gap-3">
-          <a
-            href="mailto:meghanlendhe@gmail.com"
-            class="min-w-0 break-all text-sm text-black underline decoration-neutral-300 underline-offset-4 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
-          >meghanlendhe@gmail.com</a>
+        <p class="mb-2 text-sm text-neutral-700">You can reach out to me at</p>
+        <div class="flex items-center justify-between gap-2 rounded-xl bg-white/70 p-2.5">
+          <span class="min-w-0 break-all text-sm text-neutral-900">meghanlendhe@gmail.com</span>
           <button
             type="button"
             data-copy-email
-            data-default-label="Copy email"
-            class="shrink-0 rounded bg-secondary/10 px-3 py-2 text-sm font-medium text-secondary hover:bg-secondary/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
-          ><span data-copy-label>Copy email</span><span class="sr-only" data-copy-status role="status"></span></button>
+            data-default-label="Copy"
+            class="shrink-0 rounded-lg px-2 py-2 text-sm font-medium text-secondary transition-colors hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+          ><span data-copy-label>Copy</span><span class="sr-only" data-copy-status role="status"></span></button>
         </div>
-        <p class="mt-5 text-sm text-neutral-700">Or connect with me on LinkedIn</p>
         <a
           href="https://www.linkedin.com/in/meghanlendhe/"
           target="_blank"
           rel="noopener noreferrer"
-          class="mt-2 flex items-center gap-3 rounded bg-secondary/5 px-3 py-2 hover:bg-secondary/10 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+          class="group mt-3 flex items-center gap-3 rounded-xl px-2.5 py-2 transition-colors hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
         >
-          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5 shrink-0 text-secondary" fill="currentColor">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5 shrink-0 text-neutral-600 transition-colors group-hover:text-secondary" fill="currentColor">
             <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.97V9.06h2.96v9.28ZM6.45 7.79a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.55h-2.96v-4.51c0-1.08-.02-2.47-1.51-2.47-1.51 0-1.74 1.18-1.74 2.39v4.59H9.17V9.06h2.84v1.27h.04c.4-.73 1.36-1.51 2.79-1.51 2.99 0 3.55 1.97 3.55 4.53v4.99Z"/>
           </svg>
-          <span class="text-sm font-medium">Visit LinkedIn profile</span>
+          <span class="text-sm font-medium text-neutral-800 transition-colors group-hover:text-secondary">Or connect with me on LinkedIn</span>
           <span aria-hidden="true" class="ml-auto text-neutral-500">↗</span>
           <span class="sr-only">(opens in a new tab)</span>
         </a>
@@ -57,17 +58,28 @@ const linkClass = 'hover:text-secondary transition-colors focus-visible:outline-
 
 <style>
   [data-contact-panel] {
-    transform: translateY(-0.5rem) scale(0.98);
+    box-sizing: border-box;
+    width: 0;
+    height: 0;
+    max-height: calc(100dvh - 2rem);
+    padding: 0;
+    border-radius: 9999px;
     transform-origin: top right;
     opacity: 0;
     transition:
-      opacity 180ms ease,
-      transform 180ms ease,
-      display 180ms allow-discrete;
+      width 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      height 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      padding 240ms ease,
+      border-radius 240ms ease,
+      opacity 120ms ease,
+      display 240ms allow-discrete;
   }
 
   [data-contact-panel]:not([hidden]) {
-    transform: translateY(0) scale(1);
+    width: min(22rem, calc(100vw - 3rem));
+    height: 13rem;
+    padding: 3.25rem 1.25rem 1rem;
+    border-radius: 1.25rem;
     opacity: 1;
   }
 
@@ -77,7 +89,10 @@ const linkClass = 'hover:text-secondary transition-colors focus-visible:outline-
 
   @starting-style {
     [data-contact-panel]:not([hidden]) {
-      transform: translateY(-0.5rem) scale(0.98);
+      width: 0;
+      height: 0;
+      padding: 0;
+      border-radius: 9999px;
       opacity: 0;
     }
   }

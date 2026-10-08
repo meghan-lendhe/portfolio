@@ -45,12 +45,21 @@
   }
 
   const contactToggle = document.querySelector('[data-contact-toggle]');
+  const contactLabel = document.querySelector('[data-contact-label]');
+  const contactCloseIcon = document.querySelector('[data-contact-close-icon]');
   const contactPanel = document.querySelector('[data-contact-panel]');
 
-  if (contactToggle && contactPanel) {
+  if (contactToggle && contactLabel && contactCloseIcon && contactPanel) {
     function setContactPanelOpen(open) {
       contactPanel.hidden = !open;
       contactToggle.setAttribute('aria-expanded', String(open));
+      contactLabel.hidden = open;
+      contactCloseIcon.toggleAttribute('hidden', !open);
+      if (open) {
+        contactToggle.setAttribute('aria-label', 'Close contact options');
+      } else {
+        contactToggle.removeAttribute('aria-label');
+      }
     }
 
     contactToggle.addEventListener('click', function () {
