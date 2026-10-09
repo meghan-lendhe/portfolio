@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#E8F0ED"/>
+  <rect x="46" y="48" width="1108" height="804" rx="24" fill="#FFFEF7"/>
+  <rect x="46" y="48" width="1108" height="76" rx="24" fill="#001514"/>
+  <path d="M46 100h1108v24H46z" fill="#001514"/>
+  <circle cx="86" cy="86" r="10" fill="#B9D1C9"/>
+  <circle cx="118" cy="86" r="10" fill="#789B90"/>
+  <circle cx="150" cy="86" r="10" fill="#2A7B7E"/>
+  <rect x="190" y="74" width="258" height="24" rx="12" fill="#233C38"/>
+  <text x="86" y="174" fill="#515653" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">ILLUSTRATIVE CONCEPT</text>
+
+  <rect x="82" y="208" width="496" height="602" rx="18" fill="#F7F5EC"/>
+  <text x="118" y="258" fill="#001514" font-family="Arial, sans-serif" font-size="27" font-weight="700">Application review</text>
+  <text x="118" y="292" fill="#6B6D6A" font-family="Arial, sans-serif" font-size="17">Offline application · Ready for review</text>
+  <rect x="118" y="326" width="424" height="2" fill="#D4D2C9"/>
+  <text x="118" y="370" fill="#515653" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1">APPLICANT DETAILS</text>
+  <rect x="118" y="393" width="424" height="76" rx="12" fill="#FFFEF7"/>
+  <circle cx="157" cy="431" r="20" fill="#B9D1C9"/>
+  <path d="M149 430a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm-8 18c1.8-7 6-10 12-10s10.2 3 12 10" stroke="#2A7B7E" stroke-width="3" stroke-linecap="round"/>
+  <rect x="193" y="412" width="165" height="13" rx="6.5" fill="#51645F"/>
+  <rect x="193" y="438" width="112" height="9" rx="4.5" fill="#CBD3CE"/>
+  <rect x="118" y="489" width="424" height="1" fill="#D4D2C9"/>
+  <text x="118" y="530" fill="#515653" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1">REVIEW CHECKLIST</text>
+  <rect x="118" y="551" width="424" height="56" rx="10" fill="#FFFEF7"/>
+  <circle cx="145" cy="579" r="10" fill="#2A7B7E"/>
+  <path d="m140 579 4 4 7-8" stroke="#FFFEF7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="168" y="572" width="172" height="11" rx="5.5" fill="#AEBBB5"/>
+  <rect x="118" y="617" width="424" height="56" rx="10" fill="#FFFEF7"/>
+  <circle cx="145" cy="645" r="10" fill="#2A7B7E"/>
+  <path d="m140 645 4 4 7-8" stroke="#FFFEF7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="168" y="638" width="211" height="11" rx="5.5" fill="#AEBBB5"/>
+  <rect x="118" y="683" width="424" height="56" rx="10" fill="#FFF8E8"/>
+  <circle cx="145" cy="711" r="10" fill="#C78328"/>
+  <path d="M145 706v7m0 4v.5" stroke="#FFFEF7" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="168" y="704" width="190" height="11" rx="5.5" fill="#C9BFA9"/>
+  <rect x="118" y="758" width="164" height="34" rx="17" fill="#2A7B7E"/>
+  <text x="200" y="780" fill="#FFFEF7" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700">REQUEST CLARIFICATION</text>
+
+  <rect x="610" y="208" width="508" height="602" rx="18" fill="#F7F5EC"/>
+  <text x="646" y="258" fill="#001514" font-family="Arial, sans-serif" font-size="27" font-weight="700">Design tooling</text>
+  <text x="646" y="292" fill="#6B6D6A" font-family="Arial, sans-serif" font-size="17">Standards checks · Prototype generation</text>
+  <rect x="646" y="326" width="436" height="2" fill="#D4D2C9"/>
+
+  <rect x="646" y="354" width="436" height="164" rx="14" fill="#FFFEF7"/>
+  <rect x="670" y="378" width="38" height="38" rx="10" fill="#DCEAE5"/>
+  <path d="M681 389h16v16h-16zm4 4h8m-8 4h8" stroke="#2A7B7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="724" y="393" fill="#001514" font-family="Arial, sans-serif" font-size="18" font-weight="700">Standards review</text>
+  <rect x="724" y="405" width="178" height="9" rx="4.5" fill="#CBD3CE"/>
+  <circle cx="682" cy="449" r="8" fill="#2A7B7E"/>
+  <path d="m678 449 3 3 5-6" stroke="#FFFEF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="702" y="445" width="280" height="9" rx="4.5" fill="#B9C5BF"/>
+  <circle cx="682" cy="481" r="8" fill="#2A7B7E"/>
+  <path d="m678 481 3 3 5-6" stroke="#FFFEF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="702" y="477" width="225" height="9" rx="4.5" fill="#B9C5BF"/>
+
+  <rect x="646" y="540" width="436" height="240" rx="14" fill="#FFFEF7"/>
+  <rect x="670" y="564" width="38" height="38" rx="10" fill="#E9E3F5"/>
+  <path d="m681 575 8-5 8 5v10l-8 5-8-5v-10Z" stroke="#6C53A3" stroke-width="2" stroke-linejoin="round"/>
+  <text x="724" y="579" fill="#001514" font-family="Arial, sans-serif" font-size="18" font-weight="700">Prototype from components</text>
+  <rect x="724" y="591" width="194" height="9" rx="4.5" fill="#CBD3CE"/>
+  <rect x="670" y="627" width="388" height="126" rx="10" fill="#F2F4F3"/>
+  <rect x="690" y="647" width="112" height="86" rx="7" fill="#FFFEF7" stroke="#D4D2C9"/>
+  <rect x="704" y="660" width="68" height="8" rx="4" fill="#9FAFA8"/>
+  <rect x="704" y="677" width="82" height="8" rx="4" fill="#D1D8D4"/>
+  <rect x="704" y="699" width="58" height="20" rx="10" fill="#2A7B7E"/>
+  <rect x="822" y="647" width="216" height="86" rx="7" fill="#FFFEF7" stroke="#D4D2C9"/>
+  <rect x="839" y="662" width="86" height="8" rx="4" fill="#9FAFA8"/>
+  <rect x="839" y="680" width="164" height="7" rx="3.5" fill="#D1D8D4"/>
+  <rect x="839" y="696" width="143" height="7" rx="3.5" fill="#D1D8D4"/>
+  <rect x="839" y="712" width="104" height="7" rx="3.5" fill="#D1D8D4"/>
+</svg>

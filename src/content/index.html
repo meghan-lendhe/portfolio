@@ -44,24 +44,47 @@
     </div>
   </header>
 
-  <main id="main" class="max-w-page mx-auto px-6 py-24">
-    <!-- Hero -->
-    <section class="max-w-content mb-24">
-      <h1 class="text-4xl font-semibold leading-tight max-w-[28ch]">
-        I design systems that help people make better decisions.
-      </h1>
-      <p class="mt-4 text-neutral-700 text-lg">
-        Product Designer with 2+ years of experience designing products
-        for early age startups. I focus on research-led
-        UX, interaction design, and clear interfaces.
-      </p>
+  <main id="main" class="max-w-page mx-auto px-6 pb-24 pt-28 md:pt-36">
+    <section class="mb-32" aria-labelledby="intro-title">
+      <div class="home-collage mx-auto" role="group" aria-label="A collage of screens from projects I’ve worked on">
+        <figure class="home-collage-news">
+          <img src="assets/alirtify/cover.png" alt="News and source-validation screens from Alirtify" fetchpriority="high" />
+        </figure>
+        <figure class="home-collage-vitals">
+          <img src="assets/vitals/cover.png" alt="A set of Vitals mobile app screens" fetchpriority="high" />
+        </figure>
+        <figure class="home-collage-school">
+          <img src="assets/cool-school/music-room-npc.png" alt="A scene from the Cool School game" fetchpriority="high" />
+        </figure>
+      </div>
+
+      <div class="mx-auto mt-8 grid max-w-content gap-5 md:grid-cols-[0.7fr_1.3fr] md:items-start md:gap-12">
+        <h1 id="intro-title" class="type-feature-title">Product designer</h1>
+        <div class="max-w-2xl">
+          <p class="text-neutral-600">
+            I’ve designed products as a consultant and as part of in-house teams. I’m now building data-science projects
+            around EEG and imagined speech.
+          </p>
+          <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a href="#work" class="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+              See the projects
+            </a>
+            <a href="mailto:meghanlendhe@gmail.com" class="text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+              Say hello
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Work -->
-    <section id="work" class="max-w-page mb-24">
-      <h2 class="font-display uppercase tracking-widest text-xs text-neutral-500 mb-6">
-        Selected case studies
-      </h2>
+    <section id="work" aria-labelledby="work-title" class="mb-32">
+      <div class="max-w-content mb-10">
+        <p class="type-eyebrow mb-4">A few projects</p>
+        <h2 id="work-title" class="type-section-title mb-4">Some things I’ve worked on with clients</h2>
+        <p class="max-w-[60ch] text-neutral-600">
+          These were consulting projects: I joined each team to help think through a product and shape how it should work.
+        </p>
+      </div>
 
       <div class="flex flex-col gap-12 md:gap-20">
         <!-- Cool School -->
@@ -70,10 +93,10 @@
           <img src="assets/cool-school/music-room-npc.png" alt="Cool School characters meeting in the music room"
             class="max-h-[58vh] w-full object-cover object-center md:max-h-[72vh]" />
           <div class="max-w-md">
-            <h3 class="text-lg font-semibold mb-1">
+            <h3 class="type-project-title mb-3">
               Reimagining Cool School for a New Generation
             </h3>
-            <p class="text-neutral-700 text-sm">
+            <p class="text-neutral-600 text-base leading-relaxed">
               Expanding a school conflict-resolution game into a playful, open-world experience.
             </p>
           </div>
@@ -84,10 +107,10 @@
           class="grid max-h-[80vh] grid-cols-1 items-center gap-5 overflow-hidden transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary md:grid-cols-[1.6fr_1fr] md:gap-12">
           <img src="assets/vitals/cover.png" alt="" aria-hidden="true" class="max-h-[58vh] w-full object-contain object-left md:max-h-[72vh]" />
           <div class="max-w-md">
-            <h3 class="text-lg font-semibold mb-1">
+            <h3 class="type-project-title mb-3">
               Reducing Friction, Boosting Vitals Subscriptions
             </h3>
-            <p class="text-neutral-700 text-sm">
+            <p class="text-neutral-600 text-base leading-relaxed">
               Designing for trust and conversion in a sensitive medical product.
             </p>
           </div>
@@ -98,10 +121,10 @@
           class="hidden grid max-h-[80vh] grid-cols-1 items-center gap-5 overflow-hidden transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary md:grid-cols-[1.6fr_1fr] md:gap-12">
           <img src="assets/bulkmagic/cover.png" alt="" aria-hidden="true" class="max-h-[58vh] w-full object-contain object-left md:max-h-[72vh]" />
           <div class="max-w-md">
-            <h3 class="text-lg font-semibold mb-1">
+            <h3 class="type-project-title mb-3">
               Seller Onboarding for BulkMagic
             </h3>
-            <p class="text-neutral-700 text-sm">
+            <p class="text-neutral-600 text-base leading-relaxed">
               Reducing friction in a compliance-heavy workflow.
             </p>
           </div>
@@ -112,14 +135,135 @@
           class="grid max-h-[80vh] grid-cols-1 items-center gap-5 overflow-hidden transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary md:grid-cols-[1.6fr_1fr] md:gap-12">
           <img src="assets/alirtify/cover.png" alt="" aria-hidden="true" class="max-h-[58vh] w-full object-contain object-left md:max-h-[72vh]" />
           <div class="max-w-md">
-            <h3 class="text-lg font-semibold mb-1">
+            <h3 class="type-project-title mb-3">
               Designing a Data-Driven UX for News Validation
             </h3>
-            <p class="text-neutral-700 text-sm">
+            <p class="text-neutral-600 text-base leading-relaxed">
               Translating research insights into ethical UX decisions.
             </p>
           </div>
         </a>
+      </div>
+    </section>
+
+    <!-- Company experience -->
+    <section id="experience" aria-labelledby="experience-title" class="mb-32">
+      <div class="max-w-content mb-10">
+        <p class="type-eyebrow mb-4">On the team</p>
+        <h2 id="experience-title" class="type-section-title mb-4">A couple of teams I’ve been part of</h2>
+        <p class="max-w-[60ch] text-neutral-600">
+          Different stages, different problems, and plenty of figuring things out together.
+        </p>
+      </div>
+
+      <div class="space-y-8 md:space-y-12">
+        <article class="grid grid-cols-1 items-center gap-8 bg-neutral-100 p-5 sm:p-8 lg:grid-cols-2 lg:gap-12">
+          <div class="grid gap-4">
+            <figure class="overflow-hidden bg-[#071c28]">
+              <img
+                src="assets/experience/bulkmagic-app-marketplace.jpg"
+                alt="Desktop and mobile exploration of a progressive web app marketplace"
+                class="aspect-[16/10] w-full object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="bg-[#071c28] px-3 py-2 text-xs text-white/75">Progressive web app marketplace concept</figcaption>
+            </figure>
+            <figure class="overflow-hidden bg-[#333]">
+              <img
+                src="assets/experience/bulkmagic-group-buy.jpg"
+                alt="Responsive BulkMagic group-buying product page concept"
+                class="aspect-[16/10] w-full object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="bg-[#333] px-3 py-2 text-xs text-white/75">Group-buying e-commerce concept</figcaption>
+            </figure>
+          </div>
+          <div class="max-w-xl">
+            <p class="type-eyebrow type-eyebrow-accent mb-3">BulkMagic · Pre-seed product exploration</p>
+            <h3 class="type-feature-title mb-4">Taking a product from ambiguity to a campus pilot</h3>
+            <p class="mb-5 text-neutral-600">
+              We explored several product directions before piloting a food-subscription web app.
+            </p>
+            <ol class="mb-6 space-y-4 border-l border-neutral-300 pl-4">
+              <li>
+                <span class="font-display text-xs text-neutral-500">01</span>
+                <h4 class="type-subheading mb-1">PWA app store</h4>
+                <p class="text-sm text-neutral-600">Started as a marketplace for progressive web apps.</p>
+              </li>
+              <li>
+                <span class="font-display text-xs text-neutral-500">02</span>
+                <h4 class="type-subheading mb-1">Group-buying e-commerce</h4>
+                <p class="text-sm text-neutral-600">Evolved into a marketplace built around buying together.</p>
+              </li>
+              <li>
+                <span class="font-display text-xs text-neutral-500">03</span>
+                <h4 class="type-subheading mb-1">Food-subscription pilot</h4>
+                <p class="text-sm text-neutral-600">
+                  Became a Grubhub-like service for subsidized coffee and other food subscriptions, piloted with
+                  UHungry Cafe on the University of Utah campus.
+                </p>
+              </li>
+            </ol>
+            <div>
+              <h4 class="type-subheading mb-1">My contribution</h4>
+              <p class="text-neutral-600">
+                I worked with product managers, engineers, and the head of product to define the product, map user flows,
+                and build responsive prototypes. I surfaced ambiguity and facilitated conversations to clarify how ideas
+                and edge cases should work.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-1 items-center gap-8 bg-neutral-100 p-5 sm:p-8 lg:grid-cols-2 lg:gap-12">
+          <figure class="overflow-hidden bg-[#e8f0ed]">
+            <img
+              src="assets/experience/omara-workflows.svg"
+              alt="Illustrative interface concepts for welfare application review and design-system tooling"
+              class="aspect-[4/3] w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div class="max-w-xl">
+            <p class="type-eyebrow type-eyebrow-accent mb-3">Omara Technologies · Government services</p>
+            <h3 class="type-feature-title mb-6">Supporting clearer reviews and faster design workflows</h3>
+            <div class="space-y-5">
+              <div>
+                <h4 class="type-subheading mb-1">Welfare application review</h4>
+                <p class="text-neutral-600">
+                  I designed a review platform for government officers processing offline welfare applications, including
+                  a way to request clarifications when information was missing.
+                </p>
+              </div>
+              <div>
+                <h4 class="type-subheading mb-1">Design-system tooling</h4>
+                <p class="text-neutral-600">
+                  I built two Claude Code skills: one to review and fix UI components and documentation against internal
+                  standards, improving quality and reducing manual effort; another generates high-fidelity Figma prototypes
+                  from design-system components, reducing prototype time from hours to minutes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="neurohci" aria-labelledby="neurohci-title" class="grid gap-6 border-t border-neutral-300 py-12 md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:py-16">
+      <div>
+        <h2 id="neurohci-title" class="type-section-title max-w-[15ch]">I want technology to feel like a natural extension of us.</h2>
+      </div>
+      <div class="max-w-2xl">
+        <p class="mb-5 text-lg leading-relaxed text-neutral-800">
+          That’s what draws me to neural interfaces: the possibility of interacting with technology with as little friction as possible.
+        </p>
+        <p class="text-neutral-600">
+          I’m brushing up on data science through projects in EEG-based intent classification and imagined-speech decoding.
+          I want to get a feel for what these signals can tell us, and what people might actually find useful.
+        </p>
       </div>
     </section>
 
