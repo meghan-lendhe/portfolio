@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Space+Grotesk:wght@500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100..900&display=swap"
     rel="stylesheet" />
 
   <!-- Stylesheet -->
@@ -45,10 +45,87 @@
   </header>
 
   <main id="main" class="max-w-page mx-auto px-6 pb-24 pt-16 md:pt-20">
-    <section id="work" aria-labelledby="work-title" class="mb-32">
+    <section id="intro" aria-labelledby="intro-title" class="mb-20 grid gap-6 rounded-3xl bg-neutral-100 px-6 py-8 md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:px-12 md:py-14">
+      <div>
+        <h1 id="intro-title" class="type-page-title max-w-[15ch]">I’m Meghan, a product designer.</h1>
+      </div>
+      <div class="max-w-2xl">
+        <p class="text-lg leading-relaxed text-neutral-700">
+          I design digital products across education and government services, from playful learning experiences to tools that make complex public-service workflows easier to navigate. I’m also interested in neuroHCI and how neural signals could shape more natural ways to interact with technology.
+        </p>
+        <a href="#companies" class="mt-6 inline-flex items-center gap-2 rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+          Explore my UX design work <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="neurohci" aria-labelledby="neurohci-title" class="mb-32 grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+      <div>
+        <h2 id="neurohci-title" class="type-section-title max-w-[15ch]">I’m exploring the challenges of neural interfaces.</h2>
+      </div>
+      <div class="max-w-2xl">
+        <p class="mb-5 text-lg leading-relaxed text-neutral-800">
+          Neural interfaces could make interacting with technology feel more natural. The challenge is understanding what neural signals can reliably tell us, and how to make that useful.
+        </p>
+        <p class="mb-5 text-neutral-600">
+          In an earlier project, I co-authored research on
+          <a href="https://link.springer.com/chapter/10.1007/978-981-15-8354-4_27" target="_blank" rel="noopener noreferrer" class="underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+            detecting emotion and depression from speech
+          </a>
+          using machine-learning and deep-learning models.
+        </p>
+        <p class="text-neutral-600">
+          I’m currently working on EEG-based intent classification and imagined-speech decoding, and taking part in the
+          <a href="https://neural-interfaces26.github.io/index.html" target="_blank" rel="noopener noreferrer" class="underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+            EEG/EMG Foundation Challenge
+          </a>
+          at the NeurIPS 2026 Brain &amp; Body Workshop. It explores whether biosignal models can generalize to unfamiliar stimuli, recording sessions, and people.
+        </p>
+      </div>
+    </section>
+
+    <section id="companies" aria-labelledby="companies-title" class="mb-32 border-t border-neutral-300 pt-12 md:pt-16">
       <div class="max-w-content mb-10">
-        <p class="type-eyebrow mb-4">A few projects</p>
-        <h2 id="work-title" class="type-section-title mb-4">Some things I’ve worked on with clients</h2>
+        <p class="type-eyebrow mb-4">Company work</p>
+        <h2 id="companies-title" class="type-section-title mb-4">Projects with the teams I’ve been part of</h2>
+        <p class="max-w-[60ch] text-neutral-600">
+          Product work across early-stage e-commerce and government services.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-12 md:gap-20">
+        <!-- BulkMagic -->
+        <a href="/bulkmagic"
+          class="grid grid-cols-1 items-center gap-5 transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary md:grid-cols-[1.6fr_1fr] md:gap-12">
+          <img src="assets/experience/bulkmagic-group-buy.jpg" alt="BulkMagic group-buying e-commerce product concept"
+            class="w-full object-contain object-left" />
+          <div class="max-w-md">
+            <h3 class="type-project-title mb-3">BulkMagic</h3>
+            <p class="text-neutral-600 text-base leading-relaxed">
+              Early-stage e-commerce: I helped shape BulkMagic from a PWA marketplace into a campus food-subscription pilot. I mapped user flows and built responsive prototypes; the pilot launched with UHungry Cafe at the University of Utah.
+            </p>
+          </div>
+        </a>
+
+        <!-- Omara Technologies -->
+        <a href="/omara"
+          class="grid grid-cols-1 items-center gap-5 transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary md:grid-cols-[1.6fr_1fr] md:gap-12">
+          <img src="assets/experience/omara-workflows.svg" alt="Omara concepts for welfare application review and design-system tooling"
+            class="w-full object-contain object-left" />
+          <div class="max-w-md">
+            <h3 class="type-project-title mb-3">Omara Technologies</h3>
+            <p class="text-neutral-600 text-base leading-relaxed">
+              Government services: I designed an officer-facing platform to review offline welfare applications and request missing information. I built design-system skills for UI quality checks and Figma prototyping, cutting prototype creation from hours to minutes.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="work-title" class="mb-32 border-t border-neutral-300 pt-12 md:pt-16">
+      <div class="max-w-content mb-10">
+        <p class="type-eyebrow mb-4">Client case studies</p>
+        <h2 id="work-title" class="type-section-title mb-4">Three projects I’ve worked on with clients</h2>
         <p class="max-w-[60ch] text-neutral-600">
           These were consulting projects: I joined each team to help think through a product and shape how it should work.
         </p>
@@ -84,20 +161,6 @@
           </div>
         </a>
 
-        <!-- BulkMagic -->
-        <a href="/bulkmagic"
-          class="hidden grid max-h-[80vh] grid-cols-1 items-center gap-5 overflow-hidden transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary md:grid-cols-[1.6fr_1fr] md:gap-12">
-          <img src="assets/bulkmagic/cover.png" alt="" aria-hidden="true" class="max-h-[58vh] w-full object-contain object-left md:max-h-[72vh]" />
-          <div class="max-w-md">
-            <h3 class="type-project-title mb-3">
-              Seller Onboarding for BulkMagic
-            </h3>
-            <p class="text-neutral-600 text-base leading-relaxed">
-              Reducing friction in a compliance-heavy workflow.
-            </p>
-          </div>
-        </a>
-
         <!-- Alirtify -->
         <a href="/alirtify"
           class="grid max-h-[80vh] grid-cols-1 items-center gap-5 overflow-hidden transition transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary md:grid-cols-[1.6fr_1fr] md:gap-12">
@@ -111,138 +174,6 @@
             </p>
           </div>
         </a>
-      </div>
-    </section>
-
-    <!-- Company experience -->
-    <section id="experience" aria-labelledby="experience-title" class="mb-32">
-      <div class="max-w-content mb-10">
-        <p class="type-eyebrow mb-4">On the team</p>
-        <h2 id="experience-title" class="type-section-title mb-4">A couple of teams I’ve been part of</h2>
-        <p class="max-w-[60ch] text-neutral-600">
-          Different stages, different problems, and plenty of figuring things out together.
-        </p>
-      </div>
-
-      <div class="space-y-8 md:space-y-12">
-        <article class="grid grid-cols-1 items-center gap-8 bg-neutral-100 p-5 sm:p-8 lg:grid-cols-2 lg:gap-12">
-          <div class="grid gap-4">
-            <figure class="overflow-hidden bg-[#071c28]">
-              <img
-                src="assets/experience/bulkmagic-app-marketplace.jpg"
-                alt="Desktop and mobile exploration of a progressive web app marketplace"
-                class="aspect-[16/10] w-full object-contain"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption class="bg-[#071c28] px-3 py-2 text-xs text-white/75">Progressive web app marketplace concept</figcaption>
-            </figure>
-            <figure class="overflow-hidden bg-[#333]">
-              <img
-                src="assets/experience/bulkmagic-group-buy.jpg"
-                alt="Responsive BulkMagic group-buying product page concept"
-                class="aspect-[16/10] w-full object-contain"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption class="bg-[#333] px-3 py-2 text-xs text-white/75">Group-buying e-commerce concept</figcaption>
-            </figure>
-          </div>
-          <div class="max-w-xl">
-            <p class="type-eyebrow type-eyebrow-accent mb-3">BulkMagic · Pre-seed product exploration</p>
-            <h3 class="type-feature-title mb-4">Taking a product from ambiguity to a campus pilot</h3>
-            <p class="mb-5 text-neutral-600">
-              We explored several product directions before piloting a food-subscription web app.
-            </p>
-            <ol class="mb-6 space-y-4 border-l border-neutral-300 pl-4">
-              <li>
-                <span class="font-display text-xs text-neutral-500">01</span>
-                <h4 class="type-subheading mb-1">PWA app store</h4>
-                <p class="text-sm text-neutral-600">Started as a marketplace for progressive web apps.</p>
-              </li>
-              <li>
-                <span class="font-display text-xs text-neutral-500">02</span>
-                <h4 class="type-subheading mb-1">Group-buying e-commerce</h4>
-                <p class="text-sm text-neutral-600">Evolved into a marketplace built around buying together.</p>
-              </li>
-              <li>
-                <span class="font-display text-xs text-neutral-500">03</span>
-                <h4 class="type-subheading mb-1">Food-subscription pilot</h4>
-                <p class="text-sm text-neutral-600">
-                  Became a Grubhub-like service for subsidized coffee and other food subscriptions, piloted with
-                  UHungry Cafe on the University of Utah campus.
-                </p>
-              </li>
-            </ol>
-            <div>
-              <h4 class="type-subheading mb-1">My contribution</h4>
-              <p class="text-neutral-600">
-                I worked with product managers, engineers, and the head of product to define the product, map user flows,
-                and build responsive prototypes. I surfaced ambiguity and facilitated conversations to clarify how ideas
-                and edge cases should work.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="grid grid-cols-1 items-center gap-8 bg-neutral-100 p-5 sm:p-8 lg:grid-cols-2 lg:gap-12">
-          <figure class="overflow-hidden bg-[#e8f0ed]">
-            <img
-              src="assets/experience/omara-workflows.svg"
-              alt="Illustrative interface concepts for welfare application review and design-system tooling"
-              class="aspect-[4/3] w-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <div class="max-w-xl">
-            <p class="type-eyebrow type-eyebrow-accent mb-3">Omara Technologies · Government services</p>
-            <h3 class="type-feature-title mb-6">Supporting clearer reviews and faster design workflows</h3>
-            <div class="space-y-5">
-              <div>
-                <h4 class="type-subheading mb-1">Welfare application review</h4>
-                <p class="text-neutral-600">
-                  I designed a review platform for government officers processing offline welfare applications, including
-                  a way to request clarifications when information was missing.
-                </p>
-              </div>
-              <div>
-                <h4 class="type-subheading mb-1">Design-system tooling</h4>
-                <p class="text-neutral-600">
-                  I built two Claude Code skills: one to review and fix UI components and documentation against internal
-                  standards, improving quality and reducing manual effort; another generates high-fidelity Figma prototypes
-                  from design-system components, reducing prototype time from hours to minutes.
-                </p>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="neurohci" aria-labelledby="neurohci-title" class="grid gap-6 border-t border-neutral-300 py-12 md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:py-16">
-      <div>
-        <h2 id="neurohci-title" class="type-section-title max-w-[15ch]">I want technology to feel like a natural extension of us.</h2>
-      </div>
-      <div class="max-w-2xl">
-        <p class="mb-5 text-lg leading-relaxed text-neutral-800">
-          That’s what draws me to neural interfaces: the possibility of interacting with technology with as little friction as possible.
-        </p>
-        <p class="mb-5 text-neutral-600">
-          In an earlier project, we brought together speech datasets covering different accents and trained machine-learning
-          and deep-learning systems to predict emotion across accents.
-        </p>
-        <p class="text-neutral-600">
-          I’m brushing up on data science through projects in EEG-based intent classification and imagined-speech decoding.
-          I want to get a feel for what these signals can tell us, and what people might actually find useful.
-        </p>
-        <p class="mt-5 text-neutral-600">
-          I’m also taking part in the
-          <a href="https://neural-interfaces26.github.io/index.html" target="_blank" rel="noopener noreferrer" class="underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
-            EEG/EMG Foundation Challenge
-          </a>
-          at the NeurIPS 2026 Brain &amp; Body Workshop.
-        </p>
       </div>
     </section>
 
