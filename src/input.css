@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @source "./**/*.astro";
-@source "./content/**/*.html";
 @source "../public/assets/js/**/*.js";
 
 @theme {

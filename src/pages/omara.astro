@@ -1,10 +1,116 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import source from '../content/omara.html?raw';
-
-const main = source.match(new RegExp('<main[\\s\\S]*?</main>'))?.[0].replaceAll('assets/', '/assets/') ?? '';
 ---
 
 <BaseLayout title="Omara Technologies — Government Services and Design-System Work">
-  <Fragment set:html={main} />
+<main id="main" class="max-w-page mx-auto px-6 py-16 md:py-24">
+  <section class="mb-12 md:mb-16">
+    <div class="grid grid-cols-1 items-end gap-6 md:grid-cols-[1.15fr_0.85fr] md:gap-12">
+      <div>
+        <p class="type-eyebrow mb-5">Omara Technologies · Government services</p>
+        <h1 class="type-page-title max-w-[14ch]">Clearer reviews, faster design workflows</h1>
+      </div>
+      <p class="max-w-prose text-lg text-neutral-700 md:pb-1">
+        Designing tools for government officers reviewing offline welfare applications, and building design-system skills that make quality UI work faster.
+      </p>
+    </div>
+  </section>
+
+  <figure class="mb-16 bg-[#e8f0ed] md:mb-24">
+    <img
+      src="/assets/experience/omara-workflows.svg"
+      alt="Illustrative concepts for welfare application review and design-system tooling"
+      class="mx-auto h-auto w-full"
+    />
+    <figcaption class="px-4 py-3 text-xs text-neutral-600">
+      Concepts for application review and design-system workflows.
+    </figcaption>
+  </figure>
+
+  <section class="mb-20 border-y border-neutral-300 py-8 md:mb-28">
+    <div class="grid grid-cols-2 gap-x-8 gap-y-6 text-sm md:grid-cols-4">
+      <div>
+        <span class="mb-1 block text-neutral-500">Company</span>
+        Omara Technologies
+      </div>
+      <div>
+        <span class="mb-1 block text-neutral-500">Domain</span>
+        Government services
+      </div>
+      <div>
+        <span class="mb-1 block text-neutral-500">Focus</span>
+        Application review · Design systems
+      </div>
+      <div>
+        <span class="mb-1 block text-neutral-500">My work</span>
+        Product design · Workflow tooling
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-20 md:mb-28">
+    <div class="grid gap-8 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
+      <div>
+        <p class="type-eyebrow mb-4">01 · Welfare application review</p>
+        <h2 class="type-section-title max-w-[16ch]">Help officers review applications and resolve gaps</h2>
+      </div>
+      <div class="max-w-content">
+        <p class="mb-5 text-neutral-700">
+          Government officers processed welfare applications submitted offline. I designed a review platform to support that work and give officers a way to request clarifications when information was missing.
+        </p>
+        <div class="grid gap-6 border-t border-neutral-300 pt-6 sm:grid-cols-2">
+          <div>
+            <h3 class="type-subheading mb-2">The context</h3>
+            <p class="text-neutral-600">
+              The workflow needed to bring offline applications into an officer-facing review experience.
+            </p>
+          </div>
+          <div>
+            <h3 class="type-subheading mb-2">The design response</h3>
+            <p class="text-neutral-600">
+              The platform included a clarification request so an officer could follow up when application information was incomplete.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-20 bg-neutral-100 px-6 py-8 md:mb-28 md:px-12 md:py-12">
+    <div class="grid gap-8 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
+      <div>
+        <p class="type-eyebrow mb-4">02 · Design-system tooling</p>
+        <h2 class="type-section-title max-w-[16ch]">Turn design-system work into reusable skills</h2>
+      </div>
+      <div class="space-y-8">
+        <div>
+          <h3 class="type-subheading mb-2">Review and fix UI components</h3>
+          <p class="text-neutral-700">
+            I built a Claude Code skill to review and fix UI components and documentation against internal standards, improving quality and reducing manual effort.
+          </p>
+        </div>
+        <div class="border-t border-neutral-300 pt-8">
+          <h3 class="type-subheading mb-2">Generate high-fidelity prototypes</h3>
+          <p class="text-neutral-700">
+            A second Claude Code skill generates high-fidelity Figma prototypes from design-system components, reducing prototype time from hours to minutes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-content border-t border-neutral-300 py-10 md:py-12">
+    <p class="type-eyebrow mb-4">Outcome</p>
+    <h2 class="type-section-title mb-5">Make good work easier to repeat</h2>
+    <p class="max-w-prose text-neutral-700">
+      The review platform addressed a practical gap in offline application processing, while the two design-system skills made routine quality checks and prototype creation more efficient.
+    </p>
+  </section>
+
+  <section class="border-t border-neutral-300 py-8">
+    <a href="/#work" class="inline-flex items-center gap-2 text-sm font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+      ← Back to selected work
+    </a>
+  </section>
+</main>
 </BaseLayout>
