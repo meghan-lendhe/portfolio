@@ -1,26 +1,50 @@
-<footer class="bg-black text-white">
-  <div class="mx-auto max-w-page px-6 pb-6 pt-14 md:pb-8 md:pt-20">
-    <div class="grid gap-8 pb-12 md:grid-cols-[0.8fr_1.2fr] md:items-end md:gap-16 md:pb-16">
-      <h2 class="font-display text-4xl font-medium tracking-tight sm:text-5xl">Want to talk?</h2>
-      <div class="max-w-2xl">
-        <p class="mb-6 text-lg leading-relaxed text-white/75">
-          I’m always happy to chat about product design, neuroHCI, or what you’re working on.
+---
+interface Props {
+  theme?: 'light' | 'dark';
+}
+
+const { theme = 'light' } = Astro.props;
+const isDark = theme === 'dark';
+---
+
+<footer class={isDark ? "bg-[#090A0C] text-white border-t border-white/[0.07]" : "bg-black text-white"}>
+  <div class="mx-auto max-w-page px-6 md:px-20 pb-16 pt-24 md:pb-24 md:pt-36">
+    <div class="grid gap-12 pb-20 md:grid-cols-[1fr_1fr] md:items-start md:gap-20 border-b border-white/[0.07]">
+      <div>
+        <span class={isDark ? "inline-block text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase mb-6" : "hidden"}>COLLOQUIUM &amp; INQUIRY</span>
+        <h2 class="font-serif text-4xl sm:text-6xl font-light text-white leading-tight tracking-tight">
+          Initiate dialogue.
+        </h2>
+      </div>
+      <div class="space-y-8 lg:pt-2">
+        <p class="text-lg md:text-xl font-light leading-relaxed text-neutral-300 max-w-[44ch]">
+          Open to research inquiries, engineering collaboration, and opportunities across neural interfaces, foundation biosignal decoders, and complex operational systems.
         </p>
-        <a
+        <div class="flex flex-wrap items-center gap-6 font-mono text-xs">
+          <a
+            href="mailto:meghanlendhe@gmail.com"
+            class="group inline-flex items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-amber-400 hover:text-amber-300 transition-luxury"
+          >
+            <span>meghanlendhe@gmail.com</span>
+            <span class="text-neutral-500 group-hover:text-amber-300 transition-luxury">→</span>
+          </a>
+          <a
             href="https://www.linkedin.com/in/meghanlendhe/"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-sm font-medium text-white/75 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            class="group inline-flex items-center gap-2 text-neutral-400 border-b border-white/10 pb-1 hover:border-amber-400 hover:text-amber-300 transition-luxury"
           >
-            Connect on LinkedIn <span aria-hidden="true">↗</span>
+            <span>LinkedIn Archive</span>
+            <span class="text-neutral-600 group-hover:text-amber-300 transition-luxury">↗</span>
             <span class="sr-only">(opens in a new tab)</span>
           </a>
+        </div>
       </div>
     </div>
-    <div class="flex flex-col gap-3 border-t border-white/20 pt-5 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
-      <span>© 2026 Meghan Lendhe</span>
-      <a href="#main" class="w-fit transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-        Back to top ↑
+    <div class="flex flex-col gap-4 pt-8 text-[10px] font-mono tracking-[0.25em] text-neutral-500 uppercase sm:flex-row sm:items-center sm:justify-between">
+      <span>© 2026 MEGHAN LENDHE · NEURAL INTERFACES &amp; BIOSIGNAL COMPUTING</span>
+      <a href="#main" class="w-fit text-neutral-400 transition-luxury hover:text-amber-300">
+        TOP OF FOLIO ↑
       </a>
     </div>
   </div>

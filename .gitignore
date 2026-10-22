@@ -11,3 +11,6 @@ Thumbs.db
 test-results/
 playwright-report/
 blob-report/
+
+# Local agent context and instructions
+AGENTS.md

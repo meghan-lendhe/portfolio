@@ -20,7 +20,9 @@
   --color-neutral-900: #20262D;
   --color-neutral-950: #151A20;
   --font-sans: "Libre Franklin", system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
   --font-display: "Libre Franklin", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --container-page: calc(var(--spacing) * 275);
   --container-content: calc(var(--spacing) * 180);
 }
@@ -179,3 +181,59 @@
   line-height: 1.4;
   text-transform: uppercase;
 }
+
+/* Neurotech Theme & Dark Mode Styling */
+.dark .type-eyebrow {
+  color: #94A3B8;
+}
+
+.dark .type-section-label {
+  color: #F1F5F9;
+}
+
+.dark .type-subheading {
+  color: #F8FAFC;
+}
+
+.dark .type-project-title {
+  color: #F8FAFC;
+}
+
+.dark .type-metric-label {
+  color: #94A3B8;
+}
+
+.neuro-grid {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.signal-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.signal-border:hover {
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 0 0 25px -5px rgba(34, 211, 238, 0.15), 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes eeg-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+.animate-eeg-pulse {
+  animation: eeg-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.ease-luxury {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.transition-luxury {
+  transition-property: all;
+  transition-duration: 650ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
