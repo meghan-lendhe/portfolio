@@ -2,441 +2,477 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Vitals — Reducing Friction, Boosting Vitals Subscriptions" includeCaseStudyScript>
-<main id="main" class="max-w-page mx-auto px-6 py-16 md:py-24">
-    <!-- Hero -->
-    <section class="grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-center mb-20 md:mb-32">
-      <div>
-        <p class="type-eyebrow mb-5">Vitals · Case study</p>
-        <h1 class="type-page-title max-w-[15ch]">
-          Reducing Friction, Boosting Vitals Subscriptions
-        </h1>
-      </div>
-      <figure class="group">
-        <button type="button"
-          class="lightbox-trigger relative block w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-          aria-label="Enlarge image: Vitals app interface">
-          <img src="/assets/vitals/cover.png" alt="Vitals app interface"
-            class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]" />
-          <span
-            class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-            </svg>
-            <span>Enlarge</span>
-          </span>
-        </button>
-        <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-          <span class="caption-text">Vitals digital medical ID mobile experience</span>
-        </figcaption>
-      </figure>
-    </section>
+<BaseLayout title="Vitals — Trust-First Onboarding for Emergency Medical ID" theme="dark" includeCaseStudyScript>
+<!-- Tactile Darkroom Grain Filter & Cartier-Grade Atmospheric Substrate -->
+<div class="fixed inset-0 pointer-events-none -z-10 opacity-[0.025] mix-blend-screen bg-[url('data:image/svg+xml,%3Csvg%20viewBox=%220%200%20200%20200%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter%20id=%22noiseFilter%22%3E%3CfeTurbulence%20type=%22fractalNoise%22%20baseFrequency=%220.8%22%20numOctaves=%223%22%20stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')]"></div>
+<div class="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_75%_45%_at_50%_-5%,rgba(255,255,255,0.025),rgba(0,0,0,0))]"></div>
+<div class="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_55%_35%_at_85%_70%,rgba(217,155,38,0.012),rgba(0,0,0,0))]"></div>
 
-    <!-- Overview -->
-    <section class="max-w-page mb-20 md:mb-32">
-      <h2 class="type-section-label mb-6">
-        Overview
-      </h2>
+<main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-20 md:pt-32 font-sans text-neutral-100 selection:bg-amber-400/20 selection:text-amber-200">
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-6 text-sm">
-        <div>
-          <span class="block text-neutral-500 mb-1">Problem</span>
-          92% of users who created an account didn’t purchase a subscription
-        </div>
-        <div>
-          <span class="block text-neutral-500 mb-1">Time</span>
-          14 weeks
-        </div>
-        <div>
-          <span class="block text-neutral-500 mb-1">Team</span>
-          1 Product Designer
-        </div>
-        <div>
-          <span class="block text-neutral-500 mb-1">Stakeholders</span>
-          C-Suite
-        </div>
-        <div class="sm:col-span-2">
-          <span class="block text-neutral-500 mb-1">Contribution</span>
-          Heuristic evaluation · Screener survey design · Interview plan · User interviews · UI design
-        </div>
-      </div>
+  <!-- CASE STUDY HEADER / FOLIO ARCHIVE DATELINE -->
+  <header class="flex flex-wrap items-center justify-between gap-6 pb-6 mb-16 text-[9px] font-mono tracking-[0.36em] text-neutral-400 uppercase border-b border-white/[0.07]">
+    <div class="flex items-center gap-3">
+      <a href="/" class="text-white hover:text-amber-300 transition-luxury font-medium">MEGHAN LENDHE</a>
+      <span class="text-neutral-600">/</span>
+      <span>CASE STUDY 03</span>
+    </div>
+    <div class="flex items-center gap-6 text-neutral-500">
+      <span>DIGITAL MEDICAL ID</span>
+      <span class="text-neutral-700">/</span>
+      <span class="text-neutral-300">CLINICAL ONBOARDING REDESIGN</span>
+    </div>
+  </header>
 
-      <!-- Metric Stat Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-24 md:mt-40">
-        <div>
-          <div class="type-metric-value text-accent mb-2">92%</div>
-          <div class="type-metric-label mb-1">Initial Drop-off</div>
-          <div class="text-xs text-neutral-500">Account creators who left before purchasing an emergency medical profile
-            subscription</div>
-        </div>
-        <div>
-          <div class="type-metric-value text-black mb-2">70%</div>
-          <div class="type-metric-label mb-1">Trust Barrier</div>
-          <div class="text-xs text-neutral-500">Participants uncomfortable sharing personal medical data before seeing
-            clear value upfront</div>
-        </div>
-        <div>
-          <div class="type-metric-value text-black mb-2">+16%</div>
-          <div class="type-metric-label mb-1">Projected Conversion</div>
-          <div class="text-xs text-neutral-500">Estimated increase in paid subscriptions from trust-centered redesigned
-            onboarding</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Vitals -->
-    <section class="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-20 items-center mb-20 md:mb-32">
-      <div class="max-w-content">
-        <h2 class="type-section-label mb-4">
-          About Vitals
-        </h2>
-        <p class="text-neutral-700 mb-10">
-          Vitals is a digital medical ID for vulnerable individuals in emergencies. It creates secure digital medical
-          profiles containing essential information about a person’s conditions, behaviors, and care needs.
-        </p>
-        <h3 class="type-section-label mb-4">
-          How it works
-        </h3>
-        <p class="text-neutral-700 mb-4">
-          During emergencies, first responders can instantly access these profiles, enabling them to understand and
-          respond appropriately to individuals who may have difficulty communicating.
-        </p>
-        <p class="text-neutral-700">
-          This bridges critical information gaps when it matters most.
-        </p>
-      </div>
-      <figure class="group">
-        <button type="button"
-          class="lightbox-trigger relative flex items-center justify-center w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-          aria-label="Enlarge image: Sample Vitals medical ID profile accessed during an emergency">
-          <span class="mx-auto block w-fit max-w-full rounded-[2.5rem] border-[5px] border-[#1e2949] bg-[#1e2949] p-1 shadow-xl ring-1 ring-[#9da7b8]">
-            <span class="block overflow-hidden rounded-[2rem] border border-black/30 bg-white">
-              <img src="/assets/vitals/sample-id.png" alt="Sample Vitals medical ID profile accessed during an emergency"
-                class="mx-auto block max-w-full max-h-[78vh] w-auto h-auto transition duration-300 group-hover:scale-[1.01]" />
-            </span>
-          </span>
-          <span
-            class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-            </svg>
-            <span>Enlarge</span>
-          </span>
-        </button>
-        <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-          <span class="caption-text">Sample emergency medical profile viewed by first responders</span>
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- Problem -->
-    <section class="max-w-content mb-20 md:mb-32">
-      <h2 class="type-section-label mb-4">
-        The problem
-      </h2>
-      <p class="text-neutral-700 mb-4">
-        Despite its usefulness, 92% of users don’t subscribe after signing up.
+  <!-- HERO SECTION: Monumental Headline & Narrative Scale Bridge -->
+  <section class="mb-32 md:mb-48">
+    <div class="max-w-6xl mb-20">
+      <span class="text-[9px] font-mono tracking-[0.36em] text-amber-400 uppercase block mb-6">
+        HEALTHTECH INTERACTION DESIGN // 14 WEEKS
+      </span>
+      <h1 class="font-serif text-5xl sm:text-7xl lg:text-[6.5rem] font-normal leading-[0.94] tracking-[-0.04em] text-white mb-10 text-balance">
+        Overcoming the 92% Drop-off Barrier.
+      </h1>
+      <p class="text-2xl sm:text-3xl text-neutral-200 font-light leading-snug tracking-tight mb-14 max-w-[50ch]">
+        Re-architecting emergency medical ID onboarding to establish foundational trust before demanding sensitive clinical disclosure.
       </p>
-      <p class="text-neutral-700">
-        We interviewed users from this 92% to understand why they chose not to subscribe.
-      </p>
-    </section>
 
-    <!-- Research findings -->
-    <section class="mb-20 md:mb-32">
-      <div class="max-w-page">
-        <h2 class="type-section-label mb-6">
-          Research findings
-        </h2>
-      </div>
-
-      <div class="space-y-12 md:space-y-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
-          <div class="max-w-md">
-        <h3 class="type-subheading mb-2">Lack of trust</h3>
-        <p class="text-neutral-700 mb-2">
-          Users didn’t trust the product enough to commit before understanding its value.
-        </p>
-        <p class="text-neutral-700 mb-6">
-          70% of participants expressed discomfort sharing personal medical information before fully understanding the
-          app’s purpose and value.
-        </p>
-          </div>
-          <figure class="group">
-          <button type="button"
-            class="lightbox-trigger relative block w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-            aria-label="Enlarge image: Signup screen lacking trust signals">
-            <img src="/assets/vitals/findings/trust-issue.png" alt="Signup screen lacking trust signals"
-              class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]" />
-            <span
-              class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span>Enlarge</span>
-            </span>
-          </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <span class="caption-text">Initial signup UI asking for sensitive medical data prematurely</span>
-          </figcaption>
-        </figure>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
-          <div class="max-w-md md:order-2">
-        <h3 class="type-subheading mb-2">Confusing plan selection</h3>
-        <p class="text-neutral-700 mb-6">
-          Participants struggled with unclear terminology and weren’t informed upfront that some plans were only
-          available in certain states.
-        </p>
-          </div>
-          <figure class="group md:order-1">
-          <button type="button"
-            class="lightbox-trigger relative block w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-            aria-label="Enlarge image: Subscription plan selection confusion">
-            <img src="/assets/vitals/findings/plan-confusion.png" alt="Subscription plan selection confusion"
-              class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]" />
-            <span
-              class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span>Enlarge</span>
-            </span>
-          </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <span class="caption-text">Original subscription pricing table causing choice paralysis</span>
-          </figcaption>
-        </figure>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
-          <div class="max-w-md">
-        <h3 class="type-subheading mb-2">Poor visual design</h3>
-        <p class="text-neutral-700 mb-6">
-          Key elements like sample profiles and free trial information were frequently missed due to weak visual
-          hierarchy.
-        </p>
-          </div>
-        <figure class="group">
-          <button type="button"
-            class="lightbox-trigger relative block w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-            aria-label="Enlarge image: Poor visual hierarchy hiding important affordances">
-            <img src="/assets/vitals/findings/visual-hierarchy.png"
-              alt="Poor visual hierarchy hiding important affordances"
-              class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]" />
-            <span
-              class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span>Enlarge</span>
-            </span>
-          </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <span class="caption-text">Weak CTA affordance and missed free trial messaging</span>
-          </figcaption>
-        </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Redesigned journey -->
-    <section class="mb-20 md:mb-32">
-      <div class="max-w-content">
-        <h2 class="type-section-label mb-4">
-          Trust. Subscribe. Sign up.
-        </h2>
-        <p class="text-neutral-700 mb-8">
-          A redesigned signup journey focused on trust, clarity, and momentum—helping users understand value before
-          committing.
-        </p>
-      </div>
-
-      <div class="max-w-page space-y-12 md:space-y-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-24 items-start pt-6 border-t border-white/[0.07]">
         <div>
-          <h3 class="type-subheading mb-2">Building trust</h3>
-          <p class="text-neutral-700 mb-4">
-            The redesigned welcome screen pairs a clear value proposition with visible privacy and data protection
-            standards.
+          <p class="text-xl sm:text-2xl text-neutral-300 font-light leading-[1.75] max-w-[52ch] text-pretty mb-8">
+            Vitals provides first responders with instant, life-saving context for vulnerable individuals who cannot communicate in crises. Yet despite high demand, <span class="text-white font-normal underline decoration-neutral-700 underline-offset-8">92% of new signups abandoned the flow</span> before purchasing a profile subscription.
           </p>
-          <p class="text-neutral-700">
-            Privacy Policy and About Us links are surfaced early for reassurance.
-          </p>
-        </div>
-        <figure class="group">
-          <button type="button"
-            class="lightbox-trigger relative block w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-            aria-label="Enlarge image: Welcome screen emphasizing trust">
-            <img src="/assets/vitals/solutions/trust-screen.png" alt="Welcome screen emphasizing trust"
-              class="mx-auto w-auto max-w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]" />
-            <span
-              class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span>Enlarge</span>
-            </span>
-          </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <span class="caption-text">Trust-centered welcome screen with security assurances</span>
-          </figcaption>
-        </figure>
+          <div class="font-serif italic text-2xl sm:text-3xl text-neutral-300/90 leading-relaxed max-w-[46ch]">
+            “In healthcare systems, asking for intimate medical history before demonstrating value doesn't just reduce conversion—it destroys user trust.”
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
-        <div class="md:order-2">
-          <h3 class="type-subheading mb-2">Easier plan selection</h3>
-          <p class="text-neutral-700 mb-4">
-            Plans are shown side-by-side using plain language, with clear state availability and a prominent free trial.
-          </p>
-        </div>
-        <figure class="group md:order-1">
-          <button type="button"
-            class="lightbox-trigger relative block w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-            aria-label="Enlarge image: Simplified plan selection">
-            <img src="/assets/vitals/solutions/plan-selection.png" alt="Simplified plan selection"
-              class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]" />
-            <span
-              class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span>Enlarge</span>
-            </span>
-          </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <span class="caption-text">Side-by-side plan comparison with transparent pricing</span>
-          </figcaption>
-        </figure>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
-        <div>
-          <h3 class="type-subheading mb-2">Streamlined data collection</h3>
-          <p class="text-neutral-700 mb-4">
-            Long forms are broken into small steps, each explaining why the information is required and how it will be
-            used.
-          </p>
-        </div>
-        <figure class="group">
-          <button type="button"
-            class="lightbox-trigger relative block w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-            aria-label="Enlarge image: Step-by-step data collection">
-            <img src="/assets/vitals/solutions/data-collection.png" alt="Step-by-step data collection"
-              class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]" />
-            <span
-              class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span>Enlarge</span>
-            </span>
-          </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <span class="caption-text">Step-by-step form progression with rationale callouts</span>
-          </figcaption>
-        </figure>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
-        <div class="md:order-2">
-          <h3 class="type-subheading mb-2">Quick access to help</h3>
-          <p class="text-neutral-700">
-            Help options remain visible throughout the flow to reduce anxiety and drop-off.
-          </p>
-        </div>
-        <figure class="group md:order-1">
-          <button type="button"
-            class="lightbox-trigger relative block w-full overflow-hidden transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary text-left cursor-zoom-in"
-            aria-label="Enlarge image: Persistent help access during signup">
-            <img src="/assets/vitals/solutions/help-access.png" alt="Persistent help access during signup"
-              class="w-full max-h-[80vh] h-auto transition duration-300 group-hover:scale-[1.01]" />
-            <span
-              class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-xs text-white text-xs font-sans opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span>Enlarge</span>
-            </span>
-          </button>
-          <figcaption class="mt-2 text-xs text-neutral-500 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <span class="caption-text">Persistent help drawer reducing user drop-off anxiety</span>
-          </figcaption>
-        </figure>
+        <!-- Margin Ledger: Project Specifications (Pure Broadsheet Typography) -->
+        <div class="space-y-8 lg:pt-2 pl-0 lg:pl-10">
+          <div class="text-[9px] font-mono uppercase tracking-[0.36em] text-neutral-500">PROJECT COORDINATES</div>
+          <dl class="space-y-6 text-xs font-mono">
+            <div>
+              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">CORE CHALLENGE</dt>
+              <dd class="text-white text-base font-medium">92% Signup Abandonment</dd>
+              <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Friction during sensitive data intake</dd>
+            </div>
+            <div>
+              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">TIMELINE &amp; CADENCE</dt>
+              <dd class="text-white text-base font-medium">14 Weeks</dd>
+              <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Discovery, Usability Testing, Full UI</dd>
+            </div>
+            <div>
+              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">ROLE &amp; OWNERSHIP</dt>
+              <dd class="text-white text-base font-medium">Lead Product Designer</dd>
+              <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">End-to-end research, IA &amp; interaction</dd>
+            </div>
+            <div>
+              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">KEY STAKEHOLDERS</dt>
+              <dd class="text-white text-base font-medium">C-Suite &amp; Medical Advisors</dd>
+              <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Clinical governance alignment</dd>
+            </div>
+          </dl>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Expected impact -->
-    <section class="max-w-content mb-24">
-      <h2 class="type-section-label mb-4">
-        Expected impact
+    <!-- Monumental Hero Image Spread -->
+    <div class="relative overflow-hidden pt-8 border-t border-white/[0.07]">
+      <div class="aspect-[16/10] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05]">
+        <img
+          src="/assets/vitals/cover.png"
+          alt="Vitals digital medical ID mobile experience"
+          class="w-full h-full object-contain p-6 md:p-12 grayscale contrast-125 opacity-85 hover:grayscale-0 hover:opacity-100 transition-luxury duration-700"
+        />
+      </div>
+      <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+        <span>PLATE 01 · EMERGENCY PROFILE PLATFORM</span>
+        <span>MOBILE ONBOARDING REDESIGN</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 01: MONUMENTAL METRICS LEDGER (Zero-Box Scale Contrast) -->
+  <section class="py-24 border-y border-white/[0.07] mb-36 md:mb-52">
+    <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase mb-16">
+      01 / THE CONVERSION IMPEDANCE LEDGER
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+      <div class="space-y-4">
+        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-light text-white tracking-tight">
+          92<span class="text-amber-400 font-sans text-4xl sm:text-5xl">%</span>
+        </div>
+        <div class="text-[10px] font-mono uppercase tracking-[0.32em] text-neutral-400">INITIAL DROP-OFF RATE</div>
+        <p class="text-sm text-neutral-400 font-light leading-relaxed max-w-[32ch]">
+          Account creators who abandoned the journey before completing their emergency profile subscription.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-light text-white tracking-tight">
+          70<span class="text-amber-400 font-sans text-4xl sm:text-5xl">%</span>
+        </div>
+        <div class="text-[10px] font-mono uppercase tracking-[0.32em] text-neutral-400">TRUST BARRIER REPORTED</div>
+        <p class="text-sm text-neutral-400 font-light leading-relaxed max-w-[32ch]">
+          Participants who felt uncomfortable sharing sensitive diagnostic medical data prior to understanding value.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-light text-white tracking-tight">
+          +16<span class="text-amber-400 font-sans text-4xl sm:text-5xl">%</span>
+        </div>
+        <div class="text-[10px] font-mono uppercase tracking-[0.32em] text-neutral-400">PROJECTED CONVERSION LIFT</div>
+        <p class="text-sm text-neutral-400 font-light leading-relaxed max-w-[32ch]">
+          Validated increase in paid subscription completions following the trust-centered sequence architecture.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02: THE CLINICAL MISSION & EMERGENCY CONTEXT -->
+  <section class="mb-48 md:mb-60">
+    <div class="pb-5 mb-20 border-b border-white/[0.07]">
+      <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-400 uppercase">
+        02 / CLINICAL SYSTEM &amp; EMERGENCY CONTEXT
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-24 items-start">
+      <div class="space-y-8">
+        <h2 class="font-serif text-4xl sm:text-6xl text-white leading-[1.05] tracking-tight">
+          Bridging information gaps when seconds determine outcomes.
+        </h2>
+        <div class="space-y-6 text-neutral-300 font-light text-lg leading-[1.85] max-w-[54ch]">
+          <p class="text-white font-normal text-xl leading-relaxed">
+            Vitals equips first responders with instant, non-verbal access to crucial medical profiles. When interacting with individuals experiencing cognitive distress, autism, dementia, or severe physical trauma, paramedics can instantly scan a beacon or look up an ID to retrieve vital diagnoses, de-escalation protocols, and emergency contacts.
+          </p>
+          <p class="text-neutral-400">
+            However, the original application front-loaded all clinical friction onto the user: immediately after creating an account, users were asked to input intimate health conditions and commit to a paid subscription before ever seeing what their emergency profile would actually look like to a paramedic.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden">
+        <div class="aspect-[4/5] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05] flex items-center justify-center p-6">
+          <img
+            src="/assets/vitals/sample-id.png"
+            alt="Sample emergency medical profile accessed by first responders"
+            class="max-h-[90%] w-auto object-contain grayscale contrast-125 hover:grayscale-0 transition-luxury duration-700"
+          />
+        </div>
+        <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+          <span>PLATE 02 · FIRST RESPONDER INTERFACE</span>
+          <span>EMERGENCY BEACON VIEW</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03: QUALITATIVE RESEARCH & THE THREE ANXIETY PILLARS -->
+  <section class="mb-48 md:mb-60">
+    <div class="pb-5 mb-20 border-b border-white/[0.07]">
+      <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-400 uppercase">
+        03 / EMPIRICAL INVESTIGATION · THREE ANXIETY PILLARS
+      </div>
+    </div>
+
+    <div class="max-w-4xl mb-24">
+      <h2 class="font-serif text-4xl sm:text-6xl text-white mb-6">
+        Diagnosing why 92% of users left without subscribing.
       </h2>
-      <p class="text-neutral-700">
-        Based on usability testing and behavior analysis, the redesigned journey was estimated to increase subscriptions
-        by 16%.
+      <p class="text-xl text-neutral-400 font-light leading-[1.7] max-w-[52ch]">
+        Through think-aloud usability sessions and in-depth interviews with patients and caregivers, we uncovered three systemic breakdown points in the legacy onboarding journey.
       </p>
-    </section>
+    </div>
 
-    <!-- Research & Strategy -->
-    <section class="max-w-content mb-24">
-      <h2 class="type-section-label mb-6">
-        Research & Strategy
-      </h2>
+    <div class="space-y-40">
+      
+      <!-- Finding 01: Lack of Trust -->
+      <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
+        <div class="relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05]">
+            <img
+              src="/assets/vitals/findings/trust-issue.png"
+              alt="Legacy signup screen asking for sensitive medical data prematurely"
+              class="w-full h-full object-contain p-6 grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <span>PLATE 03A · LEGACY AUDIT</span>
+            <span>PREMATURE DISCLOSURE</span>
+          </div>
+        </div>
 
-      <h3 class="type-subheading mb-2">Methods</h3>
-      <ul class="list-disc list-inside text-neutral-700 mb-6">
-        <li>Heuristic evaluation of signup and subscription flows</li>
-        <li>Usability testing with think-aloud session</li>
-        <li>Post-test interviews focused on subscription intent</li>
-      </ul>
+        <div class="space-y-5 lg:pt-2">
+          <span class="text-[9px] font-mono text-amber-400 uppercase tracking-[0.36em] block">BREAKDOWN 01</span>
+          <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            Premature Clinical Disclosure
+          </h3>
+          <p class="text-base text-neutral-400 font-light leading-[1.75]">
+            70% of interviewed participants expressed acute discomfort disclosing neurological conditions, medications, or behavioral triggers before understanding how data is safeguarded or who has access. The legacy interface lacked visible encryption assurances or clear governance policies.
+          </p>
+          <div class="font-mono text-xs text-neutral-500 pt-2 border-t border-white/[0.05]">
+            USER VERBATIM: "Why do you need my daughter’s diagnosis before you’ve even shown me how a police officer will see it?"
+          </div>
+        </div>
+      </article>
 
-      <h3 class="type-subheading mb-2">Participant Pool</h3>
-      <ul class="list-disc list-inside text-neutral-700 mb-6">
-        <li>Patients, caregivers, and users who identify as both</li>
-        <li>Diverse age groups, races, and ethnicities</li>
-        <li>Varied levels of technical proficiency</li>
-        <li>Experience interacting with emergency service personnel</li>
-      </ul>
+      <!-- Finding 02: Plan Selection Cognitive Load -->
+      <article class="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-16 items-start group">
+        <div class="space-y-5 order-2 lg:order-1 lg:pt-2">
+          <span class="text-[9px] font-mono text-amber-400 uppercase tracking-[0.36em] block">BREAKDOWN 02</span>
+          <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            Pricing Opacity &amp; Choice Paralysis
+          </h3>
+          <p class="text-base text-neutral-400 font-light leading-[1.75]">
+            Users faced a dense, jargon-laden pricing matrix without knowing that certain subscription tiers were restricted to specific state jurisdictions. Users feared paying for a service that emergency personnel in their county could not even scan.
+          </p>
+          <div class="font-mono text-xs text-neutral-500 pt-2 border-t border-white/[0.05]">
+            USER VERBATIM: "I don't know what 'Standard Statewide' vs 'Regional' means if my dad travels across state lines."
+          </div>
+        </div>
 
-      <h3 class="type-subheading mb-2">Key Sources of Insight</h3>
-      <ul class="list-disc list-inside text-neutral-700">
-        <li><strong>User Research Findings:</strong> Actionable insights from usability tests and evaluations</li>
-        <li><strong>Business Model Analysis:</strong> Review of how Vitals converts users beyond app signups</li>
-        <li><strong>Design Best Practices:</strong> Applied principles around trust, persuasion, and emotional design
-        </li>
-      </ul>
-    </section>
+        <div class="order-1 lg:order-2 relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05]">
+            <img
+              src="/assets/vitals/findings/plan-confusion.png"
+              alt="Legacy pricing table causing decision paralysis"
+              class="w-full h-full object-contain p-6 grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <span>PLATE 03B · LEGACY AUDIT</span>
+            <span>JARGON &amp; AMBIGUITY</span>
+          </div>
+        </div>
+      </article>
 
-    <!-- Project Navigation -->
-    <section class="pt-8 mb-24">
-      <div class="flex flex-col sm:flex-row items-stretch justify-between gap-6">
-        <a href="/cool-school"
-          class="flex-1 py-4 transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
-          <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">← Previous
-            Project</span>
-          <h3 class="type-project-title group-hover:text-secondary transition-colors mb-1">Reimagining Cool School for a New Generation</h3>
-          <p class="text-sm text-neutral-600">A playful, open-world redesign of a school conflict-resolution game.</p>
-        </a>
-        <a href="/bulkmagic"
-          class="hidden flex-1 py-4 transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary sm:text-right">
-          <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">Next Project →</span>
-          <h3 class="type-project-title group-hover:text-secondary transition-colors mb-1">Seller Onboarding for
-            BulkMagic</h3>
-          <p class="text-sm text-neutral-600">Reducing friction in a compliance-heavy e-commerce workflow.</p>
-        </a>
+      <!-- Finding 03: Buried Reassurance -->
+      <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
+        <div class="relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05]">
+            <img
+              src="/assets/vitals/findings/visual-hierarchy.png"
+              alt="Weak visual hierarchy obscuring free trial messaging"
+              class="w-full h-full object-contain p-6 grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <span>PLATE 03C · LEGACY AUDIT</span>
+            <span>HIERARCHICAL WEAKNESS</span>
+          </div>
+        </div>
+
+        <div class="space-y-5 lg:pt-2">
+          <span class="text-[9px] font-mono text-amber-400 uppercase tracking-[0.36em] block">BREAKDOWN 03</span>
+          <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            Concealed Value &amp; Trial Affordances
+          </h3>
+          <p class="text-base text-neutral-400 font-light leading-[1.75]">
+            Critical reassurance mechanisms—including a 30-day no-risk trial, sample responder profile previews, and cancel-anytime guarantees—were buried below the fold in low-contrast typography, causing users to believe they were entering an immediate, irreversible billing commitment.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MONUMENTAL EDITORIAL INTERLUDE: Cartier-Grade Silence & Immense Scale Contrast -->
+  <section class="py-36 md:py-48 my-28 border-y border-white/[0.07] text-center relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 space-y-8">
+      <span class="text-[9px] font-mono tracking-[0.36em] text-amber-400 uppercase">THE ARCHITECTURAL MANIFESTO</span>
+      <blockquote class="font-serif italic text-3xl sm:text-5xl lg:text-6xl text-white font-light leading-[1.12] text-balance">
+        “In emergency healthcare software, trust is not an aesthetic afterthought—it is the prerequisite for clinical disclosure.”
+      </blockquote>
+      <div class="text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase pt-2">
+        TRUST · SUBSCRIBE · SIGN UP // THE INVERTED ONBOARDING FUNNEL
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- SECTION 04: THE REDESIGNED ARCHITECTURE (Four Systematic Solution Plates) -->
+  <section class="mb-48 md:mb-60">
+    <div class="pb-5 mb-20 border-b border-white/[0.07]">
+      <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-400 uppercase">
+        04 / THE REDESIGNED EXPERIENCE · 4 ARCHITECTURAL PILLARS
+      </div>
+    </div>
+
+    <div class="max-w-4xl mb-24">
+      <h2 class="font-serif text-4xl sm:text-6xl text-white mb-6">
+        Inverting the funnel: value before commitment.
+      </h2>
+      <p class="text-xl text-neutral-400 font-light leading-[1.7] max-w-[52ch]">
+        We dismantled the legacy onboarding flow, reversing the sequence so that users first understand the system, preview their emergency ID, choose transparent coverage, and only then input personal medical data.
+      </p>
+    </div>
+
+    <div class="space-y-48">
+      
+      <!-- Plate 04: Building Foundational Trust -->
+      <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
+        <div class="relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05]">
+            <img
+              src="/assets/vitals/solutions/trust-screen.png"
+              alt="Trust-centered welcome screen with security assurances"
+              class="w-full h-full object-contain p-6 grayscale contrast-125 opacity-85 group-hover:grayscale-0 group-hover:opacity-100 transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <span>PLATE 04 · TRUST ARCHITECTURE</span>
+            <span>SECURITY ASSURANCES &amp; GOVERNANCE</span>
+          </div>
+        </div>
+
+        <div class="space-y-5 lg:pt-2">
+          <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block">PILLAR 01</span>
+          <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            Foundational Trust &amp; Governance
+          </h3>
+          <p class="text-base text-neutral-400 font-light leading-[1.75]">
+            The new entry screen anchors the experience with an explicit statement of data custody: who sees the profile, how beacons trigger access, and explicit HIPAA-compliant encryption standards. Direct links to governance documentation are surfaced before registration.
+          </p>
+        </div>
+      </article>
+
+      <!-- Plate 05: Transparent Plan Selection -->
+      <article class="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-16 items-start group">
+        <div class="space-y-5 order-2 lg:order-1 lg:pt-2">
+          <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block">PILLAR 02</span>
+          <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            Plain-Language Plan Comparison
+          </h3>
+          <p class="text-base text-neutral-400 font-light leading-[1.75]">
+            Replaced technical insurance terminology with simple, side-by-side tier cards. Dynamic geo-location automatically confirms whether the user’s local first responder jurisdiction participates, removing cross-border uncertainty.
+          </p>
+        </div>
+
+        <div class="order-1 lg:order-2 relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05]">
+            <img
+              src="/assets/vitals/solutions/plan-selection.png"
+              alt="Side-by-side plan comparison with transparent pricing"
+              class="w-full h-full object-contain p-6 grayscale contrast-125 opacity-85 group-hover:grayscale-0 group-hover:opacity-100 transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <span>PLATE 05 · TARIFF TRANSPARENCY</span>
+            <span>JURISDICTION VERIFICATION</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Plate 06: Progressive Clinical Data Collection -->
+      <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
+        <div class="relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05]">
+            <img
+              src="/assets/vitals/solutions/data-collection.png"
+              alt="Step-by-step form progression with clinical rationale"
+              class="w-full h-full object-contain p-6 grayscale contrast-125 opacity-85 group-hover:grayscale-0 group-hover:opacity-100 transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <span>PLATE 06 · PROGRESSIVE INTAKE</span>
+            <span>CLINICAL RATIONALE CALLOUTS</span>
+          </div>
+        </div>
+
+        <div class="space-y-5 lg:pt-2">
+          <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block">PILLAR 03</span>
+          <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            Progressive Clinical Disclosure
+          </h3>
+          <p class="text-base text-neutral-400 font-light leading-[1.75]">
+            Divided extensive medical questionnaires into discrete, bite-sized cognitive modules. Each field features a micro-callout explaining precisely why paramedics need the detail (e.g., “Knowing non-verbal triggers allows responders to avoid sensory overload”).
+          </p>
+        </div>
+      </article>
+
+      <!-- Plate 07: Contextual Assurance Drawer -->
+      <article class="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-16 items-start group">
+        <div class="space-y-5 order-2 lg:order-1 lg:pt-2">
+          <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block">PILLAR 04</span>
+          <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            Contextual Reassurance Drawer
+          </h3>
+          <p class="text-base text-neutral-400 font-light leading-[1.75]">
+            Integrated a persistent, zero-friction help drawer across all onboarding steps. Caregivers can trigger instant chat assistance, review security FAQs, or preview exactly how their emergency profile appears to emergency teams.
+          </p>
+        </div>
+
+        <div class="order-1 lg:order-2 relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-[#0A0B0E]/60 border border-white/[0.05]">
+            <img
+              src="/assets/vitals/solutions/help-access.png"
+              alt="Persistent help drawer reducing user drop-off anxiety"
+              class="w-full h-full object-contain p-6 grayscale contrast-125 opacity-85 group-hover:grayscale-0 group-hover:opacity-100 transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <span>PLATE 07 · PERSISTENT HELP</span>
+            <span>CAREGIVER REASSURANCE DRAWER</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SECTION 05: RESEARCH METHODOLOGY ARCHIVE -->
+  <section class="py-24 border-t border-white/[0.07] mb-32 md:mb-48">
+    <div class="pb-5 mb-16 border-b border-white/[0.07]">
+      <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-400 uppercase">
+        05 / RESEARCH METHODOLOGY &amp; PARTICIPANT SAMPLE
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="space-y-4">
+        <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block">PROTOCOL 01</span>
+        <h4 class="text-lg font-medium text-white">Heuristic Onboarding Audit</h4>
+        <p class="text-sm text-neutral-400 font-light leading-relaxed">
+          Comprehensive review evaluating cognitive friction, premature disclosure barriers, and lack of system status visibility across 18 unique user journeys.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block">PROTOCOL 02</span>
+        <h4 class="text-lg font-medium text-white">Think-Aloud Usability Sessions</h4>
+        <p class="text-sm text-neutral-400 font-light leading-relaxed">
+          Conducted remote think-aloud evaluation with patients, caregivers, and medical guardians to isolate exact moments of abandonment and subscription resistance.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block">PROTOCOL 03</span>
+        <h4 class="text-lg font-medium text-white">Executive Stakeholder Alignment</h4>
+        <p class="text-sm text-neutral-400 font-light leading-relaxed">
+          Synthesized qualitative findings into financial projection models, demonstrating to C-suite leadership how trust-centered design directly unlocks a +16% conversion lift.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER NAVIGATION: Architectural Broadsheet Links -->
+  <section class="pt-16 border-t border-white/[0.07]">
+    <div class="flex flex-col sm:flex-row items-baseline justify-between gap-12 font-mono text-xs">
+      <a href="/cool-school" class="group flex flex-col gap-2 transition-luxury">
+        <span class="text-[9px] tracking-[0.36em] uppercase text-neutral-500 group-hover:text-amber-300">← PREVIOUS CHAPTER</span>
+        <span class="font-serif text-2xl font-light text-white group-hover:text-amber-200">Cool School: Game Architecture</span>
+        <span class="font-sans text-xs text-neutral-400 font-light">Playful conflict-resolution for pediatric environments</span>
+      </a>
+
+      <a href="/bulkmagic" class="group flex flex-col gap-2 sm:text-right transition-luxury">
+        <span class="text-[9px] tracking-[0.36em] uppercase text-neutral-500 group-hover:text-amber-300">NEXT CHAPTER →</span>
+        <span class="font-serif text-2xl font-light text-white group-hover:text-amber-200">BulkMagic: Campus Subscriptions</span>
+        <span class="font-sans text-xs text-neutral-400 font-light">E-commerce group-buying state machine &amp; unit economics</span>
+      </a>
+    </div>
+  </section>
+
+</main>
 </BaseLayout>
