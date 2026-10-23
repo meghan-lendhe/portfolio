@@ -327,10 +327,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     let width, height;
     let mouse = { x: -1000, y: -1000, isDown: false, active: false };
 
-    // Audio Engine (Web Audio API Synthesizer)
+    // Audio Engine: Tactile Acoustic Physical Synthesizer (Museum-Grade Micro-Acoustics)
     let audioCtx = null;
     let audioEnabled = false;
-    const pentatonicScale = [432, 486, 540, 648, 720, 864, 972]; // Ethereal Pythagorean tuning
+    // Luminous, tranquil pentatonic scale (D4, E4, F#4, A4, B4, D5, E5)
+    const pentatonicScale = [293.66, 329.63, 369.99, 440.00, 493.88, 587.33, 659.25];
 
     function initAudio() {
       if (!audioCtx) {
@@ -342,47 +343,155 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
     }
 
-    function playSynapticChime(freq = 540, volume = 0.08) {
+    // Tactile Sub-Threshold Droplet (Subtle bio-acoustic impulse on tap, never a beep)
+    function playTactileStimulus(intensity = 0.032) {
       if (!audioEnabled || !audioCtx) return;
       try {
+        const now = audioCtx.currentTime;
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
+        const filter = audioCtx.createBiquadFilter();
+
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(320, now);
 
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(150, now);
+        osc.frequency.exponentialRampToValueAtTime(70, now + 0.065);
 
-        gain.gain.setValueAtTime(0, audioCtx.currentTime);
-        gain.gain.linearRampToValueAtTime(volume, audioCtx.currentTime + 0.015);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.35);
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(intensity, now + 0.004);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.075);
 
         osc.connect(gain);
-        gain.connect(audioCtx.destination);
+        gain.connect(filter);
+        filter.connect(audioCtx.destination);
 
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.36);
+        osc.start(now);
+        osc.stop(now + 0.08);
       } catch(e) {}
     }
 
+    // Crystalline Celesta / Rhodes Tine Synaptic Chime (Warm physical harmonics, zero digital beep)
+    function playSynapticChime(freq = 440, volume = 0.065) {
+      if (!audioEnabled || !audioCtx) return;
+      try {
+        const now = audioCtx.currentTime;
+
+        // Warm analog low-pass shaping filter
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(2200, now);
+        filter.Q.setValueAtTime(0.9, now);
+
+        // 1. Fundamental acoustic body
+        const oscBody = audioCtx.createOscillator();
+        const gainBody = audioCtx.createGain();
+        oscBody.type = 'sine';
+        oscBody.frequency.setValueAtTime(freq, now);
+
+        gainBody.gain.setValueAtTime(0, now);
+        gainBody.gain.linearRampToValueAtTime(volume, now + 0.006);
+        gainBody.gain.exponentialRampToValueAtTime(0.0001, now + 0.52);
+
+        // 2. High celesta bell overtone (inharmonic 2.76x ratio for delicate crystalline shimmer)
+        const oscTine = audioCtx.createOscillator();
+        const gainTine = audioCtx.createGain();
+        oscTine.type = 'sine';
+        oscTine.frequency.setValueAtTime(freq * 2.76, now);
+
+        gainTine.gain.setValueAtTime(0, now);
+        gainTine.gain.linearRampToValueAtTime(volume * 0.24, now + 0.004);
+        gainTine.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
+
+        // 3. Tactile felt mallet transient
+        const oscMallet = audioCtx.createOscillator();
+        const gainMallet = audioCtx.createGain();
+        oscMallet.type = 'triangle';
+        oscMallet.frequency.setValueAtTime(freq * 0.5, now);
+        oscMallet.frequency.exponentialRampToValueAtTime(90, now + 0.035);
+
+        gainMallet.gain.setValueAtTime(volume * 0.32, now);
+        gainMallet.gain.exponentialRampToValueAtTime(0.0001, now + 0.038);
+
+        // Routing
+        oscBody.connect(gainBody);
+        gainBody.connect(filter);
+
+        oscTine.connect(gainTine);
+        gainTine.connect(filter);
+
+        oscMallet.connect(gainMallet);
+        gainMallet.connect(filter);
+
+        filter.connect(audioCtx.destination);
+
+        oscBody.start(now);
+        oscTine.start(now);
+        oscMallet.start(now);
+
+        oscBody.stop(now + 0.55);
+        oscTine.stop(now + 0.1);
+        oscMallet.stop(now + 0.045);
+      } catch(e) {}
+    }
+
+    // Graceful Cinematic Global Ignition Chord (Deep tranquil swell + spaced celestial harp sparkles)
     function playIgnitionChord() {
       if (!audioEnabled || !audioCtx) return;
       try {
-        const chord = [216, 324, 432, 540, 648];
-        chord.forEach((freq, idx) => {
+        const now = audioCtx.currentTime;
+
+        // Shared dynamic filter: sweeps open gently like dawn light, then settles into warm embers
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(280, now);
+        filter.frequency.exponentialRampToValueAtTime(1300, now + 1.1);
+        filter.frequency.exponentialRampToValueAtTime(240, now + 3.8);
+
+        const masterGain = audioCtx.createGain();
+        masterGain.gain.setValueAtTime(0, now);
+        masterGain.gain.linearRampToValueAtTime(0.07, now + 0.9); // Silky, unhurried swell
+        masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 3.9); // Long, peaceful decay
+
+        filter.connect(masterGain);
+        masterGain.connect(audioCtx.destination);
+
+        // Expansive, serene open chord (D major 9th / D - A - E - F# - A - D)
+        const chordTones = [146.83, 220.00, 329.63, 369.99, 440.00, 587.33];
+        chordTones.forEach((freq, idx) => {
           const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
+          const noteGain = audioCtx.createGain();
           osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          osc.frequency.setValueAtTime(freq, now);
 
-          gain.gain.setValueAtTime(0, audioCtx.currentTime);
-          gain.gain.linearRampToValueAtTime(0.045, audioCtx.currentTime + 0.4 + idx * 0.08);
-          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.8);
+          // Subtle staggered voice entry for natural breath
+          const voiceDelay = idx * 0.04;
+          noteGain.gain.setValueAtTime(0, now);
+          noteGain.gain.linearRampToValueAtTime(0.18, now + 0.8 + voiceDelay);
+          noteGain.gain.exponentialRampToValueAtTime(0.0001, now + 3.8);
 
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
+          osc.connect(noteGain);
+          noteGain.connect(filter);
 
-          osc.start();
-          osc.stop(audioCtx.currentTime + 2.9);
+          osc.start(now);
+          osc.stop(now + 3.9);
         });
+
+        // 4 Spaced Crystalline Sparkles following the wavefront (pure grace, zero cacophony)
+        const sparkles = [
+          { time: 0.18, freq: 587.33 },
+          { time: 0.48, freq: 739.99 },
+          { time: 0.82, freq: 880.00 },
+          { time: 1.20, freq: 1174.66 }
+        ];
+
+        sparkles.forEach(s => {
+          setTimeout(() => {
+            playSynapticChime(s.freq, 0.035);
+          }, s.time * 1000);
+        });
+
       } catch(e) {}
     }
 
@@ -400,7 +509,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           audioIcon.textContent = '🔊';
           audioLabel.textContent = 'HARMONICS: ON';
           audioBtn.classList.add('border-amber-400', 'text-amber-800', 'bg-amber-50');
-          playSynapticChime(648, 0.1);
+          playSynapticChime(587.33, 0.07);
         } else {
           audioIcon.textContent = '🔇';
           audioLabel.textContent = 'HARMONICS: OFF';
@@ -481,6 +590,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         return;
       }
 
+      let anyFired = false;
+      let anyStimulated = false;
+
       for (let i = 0; i < neurons.length; i++) {
         const n = neurons[i];
         n.isEngramRecruited = false;
@@ -490,11 +602,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           const stimulus = Math.pow(1 - dist / 240, 1.3) * 0.75;
           if (n.refractory <= 0) {
             n.potential += stimulus;
+            anyStimulated = true;
             if (n.potential >= n.currentThreshold) {
               fireNeuron(n, -1, 0);
+              anyFired = true;
             }
           }
         }
+      }
+
+      if (!anyFired && anyStimulated) {
+        playTactileStimulus(0.032);
       }
     });
 
@@ -665,7 +783,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           n.spikeEnergy = 1.0;
           n.potential = 0.0;
           n.refractory = 40;
-          playSynapticChime(pentatonicScale[n.id % pentatonicScale.length], 0.03);
         }, delay);
       });
 
