@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      background-color: #FAF9F5;
+      color: #171717;
+      font-family: 'Newsreader', Georgia, serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient radial glow */
+    .ambient-glow {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 650px;
+      height: 650px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, rgba(13, 148, 136, 0.04) 45%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Inset Hairline Frame */
+    .frame {
+      width: 1120px;
+      height: 550px;
+      border: 1px solid rgba(229, 226, 218, 0.9);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 56px 64px;
+      background: rgba(250, 249, 245, 0.7);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .seal-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .seal-svg {
+      width: 28px;
+      height: 28px;
+      color: #171717;
+    }
+
+    .meta-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #737373;
+    }
+
+    /* Center Content */
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .title {
+      font-size: 78px;
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: #0A0A0A;
+    }
+
+    .subtitle {
+      font-size: 28px;
+      font-weight: 300;
+      color: #525252;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .pill-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #737373;
+      padding: 6px 14px;
+      border: 1px solid rgba(212, 212, 212, 0.8);
+      border-radius: 9999px;
+      background: #FAF9F5;
+    }
+
+    .pill-accent {
+      color: #B45309;
+      border-color: rgba(217, 119, 6, 0.35);
+      background: rgba(217, 119, 6, 0.04);
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(229, 226, 218, 0.9);
+      padding-top: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #737373;
+    }
+
+    .domain {
+      color: #171717;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <div class="frame">
+    <!-- Header -->
+    <div class="header">
+      <div class="seal-lockup">
+        <svg class="seal-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <path d="M16 2v10M16 12l-5 6h10l-5-6ZM11 18l-4 8M21 18l4 8M16 18v12M14 26h4" />
+          <circle cx="16" cy="14" r="1.75" fill="#D97706" stroke="#D97706" />
+        </svg>
+        <span class="meta-tag">Santiago Ramón y Cajal Seal · 2026</span>
+      </div>
+      <span class="meta-tag">Portfolio Monograph</span>
+    </div>
+
+    <!-- Center Content -->
+    <div class="center-content">
+      <h1 class="title">Meghan Lendhe</h1>
+      <p class="subtitle">Product Designer &amp; NeuroHCI Researcher</p>
+      
+      <div class="pill-row">
+        <span class="pill pill-accent">NeurIPS 2026 Foundation Challenge</span>
+        <span class="pill">Brain-Computer Interfaces</span>
+        <span class="pill">Complex Systems Design</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="domain">meghan.in</span>
+      <span>Salt Lake City, Utah · Systems Architecture</span>
+    </div>
+  </div>
+</body>
+</html>

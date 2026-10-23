@@ -5,12 +5,21 @@ import Navbar from '../components/Navbar.astro';
 
 interface Props {
   title: string;
+  description?: string;
   includeCaseStudyScript?: boolean;
   theme?: 'light' | 'dark';
 }
 
-const { title, includeCaseStudyScript = false, theme = 'light' } = Astro.props;
+const {
+  title,
+  description = "Product Designer & NeuroHCI Researcher specializing in neural interfaces, biosignal computing (EEG/EMG), and high-complexity human-system operational workflows.",
+  includeCaseStudyScript = false,
+  theme = 'light'
+} = Astro.props;
+
 const isDark = theme === 'dark';
+const canonicalUrl = new URL(Astro.url.pathname, 'https://meghan.in').href;
+const ogImageUrl = 'https://meghan.in/assets/og-image.png';
 ---
 
 <!doctype html>
@@ -19,6 +28,30 @@ const isDark = theme === 'dark';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicon: Santiago Ramón y Cajal Pyramidal Neuron -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Open Graph (LinkedIn, iMessage, Slack, Facebook) -->
+    <meta property="og:site_name" content="Meghan Lendhe" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Meghan Lendhe — Product Designer & NeuroHCI Researcher" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Libre+Franklin:wght@100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet" />

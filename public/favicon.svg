@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .pyramidal-stroke { stroke: #171717; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .bouton { fill: #D97706; stroke: #D97706; }
+    @media (prefers-color-scheme: dark) {
+      .pyramidal-stroke { stroke: #FAF9F5; }
+      .bouton { fill: #F59E0B; stroke: #F59E0B; }
+    }
+  </style>
+  <!-- Apical dendrite & branches -->
+  <path class="pyramidal-stroke" stroke-width="2.75" d="M32 6v18M32 12l-7-5M32 12l7-5" />
+  <!-- Pyramidal cell body (Soma) -->
+  <path class="pyramidal-stroke" stroke-width="2.75" d="M32 24l-10 13h20l-10-13Z" />
+  <!-- Basal dendritic arbor -->
+  <path class="pyramidal-stroke" stroke-width="2.75" d="M22 37l-9 15M42 37l9 15M27 37l-4 17M37 37l4 17" />
+  <!-- Axon & collateral -->
+  <path class="pyramidal-stroke" stroke-width="2.75" d="M32 37v21M26 52h12" />
+  <!-- Synaptic action potential bouton -->
+  <circle cx="32" cy="29" r="3" class="bouton" />
+</svg>
