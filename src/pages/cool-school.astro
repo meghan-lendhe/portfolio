@@ -2,230 +2,367 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Cool School — Reimagining a Conflict-Resolution Game" includeCaseStudyScript>
-<main id="main" class="max-w-page mx-auto px-6 py-16 md:py-24">
-    <!-- Hero -->
-    <section class="mb-12 md:mb-16">
-      <div class="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] items-end gap-6 md:gap-12 mb-8">
-        <div>
-          <p class="type-eyebrow mb-5">Cool School · Game redesign</p>
-          <h1 class="type-page-title max-w-[14ch]">
-            A school game made for today’s kids
-          </h1>
-        </div>
-        <p class="text-neutral-700 text-lg max-w-prose md:pb-1">
-          Reimagining a conflict-resolution game for ages 4–7 as a playful school world kids can explore, shape, and return to.
-        </p>
-      </div>
-    </section>
+<BaseLayout title="Cool School — Reimagining a Conflict-Resolution Game" theme="light" includeCaseStudyScript>
+<!-- Luminous Gallery Atmosphere: Layered Warm Ambient Gradients -->
+<div class="fixed inset-0 pointer-events-none -z-20 bg-[#FAF9F5]"></div>
+<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_75%_55%_at_70%_10%,rgba(217,119,6,0.045),transparent_65%)]"></div>
+<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
+<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
-    <figure class="mb-16 md:mb-24">
-      <img src="/assets/cool-school/music-room-npc.png" alt="Characters interacting in the Cool School music room"
-        class="w-full h-auto" />
-      <figcaption class="mt-3 text-xs text-neutral-500">A lively school world, with characters and places to discover.</figcaption>
-    </figure>
+<main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-20 md:pt-32 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
-    <!-- Overview -->
-    <section class="py-2 mb-20 md:mb-28">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 text-sm">
-        <div>
-          <span class="block text-neutral-500 mb-1">Audience</span>
-          Children ages 4–7
-        </div>
-        <div>
-          <span class="block text-neutral-500 mb-1">Team</span>
-          Four-person design research team
-        </div>
-        <div>
-          <span class="block text-neutral-500 mb-1">My role</span>
-          Research · Co-design · Environment design
-        </div>
-        <div>
-          <span class="block text-neutral-500 mb-1">Focus</span>
-          Game redesign · Co-design · Research
-        </div>
-      </div>
-    </section>
+  <!-- CASE STUDY HEADER / FOLIO ARCHIVE DATELINE -->
+  <header class="flex flex-wrap items-center justify-between gap-6 pb-6 mb-16 text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase border-b border-neutral-200">
+    <div class="flex items-center gap-3">
+      <a href="/" class="text-neutral-950 hover:text-amber-700 transition-luxury font-medium">MEGHAN LENDHE</a>
+      <span class="text-neutral-300">/</span>
+      <span>CASE STUDY 05</span>
+    </div>
+    <div class="flex items-center gap-6 text-neutral-500">
+      <span>PEDIATRIC INTERACTION ARCHITECTURE</span>
+      <span class="text-neutral-300">/</span>
+      <span class="text-neutral-700">PARTICIPATORY CO-DESIGN &amp; GAMEPLAY</span>
+    </div>
+  </header>
 
-    <!-- Context -->
-    <section class="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-8 md:gap-16 mb-20 md:mb-28">
-      <div>
-        <p class="type-eyebrow mb-4">The starting point</p>
-        <h2 class="type-section-title max-w-[16ch]">A meaningful lesson in an outdated game</h2>
-      </div>
-      <div class="max-w-content">
-        <p class="text-neutral-700 mb-4">
-          Cool School was created to teach young children how to handle conflicts at school. Players resolved 26
-          conflicts, each linked to a letter-based trophy; collecting A through Z meant the game was complete.
-        </p>
-        <p class="text-neutral-700">
-          The game had become dated. Our four-person design research team set out to make it engaging for today’s
-          children and relevant for longer, while keeping its extensively researched learning mechanism.
-        </p>
-      </div>
-    </section>
-
-    <!-- Design direction -->
-    <section class="bg-neutral-100 px-6 py-8 md:px-12 md:py-10 mb-20 md:mb-28">
-      <p class="type-eyebrow mb-4">The design shift</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 items-start">
-        <h2 class="type-section-title">Keep the learning. Give kids more reasons to play.</h2>
-        <p class="text-neutral-700">
-          We expanded the experience around conflict resolution: an open school to explore, characters and places
-          to discover, and playful activities that make the world feel alive between learning moments.
-        </p>
-      </div>
-    </section>
-
-    <!-- Redesign -->
-    <section class="mb-20 md:mb-32">
-      <div class="mb-10 md:mb-14">
-        <p class="type-eyebrow mb-4">Inside the redesign</p>
-        <h2 class="type-section-title max-w-[18ch]">A world to explore. A character to make your own.</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16 items-center mb-14 md:mb-20">
-        <div class="max-w-md">
-          <p class="type-eyebrow mb-4">01 · Explore & play</p>
-          <h3 class="type-feature-title mb-3">Make the whole school part of the game.</h3>
-          <p class="text-neutral-700">
-            Children can move between and inside school buildings, meet characters, and discover spontaneous
-            interactions—some tied to conflicts, some just for fun. Mini-games like playing fetch add more to do.
-          </p>
-        </div>
-        <div class="bg-neutral-100 px-6 py-8 md:px-10 md:py-12">
-          <p class="type-eyebrow mb-5">A school with room to roam</p>
-          <p class="type-feature-title">
-            Explore between buildings.<br />
-            Meet someone new.<br />
-            Stop and play.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-8 md:gap-16 items-center mb-14 md:mb-20">
-        <figure class="md:order-1">
-          <img src="/assets/cool-school/avatar-customization.png" alt="Avatar customization screen with clothing and appearance options"
-            class="w-full h-auto" />
-          <figcaption class="mt-3 text-xs text-neutral-500">Choose an avatar and customize its look.</figcaption>
-        </figure>
-        <div class="max-w-md md:order-2">
-          <p class="type-eyebrow mb-4">02 · Make it yours</p>
-          <h3 class="type-feature-title mb-3">A character that feels like their own.</h3>
-          <p class="text-neutral-700">
-            Customizable avatars let children express themselves. Accessories earned with XP and coins extend that
-            sense of ownership as they play.
-          </p>
-        </div>
-      </div>
-
-      <div class="pt-2">
-        <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16 items-start">
-          <div class="max-w-md">
-            <p class="type-eyebrow mb-4">03 · Keep progressing</p>
-            <h3 class="type-feature-title mb-3">Give every visit a new goal.</h3>
-            <p class="text-neutral-700">
-              Daily achievements and an open-ended number of conflicts replace the original fixed A-to-Z finish line.
-              Players earn XP and coins, then spend coins on avatar accessories.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <figure>
-              <img src="/assets/cool-school/achievements.png" alt="Cool School achievements screen showing goals and rewards"
-                class="w-full h-auto" />
-              <figcaption class="mt-3 text-xs text-neutral-500">Achievements make progress visible.</figcaption>
-            </figure>
-            <figure>
-              <img src="/assets/cool-school/accessories-shop.png" alt="In-game shop where players can spend coins on avatar accessories"
-                class="w-full h-auto" />
-              <figcaption class="mt-3 text-xs text-neutral-500">Coins unlock items in the shop.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Prototype -->
-    <section class="mb-20 md:mb-28">
-      <div class="py-6 mb-4">
-        <div data-prototype-placeholder class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h2 class="type-section-label mb-2">Try the prototype</h2>
-            <p class="text-sm text-neutral-600 max-w-prose">
-              This prototype includes many assets, music, and videos. It may take a while to load and run smoothly.
-            </p>
-          </div>
-          <div class="flex shrink-0 flex-col items-start gap-2 sm:items-end">
-            <button type="button" data-load-prototype
-              class="inline-flex items-center gap-2 bg-black px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
-              <span aria-hidden="true">▶</span> Play prototype
-            </button>
-            <a href="https://www.figma.com/proto/KvYJ7MyuaJeb8vZejYV0XJ/Sprint-5-Final-Prototype-Copy?node-id=202-27991&amp;t=xEFnCj4QRz8vnQLv-0&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=202%3A27991&amp;show-proto-sidebar=1"
-              target="_blank" rel="noopener noreferrer"
-              class="text-xs text-neutral-600 underline underline-offset-4 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
-              Open in Figma <span aria-hidden="true">↗</span>
-              <span class="sr-only">(opens in a new tab)</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div data-prototype-frame class="aspect-video w-full" hidden></div>
-    </section>
-
-    <!-- Process -->
-    <section class="mb-20 md:mb-28">
-      <div class="max-w-content mb-8">
-        <p class="type-eyebrow mb-4">My role · Team of four</p>
-        <h2 class="type-section-title">Research with kids. Design with purpose.</h2>
-      </div>
-      <ol class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
-        <li class="pt-5">
-          <span class="font-display text-sm text-neutral-500">01</span>
-          <h3 class="type-subheading mt-3 mb-2">Research game patterns</h3>
-          <p class="text-sm text-neutral-700">Competitive research into game-design patterns in kids’ games.</p>
-        </li>
-        <li class="pt-5">
-          <span class="font-display text-sm text-neutral-500">02</span>
-          <h3 class="type-subheading mt-3 mb-2">Co-design with children</h3>
-          <p class="text-sm text-neutral-700">Planned and facilitated KidsTeam sessions; synthesized child and expert feedback.</p>
-        </li>
-        <li class="pt-5">
-          <span class="font-display text-sm text-neutral-500">03</span>
-          <h3 class="type-subheading mt-3 mb-2">Make the ideas tangible</h3>
-          <p class="text-sm text-neutral-700">Designed environment assets and built the Figma prototype.</p>
-        </li>
-      </ol>
-      <p class="text-neutral-700 mt-10 max-w-content">
-        Through the redesign, we kept the original, extensively researched approach to teaching conflict resolution.
+  <!-- HERO SECTION: Monumental Headline & Narrative Scale Bridge -->
+  <section class="mb-32 md:mb-48">
+    <div class="max-w-6xl mb-20">
+      <span class="text-[9px] font-mono tracking-[0.36em] text-amber-700 uppercase block mb-6 font-medium">
+        PEDIATRIC BEHAVIORAL INTERACTION DESIGN // CO-DESIGN RESEARCH
+      </span>
+      <h1 class="font-serif text-5xl sm:text-7xl lg:text-[6.5rem] font-normal leading-[0.94] tracking-[-0.04em] text-neutral-950 mb-10 text-balance">
+        A School Game Made for Today's Kids.
+      </h1>
+      <p class="text-2xl sm:text-3xl text-neutral-700 font-light leading-snug tracking-tight mb-14 max-w-[50ch]">
+        Reimagining an evidence-based conflict-resolution game for ages 4–7 as an open, exploratory world children can shape, personalize, and return to.
       </p>
-    </section>
 
-    <!-- Reflection -->
-    <section class="max-w-content mb-24">
-      <h2 class="type-section-label mb-4">Reflection</h2>
-      <p class="text-neutral-700">
-        This redesign explored how the game could feel more open-ended and inviting without losing sight of what it
-        was built to teach. The work combined children's perspectives, expert feedback, and familiar game patterns
-        with a refreshed visual direction.
-      </p>
-    </section>
+      <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-24 items-start pt-6 border-t border-neutral-200">
+        <div>
+          <p class="text-xl sm:text-2xl text-neutral-600 font-light leading-[1.75] max-w-[52ch] text-pretty mb-8">
+            Cool School was originally designed to teach young children evidence-based strategies for navigating interpersonal conflicts. While its educational foundation was robust, the linear A-to-Z gameplay felt dated to contemporary children. <span class="text-neutral-950 font-normal underline decoration-neutral-300 underline-offset-8">Our team transformed the experience</span> into an expansive, agency-driven school campus.
+          </p>
+          <div class="font-serif italic text-2xl sm:text-3xl text-neutral-800 leading-relaxed max-w-[46ch]">
+            “Teaching young children social-emotional resilience works best not through moral lecturing, but by granting agency within an environment that rewards exploration.”
+          </div>
+        </div>
 
-    <!-- Project Navigation -->
-    <section class="pt-8 mb-24">
-      <div class="flex flex-col sm:flex-row items-stretch justify-between gap-6">
-        <a href="/alirtify" class="flex-1 py-4 transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
-          <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">← Previous Project</span>
-          <h3 class="type-project-title group-hover:text-secondary transition-colors mb-1">Designing a Data-Driven UX for News Validation</h3>
-          <p class="text-sm text-neutral-600">Translating qualitative research into ethical UX validation signals.</p>
-        </a>
-        <a href="/vitals" class="flex-1 py-4 transition group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary sm:text-right">
-          <span class="block text-xs font-display uppercase tracking-widest text-neutral-500 mb-2">Next Project →</span>
-          <h3 class="type-project-title group-hover:text-secondary transition-colors mb-1">Reducing Friction, Boosting Vitals Subscriptions</h3>
-          <p class="text-sm text-neutral-600">Designing for trust and conversion in a sensitive medical ID product.</p>
-        </a>
+        <!-- Margin Ledger: Project Specifications (Pure Broadsheet Typography) -->
+        <div class="space-y-8 lg:pt-2 pl-0 lg:pl-10">
+          <div class="text-[9px] font-mono uppercase tracking-[0.36em] text-neutral-500">PROJECT COORDINATES</div>
+          <dl class="space-y-6 text-xs font-mono">
+            <div>
+              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">TARGET AUDIENCE</dt>
+              <dd class="text-neutral-950 text-base font-medium">Children Ages 4–7</dd>
+              <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Early pediatric developmental stage</dd>
+            </div>
+            <div>
+              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">RESEARCH METHODOLOGY</dt>
+              <dd class="text-neutral-950 text-base font-medium">Participatory Co-Design</dd>
+              <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">KidsTeam co-design sessions &amp; expert feedback</dd>
+            </div>
+            <div>
+              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">ROLE &amp; OWNERSHIP</dt>
+              <dd class="text-neutral-950 text-base font-medium">Co-Design Lead &amp; Environment UX</dd>
+              <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Four-person design research team</dd>
+            </div>
+            <div>
+              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">CORE DELIVERABLES</dt>
+              <dd class="text-neutral-950 text-base font-medium">Interactive Figma Prototype</dd>
+              <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Customizable avatars, achievements &amp; campus map</dd>
+            </div>
+          </dl>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+
+    <!-- Monumental Hero Image Spread -->
+    <div class="relative overflow-hidden pt-8 border-t border-neutral-200">
+      <div class="aspect-[16/10] overflow-hidden bg-white/90 border border-neutral-200/90 shadow-xs flex items-center justify-center p-6 md:p-12">
+        <img
+          src="/assets/cool-school/music-room-npc.png"
+          alt="Characters interacting in the Cool School music room"
+          class="w-full h-full object-contain hover:scale-[1.01] transition-luxury duration-700"
+        />
+      </div>
+      <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-neutral-200 pt-3">
+        <span>PLATE 01 · THE LIVING SCHOOL CAMPUS</span>
+        <span>MUSIC ROOM EXPLORATION &amp; NPC INTERACTION</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 01: MONUMENTAL METRICS LEDGER (Zero-Box Scale Contrast) -->
+  <section class="py-24 border-y border-neutral-200 mb-36 md:mb-52">
+    <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase mb-16">
+      01 / PEDAGOGICAL SCOPE &amp; PARTICIPATORY DESIGN
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+      <div class="space-y-4">
+        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-light text-neutral-950 tracking-tight">
+          4–7<span class="text-amber-700 font-sans text-4xl sm:text-5xl"> Yrs</span>
+        </div>
+        <div class="text-[10px] font-mono uppercase tracking-[0.32em] text-neutral-600 font-medium">DEVELOPMENTAL AGE BAND</div>
+        <p class="text-sm text-neutral-600 font-light leading-relaxed max-w-[32ch]">
+          Tailored to early childhood cognition, prioritizing visual-spatial guidance and voice-assisted micro-prompts.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-light text-neutral-950 tracking-tight">
+          26<span class="text-amber-700 font-sans text-4xl sm:text-5xl"> Units</span>
+        </div>
+        <div class="text-[10px] font-mono uppercase tracking-[0.32em] text-neutral-600 font-medium">CONFLICT RESOLUTION SCENARIOS</div>
+        <p class="text-sm text-neutral-600 font-light leading-relaxed max-w-[32ch]">
+          Extensively researched behavioral science challenges re-anchored into natural, open-world campus locations.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-light text-neutral-950 tracking-tight">
+          100<span class="text-amber-700 font-sans text-4xl sm:text-5xl">%</span>
+        </div>
+        <div class="text-[10px] font-mono uppercase tracking-[0.32em] text-neutral-600 font-medium">PEDAGOGICAL FIDELITY PRESERVED</div>
+        <p class="text-sm text-neutral-600 font-light leading-relaxed max-w-[32ch]">
+          Maintained clinical learning efficacy while replacing rigid linear rail progression with exploratory agency.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02: THE LEARNING SHIFT · BEYOND THE FIXED RAIL -->
+  <section class="mb-48 md:mb-60">
+    <div class="pb-5 mb-20 border-b border-neutral-200">
+      <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase">
+        02 / THE ARCHITECTURAL SHIFT · KEEP THE LEARNING, EXPAND PLAY
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-24 items-start">
+      <div class="space-y-8">
+        <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight">
+          Giving young learners reasons to explore between lessons.
+        </h2>
+        <div class="space-y-6 text-neutral-600 font-light text-lg leading-[1.85] max-w-[54ch]">
+          <p class="text-neutral-900 font-normal text-xl leading-relaxed">
+            In the original game, resolving 26 conflicts meant collecting A through Z trophies in a strict linear rail. Once finished, children had zero incentive to replay or deepen their emotional mastery.
+          </p>
+          <p class="text-neutral-500">
+            We expanded the world beyond isolated tests: children freely explore school buildings, initiate spontaneous interactions with quirky peers, and unlock cosmetic avatar accessories through active empathy and conflict de-escalation.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-6 font-mono text-xs text-neutral-600 pt-2 border-t border-neutral-200">
+        <div class="text-[9px] uppercase tracking-[0.36em] text-neutral-500">REDESIGN PILLARS</div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <span class="text-amber-700 font-medium">01</span>
+            <span>Unconstrained campus navigation with playful micro-interactions.</span>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-amber-700 font-medium">02</span>
+            <span>Self-directed avatar customization establishing personal investment.</span>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-amber-700 font-medium">03</span>
+            <span>Open-ended achievement economy replacing the finite A-to-Z rail.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03: PLAY ARCHITECTURE (Four Solution Plates) -->
+  <section class="mb-48 md:mb-60">
+    <div class="pb-5 mb-20 border-b border-neutral-200">
+      <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase">
+        03 / PLAY SYSTEM ARCHITECTURE · THREE CORE PILLARS
+      </div>
+    </div>
+
+    <div class="max-w-4xl mb-24">
+      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 mb-6">
+        A world to explore. A character to make your own.
+      </h2>
+      <p class="text-xl text-neutral-600 font-light leading-[1.7] max-w-[52ch]">
+        The new system pairs emotional learning with expressive agency, giving children autonomy over how they present themselves and navigate school spaces.
+      </p>
+    </div>
+
+    <div class="space-y-48">
+      
+      <!-- Plate 02: Avatar Customization -->
+      <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
+        <div class="relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-white/90 border border-neutral-200/90 shadow-xs">
+            <img
+              src="/assets/cool-school/avatar-customization.png"
+              alt="Avatar customization screen with clothing and appearance options"
+              class="w-full h-full object-contain p-6 group-hover:scale-[1.01] transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-neutral-200 pt-3">
+            <span>PLATE 02 · IDENTITY &amp; EXPRESSION</span>
+            <span>AVATAR CUSTOMIZATION SUITE</span>
+          </div>
+        </div>
+
+        <div class="space-y-5 lg:pt-2">
+          <span class="text-[9px] font-mono text-amber-700 uppercase tracking-[0.36em] block font-medium">FEATURE 01</span>
+          <h3 class="text-3xl font-serif text-neutral-950 group-hover:text-amber-800 transition-colors">
+            A Character to Make Their Own
+          </h3>
+          <p class="text-base text-neutral-600 font-light leading-[1.75]">
+            Customizable avatars allow young children to express their unique identities. Earning shirts, hats, and glasses through de-escalation achievements extends their emotional investment in their digital surrogate.
+          </p>
+        </div>
+      </article>
+
+      <!-- Plate 03: Daily Achievements & Continuous Goals -->
+      <article class="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-16 items-start group">
+        <div class="space-y-5 order-2 lg:order-1 lg:pt-2">
+          <span class="text-[9px] font-mono text-amber-700 uppercase tracking-[0.36em] block font-medium">FEATURE 02</span>
+          <h3 class="text-3xl font-serif text-neutral-950 group-hover:text-amber-800 transition-colors">
+            Daily Goals &amp; Open Progress
+          </h3>
+          <p class="text-base text-neutral-600 font-light leading-[1.75]">
+            Dynamic daily challenges replace the static 26-step finish line. Players earn XP and coins by demonstrating empathy, listening skills, and cooperative sharing across different campus zones.
+          </p>
+        </div>
+
+        <div class="order-1 lg:order-2 relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-white/90 border border-neutral-200/90 shadow-xs">
+            <img
+              src="/assets/cool-school/achievements.png"
+              alt="Cool School achievements screen showing goals and rewards"
+              class="w-full h-full object-contain p-6 group-hover:scale-[1.01] transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-neutral-200 pt-3">
+            <span>PLATE 03 · BEHAVIORAL INCENTIVES</span>
+            <span>DAILY ACHIEVEMENTS &amp; REWARD ENGINE</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Plate 04: In-Game Accessories Shop -->
+      <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
+        <div class="relative overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden bg-white/90 border border-neutral-200/90 shadow-xs">
+            <img
+              src="/assets/cool-school/accessories-shop.png"
+              alt="In-game shop where players can spend coins on avatar accessories"
+              class="w-full h-full object-contain p-6 group-hover:scale-[1.01] transition-luxury duration-700"
+            />
+          </div>
+          <div class="flex items-center justify-between text-[10px] font-mono tracking-[0.36em] text-neutral-500 uppercase mt-4 border-t border-neutral-200 pt-3">
+            <span>PLATE 04 · MICRO-ECONOMY</span>
+            <span>VIRTUAL ACCESSORIES BOUTIQUE</span>
+          </div>
+        </div>
+
+        <div class="space-y-5 lg:pt-2">
+          <span class="text-[9px] font-mono text-amber-700 uppercase tracking-[0.36em] block font-medium">FEATURE 03</span>
+          <h3 class="text-3xl font-serif text-neutral-950 group-hover:text-amber-800 transition-colors">
+            Incentive Loop &amp; Reinforcement
+          </h3>
+          <p class="text-base text-neutral-600 font-light leading-[1.75]">
+            A kid-friendly virtual boutique lets learners spend earned currency on animated accessories. This creates an ethical, rewarding loop where pro-social resolution translates directly into delightful self-expression.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SECTION 04: INTERACTIVE FIGMA PROTOTYPE EMBED -->
+  <section class="py-24 border-y border-neutral-200 mb-36 md:mb-52">
+    <div class="pb-5 mb-16 border-b border-neutral-200">
+      <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase">
+        04 / VERIFIED EXPERIENCE · INTERACTIVE PROTOTYPE
+      </div>
+    </div>
+
+    <div class="bg-white/90 border border-neutral-200/90 shadow-xs p-8 md:p-12">
+      <div data-prototype-placeholder class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h3 class="font-serif text-3xl text-neutral-950 mb-2">Experience the Cool School Campus Prototype</h3>
+          <p class="text-sm text-neutral-600 font-light max-w-prose">
+            This interactive prototype includes full environment navigation, audio assets, and avatar styling.
+          </p>
+        </div>
+        <div class="flex shrink-0 flex-col items-start gap-3 sm:items-end">
+          <button type="button" data-load-prototype
+            class="inline-flex items-center gap-2 px-6 py-3 bg-neutral-950 text-white font-mono text-xs uppercase tracking-wider hover:bg-amber-700 transition-luxury shadow-xs">
+            <span>▶</span> Load Interactive Prototype
+          </button>
+          <a href="https://www.figma.com/proto/KvYJ7MyuaJeb8vZejYV0XJ/Sprint-5-Final-Prototype-Copy?node-id=202-27991&amp;t=xEFnCj4QRz8vnQLv-0&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=202%3A27991&amp;show-proto-sidebar=1"
+            target="_blank" rel="noopener noreferrer"
+            class="text-xs font-mono text-neutral-500 underline decoration-neutral-300 underline-offset-4 hover:text-neutral-950 transition-colors">
+            Open in Figma ↗
+          </a>
+        </div>
+      </div>
+      <div data-prototype-frame class="aspect-video w-full mt-6" hidden></div>
+    </div>
+  </section>
+
+  <!-- SECTION 05: CO-DESIGN RESEARCH PROTOCOLS -->
+  <section class="py-24 border-t border-neutral-200 mb-32 md:mb-48">
+    <div class="pb-5 mb-16 border-b border-neutral-200">
+      <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase">
+        05 / CO-DESIGN METHODOLOGY WITH CHILDREN
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="space-y-4">
+        <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block font-medium">PROTOCOL 01</span>
+        <h4 class="text-lg font-medium text-neutral-950">Pediatric Game Pattern Heuristics</h4>
+        <p class="text-sm text-neutral-600 font-light leading-relaxed">
+          Benchmarking interaction patterns, navigation clarity, and reward cadence across premier kids' gaming titles to isolate friction points.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block font-medium">PROTOCOL 02</span>
+        <h4 class="text-lg font-medium text-neutral-950">KidsTeam Participatory Sessions</h4>
+        <p class="text-sm text-neutral-600 font-light leading-relaxed">
+          Facilitated co-design workshops with young children and developmental experts, testing paper prototypes and avatar sketches to align with natural play behaviors.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.36em] block font-medium">PROTOCOL 03</span>
+        <h4 class="text-lg font-medium text-neutral-950">Tangible Environment Prototyping</h4>
+        <p class="text-sm text-neutral-600 font-light leading-relaxed">
+          Constructed multi-room campus environments and interactive NPC dialog branches within Figma, validating smooth navigation and cognitive accessibility.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER NAVIGATION: Architectural Broadsheet Links -->
+  <section class="pt-16 border-t border-neutral-200">
+    <div class="flex flex-col sm:flex-row items-baseline justify-between gap-12 font-mono text-xs">
+      <a href="/omara" class="group flex flex-col gap-2 transition-luxury">
+        <span class="text-[9px] tracking-[0.36em] uppercase text-neutral-500 group-hover:text-amber-700">← PREVIOUS CHAPTER</span>
+        <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700">Omara: GovTech Systems</span>
+        <span class="font-sans text-xs text-neutral-500 font-light">Caseworker triage workflows &amp; design-system automation</span>
+      </a>
+
+      <a href="/alirtify" class="group flex flex-col gap-2 sm:text-right transition-luxury">
+        <span class="text-[9px] tracking-[0.36em] uppercase text-neutral-500 group-hover:text-amber-700">NEXT CHAPTER →</span>
+        <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700">Alirtify: Real-Time Alerting</span>
+        <span class="font-sans text-xs text-neutral-500 font-light">Data-driven credibility signals &amp; triage heuristics</span>
+      </a>
+    </div>
+  </section>
+
+</main>
 </BaseLayout>
 
 <script>
