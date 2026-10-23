@@ -34,5 +34,16 @@ const isDark = theme === 'dark';
     <Footer theme={theme} />
     <script is:inline src="/assets/js/contact.js"></script>
     {includeCaseStudyScript && <script is:inline src="/assets/js/case-study.js"></script>}
+    <script is:inline>
+      // Action-Potential Cursor Tracking on Underlines
+      document.addEventListener('pointermove', (e) => {
+        const link = e.target && e.target.closest && e.target.closest('.action-potential-link');
+        if (link) {
+          const rect = link.getBoundingClientRect();
+          const x = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+          link.style.setProperty('--pulse-x', `${x}px`);
+        }
+      }, { passive: true });
+    </script>
   </body>
 </html>

@@ -237,12 +237,11 @@
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Action-Potential Axonal Propagation Micro-Interaction */
+/* Action-Potential Axonal Propagation Micro-Interaction (Cursor Tracking) */
 .action-potential-link {
   position: relative;
   display: inline-flex;
   align-items: center;
-  overflow: hidden;
 }
 
 .action-potential-link::after {
@@ -258,42 +257,29 @@
 }
 
 .action-potential-link:hover::after {
-  opacity: 0.85;
+  opacity: 0.6;
 }
 
 .action-potential-link::before {
   content: '';
   position: absolute;
   bottom: -0.5px;
-  left: 0;
-  width: 36px;
+  left: var(--pulse-x, 50%);
+  width: 44px;
   height: 2px;
+  margin-left: -22px;
   border-radius: 9999px;
-  background: linear-gradient(90deg, transparent, #D97706 40%, #0D9488 80%, transparent);
+  background: linear-gradient(90deg, transparent, #D97706 45%, #0D9488 75%, transparent);
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.45), 0 0 4px rgba(13, 148, 136, 0.35);
   opacity: 0;
-  transform: translateX(-40px);
   pointer-events: none;
+  transition: opacity 200ms ease, transform 80ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scaleX(0.7);
 }
 
 .action-potential-link:hover::before {
   opacity: 1;
-  animation: action-potential-travel 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: scaleX(1);
 }
 
-@keyframes action-potential-travel {
-  0% {
-    transform: translateX(-40px);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(calc(100% + 40px));
-    opacity: 0;
-  }
-}
 
