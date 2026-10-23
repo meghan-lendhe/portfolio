@@ -9,7 +9,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
-<!-- Interactive Synaptic Neural Firing Canvas (Clean Nodes & Axon Pulses, Zero Swimming Particles) -->
+<!-- Interactive Synaptic Neural Working Model (Multi-Morphology Integrate-and-Fire Simulation) -->
 <canvas id="synaptic-field" class="absolute top-0 inset-x-0 w-full h-[120vh] pointer-events-none -z-10"></canvas>
 
 <main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-28 md:pt-40 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
@@ -29,10 +29,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
 
         <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-12 lg:gap-20 items-start">
-          <div>
+          <div class="space-y-6">
             <p class="text-lg sm:text-xl text-neutral-600 font-light leading-[1.8] max-w-[52ch] text-pretty">
               I explore how neural interfaces, biosignal decoding, and machine learning can make computing feel natural, adaptive, and human. Currently developing hands-on research experience in zero-calibration EEG decoding architectures while bringing a proven foundation in end-to-end product design.
             </p>
+
+            <!-- Subtle Interactive Model Guide -->
+            <div class="flex items-center gap-2.5 pt-2 text-[10px] font-mono tracking-widest text-neutral-500 uppercase">
+              <span class="inline-block size-1.5 rounded-full bg-amber-600"></span>
+              <span>NEURAL SIMULATION // CLICK TO DEPOLARIZE NEURONS &amp; TRIGGER ACTION POTENTIALS</span>
+            </div>
           </div>
 
           <!-- Section Roadmap (Clear, Human, Zero Boxes) -->
@@ -301,7 +307,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script is:inline>
-  // Synaptic Neural Firing Simulation (Dormant Cortical Mesh + Action Potentials on Interaction)
+  // Biological Integrate-and-Fire Model: Multi-Morphology Neurons with Action Potential Cascades
   (function() {
     const canvas = document.getElementById('synaptic-field');
     if (!canvas) return;
@@ -313,7 +319,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = window.innerWidth;
-      height = Math.max(window.innerHeight * 1.15, 850);
+      height = Math.max(window.innerHeight * 1.18, 900);
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = width + 'px';
@@ -324,6 +330,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     resize();
     window.addEventListener('resize', resize);
 
+    // Track mouse move for subtle sub-threshold EPSP noise
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY + window.scrollY;
@@ -334,24 +341,231 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       mouse.active = false;
     });
 
-    // Create stable neural nodes
-    const numNodes = 65;
-    const nodes = [];
+    // Multi-morphology neural types: Pyramidal, Stellate, Spindle
+    const morphTypes = ['pyramidal', 'stellate', 'spindle'];
+    const numNeurons = 68;
+    const neurons = [];
+    const activePulses = [];
 
-    for (let i = 0; i < numNodes; i++) {
+    for (let i = 0; i < numNeurons; i++) {
       const baseX = Math.random() * (width || window.innerWidth);
-      const baseY = Math.random() * (height || 850);
-      nodes.push({
+      const baseY = Math.random() * (height || 900);
+      const type = morphTypes[i % morphTypes.length];
+      const baseSize = type === 'pyramidal' ? 6.5 : (type === 'stellate' ? 6.0 : 7.0);
+
+      neurons.push({
+        id: i,
         baseX: baseX,
         baseY: baseY,
         x: baseX,
         y: baseY,
+        type: type,
+        size: baseSize,
+        angle: Math.random() * Math.PI * 2,
         phase: Math.random() * Math.PI * 2,
-        driftSpeed: 0.002 + Math.random() * 0.003,
-        driftRadius: 12 + Math.random() * 20,
-        excitation: 0,
-        pulseOffset: Math.random() * 10
+        driftSpeed: 0.0015 + Math.random() * 0.002,
+        driftRadius: 10 + Math.random() * 18,
+        potential: 0.0,       // 0 (resting) to 1.0 (threshold)
+        threshold: 0.88,      // threshold for action potential
+        refractory: 0,        // refractory counter
+        spike: 0.0,           // spike discharge animation (1 -> 0)
+        jitterX: 0,
+        jitterY: 0,
+        connected: []
       });
+    }
+
+    // Build anatomical axonal connectivity graph
+    const maxConnDistance = 145;
+    for (let i = 0; i < neurons.length; i++) {
+      for (let j = i + 1; j < neurons.length; j++) {
+        const dx = neurons[i].baseX - neurons[j].baseX;
+        const dy = neurons[i].baseY - neurons[j].baseY;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < maxConnDistance) {
+          neurons[i].connected.push(j);
+          neurons[j].connected.push(i);
+        }
+      }
+    }
+
+    // Function to trigger an Action Potential in a neuron
+    function fireActionPotential(n) {
+      n.potential = 0.0;
+      n.spike = 1.0;
+      n.refractory = 32; // ~0.5s refractory pause
+
+      // Propagate action potentials down all connected axons
+      for (let k = 0; k < n.connected.length; k++) {
+        const targetNeuron = neurons[n.connected[k]];
+        activePulses.push({
+          from: n,
+          to: targetNeuron,
+          progress: 0.0,
+          speed: 0.038 + Math.random() * 0.015,
+          energy: 1.0
+        });
+      }
+    }
+
+    // Click / Pointerdown anywhere on the page to inject excitatory stimulus current
+    window.addEventListener('pointerdown', (e) => {
+      const clickX = e.clientX;
+      const clickY = e.clientY + window.scrollY;
+
+      for (let i = 0; i < neurons.length; i++) {
+        const n = neurons[i];
+        const dx = clickX - n.x;
+        const dy = clickY - n.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 260) {
+          // Current density inversely proportional to distance
+          const stimulusCharge = Math.pow(1 - dist / 260, 1.2) * 0.68;
+          if (n.refractory <= 0) {
+            n.potential += stimulusCharge;
+            if (n.potential >= n.threshold) {
+              fireActionPotential(n);
+            }
+          }
+        }
+      }
+    });
+
+    // Helper functions to draw varying biological neuron morphologies
+    function drawPyramidal(ctx, x, y, size, angle, excitation, spike) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+
+      // Soma: Triangular body
+      ctx.beginPath();
+      ctx.moveTo(0, -size * 1.2);              // Apical peak
+      ctx.lineTo(size * 0.9, size * 0.8);       // Right basal corner
+      ctx.lineTo(-size * 0.9, size * 0.8);      // Left basal corner
+      ctx.closePath();
+
+      if (spike > 0.05) {
+        ctx.fillStyle = `rgba(217, 119, 6, ${0.7 + spike * 0.3})`;
+        ctx.fill();
+        ctx.strokeStyle = `rgba(13, 148, 136, ${spike})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      } else {
+        ctx.fillStyle = excitation > 0.1 ? `rgba(217, 119, 6, ${0.15 + excitation * 0.6})` : 'rgba(168, 162, 158, 0.45)';
+        ctx.fill();
+        ctx.strokeStyle = excitation > 0.1 ? `rgba(217, 119, 6, ${0.3 + excitation * 0.7})` : 'rgba(120, 113, 108, 0.5)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      // Apical dendrite protruding from top
+      ctx.beginPath();
+      ctx.moveTo(0, -size * 1.2);
+      ctx.lineTo(0, -size * 2.2);
+      // Apical bifurcation
+      ctx.moveTo(0, -size * 2.2);
+      ctx.lineTo(-size * 0.5, -size * 2.8);
+      ctx.moveTo(0, -size * 2.2);
+      ctx.lineTo(size * 0.5, -size * 2.8);
+
+      // Basal dendrites
+      ctx.moveTo(size * 0.9, size * 0.8);
+      ctx.lineTo(size * 1.5, size * 1.4);
+      ctx.moveTo(-size * 0.9, size * 0.8);
+      ctx.lineTo(-size * 1.5, size * 1.4);
+
+      ctx.strokeStyle = spike > 0.05 ? `rgba(13, 148, 136, ${spike * 0.8})` : (excitation > 0.2 ? `rgba(217, 119, 6, ${0.2 + excitation * 0.4})` : 'rgba(168, 162, 158, 0.35)');
+      ctx.lineWidth = 0.7;
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    function drawStellate(ctx, x, y, size, angle, excitation, spike) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+
+      // Soma: 5-point star morphology with radiating dendritic spines
+      ctx.beginPath();
+      const points = 5;
+      for (let i = 0; i < points * 2; i++) {
+        const r = (i % 2 === 0) ? size : size * 0.48;
+        const a = (i * Math.PI) / points;
+        const px = Math.cos(a) * r;
+        const py = Math.sin(a) * r;
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+
+      if (spike > 0.05) {
+        ctx.fillStyle = `rgba(217, 119, 6, ${0.75 + spike * 0.25})`;
+        ctx.fill();
+        ctx.strokeStyle = `rgba(13, 148, 136, ${spike})`;
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+      } else {
+        ctx.fillStyle = excitation > 0.1 ? `rgba(217, 119, 6, ${0.15 + excitation * 0.6})` : 'rgba(168, 162, 158, 0.45)';
+        ctx.fill();
+        ctx.strokeStyle = excitation > 0.1 ? `rgba(217, 119, 6, ${0.3 + excitation * 0.7})` : 'rgba(120, 113, 108, 0.5)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      // Radiating dendritic spines
+      ctx.beginPath();
+      for (let i = 0; i < points; i++) {
+        const a = (i * 2 * Math.PI) / points;
+        ctx.moveTo(Math.cos(a) * size, Math.sin(a) * size);
+        ctx.lineTo(Math.cos(a) * size * 1.7, Math.sin(a) * size * 1.7);
+      }
+      ctx.strokeStyle = spike > 0.05 ? `rgba(13, 148, 136, ${spike * 0.8})` : (excitation > 0.2 ? `rgba(217, 119, 6, ${0.2 + excitation * 0.4})` : 'rgba(168, 162, 158, 0.35)');
+      ctx.lineWidth = 0.7;
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    function drawSpindle(ctx, x, y, size, angle, excitation, spike) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+
+      // Soma: Elongated fusiform spindle with bipolar poles
+      ctx.beginPath();
+      ctx.moveTo(0, -size * 1.4);
+      ctx.quadraticCurveTo(size * 0.55, 0, 0, size * 1.4);
+      ctx.quadraticCurveTo(-size * 0.55, 0, 0, -size * 1.4);
+      ctx.closePath();
+
+      if (spike > 0.05) {
+        ctx.fillStyle = `rgba(217, 119, 6, ${0.75 + spike * 0.25})`;
+        ctx.fill();
+        ctx.strokeStyle = `rgba(13, 148, 136, ${spike})`;
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+      } else {
+        ctx.fillStyle = excitation > 0.1 ? `rgba(217, 119, 6, ${0.15 + excitation * 0.6})` : 'rgba(168, 162, 158, 0.45)';
+        ctx.fill();
+        ctx.strokeStyle = excitation > 0.1 ? `rgba(217, 119, 6, ${0.3 + excitation * 0.7})` : 'rgba(120, 113, 108, 0.5)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      // Bipolar axons emerging from both ends
+      ctx.beginPath();
+      ctx.moveTo(0, -size * 1.4);
+      ctx.lineTo(0, -size * 2.3);
+      ctx.moveTo(0, size * 1.4);
+      ctx.lineTo(0, size * 2.3);
+
+      ctx.strokeStyle = spike > 0.05 ? `rgba(13, 148, 136, ${spike * 0.8})` : (excitation > 0.2 ? `rgba(217, 119, 6, ${0.2 + excitation * 0.4})` : 'rgba(168, 162, 158, 0.35)');
+      ctx.lineWidth = 0.7;
+      ctx.stroke();
+
+      ctx.restore();
     }
 
     let time = 0;
@@ -361,101 +575,143 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       time += 0.015;
 
-      // Update node positions with gentle harmonic micro-drift
-      for (let i = 0; i < nodes.length; i++) {
-        const n = nodes[i];
+      // 1. Update neuron biological dynamics
+      for (let i = 0; i < neurons.length; i++) {
+        const n = neurons[i];
+
+        // Harmonic organic drift
         n.x = n.baseX + Math.sin(time * n.driftSpeed * 100 + n.phase) * n.driftRadius;
-        n.y = n.baseY + Math.cos(time * n.driftSpeed * 80 + n.phase) * (n.driftRadius * 0.7);
+        n.y = n.baseY + Math.cos(time * n.driftSpeed * 80 + n.phase) * (n.driftRadius * 0.65);
 
-        // Interaction with cursor
-        const dx = mouse.x - n.x;
-        const dy = mouse.y - n.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 170 && mouse.active) {
-          const targetExcitation = Math.pow(1 - dist / 170, 1.5);
-          n.excitation = Math.max(n.excitation, targetExcitation);
+        // Sub-threshold cursor EPSP induction (subtle hover excitation)
+        if (mouse.active) {
+          const dx = mouse.x - n.x;
+          const dy = mouse.y - n.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 140 && n.refractory <= 0) {
+            const hoverStim = (1 - dist / 140) * 0.012;
+            n.potential = Math.min(n.threshold - 0.05, n.potential + hoverStim);
+          }
         }
 
-        // Smooth decay back to dormant state
-        n.excitation *= 0.94;
+        // Membrane potential leak (leaky integrator decay toward resting baseline)
+        n.potential *= 0.988;
+
+        // Refractory period countdown
+        if (n.refractory > 0) {
+          n.refractory--;
+        }
+
+        // Action potential spike flash decay
+        if (n.spike > 0) {
+          n.spike *= 0.91;
+        }
+
+        // Membrane jitter / micro-vibration proportional to potential
+        if (n.potential > 0.15) {
+          const jitterMag = n.potential * 2.2;
+          n.jitterX = (Math.random() - 0.5) * jitterMag;
+          n.jitterY = (Math.random() - 0.5) * jitterMag;
+        } else {
+          n.jitterX = 0;
+          n.jitterY = 0;
+        }
       }
 
-      // Draw Synaptic Connections (Axons) between nearby excited nodes
-      const maxConnDist = 135;
+      // 2. Render connecting axon fibers (inter-neuronal pathways)
+      for (let i = 0; i < neurons.length; i++) {
+        const nA = neurons[i];
+        for (let c = 0; c < nA.connected.length; c++) {
+          const j = nA.connected[c];
+          if (i < j) {
+            const nB = neurons[j];
+            const dx = nA.x - nB.x;
+            const dy = nA.y - nB.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
 
-      for (let i = 0; i < nodes.length; i++) {
-        const nA = nodes[i];
-        for (let j = i + 1; j < nodes.length; j++) {
-          const nB = nodes[j];
-          const dx = nA.x - nB.x;
-          const dy = nA.y - nB.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+            const activeCharge = Math.max(nA.potential, nB.potential);
+            const activeSpike = Math.max(nA.spike, nB.spike);
 
-          if (dist < maxConnDist) {
-            const jointExcitation = Math.max(nA.excitation, nB.excitation);
-            const distFactor = 1 - dist / maxConnDist;
+            ctx.beginPath();
+            ctx.moveTo(nA.x + nA.jitterX, nA.y + nA.jitterY);
+            ctx.lineTo(nB.x + nB.jitterX, nB.y + nB.jitterY);
 
-            // Faint resting connection
-            const baseAlpha = 0.04 * distFactor;
-            // Excited firing connection
-            const firingAlpha = jointExcitation * 0.45 * distFactor;
-            const totalAlpha = baseAlpha + firingAlpha;
-
-            if (totalAlpha > 0.02) {
-              ctx.beginPath();
-              ctx.moveTo(nA.x, nA.y);
-              ctx.lineTo(nB.x, nB.y);
-
-              if (jointExcitation > 0.25) {
-                // Warm golden amber firing axon
-                ctx.strokeStyle = `rgba(217, 119, 6, ${totalAlpha})`;
-                ctx.lineWidth = 0.75 + jointExcitation * 0.75;
-              } else {
-                // Soft muted neural mesh
-                ctx.strokeStyle = `rgba(168, 162, 158, ${totalAlpha})`;
-                ctx.lineWidth = 0.65;
-              }
-              ctx.stroke();
-
-              // Action potential pulse traveling along active axon
-              if (jointExcitation > 0.35) {
-                const pulseProgress = ((time * 1.5 + (i + j)) % 1);
-                const pulseX = nA.x + (nB.x - nA.x) * pulseProgress;
-                const pulseY = nA.y + (nB.y - nA.y) * pulseProgress;
-
-                ctx.fillStyle = `rgba(13, 148, 136, ${jointExcitation * 0.75})`;
-                ctx.beginPath();
-                ctx.arc(pulseX, pulseY, 1.2, 0, Math.PI * 2);
-                ctx.fill();
-              }
+            if (activeSpike > 0.1) {
+              ctx.strokeStyle = `rgba(13, 148, 136, ${0.4 + activeSpike * 0.4})`;
+              ctx.lineWidth = 1.0 + activeSpike * 0.8;
+            } else if (activeCharge > 0.2) {
+              ctx.strokeStyle = `rgba(217, 119, 6, ${0.12 + activeCharge * 0.35})`;
+              ctx.lineWidth = 0.8 + activeCharge * 0.5;
+            } else {
+              ctx.strokeStyle = 'rgba(214, 211, 206, 0.3)';
+              ctx.lineWidth = 0.6;
             }
+            ctx.stroke();
           }
         }
       }
 
-      // Draw Neural Soma Nodes
-      for (let i = 0; i < nodes.length; i++) {
-        const n = nodes[i];
+      // 3. Update & render traveling Action Potential Pulses along axons
+      for (let p = activePulses.length - 1; p >= 0; p--) {
+        const pulse = activePulses[p];
+        pulse.progress += pulse.speed;
 
-        if (n.excitation > 0.15) {
-          // Active firing node with golden/sage corona
-          ctx.fillStyle = `rgba(217, 119, 6, ${0.4 + n.excitation * 0.5})`;
-          ctx.beginPath();
-          ctx.arc(n.x, n.y, 2.2 + n.excitation * 1.8, 0, Math.PI * 2);
-          ctx.fill();
+        const startX = pulse.from.x;
+        const startY = pulse.from.y;
+        const targetX = pulse.to.x;
+        const targetY = pulse.to.y;
 
-          // Outer faint halo
-          ctx.fillStyle = `rgba(13, 148, 136, ${n.excitation * 0.25})`;
+        const currX = startX + (targetX - startX) * pulse.progress;
+        const currY = startY + (targetY - startY) * pulse.progress;
+
+        // Draw luminescent traveling pulse bead
+        ctx.fillStyle = 'rgba(217, 119, 6, 0.95)';
+        ctx.beginPath();
+        ctx.arc(currX, currY, 2.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(13, 148, 136, 0.4)';
+        ctx.beginPath();
+        ctx.arc(currX, currY, 5.0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Synaptic arrival: deliver EPSP to target neuron & potentially cascade!
+        if (pulse.progress >= 1.0) {
+          const target = pulse.to;
+          if (target.refractory <= 0) {
+            target.potential += 0.42; // Excitatory postsynaptic potential
+            if (target.potential >= target.threshold) {
+              fireActionPotential(target); // Synaptic chain cascade!
+            }
+          }
+          activePulses.splice(p, 1);
+        }
+      }
+
+      // 4. Render biological neuron somas with morphology & dynamic scaling
+      for (let i = 0; i < neurons.length; i++) {
+        const n = neurons[i];
+        const posX = n.x + n.jitterX;
+        const posY = n.y + n.jitterY;
+
+        // Dynamic scale during excitation and firing spike
+        const currentScale = (1.0 + n.potential * 0.28 + n.spike * 0.65);
+        const effectiveSize = n.size * currentScale;
+
+        // Corona halo during action potential
+        if (n.spike > 0.08) {
+          ctx.fillStyle = `rgba(13, 148, 136, ${n.spike * 0.35})`;
           ctx.beginPath();
-          ctx.arc(n.x, n.y, 5 + n.excitation * 4, 0, Math.PI * 2);
+          ctx.arc(posX, posY, effectiveSize * 2.2, 0, Math.PI * 2);
           ctx.fill();
+        }
+
+        if (n.type === 'pyramidal') {
+          drawPyramidal(ctx, posX, posY, effectiveSize, n.angle, n.potential, n.spike);
+        } else if (n.type === 'stellate') {
+          drawStellate(ctx, posX, posY, effectiveSize, n.angle, n.potential, n.spike);
         } else {
-          // Dormant resting node
-          ctx.fillStyle = 'rgba(168, 162, 158, 0.4)';
-          ctx.beginPath();
-          ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
-          ctx.fill();
+          drawSpindle(ctx, posX, posY, effectiveSize, n.angle, n.potential, n.spike);
         }
       }
 
