@@ -8,11 +8,11 @@ const isDark = theme === 'dark';
 
 const controlClass = isDark
   ? 'rounded-full border border-neutral-700/70 bg-neutral-900/80 backdrop-blur-md px-4 py-2 text-sm font-medium tracking-tight text-neutral-200 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-200 hover:border-amber-400/50 hover:bg-neutral-800 hover:text-amber-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400'
-  : 'rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium tracking-tight text-neutral-900 shadow-[0_1px_2px_rgba(32,38,45,0.04),0_6px_16px_rgba(32,38,45,0.06)] transition-colors hover:bg-neutral-100 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary';
+  : 'rounded-full border border-neutral-200/90 bg-[#FAF9F5]/90 backdrop-blur-md px-4 py-2 text-sm font-medium tracking-tight text-neutral-900 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-200 hover:border-neutral-300 hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700';
 
 const contactExpandedClass = isDark
   ? 'aria-expanded:border-neutral-800 aria-expanded:bg-transparent aria-expanded:text-amber-400 aria-expanded:hover:bg-transparent'
-  : 'aria-expanded:bg-transparent aria-expanded:text-secondary aria-expanded:hover:bg-transparent';
+  : 'aria-expanded:bg-transparent aria-expanded:text-amber-700 aria-expanded:hover:bg-transparent';
 ---
 
 <header class="pointer-events-none fixed inset-x-0 top-6 z-40">
@@ -44,20 +44,20 @@ const contactExpandedClass = isDark
         class={`absolute right-0 top-0 -z-0 overflow-y-auto border text-left shadow-2xl ${
           isDark
             ? 'border-neutral-800 bg-[#16181D]/95 text-neutral-100 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.8)]'
-            : 'border-neutral-200 bg-white text-neutral-900 shadow-xl'
+            : 'border-neutral-200 bg-[#FAF9F5] text-neutral-950 shadow-2xl'
         }`}
       >
-        <p class={`mb-2 text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-700'}`}>You can reach out to me at</p>
-        <div class={`flex items-center justify-between gap-2 rounded-xl p-2.5 ${isDark ? 'bg-neutral-900/90 border border-neutral-800' : 'bg-neutral-50'}`}>
-          <span class={`min-w-0 break-all text-sm ${isDark ? 'text-neutral-200 font-mono text-xs' : 'text-neutral-900'}`}>meghanlendhe@gmail.com</span>
+        <p class={`mb-2 text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>You can reach out to me at</p>
+        <div class={`flex items-center justify-between gap-2 rounded-xl p-2.5 ${isDark ? 'bg-neutral-900/90 border border-neutral-800' : 'bg-neutral-100/70 border border-neutral-200/80'}`}>
+          <span class={`min-w-0 break-all ${isDark ? 'text-neutral-200 font-mono text-xs' : 'text-neutral-900 font-mono text-xs'}`}>meghanlendhe@gmail.com</span>
           <button
             type="button"
             data-copy-email
             data-default-label="Copy"
-            class={`shrink-0 rounded-lg px-2 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${
+            class={`shrink-0 rounded-lg px-2 py-1.5 text-xs font-mono tracking-wider uppercase font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${
               isDark
                 ? 'text-amber-400 hover:text-amber-300 focus-visible:outline-amber-400'
-                : 'text-secondary hover:text-neutral-900 focus-visible:outline-secondary'
+                : 'text-amber-700 hover:text-amber-800 focus-visible:outline-amber-700'
             }`}
           ><span data-copy-label>Copy</span><span class="sr-only" data-copy-status role="status"></span></button>
         </div>
@@ -68,14 +68,14 @@ const contactExpandedClass = isDark
           class={`group mt-3 flex items-center gap-3 rounded-xl px-2.5 py-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${
             isDark
               ? 'hover:bg-neutral-800/80 focus-visible:outline-amber-400'
-              : 'hover:bg-neutral-200 focus-visible:outline-secondary'
+              : 'hover:bg-neutral-100/90 focus-visible:outline-amber-700'
           }`}
         >
-          <svg aria-hidden="true" viewBox="0 0 24 24" class={`size-5 shrink-0 transition-colors ${isDark ? 'text-neutral-400 group-hover:text-amber-400' : 'text-neutral-600 group-hover:text-secondary'}`} fill="currentColor">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class={`size-5 shrink-0 transition-colors ${isDark ? 'text-neutral-400 group-hover:text-amber-400' : 'text-neutral-500 group-hover:text-amber-700'}`} fill="currentColor">
             <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.97V9.06h2.96v9.28ZM6.45 7.79a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.55h-2.96v-4.51c0-1.08-.02-2.47-1.51-2.47-1.51 0-1.74 1.18-1.74 2.39v4.59H9.17V9.06h2.84v1.27h.04c.4-.73 1.36-1.51 2.79-1.51 2.99 0 3.55 1.97 3.55 4.53v4.99Z"/>
           </svg>
-          <span class={`text-sm font-medium transition-colors ${isDark ? 'text-neutral-300 group-hover:text-white' : 'text-neutral-800 group-hover:text-secondary'}`}>Or connect with me on LinkedIn</span>
-          <span aria-hidden="true" class={`ml-auto ${isDark ? 'text-neutral-500 group-hover:text-amber-400' : 'text-neutral-500'}`}>↗</span>
+          <span class={`text-sm font-medium transition-colors ${isDark ? 'text-neutral-300 group-hover:text-white' : 'text-neutral-800 group-hover:text-amber-700'}`}>Or connect with me on LinkedIn</span>
+          <span aria-hidden="true" class={`ml-auto transition-colors ${isDark ? 'text-neutral-500 group-hover:text-amber-400' : 'text-neutral-400 group-hover:text-amber-700'}`}>↗</span>
           <span class="sr-only">(opens in a new tab)</span>
         </a>
       </section>
