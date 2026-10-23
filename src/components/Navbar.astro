@@ -6,432 +6,170 @@ interface Props {
 const { theme = 'light' } = Astro.props;
 ---
 
-<!-- PROTOTYPE NAV CONTAINER (Switched via client-side state / localStorage) -->
-<div id="navbar-root" data-theme={theme}>
+<!-- Monograph Masthead Corner Folio -->
+<header class="fixed inset-x-0 top-6 z-40 pointer-events-none px-6 md:px-10">
+  <div class="mx-auto flex max-w-page items-center justify-between">
+    <!-- Top Left: Cajal Colophon Seal (Motif 1) & Identity -->
+    <a
+      href="/"
+      class="pointer-events-auto group flex items-center gap-3 rounded-full border border-neutral-200/80 bg-[#FAF9F5]/90 backdrop-blur-md px-3.5 py-2 shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all duration-200 hover:border-neutral-300 hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-amber-700"
+    >
+      <!-- Cajal Pyramidal Neuron Motif 1 Vignette -->
+      <svg viewBox="0 0 32 32" class="size-4 shrink-0 text-neutral-800 group-hover:text-amber-700 transition-colors" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M16 2v10M16 12l-5 6h10l-5-6ZM11 18l-4 8M21 18l4 8M16 18v12M14 26h4" />
+        <circle cx="16" cy="14" r="1.5" fill="currentColor" />
+      </svg>
+      <span class="font-mono text-[10px] tracking-[0.28em] uppercase text-neutral-900 group-hover:text-amber-700 transition-colors">
+        Meghan Lendhe
+      </span>
+    </a>
 
-  <!-- ========================================================================= -->
-  <!-- DIRECTION 1: The Archival Monograph Running Masthead (Pentagram / Area 17) -->
-  <!-- ========================================================================= -->
-  <header
-    id="nav-direction-1"
-    class="nav-variant hidden fixed inset-x-0 top-0 z-40 h-14 md:h-16 border-b border-neutral-200/80 bg-[#FAF9F5]/90 backdrop-blur-md transition-all duration-300"
+    <!-- Top Right: Minimalist Editorial Menu Trigger -->
+    <button
+      type="button"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls="folio-drawer"
+      aria-label="Open menu"
+      class="pointer-events-auto group flex items-center gap-3 rounded-full border border-neutral-200/80 bg-[#FAF9F5]/90 backdrop-blur-md px-4 py-2 font-mono text-[10px] tracking-widest uppercase text-neutral-900 shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all duration-200 hover:border-neutral-300 hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-amber-700"
+    >
+      <span>Menu</span>
+      <div class="flex flex-col gap-1 w-3.5" aria-hidden="true">
+        <span class="h-px w-full bg-current transition-transform"></span>
+        <span class="h-px w-2.5 ml-auto bg-current transition-transform group-hover:w-full"></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Editorial Monograph Drawer -->
+  <div
+    id="folio-drawer"
+    hidden
+    class="pointer-events-auto fixed inset-0 z-50 flex justify-end bg-neutral-950/20 backdrop-blur-sm transition-opacity duration-300"
   >
-    <div class="mx-auto flex h-full max-w-page items-center justify-between px-6">
-      <!-- Left: Monograph Identity & Swiss Coordinates -->
-      <div class="flex items-center">
-        <a href="/" class="group flex items-baseline gap-3 text-neutral-950 transition-colors hover:text-amber-700">
-          <span class="font-serif text-lg font-normal tracking-tight">Meghan Lendhe</span>
-        </a>
-        <span class="mx-3.5 hidden h-3.5 w-px bg-neutral-300 md:inline-block" aria-hidden="true"></span>
-        <span class="hidden font-mono text-[9px] tracking-[0.26em] uppercase text-neutral-500 md:inline-block">
-          Product Designer · NeuroHCI
-        </span>
-      </div>
-
-      <!-- Center: Contextual Archival Datum -->
-      <div class="hidden font-mono text-[9px] tracking-[0.34em] uppercase text-neutral-400 lg:block">
-        Folio 2026 · Biosignal Computing
-      </div>
-
-      <!-- Right: Editorial Ledger Links & Contact Trigger -->
-      <div class="flex items-center gap-6 font-mono text-[10px] tracking-widest uppercase">
-        <a href="/#work" class="text-neutral-600 transition-colors hover:text-amber-700">Work</a>
-
-        <div class="relative">
-          <button
-            type="button"
-            data-dir1-contact-toggle
-            aria-expanded="false"
-            class="flex items-center gap-1.5 rounded-full border border-neutral-300/90 bg-[#FAF9F5] px-3.5 py-1 text-neutral-900 transition-colors hover:border-amber-700 hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-amber-700"
-          >
-            <span>Contact</span>
-            <span class="size-1.5 rounded-full bg-amber-700"></span>
-          </button>
-
-          <!-- Masthead Archival Pull-down Card -->
-          <div
-            data-dir1-contact-panel
-            hidden
-            class="absolute right-0 top-11 w-72 rounded-2xl border border-neutral-200 bg-[#FAF9F5] p-4 text-left shadow-2xl backdrop-blur-xl"
-          >
-            <p class="mb-2 text-xs font-mono uppercase tracking-wider text-neutral-500">Direct Inquiries</p>
-            <div class="flex items-center justify-between gap-2 rounded-xl border border-neutral-200/80 bg-neutral-100/70 p-2.5">
-              <span class="min-w-0 font-mono text-xs text-neutral-900 break-all">meghanlendhe@gmail.com</span>
-              <button
-                type="button"
-                data-copy-email
-                data-default-label="Copy"
-                class="shrink-0 rounded-lg px-2 py-1 font-mono text-xs font-medium uppercase tracking-wider text-amber-700 transition-colors hover:text-amber-800"
-              ><span data-copy-label>Copy</span><span class="sr-only" data-copy-status role="status"></span></button>
-            </div>
-            <a
-              href="https://www.linkedin.com/in/meghanlendhe/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group mt-3 flex items-center justify-between rounded-xl px-2.5 py-1.5 text-xs font-mono tracking-wider text-neutral-700 uppercase transition-colors hover:bg-neutral-100 hover:text-amber-700"
-            >
-              <span>Connect on LinkedIn</span>
-              <span class="text-neutral-400 group-hover:text-amber-700">↗</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-  <!-- ========================================================================= -->
-  <!-- DIRECTION 2: The Minimalist Floating Archival Capsule (Cartier / Collins)  -->
-  <!-- ========================================================================= -->
-  <header
-    id="nav-direction-2"
-    class="nav-variant hidden fixed inset-x-0 top-5 z-40 flex justify-center pointer-events-none px-4"
-  >
-    <div class="pointer-events-auto relative">
-      <nav
-        aria-label="Sculpted capsule navigation"
-        class="flex items-center gap-4 sm:gap-6 rounded-full border border-neutral-200/90 bg-[#FAF9F5]/90 backdrop-blur-xl px-5 py-2 shadow-[0_4px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:border-neutral-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.09)]"
-      >
-        <!-- Identity -->
-        <a href="/" class="group flex items-center">
-          <span class="font-serif text-base font-normal tracking-tight text-neutral-950 transition-colors group-hover:text-amber-700">Meghan Lendhe</span>
-        </a>
-
-        <span class="h-3.5 w-px bg-neutral-200" aria-hidden="true"></span>
-
-        <!-- Section Anchors -->
-        <div class="flex items-center gap-4 sm:gap-5 font-mono text-[10px] tracking-widest uppercase">
-          <a href="/#work" class="text-neutral-600 transition-colors hover:text-amber-700">Work</a>
-        </div>
-
-        <span class="h-3.5 w-px bg-neutral-200" aria-hidden="true"></span>
-
-        <!-- Contact Trigger Button -->
+    <div class="relative flex h-full w-full max-w-md flex-col justify-between border-l border-neutral-200 bg-[#FAF9F5] p-8 md:p-10 shadow-2xl overflow-y-auto">
+      <!-- Drawer Header with Whisper-Quiet Close Button -->
+      <div class="flex items-center justify-end pb-4">
         <button
           type="button"
-          data-dir2-contact-toggle
-          aria-expanded="false"
-          class="flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase text-amber-800 transition-colors hover:text-amber-600 focus-visible:outline-2 focus-visible:outline-amber-700"
+          data-menu-close
+          aria-label="Close menu"
+          class="group flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase text-neutral-600 hover:text-amber-700 transition-colors focus-visible:outline-2 focus-visible:outline-amber-700 rounded-sm"
         >
-          <span>Contact</span>
-          <span class="size-1.5 rounded-full bg-teal-600"></span>
+          <span>Close</span>
+          <span class="text-base leading-none">×</span>
         </button>
+      </div>
+
+      <!-- Case Studies List -->
+      <nav aria-label="Portfolio case studies" class="my-auto flex flex-col gap-6 py-6">
+        <div class="flex items-center justify-between border-b border-neutral-200 pb-2">
+          <span class="font-mono text-[9px] tracking-[0.28em] uppercase text-neutral-400">Selected Case Studies</span>
+          <a href="/" data-menu-link class="font-mono text-[9px] tracking-widest uppercase text-neutral-500 hover:text-amber-700 transition-colors">Home ↑</a>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <a href="/vitals" data-menu-link class="group flex flex-col gap-0.5">
+            <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Vitals</span>
+            <span class="font-sans text-xs text-neutral-500 font-light">Emergency digital medical ID onboarding</span>
+          </a>
+
+          <a href="/bulkmagic" data-menu-link class="group flex flex-col gap-0.5">
+            <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">BulkMagic</span>
+            <span class="font-sans text-xs text-neutral-500 font-light">Campus group-buying state machine &amp; unit economics</span>
+          </a>
+
+          <a href="/omara" data-menu-link class="group flex flex-col gap-0.5">
+            <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Omara Technologies</span>
+            <span class="font-sans text-xs text-neutral-500 font-light">GovTech offline welfare review &amp; design verification</span>
+          </a>
+
+          <a href="/cool-school" data-menu-link class="group flex flex-col gap-0.5">
+            <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Cool School</span>
+            <span class="font-sans text-xs text-neutral-500 font-light">Pediatric conflict-resolution game architecture</span>
+          </a>
+
+          <a href="/alirtify" data-menu-link class="group flex flex-col gap-0.5">
+            <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Alirtify</span>
+            <span class="font-sans text-xs text-neutral-500 font-light">Real-time news credibility &amp; alerting heuristics</span>
+          </a>
+        </div>
       </nav>
 
-      <!-- Capsule Floating Popover -->
-      <div
-        data-dir2-contact-panel
-        hidden
-        class="absolute right-0 top-12 w-72 rounded-2xl border border-neutral-200 bg-[#FAF9F5] p-4 text-left shadow-2xl backdrop-blur-xl"
-      >
-        <p class="mb-2 text-xs font-mono uppercase tracking-wider text-neutral-500">Direct Inquiries</p>
+      <!-- Drawer Footer Contact Details -->
+      <div class="border-t border-neutral-200 pt-5">
+        <p class="mb-2.5 font-mono text-[10px] tracking-widest uppercase text-neutral-500">Direct Inquiries</p>
         <div class="flex items-center justify-between gap-2 rounded-xl border border-neutral-200/80 bg-neutral-100/70 p-2.5">
           <span class="min-w-0 font-mono text-xs text-neutral-900 break-all">meghanlendhe@gmail.com</span>
           <button
             type="button"
             data-copy-email
             data-default-label="Copy"
-            class="shrink-0 rounded-lg px-2 py-1 font-mono text-xs font-medium uppercase tracking-wider text-amber-700 transition-colors hover:text-amber-800"
+            class="shrink-0 rounded-lg px-2 py-1 font-mono text-xs font-medium uppercase tracking-wider text-amber-700 hover:text-amber-800 transition-colors focus-visible:outline-2 focus-visible:outline-amber-700"
           ><span data-copy-label>Copy</span><span class="sr-only" data-copy-status role="status"></span></button>
         </div>
         <a
           href="https://www.linkedin.com/in/meghanlendhe/"
           target="_blank"
           rel="noopener noreferrer"
-          class="group mt-3 flex items-center justify-between rounded-xl px-2.5 py-1.5 text-xs font-mono tracking-wider text-neutral-700 uppercase transition-colors hover:bg-neutral-100 hover:text-amber-700"
+          class="group mt-2.5 flex items-center justify-between text-xs font-mono tracking-wider uppercase text-neutral-600 hover:text-amber-700 transition-colors"
         >
-          <span>Connect on LinkedIn</span>
-          <span class="text-neutral-400 group-hover:text-amber-700">↗</span>
+          <span>LinkedIn Profile</span>
+          <span>↗</span>
         </a>
       </div>
     </div>
-  </header>
-
-
-  <!-- ========================================================================= -->
-  <!-- DIRECTION 3: The Broadsheet Corner Folio & Monograph Drawer (Instrument)   -->
-  <!-- ========================================================================= -->
-  <header
-    id="nav-direction-3"
-    class="nav-variant hidden fixed inset-x-0 top-6 z-40 pointer-events-none px-6 md:px-10"
-  >
-    <div class="mx-auto flex max-w-page items-center justify-between">
-      <!-- Top Left: Cajal Colophon Seal & Maker Name -->
-      <a
-        href="/"
-        class="pointer-events-auto group flex items-center gap-3 rounded-full border border-neutral-200/80 bg-[#FAF9F5]/90 backdrop-blur-md px-3.5 py-2 shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors hover:border-neutral-300 hover:text-amber-700"
-      >
-        <!-- Cajal Pyramidal Neuron Motif 1 Vignette -->
-        <svg viewBox="0 0 32 32" class="size-4 shrink-0 text-neutral-800 group-hover:text-amber-700 transition-colors" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-          <path d="M16 2v10M16 12l-5 6h10l-5-6ZM11 18l-4 8M21 18l4 8M16 18v12M14 26h4" />
-          <circle cx="16" cy="14" r="1.5" fill="currentColor" />
-        </svg>
-        <span class="font-mono text-[10px] tracking-[0.28em] uppercase text-neutral-900 group-hover:text-amber-700 transition-colors">
-          Meghan Lendhe
-        </span>
-      </a>
-
-      <!-- Top Right: Minimalist Editorial Menu Trigger -->
-      <button
-        type="button"
-        data-dir3-drawer-toggle
-        aria-expanded="false"
-        class="pointer-events-auto group flex items-center gap-3 rounded-full border border-neutral-200/80 bg-[#FAF9F5]/90 backdrop-blur-md px-4 py-2 font-mono text-[10px] tracking-widest uppercase text-neutral-900 shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-colors hover:border-neutral-300 hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-amber-700"
-      >
-        <span>Menu</span>
-        <div class="flex flex-col gap-1 w-3.5" aria-hidden="true">
-          <span class="h-px w-full bg-current transition-transform"></span>
-          <span class="h-px w-2.5 ml-auto bg-current transition-transform group-hover:w-full"></span>
-        </div>
-      </button>
-    </div>
-
-    <!-- Direction 3: Clean Editorial Monograph Drawer -->
-    <div
-      id="dir3-drawer"
-      hidden
-      class="pointer-events-auto fixed inset-0 z-50 flex justify-end bg-neutral-950/20 backdrop-blur-sm transition-opacity duration-300"
-    >
-      <div class="relative flex h-full w-full max-w-md flex-col justify-between border-l border-neutral-200 bg-[#FAF9F5] p-8 md:p-10 shadow-2xl overflow-y-auto">
-        <!-- Drawer Header -->
-        <div class="flex items-center justify-end pb-4">
-          <button
-            type="button"
-            data-dir3-drawer-close
-            class="group flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase text-neutral-600 hover:text-amber-700 transition-colors"
-          >
-            <span>Close</span>
-            <span class="text-base leading-none">×</span>
-          </button>
-        </div>
-
-        <!-- Case Studies List -->
-        <nav class="my-auto flex flex-col gap-6 py-6">
-          <div class="flex items-center justify-between border-b border-neutral-200 pb-2">
-            <span class="font-mono text-[9px] tracking-[0.28em] uppercase text-neutral-400">Selected Case Studies</span>
-            <a href="/" data-dir3-link class="font-mono text-[9px] tracking-widest uppercase text-neutral-500 hover:text-amber-700 transition-colors">Home ↑</a>
-          </div>
-
-          <div class="flex flex-col gap-4">
-            <a href="/vitals" data-dir3-link class="group flex flex-col gap-0.5">
-              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Vitals</span>
-              <span class="font-sans text-xs text-neutral-500 font-light">Emergency digital medical ID onboarding</span>
-            </a>
-
-            <a href="/bulkmagic" data-dir3-link class="group flex flex-col gap-0.5">
-              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">BulkMagic</span>
-              <span class="font-sans text-xs text-neutral-500 font-light">Campus group-buying state machine &amp; unit economics</span>
-            </a>
-
-            <a href="/omara" data-dir3-link class="group flex flex-col gap-0.5">
-              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Omara Technologies</span>
-              <span class="font-sans text-xs text-neutral-500 font-light">GovTech offline welfare review &amp; design verification</span>
-            </a>
-
-            <a href="/cool-school" data-dir3-link class="group flex flex-col gap-0.5">
-              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Cool School</span>
-              <span class="font-sans text-xs text-neutral-500 font-light">Pediatric conflict-resolution game architecture</span>
-            </a>
-
-            <a href="/alirtify" data-dir3-link class="group flex flex-col gap-0.5">
-              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Alirtify</span>
-              <span class="font-sans text-xs text-neutral-500 font-light">Real-time news credibility &amp; alerting heuristics</span>
-            </a>
-          </div>
-        </nav>
-
-        <!-- Drawer Footer Contact Details -->
-        <div class="border-t border-neutral-200 pt-5">
-          <p class="mb-2.5 font-mono text-[10px] tracking-widest uppercase text-neutral-500">Direct Inquiries</p>
-          <div class="flex items-center justify-between gap-2 rounded-xl border border-neutral-200/80 bg-neutral-100/70 p-2.5">
-            <span class="min-w-0 font-mono text-xs text-neutral-900 break-all">meghanlendhe@gmail.com</span>
-            <button
-              type="button"
-              data-copy-email
-              data-default-label="Copy"
-              class="shrink-0 rounded-lg px-2 py-1 font-mono text-xs font-medium uppercase tracking-wider text-amber-700 hover:text-amber-800 transition-colors"
-            ><span data-copy-label>Copy</span><span class="sr-only" data-copy-status role="status"></span></button>
-          </div>
-          <a
-            href="https://www.linkedin.com/in/meghanlendhe/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group mt-2.5 flex items-center justify-between text-xs font-mono tracking-wider uppercase text-neutral-600 hover:text-amber-700 transition-colors"
-          >
-            <span>LinkedIn Profile</span>
-            <span>↗</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-</div>
-
-<!-- ========================================================================= -->
-<!-- INTERACTIVE DESIGN PROTOTYPE SWITCHER (Floating bottom controller)        -->
-<!-- ========================================================================= -->
-<aside
-  id="nav-prototype-switcher"
-  class="fixed bottom-5 inset-x-0 z-50 flex justify-center pointer-events-none px-4"
-  aria-label="Navbar prototype switcher"
->
-  <div class="pointer-events-auto flex items-center gap-1.5 rounded-full border border-neutral-300/90 bg-[#FAF9F5]/95 backdrop-blur-xl px-2.5 py-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
-    <span class="hidden sm:inline-block px-2 text-[9px] font-mono tracking-[0.2em] uppercase text-neutral-400 border-r border-neutral-200">
-      Nav Lab
-    </span>
-
-    <button
-      type="button"
-      data-select-nav="1"
-      class="nav-tab-btn rounded-full px-3 py-1 font-mono text-[10px] tracking-wider uppercase transition-colors"
-    >
-      1. Running Masthead
-    </button>
-
-    <button
-      type="button"
-      data-select-nav="2"
-      class="nav-tab-btn rounded-full px-3 py-1 font-mono text-[10px] tracking-wider uppercase transition-colors"
-    >
-      2. Sculpted Capsule
-    </button>
-
-    <button
-      type="button"
-      data-select-nav="3"
-      class="nav-tab-btn rounded-full px-3 py-1 font-mono text-[10px] tracking-wider uppercase transition-colors"
-    >
-      3. Corner Folio &amp; Menu
-    </button>
   </div>
-</aside>
+</header>
 
 <script is:inline>
 (function() {
-  const STORAGE_KEY = 'ml_portfolio_navbar_variant';
-  
-  function getActiveVariant() {
-    const params = new URLSearchParams(window.location.search);
-    const q = params.get('nav');
-    if (q && ['1', '2', '3'].includes(q)) return q;
-    return localStorage.getItem(STORAGE_KEY) || '1';
-  }
+  const toggleBtn = document.querySelector('[data-menu-toggle]');
+  const closeBtn = document.querySelector('[data-menu-close]');
+  const drawer = document.getElementById('folio-drawer');
 
-  function setVariant(variant) {
-    localStorage.setItem(STORAGE_KEY, variant);
-    
-    // Update URL parameter without reload
-    const url = new URL(window.location.href);
-    url.searchParams.set('nav', variant);
-    window.history.replaceState({}, '', url);
-
-    // Show/hide navbar variants
-    document.querySelectorAll('.nav-variant').forEach(el => el.classList.add('hidden'));
-    const target = document.getElementById(`nav-direction-${variant}`);
-    if (target) {
-      target.classList.remove('hidden');
+  function openDrawer() {
+    if (drawer) {
+      drawer.hidden = false;
+      toggleBtn && toggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     }
-
-    // Update active tab buttons
-    document.querySelectorAll('.nav-tab-btn').forEach(btn => {
-      if (btn.getAttribute('data-select-nav') === variant) {
-        btn.className = 'nav-tab-btn rounded-full px-3 py-1 font-mono text-[10px] tracking-wider uppercase bg-neutral-900 text-white font-medium shadow-sm transition-colors';
-      } else {
-        btn.className = 'nav-tab-btn rounded-full px-3 py-1 font-mono text-[10px] tracking-wider uppercase text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/60 transition-colors';
-      }
-    });
-
-    // Close any open popovers or drawers
-    closeAllPanels();
   }
 
-  function closeAllPanels() {
-    const d1Panel = document.querySelector('[data-dir1-contact-panel]');
-    if (d1Panel) d1Panel.hidden = true;
-    const d2Panel = document.querySelector('[data-dir2-contact-panel]');
-    if (d2Panel) d2Panel.hidden = true;
-    const d3Drawer = document.getElementById('dir3-drawer');
-    if (d3Drawer) d3Drawer.hidden = true;
+  function closeDrawer() {
+    if (drawer) {
+      drawer.hidden = true;
+      toggleBtn && toggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
   }
 
-  // Bind tab switcher clicks
-  document.querySelectorAll('[data-select-nav]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const v = btn.getAttribute('data-select-nav');
-      if (v) setVariant(v);
+  if (toggleBtn && drawer) {
+    toggleBtn.addEventListener('click', () => {
+      if (drawer.hidden) openDrawer();
+      else closeDrawer();
     });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  if (drawer) {
+    drawer.addEventListener('click', (e) => {
+      if (e.target === drawer) closeDrawer();
+    });
+  }
+
+  document.querySelectorAll('[data-menu-link]').forEach(link => {
+    link.addEventListener('click', closeDrawer);
   });
 
-  // Wire Direction 1 Contact Toggle
-  const d1Toggle = document.querySelector('[data-dir1-contact-toggle]');
-  const d1Panel = document.querySelector('[data-dir1-contact-panel]');
-  if (d1Toggle && d1Panel) {
-    d1Toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      d1Panel.hidden = !d1Panel.hidden;
-      d1Toggle.setAttribute('aria-expanded', String(!d1Panel.hidden));
-    });
-  }
-
-  // Wire Direction 2 Contact Toggle
-  const d2Toggle = document.querySelector('[data-dir2-contact-toggle]');
-  const d2Panel = document.querySelector('[data-dir2-contact-panel]');
-  if (d2Toggle && d2Panel) {
-    d2Toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      d2Panel.hidden = !d2Panel.hidden;
-      d2Toggle.setAttribute('aria-expanded', String(!d2Panel.hidden));
-    });
-  }
-
-  // Wire Direction 3 Drawer Toggle & Close
-  const d3Toggle = document.querySelector('[data-dir3-drawer-toggle]');
-  const d3Close = document.querySelector('[data-dir3-drawer-close]');
-  const d3Drawer = document.getElementById('dir3-drawer');
-  if (d3Toggle && d3Drawer) {
-    d3Toggle.addEventListener('click', () => {
-      d3Drawer.hidden = false;
-    });
-  }
-  if (d3Close && d3Drawer) {
-    d3Close.addEventListener('click', () => {
-      d3Drawer.hidden = true;
-    });
-  }
-  if (d3Drawer) {
-    d3Drawer.addEventListener('click', (e) => {
-      if (e.target === d3Drawer) {
-        d3Drawer.hidden = true;
-      }
-    });
-  }
-  document.querySelectorAll('[data-dir3-link]').forEach(link => {
-    link.addEventListener('click', () => {
-      if (d3Drawer) d3Drawer.hidden = true;
-    });
-  });
-
-  // Global click outside to dismiss popovers
-  document.addEventListener('click', (e) => {
-    if (d1Panel && !d1Panel.hidden && !d1Panel.contains(e.target) && !d1Toggle.contains(e.target)) {
-      d1Panel.hidden = true;
-      d1Toggle.setAttribute('aria-expanded', 'false');
-    }
-    if (d2Panel && !d2Panel.hidden && !d2Panel.contains(e.target) && !d2Toggle.contains(e.target)) {
-      d2Panel.hidden = true;
-      d2Toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // Escape key handler
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeAllPanels();
+    if (e.key === 'Escape' && drawer && !drawer.hidden) {
+      closeDrawer();
+      toggleBtn && toggleBtn.focus();
     }
   });
-
-  // Initialize
-  setVariant(getActiveVariant());
 })();
 </script>
