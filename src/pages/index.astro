@@ -9,17 +9,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
-<!-- Interactive Histological Neural Simulation Canvas (Soft Cytology, Varicose Axons, Zero Isolated Nodes) -->
-<canvas id="synaptic-field" class="absolute top-0 inset-x-0 w-full h-[120vh] pointer-events-none -z-10"></canvas>
+<!-- Theatrical Global Ignition Aura behind Headline -->
+<div id="ignition-aura" class="fixed top-12 left-1/2 -translate-x-1/2 w-[90vw] max-w-5xl h-[420px] pointer-events-none -z-15 rounded-full blur-3xl opacity-0 transition-opacity duration-1000 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.18),rgba(13,148,136,0.12),transparent_70%)]"></div>
+
+<!-- Interactive Histological Neural Simulation Canvas (Thought Scribing, Ignition & Cascades) -->
+<canvas id="synaptic-field" class="absolute top-0 inset-x-0 w-full h-[125vh] pointer-events-none -z-10"></canvas>
 
 <main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-28 md:pt-40 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
     <!-- HERO SECTION: Luminous & Grounded Career Opening -->
     <section id="hero" aria-labelledby="hero-title" class="relative mb-36 md:mb-52">
 
+      <!-- Theatrical Telemetry & Cortical Dynamics Controls -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-4 mb-12 text-[10px] font-mono tracking-wider border-b border-neutral-200">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+          <span class="text-neutral-400 uppercase text-[9px] tracking-[0.25em] mr-1">CORTICAL STATE:</span>
+          <button type="button" data-state-btn="alpha" class="state-ctrl-btn px-2.5 py-1 rounded-full text-xs font-mono transition-luxury border border-neutral-300 bg-white text-neutral-950 shadow-xs">
+            01 · 10 HZ ALPHA
+          </button>
+          <button type="button" data-state-btn="intent" class="state-ctrl-btn px-2.5 py-1 rounded-full text-xs font-mono transition-luxury border border-transparent text-neutral-500 hover:text-neutral-950 hover:border-neutral-200">
+            02 · MOTOR INTENT
+          </button>
+          <button type="button" data-state-btn="ignition" class="state-ctrl-btn px-2.5 py-1 rounded-full text-xs font-mono transition-luxury border border-transparent text-amber-700 hover:text-amber-900 hover:border-amber-300 bg-amber-500/10">
+            03 · GLOBAL IGNITION ⚡
+          </button>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button type="button" id="audio-toggle-btn" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-neutral-200 bg-white/90 text-[10px] font-mono text-neutral-600 hover:text-amber-800 hover:border-amber-400 transition-luxury shadow-xs" aria-label="Toggle ethereal audio biofeedback">
+            <span id="audio-icon">🔇</span>
+            <span id="audio-label">HARMONICS: OFF</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Monumental Career Motto Headline -->
-      <div class="max-w-6xl mb-16">
-        <h1 id="hero-title" class="font-serif text-5xl sm:text-7xl lg:text-[6.75rem] font-normal leading-[0.93] tracking-[-0.04em] text-neutral-950 mb-8 text-balance">
+      <div class="max-w-6xl mb-16 relative">
+        <h1 id="hero-title" class="font-serif text-5xl sm:text-7xl lg:text-[6.75rem] font-normal leading-[0.93] tracking-[-0.04em] text-neutral-950 mb-8 text-balance transition-all duration-700">
           Creating seamless interactions between humans and computers.
         </h1>
 
@@ -266,7 +292,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="relative overflow-hidden bg-neutral-100 rounded-xl border border-neutral-200/80">
             <a href="/vitals" class="block aspect-[16/10] overflow-hidden">
               <img
-                src="/assets/vitals/cover.png"
+                src="/assets/experience/vitals/vitals-hero.png"
                 alt="Vitals medical ID onboarding"
                 class="w-full h-full object-contain p-4 grayscale contrast-110 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
               />
@@ -301,20 +327,107 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script is:inline>
-  // Advanced Histological Cytology & Integrate-and-Fire Neural Network Simulation
-  // Features: Soft Radial Density Gradient Somas (Zero Cartoon Borders), Varicose Axons, Guaranteed Network Connectivity, Luminous Multi-Phase Action Potentials
+  // Advanced Theatrical Histological Neural Simulation Suite
+  // Modules:
+  // 1. Biological Cytology & Non-Uniform Varicose Axons
+  // 2. Thought Scribing (Pointer Drag -> Custom Engram Circuit Formation)
+  // 3. Global Cortical Ignition (Macro State Shifts & Headline Illumination)
+  // 4. Web Audio Biofeedback (Pentatonic Synaptic Chimes & Ignition Chord Swell)
   (function() {
     const canvas = document.getElementById('synaptic-field');
+    const aura = document.getElementById('ignition-aura');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
     let width, height;
-    let mouse = { x: -1000, y: -1000, active: false };
+    let mouse = { x: -1000, y: -1000, isDown: false, active: false };
+
+    // Audio Engine (Web Audio API Synthesizer)
+    let audioCtx = null;
+    let audioEnabled = false;
+    const pentatonicScale = [432, 486, 540, 648, 720, 864, 972]; // Ethereal Pythagorean tuning
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playSynapticChime(freq = 540, volume = 0.08) {
+      if (!audioEnabled || !audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+        gain.gain.setValueAtTime(0, audioCtx.currentTime);
+        gain.gain.linearRampToValueAtTime(volume, audioCtx.currentTime + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.35);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.36);
+      } catch(e) {}
+    }
+
+    function playIgnitionChord() {
+      if (!audioEnabled || !audioCtx) return;
+      try {
+        const chord = [216, 324, 432, 540, 648];
+        chord.forEach((freq, idx) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+          gain.gain.setValueAtTime(0, audioCtx.currentTime);
+          gain.gain.linearRampToValueAtTime(0.045, audioCtx.currentTime + 0.4 + idx * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.8);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start();
+          osc.stop(audioCtx.currentTime + 2.9);
+        });
+      } catch(e) {}
+    }
+
+    // Audio Toggle Button
+    const audioBtn = document.getElementById('audio-toggle-btn');
+    const audioIcon = document.getElementById('audio-icon');
+    const audioLabel = document.getElementById('audio-label');
+
+    if (audioBtn) {
+      audioBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        initAudio();
+        audioEnabled = !audioEnabled;
+        if (audioEnabled) {
+          audioIcon.textContent = '🔊';
+          audioLabel.textContent = 'HARMONICS: ON';
+          audioBtn.classList.add('border-amber-400', 'text-amber-800', 'bg-amber-50');
+          playSynapticChime(648, 0.1);
+        } else {
+          audioIcon.textContent = '🔇';
+          audioLabel.textContent = 'HARMONICS: OFF';
+          audioBtn.classList.remove('border-amber-400', 'text-amber-800', 'bg-amber-50');
+        }
+      });
+    }
 
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = window.innerWidth;
-      height = Math.max(window.innerHeight * 1.18, 900);
+      height = Math.max(window.innerHeight * 1.25, 950);
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = width + 'px';
@@ -325,26 +438,94 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     resize();
     window.addEventListener('resize', resize);
 
-    window.addEventListener('mousemove', (e) => {
+    // Track mouse & pointer for Thought Scribing
+    const scribedEngram = [];
+
+    window.addEventListener('pointermove', (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY + window.scrollY;
       mouse.active = true;
+
+      if (mouse.isDown) {
+        scribedEngram.push({ x: mouse.x, y: mouse.y, time: Date.now() });
+        // Check if cursor passes close to an unrecruited neuron
+        for (let i = 0; i < neurons.length; i++) {
+          const n = neurons[i];
+          const d = Math.hypot(mouse.x - n.x, mouse.y - n.y);
+          if (d < 45 && !n.isEngramRecruited) {
+            n.isEngramRecruited = true;
+            n.potential = 0.9;
+            playSynapticChime(pentatonicScale[i % pentatonicScale.length], 0.04);
+          }
+        }
+      }
     });
 
-    window.addEventListener('mouseleave', () => {
+    window.addEventListener('pointerleave', () => {
       mouse.active = false;
+      mouse.isDown = false;
+    });
+
+    // Pointerdown: start scribing or inject current
+    window.addEventListener('pointerdown', (e) => {
+      // Don't trigger if clicking interactive navigation elements
+      if (e.target.closest('a') || e.target.closest('button')) return;
+
+      mouse.isDown = true;
+      scribedEngram.length = 0;
+      const clickX = e.clientX;
+      const clickY = e.clientY + window.scrollY;
+
+      initAudio();
+
+      for (let i = 0; i < neurons.length; i++) {
+        const n = neurons[i];
+        n.isEngramRecruited = false;
+        const dist = Math.hypot(clickX - n.x, clickY - n.y);
+
+        if (dist < 240) {
+          const stimulus = Math.pow(1 - dist / 240, 1.3) * 0.75;
+          if (n.refractory <= 0) {
+            n.potential += stimulus;
+            if (n.potential >= n.currentThreshold) {
+              fireNeuron(n, -1, 0);
+            }
+          }
+        }
+      }
+    });
+
+    // Pointerup: Release Thought Scribe -> Ignite Engram Circuit!
+    window.addEventListener('pointerup', () => {
+      if (mouse.isDown && scribedEngram.length > 5) {
+        // Find all recruited neurons along the scribed path
+        const recruited = neurons.filter(n => n.isEngramRecruited);
+        if (recruited.length > 1) {
+          // Sequentially fire them like a choreographed circuit!
+          recruited.forEach((rn, idx) => {
+            setTimeout(() => {
+              fireNeuron(rn, -1, 0);
+            }, idx * 60);
+          });
+        }
+      }
+      mouse.isDown = false;
+      neurons.forEach(n => n.isEngramRecruited = false);
     });
 
     const morphTypes = ['pyramidal', 'multipolar', 'bipolar'];
-    const numNeurons = 64;
+    const numNeurons = 66;
     const neurons = [];
     const connections = [];
     const activePulses = [];
 
-    // Initialize Neurons with biological cytology properties
+    // Cortical Macro State Management
+    let corticalMode = 'alpha'; // 'alpha' | 'intent' | 'ignition'
+    let ignitionProgress = 0; // 0 to 1 during theatrical global ignition
+
     for (let i = 0; i < numNeurons; i++) {
       const baseX = Math.random() * (width || window.innerWidth);
-      const baseY = Math.random() * (height || 900);
+      const baseY = Math.random() * (height || 950);
       const type = morphTypes[i % morphTypes.length];
       const baseRadius = 4.0 + Math.random() * 2.5;
 
@@ -367,11 +548,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         spikeEnergy: 0.0,
         jitterX: 0,
         jitterY: 0,
-        connectedIndices: []
+        connectedIndices: [],
+        isEngramRecruited: false
       });
     }
 
-    // Helper to add a connection with organic curvature & synaptic boutons
     function addAxonalConnection(i, j, dx, dy) {
       if (neurons[i].connectedIndices.includes(j)) return;
       neurons[i].connectedIndices.push(j);
@@ -380,7 +561,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const perpAngle = Math.atan2(dy, dx) + Math.PI / 2;
       const curveOffset = (Math.random() - 0.5) * 26;
 
-      // Generate 2-4 synaptic boutons en passant along this axon
       const numBoutons = 2 + Math.floor(Math.random() * 3);
       const boutons = [];
       for (let b = 0; b < numBoutons; b++) {
@@ -399,56 +579,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
     }
 
-    // Step 1: Distance-based local arborization
     const maxConnDistance = 155;
     for (let i = 0; i < neurons.length; i++) {
       for (let j = i + 1; j < neurons.length; j++) {
         const dx = neurons[i].baseX - neurons[j].baseX;
         const dy = neurons[i].baseY - neurons[j].baseY;
-        const d = Math.sqrt(dx * dx + dy * dy);
+        const d = Math.hypot(dx, dy);
         if (d < maxConnDistance) {
           addAxonalConnection(i, j, dx, dy);
         }
       }
     }
 
-    // Step 2: GUARANTEE ZERO LONELY NEURONS (Minimum degree = 2)
+    // Guarantee Zero Lonely Neurons
     for (let i = 0; i < neurons.length; i++) {
       while (neurons[i].connectedIndices.length < 2) {
         let closestDist = Infinity;
         let closestIdx = -1;
         for (let j = 0; j < neurons.length; j++) {
           if (i === j || neurons[i].connectedIndices.includes(j)) continue;
-          const dx = neurons[i].baseX - neurons[j].baseX;
-          const dy = neurons[i].baseY - neurons[j].baseY;
-          const d = Math.sqrt(dx * dx + dy * dy);
+          const d = Math.hypot(neurons[i].baseX - neurons[j].baseX, neurons[i].baseY - neurons[j].baseY);
           if (d < closestDist) {
             closestDist = d;
             closestIdx = j;
           }
         }
         if (closestIdx !== -1) {
-          const dx = neurons[i].baseX - neurons[closestIdx].baseX;
-          const dy = neurons[i].baseY - neurons[closestIdx].baseY;
-          addAxonalConnection(i, closestIdx, dx, dy);
-        } else {
-          break;
-        }
+          addAxonalConnection(i, closestIdx, neurons[i].baseX - neurons[closestIdx].baseX, neurons[i].baseY - neurons[closestIdx].baseY);
+        } else break;
       }
     }
 
-    // Finite Action Potential Cascade with Synaptic Fatigue
+    // Fire action potential (audio-visual biofeedback)
     function fireNeuron(n, sourceId = -1, hop = 0) {
-      if (hop > 2) return; // Strict cascade limit guarantees termination
+      if (hop > 2) return;
 
       n.potential = 0.0;
       n.spikeEnergy = 1.0;
-      n.refractory = 58; // Refractory protection against loops
-      n.currentThreshold += 0.5; // Synaptic depression
+      n.refractory = 56;
+      n.currentThreshold += 0.48;
+
+      // Play soft harmonic chime mapped to neuron depth
+      const freq = pentatonicScale[n.id % pentatonicScale.length] * (hop === 0 ? 1 : 1.25);
+      playSynapticChime(freq, 0.06);
 
       for (let k = 0; k < n.connectedIndices.length; k++) {
         const targetId = n.connectedIndices[k];
-        if (targetId === sourceId) continue; // No back-excitation
+        if (targetId === sourceId) continue;
 
         const targetNeuron = neurons[targetId];
         activePulses.push({
@@ -462,59 +639,97 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
     }
 
-    // Stimulus Current Injection on Pointerdown
-    window.addEventListener('pointerdown', (e) => {
-      const clickX = e.clientX;
-      const clickY = e.clientY + window.scrollY;
+    // Trigger Theatrical Global Cortical Ignition
+    function triggerGlobalIgnition() {
+      corticalMode = 'ignition';
+      ignitionProgress = 1.0;
 
-      for (let i = 0; i < neurons.length; i++) {
-        const n = neurons[i];
-        const dx = clickX - n.x;
-        const dy = clickY - n.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 250) {
-          const stimulus = Math.pow(1 - dist / 250, 1.3) * 0.75;
-          if (n.refractory <= 0) {
-            n.potential += stimulus;
-            if (n.potential >= n.currentThreshold) {
-              fireNeuron(n, -1, 0);
-            }
-          }
-        }
+      // Awaken headline aura
+      if (aura) {
+        aura.style.opacity = '1';
+        setTimeout(() => { aura.style.opacity = '0'; }, 2200);
       }
+
+      playIgnitionChord();
+
+      // Radial synchronized wave: compute distance from center
+      const centerX = width * 0.5;
+      const centerY = 350;
+
+      neurons.forEach(n => {
+        const d = Math.hypot(n.x - centerX, n.y - centerY);
+        const delay = d * 0.85; // Traveling wavefront speed
+        setTimeout(() => {
+          n.spikeEnergy = 1.0;
+          n.potential = 0.0;
+          n.refractory = 40;
+          playSynapticChime(pentatonicScale[n.id % pentatonicScale.length], 0.03);
+        }, delay);
+      });
+
+      setTimeout(() => {
+        corticalMode = 'alpha';
+        updateStateButtons();
+      }, 2600);
+    }
+
+    // State Control Buttons
+    const stateButtons = document.querySelectorAll('[data-state-btn]');
+    function updateStateButtons() {
+      stateButtons.forEach(btn => {
+        const mode = btn.getAttribute('data-state-btn');
+        if (mode === corticalMode) {
+          btn.classList.add('bg-white', 'text-neutral-950', 'border-neutral-300', 'shadow-xs');
+          btn.classList.remove('text-neutral-500', 'border-transparent');
+        } else {
+          btn.classList.remove('bg-white', 'text-neutral-950', 'border-neutral-300', 'shadow-xs');
+          btn.classList.add('text-neutral-500', 'border-transparent');
+        }
+      });
+    }
+
+    stateButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        initAudio();
+        const mode = btn.getAttribute('data-state-btn');
+        if (mode === 'ignition') {
+          triggerGlobalIgnition();
+        } else {
+          corticalMode = mode;
+        }
+        updateStateButtons();
+      });
     });
 
-    // -------------------------------------------------------------
-    // SOFT HISTOLOGICAL SOMA DRAWING (Zero Cartoon Outlines)
-    // -------------------------------------------------------------
-    function drawSoftHistologicalSoma(ctx, x, y, r, angle, excitation, spike, type) {
+    // Soft Histological Soma Rendering
+    function drawSoftHistologicalSoma(ctx, x, y, r, angle, excitation, spike, type, isRecruited) {
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(angle);
 
-      // Radial Cytoplasmic Density Gradient (Dense Nucleus fading into soft translucent membrane)
-      const grad = ctx.createRadialGradient(0, 0, r * 0.15, 0, 0, r * 2.2);
+      const grad = ctx.createRadialGradient(0, 0, r * 0.15, 0, 0, r * 2.4);
 
       if (spike > 0.05) {
-        // Active Action Potential Flash: Radiant Champagne-Gold nucleus blooming into Emerald/Sage halo
-        grad.addColorStop(0, `rgba(255, 255, 255, ${0.9 * spike})`);
+        grad.addColorStop(0, `rgba(255, 255, 255, ${0.95 * spike})`);
         grad.addColorStop(0.25, `rgba(245, 158, 11, ${0.85 * spike})`);
         grad.addColorStop(0.65, `rgba(13, 148, 136, ${0.45 * spike})`);
         grad.addColorStop(1, 'rgba(13, 148, 136, 0)');
+      } else if (isRecruited) {
+        // Thought Scribing Engram active state
+        grad.addColorStop(0, 'rgba(245, 158, 11, 0.85)');
+        grad.addColorStop(0.6, 'rgba(217, 119, 6, 0.4)');
+        grad.addColorStop(1, 'rgba(217, 119, 6, 0)');
       } else if (excitation > 0.1) {
-        // Depolarizing / Charging: Luminous warm amber swelling from nucleus
         grad.addColorStop(0, `rgba(217, 119, 6, ${0.4 + excitation * 0.5})`);
         grad.addColorStop(0.5, `rgba(245, 158, 11, ${0.2 + excitation * 0.35})`);
         grad.addColorStop(1, 'rgba(245, 158, 11, 0)');
       } else {
-        // Dormant Resting: Translucent warm histological stain (sepia-charcoal core)
-        grad.addColorStop(0, 'rgba(120, 110, 100, 0.45)');
-        grad.addColorStop(0.55, 'rgba(168, 155, 142, 0.22)');
+        grad.addColorStop(0, 'rgba(120, 110, 100, 0.42)');
+        grad.addColorStop(0.55, 'rgba(168, 155, 142, 0.20)');
         grad.addColorStop(1, 'rgba(168, 155, 142, 0)');
       }
 
-      // Fill soft organic cytoplasmic wash
       ctx.fillStyle = grad;
       ctx.beginPath();
       if (type === 'pyramidal') {
@@ -529,30 +744,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
       ctx.fill();
 
-      // Dense central nucleus organelle
+      // Organelle Nucleus
       const nucleusR = Math.max(1.2, r * 0.38);
       ctx.beginPath();
       ctx.arc(0, 0, nucleusR, 0, Math.PI * 2);
       if (spike > 0.05) {
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.95 * spike})`;
-      } else if (excitation > 0.1) {
-        ctx.fillStyle = `rgba(217, 119, 6, ${0.5 + excitation * 0.4})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.98 * spike})`;
+      } else if (isRecruited || excitation > 0.1) {
+        ctx.fillStyle = `rgba(217, 119, 6, ${0.6 + excitation * 0.35})`;
       } else {
         ctx.fillStyle = 'rgba(90, 80, 72, 0.55)';
       }
       ctx.fill();
 
-      // Soft, organic dendritic branches emerging smoothly without hard strokes
+      // Dendritic Arborization
       ctx.beginPath();
       if (type === 'pyramidal') {
-        // Apical trunk
         ctx.moveTo(0, -r * 1.2);
         ctx.quadraticCurveTo(r * 0.3, -r * 2.2, 0, -r * 3.2);
         ctx.moveTo(0, -r * 3.2);
         ctx.quadraticCurveTo(-r * 0.6, -r * 4.0, -r * 0.9, -r * 4.6);
         ctx.moveTo(0, -r * 3.2);
         ctx.quadraticCurveTo(r * 0.6, -r * 4.0, r * 0.9, -r * 4.6);
-        // Basal branches
         ctx.moveTo(-r * 0.8, r * 1.0);
         ctx.quadraticCurveTo(-r * 1.6, r * 1.8, -r * 2.4, r * 2.5);
         ctx.moveTo(r * 0.8, r * 1.0);
@@ -579,7 +792,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       ctx.strokeStyle = spike > 0.05
         ? `rgba(13, 148, 136, ${0.5 + spike * 0.4})`
-        : (excitation > 0.1 ? `rgba(217, 119, 6, ${0.2 + excitation * 0.45})` : 'rgba(150, 140, 130, 0.32)');
+        : (isRecruited ? 'rgba(245, 158, 11, 0.7)' : (excitation > 0.1 ? `rgba(217, 119, 6, ${0.2 + excitation * 0.45})` : 'rgba(150, 140, 130, 0.32)'));
       ctx.lineWidth = 0.8;
       ctx.stroke();
 
@@ -593,44 +806,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       time += 0.012;
 
-      // 1. Biological State Integration & Leaky Decay
+      // 1. Update Biological State based on Cortical Mode
       for (let i = 0; i < neurons.length; i++) {
         const n = neurons[i];
 
-        // Smooth subtle drift
-        n.x = n.baseX + Math.sin(time * n.driftSpeed * 100 + n.phase) * n.driftRadius;
-        n.y = n.baseY + Math.cos(time * n.driftSpeed * 80 + n.phase) * (n.driftRadius * 0.65);
+        // Mode-specific dynamics
+        let speedMult = 1.0;
+        if (corticalMode === 'alpha') {
+          // Coherent, calm 10Hz alpha undulation
+          speedMult = 0.8;
+          n.potential = Math.max(n.potential, 0.05 * Math.sin(time * 3.5 + n.phase));
+        } else if (corticalMode === 'intent') {
+          // Contralateral motor desynchronization
+          speedMult = 1.4;
+          if (n.x < width * 0.5) {
+            n.potential = Math.min(n.currentThreshold - 0.05, n.potential + 0.012 * Math.sin(time * 8.0 + n.phase));
+          }
+        }
+
+        n.x = n.baseX + Math.sin(time * n.driftSpeed * 100 * speedMult + n.phase) * n.driftRadius;
+        n.y = n.baseY + Math.cos(time * n.driftSpeed * 80 * speedMult + n.phase) * (n.driftRadius * 0.65);
 
         // Hover proximity induction
-        if (mouse.active) {
-          const dx = mouse.x - n.x;
-          const dy = mouse.y - n.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+        if (mouse.active && !mouse.isDown) {
+          const dist = Math.hypot(mouse.x - n.x, mouse.y - n.y);
           if (dist < 135 && n.refractory <= 0) {
             const hoverEPSP = (1 - dist / 135) * 0.01;
             n.potential = Math.min(n.currentThreshold - 0.05, n.potential + hoverEPSP);
           }
         }
 
-        // Leaky integrator potential decay
         n.potential *= 0.985;
+        if (n.currentThreshold > n.baseThreshold) n.currentThreshold = Math.max(n.baseThreshold, n.currentThreshold - 0.005);
+        if (n.refractory > 0) n.refractory--;
+        if (n.spikeEnergy > 0) n.spikeEnergy *= 0.90;
 
-        // Fatigue recovery
-        if (n.currentThreshold > n.baseThreshold) {
-          n.currentThreshold = Math.max(n.baseThreshold, n.currentThreshold - 0.005);
-        }
-
-        // Refractory countdown
-        if (n.refractory > 0) {
-          n.refractory--;
-        }
-
-        // Action potential spike flash decay
-        if (n.spikeEnergy > 0) {
-          n.spikeEnergy *= 0.90;
-        }
-
-        // Micro-vibration proportional to membrane potential
         if (n.potential > 0.15) {
           const jitterMag = n.potential * 1.6;
           n.jitterX = (Math.random() - 0.5) * jitterMag;
@@ -641,7 +851,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 2. Render Curvilinear Axons with Synaptic Boutons & Non-Uniform Tapering
+      // 2. Render Curvilinear Axons with Boutons
       for (let c = 0; c < connections.length; c++) {
         const conn = connections[c];
         const nA = neurons[conn.from];
@@ -653,7 +863,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         const midX = (nA.x + nB.x) * 0.5 + conn.curveOffsetX;
         const midY = (nA.y + nB.y) * 0.5 + conn.curveOffsetY;
 
-        // Base curved axon fiber
         ctx.beginPath();
         ctx.moveTo(nA.x + nA.jitterX, nA.y + nA.jitterY);
         ctx.quadraticCurveTo(midX, midY, nB.x + nB.jitterX, nB.y + nB.jitterY);
@@ -661,6 +870,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         if (activeSpike > 0.08) {
           ctx.strokeStyle = `rgba(13, 148, 136, ${0.35 + activeSpike * 0.45})`;
           ctx.lineWidth = 1.1 + activeSpike * 0.7;
+        } else if (nA.isEngramRecruited && nB.isEngramRecruited) {
+          ctx.strokeStyle = 'rgba(245, 158, 11, 0.65)';
+          ctx.lineWidth = 1.2;
         } else if (activeCharge > 0.15) {
           ctx.strokeStyle = `rgba(217, 119, 6, ${0.12 + activeCharge * 0.35})`;
           ctx.lineWidth = 0.8 + activeCharge * 0.4;
@@ -670,7 +882,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
         ctx.stroke();
 
-        // Draw Synaptic Boutons (Varicosities) along the filament
+        // Boutons
         for (let b = 0; b < conn.boutons.length; b++) {
           const bt = conn.boutons[b].t;
           const invBt = 1 - bt;
@@ -691,7 +903,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 3. Render High-Fidelity Multi-Phase Action Potential Wave Packets
+      // 3. Render Thought Scribing Trail (Pointer Engram Canvas)
+      if (mouse.isDown && scribedEngram.length > 1) {
+        ctx.beginPath();
+        ctx.moveTo(scribedEngram[0].x, scribedEngram[0].y);
+        for (let i = 1; i < scribedEngram.length; i++) {
+          ctx.lineTo(scribedEngram[i].x, scribedEngram[i].y);
+        }
+        ctx.strokeStyle = 'rgba(217, 119, 6, 0.55)';
+        ctx.lineWidth = 1.4;
+        ctx.setLineDash([4, 4]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+
+      // 4. Render Traveling Action Potential Waves
       for (let p = activePulses.length - 1; p >= 0; p--) {
         const pulse = activePulses[p];
         pulse.progress += pulse.speed;
@@ -713,7 +939,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         const midX = (nA.x + nB.x) * 0.5 + curveX;
         const midY = (nA.y + nB.y) * 0.5 + curveY;
 
-        // Render traveling ion wave packet (bright leading spark + bioluminescent sage tail)
         const steps = 6;
         for (let s = 0; s < steps; s++) {
           const lag = s * 0.022;
@@ -724,28 +949,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           ctx.beginPath();
           if (s === 0) {
-            // Intense leading spark (Champagne Gold)
             ctx.arc(px, py, 2.4, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(255, 235, 180, ${0.95 * pulse.energy})`;
             ctx.fill();
 
-            // Corona
             ctx.beginPath();
             ctx.arc(px, py, 5.0, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(245, 158, 11, ${0.45 * pulse.energy})`;
             ctx.fill();
           } else {
-            // Fading bioluminescent wake (Warm Amber -> Sage Green)
             const tailAlpha = (1 - s / steps) * 0.45 * pulse.energy;
             ctx.arc(px, py, 2.0 - s * 0.25, 0, Math.PI * 2);
-            ctx.fillStyle = s < 3
-              ? `rgba(217, 119, 6, ${tailAlpha})`
-              : `rgba(13, 148, 136, ${tailAlpha * 0.8})`;
+            ctx.fillStyle = s < 3 ? `rgba(217, 119, 6, ${tailAlpha})` : `rgba(13, 148, 136, ${tailAlpha * 0.8})`;
             ctx.fill();
           }
         }
 
-        // Synaptic arrival & downstream excitation
         if (pulse.progress >= 1.0) {
           const target = pulse.toNeuron;
           if (target.refractory <= 0) {
@@ -758,14 +977,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 4. Render Soft Histological Somas
+      // 5. Render Somas
       for (let i = 0; i < neurons.length; i++) {
         const n = neurons[i];
         const posX = n.x + n.jitterX;
         const posY = n.y + n.jitterY;
 
         const effectiveR = n.radius * (1.0 + n.potential * 0.2 + n.spikeEnergy * 0.5);
-        drawSoftHistologicalSoma(ctx, posX, posY, effectiveR, n.angle, n.potential, n.spikeEnergy, n.type);
+        drawSoftHistologicalSoma(ctx, posX, posY, effectiveR, n.angle, n.potential, n.spikeEnergy, n.type, n.isEngramRecruited);
       }
 
       requestAnimationFrame(render);
