@@ -2,35 +2,35 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Meghan Lendhe — Product Designer & NeuroHCI Researcher" theme="dark">
-<!-- Tactile Grain Filter & Layered Atmospheric Lighting (Rich Amber & Obsidian Depth) -->
-<div class="fixed inset-0 pointer-events-none -z-20 opacity-[0.03] mix-blend-screen bg-[url('data:image/svg+xml,%3Csvg%20viewBox=%220%200%20200%20200%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter%20id=%22noiseFilter%22%3E%3CfeTurbulence%20type=%22fractalNoise%22%20baseFrequency=%220.8%22%20numOctaves=%223%22%20stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_80%_60%_at_70%_12%,rgba(245,158,11,0.07),transparent_65%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(56,189,248,0.035),transparent_60%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.04),transparent_70%)]"></div>
+<BaseLayout title="Meghan Lendhe — Product Designer & NeuroHCI Researcher" theme="light">
+<!-- Luminous Gallery Atmosphere: Layered Warm Ambient Gradients -->
+<div class="fixed inset-0 pointer-events-none -z-20 bg-[#FAF9F5]"></div>
+<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_75%_55%_at_70%_10%,rgba(217,119,6,0.045),transparent_65%)]"></div>
+<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
+<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
-<!-- Full-Bleed Ambient Neural Flow Field (Unboxed, Seamless Interactive Canvas) -->
-<canvas id="neural-field" class="absolute top-0 inset-x-0 w-full h-[120vh] pointer-events-none -z-10"></canvas>
+<!-- Interactive Synaptic Neural Firing Canvas (Clean Nodes & Axon Pulses, Zero Swimming Particles) -->
+<canvas id="synaptic-field" class="absolute top-0 inset-x-0 w-full h-[120vh] pointer-events-none -z-10"></canvas>
 
-<main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-28 md:pt-40 font-sans text-neutral-100 selection:bg-amber-400/20 selection:text-amber-200">
+<main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-28 md:pt-40 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
-    <!-- HERO SECTION: Unconstrained, Immersive Opening -->
+    <!-- HERO SECTION: Luminous & Grounded Career Opening -->
     <section id="hero" aria-labelledby="hero-title" class="relative mb-36 md:mb-52">
 
       <!-- Monumental Career Motto Headline -->
       <div class="max-w-6xl mb-16">
-        <h1 id="hero-title" class="font-serif text-5xl sm:text-7xl lg:text-[6.75rem] font-normal leading-[0.93] tracking-[-0.04em] text-white mb-8 text-balance">
+        <h1 id="hero-title" class="font-serif text-5xl sm:text-7xl lg:text-[6.75rem] font-normal leading-[0.93] tracking-[-0.04em] text-neutral-950 mb-8 text-balance">
           Creating seamless interactions between humans and computers.
         </h1>
 
         <!-- Intermediate Scale Bridge -->
-        <p class="text-2xl sm:text-3xl text-neutral-200 font-light leading-snug tracking-tight mb-14 max-w-[50ch]">
+        <p class="text-2xl sm:text-3xl text-neutral-700 font-light leading-snug tracking-tight mb-14 max-w-[50ch]">
           I'm Meghan Lendhe—a product designer and neuroHCI researcher bridging biosignal computing with human-centered systems.
         </p>
 
         <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-12 lg:gap-20 items-start">
           <div>
-            <p class="text-lg sm:text-xl text-neutral-300 font-light leading-[1.8] max-w-[52ch] text-pretty">
+            <p class="text-lg sm:text-xl text-neutral-600 font-light leading-[1.8] max-w-[52ch] text-pretty">
               I explore how neural interfaces, biosignal decoding, and machine learning can make computing feel natural, adaptive, and human. Currently developing hands-on research experience in zero-calibration EEG decoding architectures while bringing a proven foundation in end-to-end product design.
             </p>
           </div>
@@ -39,17 +39,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="space-y-6 lg:pt-1">
             <div class="text-[9px] font-mono uppercase tracking-[0.32em] text-neutral-500">EXPLORE WORK</div>
             <nav aria-label="Page navigation" class="flex flex-col gap-3 font-mono text-xs tracking-wider">
-              <a href="#research" class="group flex items-center justify-between border-b border-white/[0.07] pb-2.5 text-white transition-luxury hover:text-amber-300 hover:border-amber-400/50">
+              <a href="#research" class="group flex items-center justify-between border-b border-neutral-200 pb-2.5 text-neutral-900 transition-luxury hover:text-amber-700 hover:border-amber-500">
                 <span>01. NEUROHCI &amp; BIOSIGNALS</span>
-                <span class="text-neutral-500 group-hover:text-amber-300 group-hover:translate-x-1.5 transition-luxury">→</span>
+                <span class="text-neutral-400 group-hover:text-amber-700 group-hover:translate-x-1.5 transition-luxury">→</span>
               </a>
-              <a href="#product-design" class="group flex items-center justify-between border-b border-white/[0.07] pb-2.5 text-neutral-300 transition-luxury hover:text-white hover:border-white/20">
+              <a href="#product-design" class="group flex items-center justify-between border-b border-neutral-200 pb-2.5 text-neutral-600 transition-luxury hover:text-neutral-950 hover:border-neutral-400">
                 <span>02. PRODUCT DESIGN CASE STUDIES</span>
-                <span class="text-neutral-500 group-hover:text-white group-hover:translate-x-1.5 transition-luxury">→</span>
+                <span class="text-neutral-400 group-hover:text-neutral-950 group-hover:translate-x-1.5 transition-luxury">→</span>
               </a>
-              <a href="#about" class="group flex items-center justify-between border-b border-white/[0.07] pb-2.5 text-neutral-400 transition-luxury hover:text-white hover:border-white/20">
+              <a href="#about" class="group flex items-center justify-between border-b border-neutral-200 pb-2.5 text-neutral-500 transition-luxury hover:text-neutral-950 hover:border-neutral-400">
                 <span>03. PERSPECTIVE &amp; COLLABORATION</span>
-                <span class="text-neutral-500 group-hover:text-white group-hover:translate-y-0.5 transition-luxury">↓</span>
+                <span class="text-neutral-400 group-hover:text-neutral-950 group-hover:translate-y-0.5 transition-luxury">↓</span>
               </a>
             </nav>
           </div>
@@ -63,8 +63,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section id="research" aria-labelledby="monograph-title" class="mb-48 md:mb-56 scroll-mt-32">
       
       <!-- Section Tag -->
-      <div class="pb-5 mb-16 border-b border-white/[0.07]">
-        <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-400 uppercase">
+      <div class="pb-5 mb-16 border-b border-neutral-200">
+        <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase">
           01 / NEUROHCI &amp; BIOSIGNAL COMPUTING
         </div>
       </div>
@@ -72,19 +72,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Asymmetric Broadsheet Layout (65/35 Split with Technical Ledger) -->
       <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 lg:gap-24 mb-20 items-start">
         <div>
-          <h2 id="monograph-title" class="font-serif text-4xl sm:text-6xl lg:text-[4.5rem] text-white leading-[1.02] tracking-tight mb-8 text-balance">
+          <h2 id="monograph-title" class="font-serif text-4xl sm:text-6xl lg:text-[4.5rem] text-neutral-950 leading-[1.02] tracking-tight mb-8 text-balance">
             Zero-Calibration BCI: Classifying Neural Patterns Across Unfamiliar Sessions
           </h2>
-          <div class="font-serif italic text-2xl sm:text-3xl text-neutral-300/90 leading-relaxed max-w-[44ch] mb-10">
+          <div class="font-serif italic text-2xl sm:text-3xl text-neutral-700 leading-relaxed max-w-[44ch] mb-10">
             “Standard BCI setups require 30 minutes of calibration before decoding a single thought. If neural interfaces are ever going to be practical outside a lab, zero calibration is a non-negotiable step.”
           </div>
 
-          <div class="space-y-6 text-neutral-300 font-light text-lg leading-[1.85] max-w-[54ch]">
-            <p class="text-white font-normal text-xl leading-relaxed">
+          <div class="space-y-6 text-neutral-600 font-light text-lg leading-[1.85] max-w-[54ch]">
+            <p class="text-neutral-900 font-normal text-xl leading-relaxed">
               In non-invasive Brain-Computer Interfaces, user adoption breaks at the calibration step. Traditional motor-imagery systems require 20 to 40 minutes of repetitive calibration at the start of every session before any control is granted. Sensor displacement, daily impedance changes, and non-stationary neural signals cause models trained yesterday to fail today.
             </p>
-            <p class="text-neutral-400">
-              For the NeurIPS 2026 Brain &amp; Body Workshop Challenge, I explored training neural decoding architectures to classify raw EEG patterns into 3 continuous motor tasks <span class="text-white font-normal underline decoration-neutral-600 underline-offset-4">without pre-session calibration</span>. By projecting differing subjects and recording sessions into an invariant latent manifold, this approach isolates motor intent from non-stationary noise from the very first second.
+            <p class="text-neutral-600">
+              For the NeurIPS 2026 Brain &amp; Body Workshop Challenge, I explored training neural decoding architectures to classify raw EEG patterns into 3 continuous motor tasks <span class="text-neutral-950 font-normal underline decoration-neutral-300 underline-offset-4">without pre-session calibration</span>. By projecting differing subjects and recording sessions into an invariant latent manifold, this approach isolates motor intent from non-stationary noise from the very first second.
             </p>
           </div>
         </div>
@@ -95,63 +95,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           
           <dl class="space-y-6 text-xs font-mono">
             <div>
-              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">CALIBRATION LATENCY</dt>
-              <dd class="text-white text-base font-medium tabular-nums">0.0 sec Pre-Session</dd>
+              <dt class="text-neutral-400 text-[9px] tracking-[0.25em] uppercase mb-1">CALIBRATION LATENCY</dt>
+              <dd class="text-neutral-950 text-base font-medium tabular-nums">0.0 sec Pre-Session</dd>
               <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Instantaneous inference upon sensor placement</dd>
             </div>
             <div>
-              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">ELECTRODE MONTAGE</dt>
-              <dd class="text-white text-base font-medium">10-20 Sensorimotor Strip</dd>
+              <dt class="text-neutral-400 text-[9px] tracking-[0.25em] uppercase mb-1">ELECTRODE MONTAGE</dt>
+              <dd class="text-neutral-950 text-base font-medium">10-20 Sensorimotor Strip</dd>
               <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Motor cortex coordinates: C3, Cz, C4</dd>
             </div>
             <div>
-              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">INVARIANCE STRATEGY</dt>
-              <dd class="text-white text-base font-medium">Latent Manifold Alignment</dd>
+              <dt class="text-neutral-400 text-[9px] tracking-[0.25em] uppercase mb-1">INVARIANCE STRATEGY</dt>
+              <dd class="text-neutral-950 text-base font-medium">Latent Manifold Alignment</dd>
               <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Mitigates cross-subject neural drift</dd>
             </div>
             <div>
-              <dt class="text-neutral-500 text-[9px] tracking-[0.25em] uppercase mb-1">TASK CLASSIFICATION</dt>
-              <dd class="text-white text-base font-medium">3-Class Continuous</dd>
+              <dt class="text-neutral-400 text-[9px] tracking-[0.25em] uppercase mb-1">TASK CLASSIFICATION</dt>
+              <dd class="text-neutral-950 text-base font-medium">3-Class Continuous</dd>
               <dd class="text-neutral-500 text-[11px] font-sans mt-0.5">Left Hand · Right Hand · Baseline Rest</dd>
             </div>
           </dl>
 
-          <div class="pt-6 border-t border-white/[0.07]">
+          <div class="pt-6 border-t border-neutral-200">
             <a
               href="https://neural-interfaces26.github.io/index.html"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-xs font-mono text-neutral-300 hover:text-amber-300 transition-luxury group"
+              class="inline-flex items-center gap-2 text-xs font-mono text-neutral-700 hover:text-amber-700 transition-luxury group"
             >
               <span class="tracking-wider">NEURIPS WORKSHOP CHALLENGE REPO</span>
-              <span class="text-amber-400 font-mono transition-luxury group-hover:translate-x-1">→</span>
+              <span class="text-amber-600 font-mono transition-luxury group-hover:translate-x-1">→</span>
             </a>
           </div>
         </div>
       </div>
 
       <!-- Methodological Breakdown -->
-      <div class="pt-14 border-t border-white/[0.07] grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="pt-14 border-t border-neutral-200 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div class="space-y-3">
-          <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest block">PIPELINE 01 / SIGNAL PREPROCESSING</span>
-          <h3 class="text-lg font-medium text-white">Uncalibrated 10-20 Montage</h3>
-          <p class="text-sm text-neutral-400 font-light leading-relaxed">
+          <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest block">PIPELINE 01 / SIGNAL PREPROCESSING</span>
+          <h3 class="text-lg font-medium text-neutral-950">Uncalibrated 10-20 Montage</h3>
+          <p class="text-sm text-neutral-600 font-light leading-relaxed">
             Streaming multi-channel microvolt fluctuations across motor cortex coordinates (C3, Cz, C4) without baseline sweeps or manual impedance matching.
           </p>
         </div>
 
         <div class="space-y-3">
-          <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest block">PIPELINE 02 / LATENT ALIGNMENT</span>
-          <h3 class="text-lg font-medium text-white">Session-Invariant Geometry</h3>
-          <p class="text-sm text-neutral-400 font-light leading-relaxed">
+          <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest block">PIPELINE 02 / LATENT ALIGNMENT</span>
+          <h3 class="text-lg font-medium text-neutral-950">Session-Invariant Geometry</h3>
+          <p class="text-sm text-neutral-600 font-light leading-relaxed">
             Projecting non-overlapping recording days and cross-subject neural variance into a shared latent space, decoupling motor intent from hardware noise.
           </p>
         </div>
 
         <div class="space-y-3">
-          <span class="text-[9px] font-mono text-neutral-500 uppercase tracking-widest block">PIPELINE 03 / INTENT DISCRIMINATION</span>
-          <h3 class="text-lg font-medium text-white">Continuous 3-Class Inference</h3>
-          <p class="text-sm text-neutral-400 font-light leading-relaxed">
+          <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest block">PIPELINE 03 / INTENT DISCRIMINATION</span>
+          <h3 class="text-lg font-medium text-neutral-950">Continuous 3-Class Inference</h3>
+          <p class="text-sm text-neutral-600 font-light leading-relaxed">
             Distinguishing between left motor imagery, right motor imagery, and cognitive rest immediately upon donning the sensor array.
           </p>
         </div>
@@ -160,11 +160,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
 
-    <!-- PERSPECTIVE INTERLUDE -->
-    <section id="about" aria-label="Perspective" class="py-24 md:py-32 my-20 border-y border-white/[0.07] text-center relative overflow-hidden">
+    <!-- PERSPECTIVE INTERLUDE (Clean & Minimal) -->
+    <section id="about" aria-label="Perspective" class="py-20 md:py-28 my-16 border-y border-neutral-200 text-center relative overflow-hidden">
       <div class="max-w-4xl mx-auto px-6 space-y-6">
-        <span class="text-[9px] font-mono tracking-[0.35em] text-amber-400 uppercase">PERSPECTIVE</span>
-        <blockquote class="font-serif italic text-2xl sm:text-4xl text-white font-light leading-[1.3] text-balance">
+        <span class="text-[9px] font-mono tracking-[0.35em] text-amber-700 uppercase">PERSPECTIVE</span>
+        <blockquote class="font-serif italic text-2xl sm:text-4xl text-neutral-900 font-light leading-[1.3] text-balance">
           “The most impactful technology doesn’t demand that people adapt to it. It adapts quietly to them.”
         </blockquote>
         <div class="text-[10px] font-mono tracking-[0.25em] text-neutral-400 uppercase pt-2">
@@ -177,17 +177,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- SECTION 02: PRODUCT DESIGN & COMPLEX WORKFLOWS -->
     <section id="product-design" aria-labelledby="product-title" class="pt-16">
       
-      <div class="pb-5 mb-16 border-b border-white/[0.07]">
-        <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-400 uppercase">
+      <div class="pb-5 mb-16 border-b border-neutral-200">
+        <div class="text-[9px] font-mono tracking-[0.36em] text-neutral-500 uppercase">
           02 / PRODUCT DESIGN &amp; COMPLEX WORKFLOWS
         </div>
       </div>
 
       <div class="max-w-4xl mb-24">
-        <h2 id="product-title" class="font-serif text-4xl sm:text-6xl text-white mb-6">
+        <h2 id="product-title" class="font-serif text-4xl sm:text-6xl text-neutral-950 mb-6">
           Product Design
         </h2>
-        <p class="text-xl text-neutral-300 font-light leading-[1.7] max-w-[52ch]">
+        <p class="text-xl text-neutral-600 font-light leading-[1.7] max-w-[52ch]">
           I spent the past few years designing digital products across e-commerce, government services, and healthcare.
         </p>
       </div>
@@ -197,30 +197,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         
         <!-- Case Study 01: BulkMagic -->
         <article class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-16 items-start group">
-          <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden bg-neutral-100 rounded-xl border border-neutral-200/80">
             <a href="/bulkmagic" class="block aspect-[16/10] overflow-hidden">
               <img
                 src="/assets/experience/bulkmagic-group-buy.jpg"
                 alt="BulkMagic campus group-buying e-commerce product architecture"
-                class="w-full h-full object-contain p-4 grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
+                class="w-full h-full object-contain p-4 grayscale contrast-110 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
               />
             </a>
-            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase border-t border-neutral-200 px-4 py-2.5 bg-neutral-50/80">
               <span>E-COMMERCE · GROUP BUYING</span>
               <span>UHUNGRY PILOT</span>
             </div>
           </div>
 
           <div class="space-y-4 lg:pt-2">
-            <span class="text-[9px] font-mono text-amber-400 uppercase tracking-widest block">E-COMMERCE · CAMPUS PILOT</span>
-            <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            <span class="text-[9px] font-mono text-amber-700 uppercase tracking-widest block">E-COMMERCE · CAMPUS PILOT</span>
+            <h3 class="text-3xl font-serif text-neutral-950 group-hover:text-amber-800 transition-colors">
               BulkMagic: Campus Subscription Ecosystem
             </h3>
-            <p class="text-base text-neutral-400 font-light leading-[1.7]">
+            <p class="text-base text-neutral-600 font-light leading-[1.7]">
               Pivoted BulkMagic into a focused campus subscription pilot with UHungry Cafe at the University of Utah. Architected responsive prototypes, mapped group-buy state machines, and tested student meal-plan economics.
             </p>
             <div class="pt-3">
-              <a href="/bulkmagic" class="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-amber-300 transition-luxury group">
+              <a href="/bulkmagic" class="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-800 hover:text-amber-700 border-b border-neutral-300 pb-0.5 hover:border-amber-600 transition-luxury group">
                 <span>View BulkMagic Case Study</span>
                 <span class="group-hover:translate-x-1 transition-luxury">→</span>
               </a>
@@ -231,30 +231,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Case Study 02: Omara Technologies -->
         <article class="grid grid-cols-1 lg:grid-cols-[0.65fr_1.35fr] gap-16 items-start group">
           <div class="space-y-4 order-2 lg:order-1 lg:pt-2">
-            <span class="text-[9px] font-mono text-amber-400 uppercase tracking-widest block">GOVERNMENT SERVICES · AUDIT PLATFORM</span>
-            <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            <span class="text-[9px] font-mono text-teal-700 uppercase tracking-widest block">GOVERNMENT SERVICES · AUDIT PLATFORM</span>
+            <h3 class="text-3xl font-serif text-neutral-950 group-hover:text-teal-800 transition-colors">
               Omara: Welfare Application Review
             </h3>
-            <p class="text-base text-neutral-400 font-light leading-[1.7]">
+            <p class="text-base text-neutral-600 font-light leading-[1.7]">
               Designed an officer-facing operational platform to review offline welfare applications. Engineered custom design-system verification skills that automated high-fidelity Figma components and accelerated prototyping workflows.
             </p>
             <div class="pt-3">
-              <a href="/omara" class="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-amber-300 transition-luxury group">
+              <a href="/omara" class="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-800 hover:text-teal-700 border-b border-neutral-300 pb-0.5 hover:border-teal-600 transition-luxury group">
                 <span>View Omara Case Study</span>
                 <span class="group-hover:translate-x-1 transition-luxury">→</span>
               </a>
             </div>
           </div>
 
-          <div class="order-1 lg:order-2 relative overflow-hidden">
+          <div class="order-1 lg:order-2 relative overflow-hidden bg-neutral-100 rounded-xl border border-neutral-200/80">
             <a href="/omara" class="block aspect-[16/10] overflow-hidden">
               <img
                 src="/assets/experience/omara-workflows.svg"
                 alt="Omara welfare application review and design-system tooling"
-                class="w-full h-full object-contain p-4 grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
+                class="w-full h-full object-contain p-4 grayscale contrast-110 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
               />
             </a>
-            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase border-t border-neutral-200 px-4 py-2.5 bg-neutral-50/80">
               <span>GOVERNMENT SERVICES</span>
               <span>VERIFICATION WORKFLOW</span>
             </div>
@@ -263,30 +263,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Case Study 03: Vitals Digital Medical ID -->
         <article class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-16 items-start group">
-          <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden bg-neutral-100 rounded-xl border border-neutral-200/80">
             <a href="/vitals" class="block aspect-[16/10] overflow-hidden">
               <img
                 src="/assets/vitals/cover.png"
                 alt="Vitals medical ID onboarding"
-                class="w-full h-full object-contain p-4 grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
+                class="w-full h-full object-contain p-4 grayscale contrast-110 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
               />
             </a>
-            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase mt-4 border-t border-white/[0.05] pt-3">
+            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase border-t border-neutral-200 px-4 py-2.5 bg-neutral-50/80">
               <span>HEALTHCARE · DIGITAL MEDICAL ID</span>
               <span>TRUST-FIRST DISCLOSURE</span>
             </div>
           </div>
 
           <div class="space-y-4 lg:pt-2">
-            <span class="text-[9px] font-mono text-amber-400 uppercase tracking-widest block">HEALTHCARE · CLINICAL ONBOARDING</span>
-            <h3 class="text-3xl font-serif text-white group-hover:text-amber-200 transition-colors">
+            <span class="text-[9px] font-mono text-amber-700 uppercase tracking-widest block">HEALTHCARE · CLINICAL ONBOARDING</span>
+            <h3 class="text-3xl font-serif text-neutral-950 group-hover:text-amber-800 transition-colors">
               Vitals: Digital Medical ID
             </h3>
-            <p class="text-base text-neutral-400 font-light leading-[1.7]">
+            <p class="text-base text-neutral-600 font-light leading-[1.7]">
               Redesigned emergency medical onboarding to solve a 92% drop-off barrier for vulnerable patients, establishing foundational trust and clear privacy control before requesting sensitive medical history.
             </p>
             <div class="pt-3">
-              <a href="/vitals" class="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-amber-300 transition-luxury group">
+              <a href="/vitals" class="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-800 hover:text-amber-700 border-b border-neutral-300 pb-0.5 hover:border-amber-600 transition-luxury group">
                 <span>View Vitals Case Study</span>
                 <span class="group-hover:translate-x-1 transition-luxury">→</span>
               </a>
@@ -301,19 +301,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script is:inline>
-  // Full-Bleed Atmospheric Neural Flow Field
+  // Synaptic Neural Firing Simulation (Dormant Cortical Mesh + Action Potentials on Interaction)
   (function() {
-    const canvas = document.getElementById('neural-field');
+    const canvas = document.getElementById('synaptic-field');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
     let width, height;
-    let mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, active: false };
+    let mouse = { x: -1000, y: -1000, active: false };
 
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = window.innerWidth;
-      height = Math.max(window.innerHeight * 1.2, 900);
+      height = Math.max(window.innerHeight * 1.15, 850);
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = width + 'px';
@@ -325,8 +325,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     window.addEventListener('resize', resize);
 
     window.addEventListener('mousemove', (e) => {
-      mouse.targetX = e.clientX;
-      mouse.targetY = e.clientY + window.scrollY;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY + window.scrollY;
       mouse.active = true;
     });
 
@@ -334,100 +334,127 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       mouse.active = false;
     });
 
-    // Particle vector system
-    const numParticles = 90;
-    const particles = [];
+    // Create stable neural nodes
+    const numNodes = 65;
+    const nodes = [];
 
-    const colors = [
-      'rgba(245, 158, 11, ',   // Warm Amber
-      'rgba(251, 191, 36, ',   // Topaz Gold
-      'rgba(226, 232, 240, ',  // Starlight White
-      'rgba(217, 119, 6, '     // Deep Champagne
-    ];
-
-    for (let i = 0; i < numParticles; i++) {
-      particles.push({
-        x: Math.random() * (width || window.innerWidth),
-        y: Math.random() * (height || 900),
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        history: [],
-        maxHistory: 20 + Math.floor(Math.random() * 16),
-        color: colors[Math.floor(Math.random() * colors.length)],
-        baseAlpha: 0.12 + Math.random() * 0.35,
-        lineWidth: 0.8 + Math.random() * 0.8
+    for (let i = 0; i < numNodes; i++) {
+      const baseX = Math.random() * (width || window.innerWidth);
+      const baseY = Math.random() * (height || 850);
+      nodes.push({
+        baseX: baseX,
+        baseY: baseY,
+        x: baseX,
+        y: baseY,
+        phase: Math.random() * Math.PI * 2,
+        driftSpeed: 0.002 + Math.random() * 0.003,
+        driftRadius: 12 + Math.random() * 20,
+        excitation: 0,
+        pulseOffset: Math.random() * 10
       });
     }
 
     let time = 0;
 
     function render() {
-      // Gentle decay for graceful fluid trails
       ctx.clearRect(0, 0, width, height);
 
-      time += 0.006;
+      time += 0.015;
 
-      // Smooth mouse lerping
-      if (mouse.active) {
-        mouse.x += (mouse.targetX - mouse.x) * 0.08;
-        mouse.y += (mouse.targetY - mouse.y) * 0.08;
-      } else {
-        mouse.x = width * 0.65 + Math.cos(time * 0.7) * (width * 0.22);
-        mouse.y = 400 + Math.sin(time * 0.8) * 160;
-      }
+      // Update node positions with gentle harmonic micro-drift
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i];
+        n.x = n.baseX + Math.sin(time * n.driftSpeed * 100 + n.phase) * n.driftRadius;
+        n.y = n.baseY + Math.cos(time * n.driftSpeed * 80 + n.phase) * (n.driftRadius * 0.7);
 
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-
-        // Complex flow vector
-        const angle = Math.sin(p.x * 0.003 + time) * Math.cos(p.y * 0.0035 + time) * Math.PI * 2;
-        p.vx += Math.cos(angle) * 0.06;
-        p.vy += Math.sin(angle) * 0.06;
-
-        // Interactive gravity with mouse
-        const dx = mouse.x - p.x;
-        const dy = mouse.y - p.y;
+        // Interaction with cursor
+        const dx = mouse.x - n.x;
+        const dy = mouse.y - n.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 220 && dist > 1) {
-          const force = (1 - dist / 220) * 0.35;
-          p.vx += (dx / dist) * force;
-          p.vy += (dy / dist) * force;
+        if (dist < 170 && mouse.active) {
+          const targetExcitation = Math.pow(1 - dist / 170, 1.5);
+          n.excitation = Math.max(n.excitation, targetExcitation);
         }
 
-        // Damping
-        p.vx *= 0.95;
-        p.vy *= 0.95;
+        // Smooth decay back to dormant state
+        n.excitation *= 0.94;
+      }
 
-        p.x += p.vx;
-        p.y += p.vy;
+      // Draw Synaptic Connections (Axons) between nearby excited nodes
+      const maxConnDist = 135;
 
-        // Wrap around bounds
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
+      for (let i = 0; i < nodes.length; i++) {
+        const nA = nodes[i];
+        for (let j = i + 1; j < nodes.length; j++) {
+          const nB = nodes[j];
+          const dx = nA.x - nB.x;
+          const dy = nA.y - nB.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
 
-        p.history.push({ x: p.x, y: p.y });
-        if (p.history.length > p.maxHistory) {
-          p.history.shift();
-        }
+          if (dist < maxConnDist) {
+            const jointExcitation = Math.max(nA.excitation, nB.excitation);
+            const distFactor = 1 - dist / maxConnDist;
 
-        // Draw particle trail with tapered glow
-        if (p.history.length > 2) {
-          ctx.beginPath();
-          ctx.moveTo(p.history[0].x, p.history[0].y);
-          for (let j = 1; j < p.history.length; j++) {
-            ctx.lineTo(p.history[j].x, p.history[j].y);
+            // Faint resting connection
+            const baseAlpha = 0.04 * distFactor;
+            // Excited firing connection
+            const firingAlpha = jointExcitation * 0.45 * distFactor;
+            const totalAlpha = baseAlpha + firingAlpha;
+
+            if (totalAlpha > 0.02) {
+              ctx.beginPath();
+              ctx.moveTo(nA.x, nA.y);
+              ctx.lineTo(nB.x, nB.y);
+
+              if (jointExcitation > 0.25) {
+                // Warm golden amber firing axon
+                ctx.strokeStyle = `rgba(217, 119, 6, ${totalAlpha})`;
+                ctx.lineWidth = 0.75 + jointExcitation * 0.75;
+              } else {
+                // Soft muted neural mesh
+                ctx.strokeStyle = `rgba(168, 162, 158, ${totalAlpha})`;
+                ctx.lineWidth = 0.65;
+              }
+              ctx.stroke();
+
+              // Action potential pulse traveling along active axon
+              if (jointExcitation > 0.35) {
+                const pulseProgress = ((time * 1.5 + (i + j)) % 1);
+                const pulseX = nA.x + (nB.x - nA.x) * pulseProgress;
+                const pulseY = nA.y + (nB.y - nA.y) * pulseProgress;
+
+                ctx.fillStyle = `rgba(13, 148, 136, ${jointExcitation * 0.75})`;
+                ctx.beginPath();
+                ctx.arc(pulseX, pulseY, 1.2, 0, Math.PI * 2);
+                ctx.fill();
+              }
+            }
           }
-          ctx.strokeStyle = p.color + (p.baseAlpha * (mouse.active ? 1.25 : 0.9)) + ')';
-          ctx.lineWidth = p.lineWidth;
-          ctx.stroke();
+        }
+      }
 
-          // Particle head
-          ctx.fillStyle = p.color + '0.85)';
+      // Draw Neural Soma Nodes
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i];
+
+        if (n.excitation > 0.15) {
+          // Active firing node with golden/sage corona
+          ctx.fillStyle = `rgba(217, 119, 6, ${0.4 + n.excitation * 0.5})`;
           ctx.beginPath();
-          ctx.arc(p.x, p.y, p.lineWidth * 0.9, 0, Math.PI * 2);
+          ctx.arc(n.x, n.y, 2.2 + n.excitation * 1.8, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Outer faint halo
+          ctx.fillStyle = `rgba(13, 148, 136, ${n.excitation * 0.25})`;
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, 5 + n.excitation * 4, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          // Dormant resting node
+          ctx.fillStyle = 'rgba(168, 162, 158, 0.4)';
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
           ctx.fill();
         }
       }
