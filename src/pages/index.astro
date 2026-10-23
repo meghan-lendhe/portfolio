@@ -12,7 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <!-- Theatrical Global Ignition Aura behind Headline -->
 <div id="ignition-aura" class="fixed top-12 left-1/2 -translate-x-1/2 w-[90vw] max-w-5xl h-[420px] pointer-events-none -z-15 rounded-full blur-3xl opacity-0 transition-opacity duration-1000 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.18),rgba(13,148,136,0.12),transparent_70%)]"></div>
 
-<!-- Interactive Histological Neural Simulation Canvas (Thought Scribing, Ignition & Cascades) -->
+<!-- Interactive Histological Neural Simulation Canvas (Thought Scribing, Cascades & Ignition) -->
 <canvas id="synaptic-field" class="absolute top-0 inset-x-0 w-full h-[125vh] pointer-events-none -z-10"></canvas>
 
 <main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-28 md:pt-40 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
@@ -20,27 +20,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- HERO SECTION: Luminous & Grounded Career Opening -->
     <section id="hero" aria-labelledby="hero-title" class="relative mb-36 md:mb-52">
 
-      <!-- Theatrical Telemetry & Cortical Dynamics Controls -->
-      <div class="flex flex-wrap items-center justify-between gap-4 pb-4 mb-12 text-[10px] font-mono tracking-wider border-b border-neutral-200">
-        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-          <span class="text-neutral-400 uppercase text-[9px] tracking-[0.25em] mr-1">CORTICAL STATE:</span>
-          <button type="button" data-state-btn="alpha" class="state-ctrl-btn px-2.5 py-1 rounded-full text-xs font-mono transition-luxury border border-neutral-300 bg-white text-neutral-950 shadow-xs">
-            01 · 10 HZ ALPHA
-          </button>
-          <button type="button" data-state-btn="intent" class="state-ctrl-btn px-2.5 py-1 rounded-full text-xs font-mono transition-luxury border border-transparent text-neutral-500 hover:text-neutral-950 hover:border-neutral-200">
-            02 · MOTOR INTENT
-          </button>
-          <button type="button" data-state-btn="ignition" class="state-ctrl-btn px-2.5 py-1 rounded-full text-xs font-mono transition-luxury border border-transparent text-amber-700 hover:text-amber-900 hover:border-amber-300 bg-amber-500/10">
-            03 · GLOBAL IGNITION ⚡
-          </button>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <button type="button" id="audio-toggle-btn" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-neutral-200 bg-white/90 text-[10px] font-mono text-neutral-600 hover:text-amber-800 hover:border-amber-400 transition-luxury shadow-xs" aria-label="Toggle ethereal audio biofeedback">
-            <span id="audio-icon">🔇</span>
-            <span id="audio-label">HARMONICS: OFF</span>
-          </button>
-        </div>
+      <!-- Minimal Audio Harmonics Toggle (Clean, Non-Intrusive) -->
+      <div class="flex items-center justify-end pb-3 mb-10">
+        <button type="button" id="audio-toggle-btn" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-neutral-200 bg-white/90 text-[10px] font-mono text-neutral-600 hover:text-amber-800 hover:border-amber-400 transition-luxury shadow-xs" aria-label="Toggle ethereal audio biofeedback">
+          <span id="audio-icon">🔇</span>
+          <span id="audio-label">HARMONICS: OFF</span>
+        </button>
       </div>
 
       <!-- Monumental Career Motto Headline -->
@@ -328,11 +313,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <script is:inline>
   // Advanced Theatrical Histological Neural Simulation Suite
-  // Modules:
-  // 1. Biological Cytology & Non-Uniform Varicose Axons
+  // Features:
+  // 1. Biological Cytology & Varicose Axons
   // 2. Thought Scribing (Pointer Drag -> Custom Engram Circuit Formation)
-  // 3. Global Cortical Ignition (Macro State Shifts & Headline Illumination)
-  // 4. Web Audio Biofeedback (Pentatonic Synaptic Chimes & Ignition Chord Swell)
+  // 3. Global Cortical Ignition (Triggered via Rapid Interaction & Engram Resonance)
+  // 4. Web Audio Biofeedback (Pythagorean Synaptic Chimes & Ignition Chord Swell)
   (function() {
     const canvas = document.getElementById('synaptic-field');
     const aura = document.getElementById('ignition-aura');
@@ -440,6 +425,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     // Track mouse & pointer for Thought Scribing
     const scribedEngram = [];
+    let isIgniting = false;
+
+    // Rapid Interaction Monitor (Triggers Global Ignition organically on rapid stimulation)
+    let rapidStimulusCount = 0;
+    let lastStimulusTime = 0;
 
     window.addEventListener('pointermove', (e) => {
       mouse.x = e.clientX;
@@ -448,7 +438,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       if (mouse.isDown) {
         scribedEngram.push({ x: mouse.x, y: mouse.y, time: Date.now() });
-        // Check if cursor passes close to an unrecruited neuron
         for (let i = 0; i < neurons.length; i++) {
           const n = neurons[i];
           const d = Math.hypot(mouse.x - n.x, mouse.y - n.y);
@@ -466,9 +455,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       mouse.isDown = false;
     });
 
-    // Pointerdown: start scribing or inject current
+    // Pointerdown: Stimulus Injection & Rapid Summation Check
     window.addEventListener('pointerdown', (e) => {
-      // Don't trigger if clicking interactive navigation elements
       if (e.target.closest('a') || e.target.closest('button')) return;
 
       mouse.isDown = true;
@@ -477,6 +465,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const clickY = e.clientY + window.scrollY;
 
       initAudio();
+
+      // Check for rapid successive clicks to trigger Global Ignition organically
+      const now = Date.now();
+      if (now - lastStimulusTime < 750) {
+        rapidStimulusCount++;
+      } else {
+        rapidStimulusCount = 1;
+      }
+      lastStimulusTime = now;
+
+      if (rapidStimulusCount >= 3 && !isIgniting) {
+        rapidStimulusCount = 0;
+        triggerGlobalIgnition();
+        return;
+      }
 
       for (let i = 0; i < neurons.length; i++) {
         const n = neurons[i];
@@ -495,18 +498,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
     });
 
-    // Pointerup: Release Thought Scribe -> Ignite Engram Circuit!
+    // Pointerup: Release Thought Scribe -> Ignite Engram Circuit -> Critical Avalanche
     window.addEventListener('pointerup', () => {
       if (mouse.isDown && scribedEngram.length > 5) {
-        // Find all recruited neurons along the scribed path
         const recruited = neurons.filter(n => n.isEngramRecruited);
         if (recruited.length > 1) {
-          // Sequentially fire them like a choreographed circuit!
           recruited.forEach((rn, idx) => {
             setTimeout(() => {
               fireNeuron(rn, -1, 0);
             }, idx * 60);
           });
+
+          // If a large engram is formed (>= 4 neurons), trigger Global Cortical Ignition!
+          if (recruited.length >= 4 && !isIgniting) {
+            setTimeout(() => {
+              triggerGlobalIgnition();
+            }, recruited.length * 60 + 150);
+          }
         }
       }
       mouse.isDown = false;
@@ -518,10 +526,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const neurons = [];
     const connections = [];
     const activePulses = [];
-
-    // Cortical Macro State Management
-    let corticalMode = 'alpha'; // 'alpha' | 'intent' | 'ignition'
-    let ignitionProgress = 0; // 0 to 1 during theatrical global ignition
 
     for (let i = 0; i < numNeurons; i++) {
       const baseX = Math.random() * (width || window.innerWidth);
@@ -619,7 +623,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       n.refractory = 56;
       n.currentThreshold += 0.48;
 
-      // Play soft harmonic chime mapped to neuron depth
       const freq = pentatonicScale[n.id % pentatonicScale.length] * (hop === 0 ? 1 : 1.25);
       playSynapticChime(freq, 0.06);
 
@@ -641,8 +644,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     // Trigger Theatrical Global Cortical Ignition
     function triggerGlobalIgnition() {
-      corticalMode = 'ignition';
-      ignitionProgress = 1.0;
+      if (isIgniting) return;
+      isIgniting = true;
 
       // Awaken headline aura
       if (aura) {
@@ -652,13 +655,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       playIgnitionChord();
 
-      // Radial synchronized wave: compute distance from center
       const centerX = width * 0.5;
       const centerY = 350;
 
       neurons.forEach(n => {
         const d = Math.hypot(n.x - centerX, n.y - centerY);
-        const delay = d * 0.85; // Traveling wavefront speed
+        const delay = d * 0.85;
         setTimeout(() => {
           n.spikeEnergy = 1.0;
           n.potential = 0.0;
@@ -668,39 +670,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
 
       setTimeout(() => {
-        corticalMode = 'alpha';
-        updateStateButtons();
+        isIgniting = false;
       }, 2600);
     }
-
-    // State Control Buttons
-    const stateButtons = document.querySelectorAll('[data-state-btn]');
-    function updateStateButtons() {
-      stateButtons.forEach(btn => {
-        const mode = btn.getAttribute('data-state-btn');
-        if (mode === corticalMode) {
-          btn.classList.add('bg-white', 'text-neutral-950', 'border-neutral-300', 'shadow-xs');
-          btn.classList.remove('text-neutral-500', 'border-transparent');
-        } else {
-          btn.classList.remove('bg-white', 'text-neutral-950', 'border-neutral-300', 'shadow-xs');
-          btn.classList.add('text-neutral-500', 'border-transparent');
-        }
-      });
-    }
-
-    stateButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        initAudio();
-        const mode = btn.getAttribute('data-state-btn');
-        if (mode === 'ignition') {
-          triggerGlobalIgnition();
-        } else {
-          corticalMode = mode;
-        }
-        updateStateButtons();
-      });
-    });
 
     // Soft Histological Soma Rendering
     function drawSoftHistologicalSoma(ctx, x, y, r, angle, excitation, spike, type, isRecruited) {
@@ -716,7 +688,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         grad.addColorStop(0.65, `rgba(13, 148, 136, ${0.45 * spike})`);
         grad.addColorStop(1, 'rgba(13, 148, 136, 0)');
       } else if (isRecruited) {
-        // Thought Scribing Engram active state
         grad.addColorStop(0, 'rgba(245, 158, 11, 0.85)');
         grad.addColorStop(0.6, 'rgba(217, 119, 6, 0.4)');
         grad.addColorStop(1, 'rgba(217, 119, 6, 0)');
@@ -806,26 +777,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       time += 0.012;
 
-      // 1. Update Biological State based on Cortical Mode
+      // 1. Update Biological State
       for (let i = 0; i < neurons.length; i++) {
         const n = neurons[i];
 
-        // Mode-specific dynamics
-        let speedMult = 1.0;
-        if (corticalMode === 'alpha') {
-          // Coherent, calm 10Hz alpha undulation
-          speedMult = 0.8;
-          n.potential = Math.max(n.potential, 0.05 * Math.sin(time * 3.5 + n.phase));
-        } else if (corticalMode === 'intent') {
-          // Contralateral motor desynchronization
-          speedMult = 1.4;
-          if (n.x < width * 0.5) {
-            n.potential = Math.min(n.currentThreshold - 0.05, n.potential + 0.012 * Math.sin(time * 8.0 + n.phase));
-          }
-        }
-
-        n.x = n.baseX + Math.sin(time * n.driftSpeed * 100 * speedMult + n.phase) * n.driftRadius;
-        n.y = n.baseY + Math.cos(time * n.driftSpeed * 80 * speedMult + n.phase) * (n.driftRadius * 0.65);
+        n.x = n.baseX + Math.sin(time * n.driftSpeed * 100 + n.phase) * n.driftRadius;
+        n.y = n.baseY + Math.cos(time * n.driftSpeed * 80 + n.phase) * (n.driftRadius * 0.65);
 
         // Hover proximity induction
         if (mouse.active && !mouse.isDown) {
