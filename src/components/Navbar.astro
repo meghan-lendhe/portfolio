@@ -35,9 +35,7 @@ const { theme = 'light' } = Astro.props;
 
       <!-- Right: Editorial Ledger Links & Contact Trigger -->
       <div class="flex items-center gap-6 font-mono text-[10px] tracking-widest uppercase">
-        <a href="/#work" class="text-neutral-600 transition-colors hover:text-amber-700 hidden sm:inline-block">Work</a>
-        <a href="/#research" class="text-neutral-600 transition-colors hover:text-amber-700 hidden sm:inline-block">Research</a>
-        <a href="/#perspective" class="text-neutral-600 transition-colors hover:text-amber-700 hidden md:inline-block">Perspective</a>
+        <a href="/#work" class="text-neutral-600 transition-colors hover:text-amber-700">Work</a>
 
         <div class="relative">
           <button
@@ -104,8 +102,6 @@ const { theme = 'light' } = Astro.props;
         <!-- Section Anchors -->
         <div class="flex items-center gap-4 sm:gap-5 font-mono text-[10px] tracking-widest uppercase">
           <a href="/#work" class="text-neutral-600 transition-colors hover:text-amber-700">Work</a>
-          <a href="/#research" class="text-neutral-600 transition-colors hover:text-amber-700">Research</a>
-          <a href="/#perspective" class="hidden sm:inline-block text-neutral-600 transition-colors hover:text-amber-700">Perspective</a>
         </div>
 
         <span class="h-3.5 w-px bg-neutral-200" aria-hidden="true"></span>
@@ -198,8 +194,7 @@ const { theme = 'light' } = Astro.props;
     >
       <div class="relative flex h-full w-full max-w-md flex-col justify-between border-l border-neutral-200 bg-[#FAF9F5] p-8 md:p-10 shadow-2xl overflow-y-auto">
         <!-- Drawer Header -->
-        <div class="flex items-center justify-between border-b border-neutral-200 pb-5">
-          <span class="font-mono text-[10px] tracking-[0.28em] uppercase text-neutral-500">Navigation</span>
+        <div class="flex items-center justify-end pb-4">
           <button
             type="button"
             data-dir3-drawer-close
@@ -210,48 +205,38 @@ const { theme = 'light' } = Astro.props;
           </button>
         </div>
 
-        <!-- Monumental Serif Navigation Chapters -->
-        <nav class="my-auto flex flex-col gap-10 py-8">
-          <!-- 01 / WORK -->
-          <div class="flex flex-col gap-3">
-            <a href="/#work" data-dir3-link class="group inline-flex items-baseline gap-3">
-              <span class="font-serif text-3xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Work</span>
-              <span class="font-mono text-[10px] tracking-widest uppercase text-neutral-400 group-hover:text-amber-700">01</span>
-            </a>
-            <!-- Direct Case Study Links -->
-            <div class="flex flex-wrap items-center gap-x-3.5 gap-y-1.5 font-mono text-[11px] text-neutral-600">
-              <a href="/vitals" data-dir3-link class="hover:text-amber-700 transition-colors">Vitals</a>
-              <span class="text-neutral-300" aria-hidden="true">·</span>
-              <a href="/bulkmagic" data-dir3-link class="hover:text-amber-700 transition-colors">BulkMagic</a>
-              <span class="text-neutral-300" aria-hidden="true">·</span>
-              <a href="/omara" data-dir3-link class="hover:text-amber-700 transition-colors">Omara</a>
-              <span class="text-neutral-300" aria-hidden="true">·</span>
-              <a href="/cool-school" data-dir3-link class="hover:text-amber-700 transition-colors">Cool School</a>
-              <span class="text-neutral-300" aria-hidden="true">·</span>
-              <a href="/alirtify" data-dir3-link class="hover:text-amber-700 transition-colors">Alirtify</a>
-            </div>
+        <!-- Case Studies List -->
+        <nav class="my-auto flex flex-col gap-6 py-6">
+          <div class="flex items-center justify-between border-b border-neutral-200 pb-2">
+            <span class="font-mono text-[9px] tracking-[0.28em] uppercase text-neutral-400">Selected Case Studies</span>
+            <a href="/" data-dir3-link class="font-mono text-[9px] tracking-widest uppercase text-neutral-500 hover:text-amber-700 transition-colors">Home ↑</a>
           </div>
 
-          <!-- 02 / RESEARCH -->
-          <div class="flex flex-col gap-3">
-            <a href="/#research" data-dir3-link class="group inline-flex items-baseline gap-3">
-              <span class="font-serif text-3xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Research</span>
-              <span class="font-mono text-[10px] tracking-widest uppercase text-neutral-400 group-hover:text-amber-700">02</span>
+          <div class="flex flex-col gap-4">
+            <a href="/vitals" data-dir3-link class="group flex flex-col gap-0.5">
+              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Vitals</span>
+              <span class="font-sans text-xs text-neutral-500 font-light">Emergency digital medical ID onboarding</span>
             </a>
-            <div class="flex flex-wrap items-center gap-x-3.5 gap-y-1.5 font-mono text-[11px] text-neutral-600">
-              <a href="/#research" data-dir3-link class="hover:text-amber-700 transition-colors">NeurIPS 2026 EEG/EMG</a>
-              <span class="text-neutral-300" aria-hidden="true">·</span>
-              <a href="/#research" data-dir3-link class="hover:text-amber-700 transition-colors">Springer Nature Publication</a>
-            </div>
-          </div>
 
-          <!-- 03 / PERSPECTIVE -->
-          <div class="flex flex-col gap-2">
-            <a href="/#perspective" data-dir3-link class="group inline-flex items-baseline gap-3">
-              <span class="font-serif text-3xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Perspective</span>
-              <span class="font-mono text-[10px] tracking-widest uppercase text-neutral-400 group-hover:text-amber-700">03</span>
+            <a href="/bulkmagic" data-dir3-link class="group flex flex-col gap-0.5">
+              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">BulkMagic</span>
+              <span class="font-sans text-xs text-neutral-500 font-light">Campus group-buying state machine &amp; unit economics</span>
             </a>
-            <span class="font-sans text-xs text-neutral-500 font-light">Neurotechnology, human agency &amp; Santiago Ramón y Cajal seal</span>
+
+            <a href="/omara" data-dir3-link class="group flex flex-col gap-0.5">
+              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Omara Technologies</span>
+              <span class="font-sans text-xs text-neutral-500 font-light">GovTech offline welfare review &amp; design verification</span>
+            </a>
+
+            <a href="/cool-school" data-dir3-link class="group flex flex-col gap-0.5">
+              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Cool School</span>
+              <span class="font-sans text-xs text-neutral-500 font-light">Pediatric conflict-resolution game architecture</span>
+            </a>
+
+            <a href="/alirtify" data-dir3-link class="group flex flex-col gap-0.5">
+              <span class="font-serif text-2xl font-light text-neutral-950 group-hover:text-amber-700 transition-colors">Alirtify</span>
+              <span class="font-sans text-xs text-neutral-500 font-light">Real-time news credibility &amp; alerting heuristics</span>
+            </a>
           </div>
         </nav>
 
