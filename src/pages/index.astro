@@ -661,8 +661,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         radius: baseRadius,
         angle: Math.random() * Math.PI * 2,
         phase: Math.random() * Math.PI * 2,
-        driftSpeed: 0.001 + Math.random() * 0.0016,
-        driftRadius: 6 + Math.random() * 12,
+        driftSpeed: 0.0003 + Math.random() * 0.0005,
+        driftRadius: 2.0 + Math.random() * 3.5,
         potential: 0.0,
         baseThreshold: 0.82,
         currentThreshold: 0.82,
@@ -813,9 +813,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         grad.addColorStop(0.5, `rgba(245, 158, 11, ${0.2 + excitation * 0.35})`);
         grad.addColorStop(1, 'rgba(245, 158, 11, 0)');
       } else {
-        grad.addColorStop(0, 'rgba(120, 110, 100, 0.42)');
-        grad.addColorStop(0.55, 'rgba(168, 155, 142, 0.20)');
-        grad.addColorStop(1, 'rgba(168, 155, 142, 0)');
+        grad.addColorStop(0, 'rgba(130, 120, 110, 0.11)');
+        grad.addColorStop(0.6, 'rgba(175, 165, 155, 0.035)');
+        grad.addColorStop(1, 'rgba(175, 165, 155, 0)');
       }
 
       ctx.fillStyle = grad;
@@ -841,7 +841,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       } else if (isRecruited || excitation > 0.1) {
         ctx.fillStyle = `rgba(217, 119, 6, ${0.6 + excitation * 0.35})`;
       } else {
-        ctx.fillStyle = 'rgba(90, 80, 72, 0.55)';
+        ctx.fillStyle = 'rgba(110, 100, 92, 0.15)';
       }
       ctx.fill();
 
@@ -880,8 +880,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       ctx.strokeStyle = spike > 0.05
         ? `rgba(13, 148, 136, ${0.5 + spike * 0.4})`
-        : (isRecruited ? 'rgba(245, 158, 11, 0.7)' : (excitation > 0.1 ? `rgba(217, 119, 6, ${0.2 + excitation * 0.45})` : 'rgba(150, 140, 130, 0.32)'));
-      ctx.lineWidth = 0.8;
+        : (isRecruited ? 'rgba(245, 158, 11, 0.7)' : (excitation > 0.1 ? `rgba(217, 119, 6, ${0.2 + excitation * 0.45})` : 'rgba(165, 155, 145, 0.06)'));
+      ctx.lineWidth = 0.55;
       ctx.stroke();
 
       ctx.restore();
@@ -892,7 +892,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     function render() {
       ctx.clearRect(0, 0, width, height);
 
-      time += 0.012;
+      time += 0.004;
 
       // 1. Update Biological State
       for (let i = 0; i < neurons.length; i++) {
@@ -951,8 +951,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           ctx.strokeStyle = `rgba(217, 119, 6, ${0.12 + activeCharge * 0.35})`;
           ctx.lineWidth = 0.8 + activeCharge * 0.4;
         } else {
-          ctx.strokeStyle = 'rgba(195, 188, 180, 0.28)';
-          ctx.lineWidth = 0.65;
+          ctx.strokeStyle = 'rgba(180, 172, 164, 0.065)';
+          ctx.lineWidth = 0.5;
         }
         ctx.stroke();
 
@@ -971,7 +971,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           } else if (activeCharge > 0.15) {
             ctx.fillStyle = `rgba(217, 119, 6, ${0.25 + activeCharge * 0.4})`;
           } else {
-            ctx.fillStyle = 'rgba(180, 172, 164, 0.35)';
+            ctx.fillStyle = 'rgba(170, 162, 154, 0.08)';
           }
           ctx.fill();
         }
