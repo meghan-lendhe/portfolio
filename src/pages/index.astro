@@ -75,24 +75,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="relative flex flex-col items-center">
           <div class="relative w-full aspect-square max-w-[420px] mx-auto cursor-crosshair">
             <canvas id="cortical-topography" class="w-full h-full block"></canvas>
-            
-            <!-- Subtle Archival Coordinate Legend -->
-            <div class="absolute inset-x-0 bottom-1 flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.25em] text-neutral-400 pointer-events-none px-2 select-none">
-              <span>10-20 SENSOR MONTAGE</span>
-              <span>SCALP POTENTIAL CONTOURS</span>
-            </div>
           </div>
         </div>
 
-        <!-- Right: Distilled Narrative & Archival Coordinates -->
+        <!-- Right: Distilled Narrative & Archival Link -->
         <div class="space-y-8">
           <div>
-            <h2 id="monograph-title" class="font-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-normal text-neutral-950 leading-[1.02] tracking-[-0.035em] mb-4 text-balance">
+            <h2 id="monograph-title" class="font-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-normal text-neutral-950 leading-[1.02] tracking-[-0.035em] text-balance">
               Zero-Calibration Neural Decoding
             </h2>
-            <div class="text-xs font-mono text-neutral-600 uppercase tracking-[0.2em] font-medium">
-              NEURIPS 2026 BRAIN &amp; BODY WORKSHOP CHALLENGE
-            </div>
           </div>
 
           <div class="space-y-5 text-neutral-800 font-normal text-base sm:text-lg leading-[1.75] max-w-[48ch]">
@@ -104,20 +95,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </p>
           </div>
 
-          <div class="pt-6 border-t border-neutral-200">
-            <dl class="grid grid-cols-2 gap-6 text-xs font-mono mb-8">
-              <div>
-                <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">TASK CLASSIFICATION</dt>
-                <dd class="text-neutral-900 font-medium">3-Class Continuous</dd>
-                <dd class="text-neutral-500 text-xs font-sans mt-0.5">Motor · Math · Speech</dd>
-              </div>
-              <div>
-                <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">STATUS</dt>
-                <dd class="text-amber-800 font-medium">Active Exploration</dd>
-                <dd class="text-neutral-500 text-xs font-sans mt-0.5">Case study in progress</dd>
-              </div>
-            </dl>
-
+          <div class="pt-4 border-t border-neutral-200">
             <a
               href="https://neural-interfaces26.github.io/index.html"
               target="_blank"
@@ -155,8 +133,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
 
-      <!-- CASE STUDY SPREADS: Authentic Domain & Impact -->
-      <div class="space-y-44">
+      <!-- CASE STUDY SPREADS: Clean, Uncluttered, Pure Story & Media -->
+      <div class="space-y-40">
         
         <!-- Case Study 01: BulkMagic -->
         <article class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-16 items-start group">
@@ -168,14 +146,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 class="w-full h-full object-contain p-4 grayscale contrast-110 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
               />
             </a>
-            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-600 uppercase border-t border-neutral-200 px-4 py-2.5 bg-neutral-50/80 font-medium">
-              <span>E-COMMERCE · GROUP BUYING</span>
-              <span>UHUNGRY PILOT</span>
-            </div>
           </div>
 
           <div class="space-y-4 lg:pt-2">
-            <span class="text-[10px] font-mono text-amber-800 uppercase tracking-[0.25em] block font-medium">E-COMMERCE · CAMPUS PILOT</span>
             <h3 class="text-3xl sm:text-4xl font-serif font-normal text-neutral-950 tracking-[-0.03em] group-hover:text-amber-800 transition-colors">
               BulkMagic: Campus Subscription Ecosystem
             </h3>
@@ -194,7 +167,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Case Study 02: Omara Technologies -->
         <article class="grid grid-cols-1 lg:grid-cols-[0.65fr_1.35fr] gap-16 items-start group">
           <div class="space-y-4 order-2 lg:order-1 lg:pt-2">
-            <span class="text-[10px] font-mono text-teal-800 uppercase tracking-[0.25em] block font-medium">GOVERNMENT SERVICES · AUDIT PLATFORM</span>
             <h3 class="text-3xl sm:text-4xl font-serif font-normal text-neutral-950 tracking-[-0.03em] group-hover:text-teal-800 transition-colors">
               Omara: Welfare Application Review
             </h3>
@@ -217,10 +189,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 class="w-full h-full object-contain p-4 grayscale contrast-110 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
               />
             </a>
-            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-600 uppercase border-t border-neutral-200 px-4 py-2.5 bg-neutral-50/80 font-medium">
-              <span>GOVERNMENT SERVICES</span>
-              <span>VERIFICATION WORKFLOW</span>
-            </div>
           </div>
         </article>
 
@@ -234,14 +202,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 class="w-full h-full object-contain p-4 grayscale contrast-110 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.015] transition-luxury duration-700"
               />
             </a>
-            <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-600 uppercase border-t border-neutral-200 px-4 py-2.5 bg-neutral-50/80 font-medium">
-              <span>HEALTHCARE · DIGITAL MEDICAL ID</span>
-              <span>TRUST-FIRST DISCLOSURE</span>
-            </div>
           </div>
 
           <div class="space-y-4 lg:pt-2">
-            <span class="text-[10px] font-mono text-amber-800 uppercase tracking-[0.25em] block font-medium">HEALTHCARE · CLINICAL ONBOARDING</span>
             <h3 class="text-3xl sm:text-4xl font-serif font-normal text-neutral-950 tracking-[-0.03em] group-hover:text-amber-800 transition-colors">
               Vitals: Digital Medical ID
             </h3>
