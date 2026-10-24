@@ -61,55 +61,61 @@ const { theme = 'light' } = Astro.props;
         </button>
       </div>
 
-      <!-- Pure Typographic Navigation -->
+      <!-- Navigation Links with Subtitle One-Liners -->
       <nav aria-label="Portfolio navigation" class="my-auto py-6">
-        <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-6">
           <a
             href="/"
             data-menu-link
-            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
+            class="group flex flex-col transition-luxury group-hover:translate-x-1"
           >
-            Overview
+            <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 transition-colors">Overview</span>
+            <span class="font-sans text-xs text-neutral-600 font-normal mt-0.5">Product design &amp; NeuroHCI research</span>
           </a>
 
           <a
             href="/vitals"
             data-menu-link
-            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
+            class="group flex flex-col transition-luxury group-hover:translate-x-1"
           >
-            Vitals
+            <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 transition-colors">Vitals</span>
+            <span class="font-sans text-xs text-neutral-600 font-normal mt-0.5">Emergency digital medical ID onboarding</span>
           </a>
 
           <a
             href="/bulkmagic"
             data-menu-link
-            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
+            class="group flex flex-col transition-luxury group-hover:translate-x-1"
           >
-            BulkMagic
+            <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 transition-colors">BulkMagic</span>
+            <span class="font-sans text-xs text-neutral-600 font-normal mt-0.5">Campus group-buying state machine &amp; unit economics</span>
           </a>
 
           <a
             href="/omara"
             data-menu-link
-            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-teal-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
+            class="group flex flex-col transition-luxury group-hover:translate-x-1"
           >
-            Omara Technologies
+            <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-teal-800 transition-colors">Omara Technologies</span>
+            <span class="font-sans text-xs text-neutral-600 font-normal mt-0.5">GovTech offline welfare review &amp; design verification</span>
           </a>
 
           <a
             href="/cool-school"
             data-menu-link
-            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
+            class="group flex flex-col transition-luxury group-hover:translate-x-1"
           >
-            Cool School
+            <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 transition-colors">Cool School</span>
+            <span class="font-sans text-xs text-neutral-600 font-normal mt-0.5">Pediatric conflict-resolution game architecture</span>
           </a>
 
           <a
             href="/alirtify"
             data-menu-link
-            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
+            class="group flex flex-col transition-luxury group-hover:translate-x-1"
           >
-            Alirtify
+            <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 transition-colors">Alirtify</span>
+            <span class="font-sans text-xs text-neutral-600 font-normal mt-0.5">Real-time news credibility &amp; alerting heuristics</span>
           </a>
         </div>
       </nav>
