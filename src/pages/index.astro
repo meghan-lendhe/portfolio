@@ -673,6 +673,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const type = morphTypes[i % morphTypes.length];
       const baseRadius = 4.0 + Math.random() * 2.5;
 
+      // Morphological orientation: subtle vertical/columnar polarity for pyramidal cells
+      let angle = Math.random() * Math.PI * 2;
+      if (type === 'pyramidal') {
+        angle = -Math.PI * 0.5 + (Math.random() - 0.5) * 0.75;
+      } else if (type === 'bipolar') {
+        angle = -Math.PI * 0.5 + (Math.random() - 0.5) * 0.9;
+      }
+
       neurons.push({
         id: i,
         baseX: baseX,
@@ -681,7 +689,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         y: baseY,
         type: type,
         radius: baseRadius,
-        angle: Math.random() * Math.PI * 2,
+        angle: angle,
         phase: Math.random() * Math.PI * 2,
         driftSpeed: 0.0003 + Math.random() * 0.0005,
         driftRadius: 2.0 + Math.random() * 3.5,
@@ -697,41 +705,106 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
     }
 
-    function addAxonalConnection(i, j, dx, dy) {
+    // Cubic Bézier Evaluation Helpers
+    function getCubicPoint(x0, y0, cp1x, cp1y, cp2x, cp2y, x1, y1, t) {
+      const invT = 1 - t;
+      const c0 = invT * invT * invT;
+      const c1 = 3 * invT * invT * t;
+      const c2 = 3 * invT * t * t;
+      const c3 = t * t * t;
+      return {
+        x: c0 * x0 + c1 * cp1x + c2 * cp2x + c3 * x1,
+        y: c0 * y0 + c1 * cp1y + c2 * cp2y + c3 * y1
+      };
+    }
+
+    function getCubicControlPoints(nA, nB, conn) {
+      const isForward = (conn.from === nA.id);
+      const dx = nB.x - nA.x;
+      const dy = nB.y - nA.y;
+      const d = Math.hypot(dx, dy) || 1;
+      const nx = -dy / d;
+      const ny = dx / d;
+
+      if (isForward) {
+        return {
+          cp1x: nA.x + dx * conn.t1 + nx * conn.offset1,
+          cp1y: nA.y + dy * conn.t1 + ny * conn.offset1,
+          cp2x: nA.x + dx * conn.t2 + nx * conn.offset2,
+          cp2y: nA.y + dy * conn.t2 + ny * conn.offset2
+        };
+      } else {
+        return {
+          cp1x: nA.x + dx * (1 - conn.t2) - nx * conn.offset2,
+          cp1y: nA.y + dy * (1 - conn.t2) - ny * conn.offset2,
+          cp2x: nA.x + dx * (1 - conn.t1) - nx * conn.offset1,
+          cp2y: nA.y + dy * (1 - conn.t1) - ny * conn.offset1
+        };
+      }
+    }
+
+    function addAxonalConnection(i, j, isCollateral = false) {
       if (neurons[i].connectedIndices.includes(j)) return;
       neurons[i].connectedIndices.push(j);
       neurons[j].connectedIndices.push(i);
 
-      const perpAngle = Math.atan2(dy, dx) + Math.PI / 2;
-      const curveOffset = (Math.random() - 0.5) * 26;
+      const dx = neurons[j].baseX - neurons[i].baseX;
+      const dy = neurons[j].baseY - neurons[i].baseY;
+      const d = Math.hypot(dx, dy) || 1;
+
+      // Authentic Santiago Ramón y Cajal S-curve tortuosity:
+      // Alternating normal offsets create undulating inflection (biological S-meander)
+      const sign = Math.random() > 0.5 ? 1 : -1;
+      const maxOffset = Math.min(d * 0.35, 48);
+      const offset1 = sign * (18 + Math.random() * (maxOffset - 18));
+      const offset2 = -sign * (16 + Math.random() * (maxOffset - 16));
 
       const numBoutons = 2 + Math.floor(Math.random() * 3);
       const boutons = [];
       for (let b = 0; b < numBoutons; b++) {
         boutons.push({
-          t: 0.2 + Math.random() * 0.6,
-          radius: 1.0 + Math.random() * 0.8
+          t: 0.22 + Math.random() * 0.56,
+          radius: 1.1 + Math.random() * 0.7
         });
       }
 
       connections.push({
         from: i,
         to: j,
-        curveOffsetX: Math.cos(perpAngle) * curveOffset,
-        curveOffsetY: Math.sin(perpAngle) * curveOffset,
-        boutons: boutons
+        t1: 0.32 + (Math.random() - 0.5) * 0.08,
+        t2: 0.68 + (Math.random() - 0.5) * 0.08,
+        offset1: offset1,
+        offset2: offset2,
+        boutons: boutons,
+        isCollateral: isCollateral
       });
     }
 
-    const maxConnDistance = 155;
+    // Sparse, purposeful histological arborization (eliminates constellation mesh)
     for (let i = 0; i < neurons.length; i++) {
-      for (let j = i + 1; j < neurons.length; j++) {
+      if (neurons[i].connectedIndices.length >= 2) continue;
+
+      const candidates = [];
+      for (let j = 0; j < neurons.length; j++) {
+        if (i === j || neurons[i].connectedIndices.includes(j)) continue;
         const dx = neurons[i].baseX - neurons[j].baseX;
         const dy = neurons[i].baseY - neurons[j].baseY;
         const d = Math.hypot(dx, dy);
-        if (d < maxConnDistance) {
-          addAxonalConnection(i, j, dx, dy);
+        if (d > 35 && d < 205) {
+          candidates.push({ id: j, d: d });
         }
+      }
+
+      candidates.sort((a, b) => a.d - b.d);
+
+      // Primary axonal shaft
+      if (candidates.length > 0 && neurons[candidates[0].id].connectedIndices.length < 3) {
+        addAxonalConnection(i, candidates[0].id, false);
+      }
+
+      // Secondary collateral branchlet
+      if (candidates.length > 1 && neurons[candidates[1].id].connectedIndices.length < 3 && Math.random() < 0.8) {
+        addAxonalConnection(i, candidates[1].id, true);
       }
     }
 
@@ -749,7 +822,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           }
         }
         if (closestIdx !== -1) {
-          addAxonalConnection(i, closestIdx, neurons[i].baseX - neurons[closestIdx].baseX, neurons[i].baseY - neurons[closestIdx].baseY);
+          addAxonalConnection(i, closestIdx, neurons[i].connectedIndices.length > 0);
         } else break;
       }
     }
@@ -771,12 +844,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         if (targetId === sourceId) continue;
 
         const targetNeuron = neurons[targetId];
-        let cOffsetX = 0, cOffsetY = 0;
+        let targetConn = null;
         for (let c = 0; c < connections.length; c++) {
           if ((connections[c].from === n.id && connections[c].to === targetId) ||
               (connections[c].from === targetId && connections[c].to === n.id)) {
-            cOffsetX = connections[c].curveOffsetX;
-            cOffsetY = connections[c].curveOffsetY;
+            targetConn = connections[c];
             break;
           }
         }
@@ -784,10 +856,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         activePulses.push({
           fromNeuron: n,
           toNeuron: targetNeuron,
-          curveOffsetX: cOffsetX,
-          curveOffsetY: cOffsetY,
+          conn: targetConn,
           progress: 0.0,
-          speed: 0.034 + Math.random() * 0.012,
+          speed: 0.030 + Math.random() * 0.012,
           hop: hop + 1,
           energy: Math.max(0.35, 1.0 - hop * 0.32)
         });
@@ -962,20 +1033,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 2. Render Curvilinear Axons with Boutons
+      // 2. Render Curvilinear Sinuous Axons with Boutons
       for (let c = 0; c < connections.length; c++) {
         const conn = connections[c];
         const nA = neurons[conn.from];
         const nB = neurons[conn.to];
 
         const activeCharge = Math.max(nA.potential, nB.potential);
-
-        const midX = (nA.x + nB.x) * 0.5 + conn.curveOffsetX;
-        const midY = (nA.y + nB.y) * 0.5 + conn.curveOffsetY;
+        const cp = getCubicControlPoints(nA, nB, conn);
 
         ctx.beginPath();
         ctx.moveTo(nA.x + nA.jitterX, nA.y + nA.jitterY);
-        ctx.quadraticCurveTo(midX, midY, nB.x + nB.jitterX, nB.y + nB.jitterY);
+        ctx.bezierCurveTo(cp.cp1x, cp.cp1y, cp.cp2x, cp.cp2y, nB.x + nB.jitterX, nB.y + nB.jitterY);
 
         if (nA.isEngramRecruited && nB.isEngramRecruited) {
           ctx.strokeStyle = 'rgba(245, 158, 11, 0.65)';
@@ -984,17 +1053,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           ctx.strokeStyle = `rgba(217, 119, 6, ${0.12 + activeCharge * 0.35})`;
           ctx.lineWidth = 0.8 + activeCharge * 0.4;
         } else {
-          ctx.strokeStyle = 'rgba(180, 172, 164, 0.065)';
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = conn.isCollateral ? 'rgba(175, 165, 155, 0.05)' : 'rgba(170, 160, 150, 0.075)';
+          ctx.lineWidth = conn.isCollateral ? 0.45 : 0.6;
         }
         ctx.stroke();
 
-        // Boutons
+        // Boutons placed directly along the cubic curve
         for (let b = 0; b < conn.boutons.length; b++) {
           const bt = conn.boutons[b].t;
-          const invBt = 1 - bt;
-          const bx = invBt * invBt * nA.x + 2 * invBt * bt * midX + bt * bt * nB.x;
-          const by = invBt * invBt * nA.y + 2 * invBt * bt * midY + bt * bt * nB.y;
+          const bPt = getCubicPoint(nA.x, nA.y, cp.cp1x, cp.cp1y, cp.cp2x, cp.cp2y, nB.x, nB.y, bt);
 
           // Check if any traveling action potential is currently crossing this bouton
           let boutonPulse = 0;
@@ -1014,7 +1081,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           }
 
           ctx.beginPath();
-          ctx.arc(bx, by, conn.boutons[b].radius, 0, Math.PI * 2);
+          ctx.arc(bPt.x, bPt.y, conn.boutons[b].radius, 0, Math.PI * 2);
 
           if (boutonPulse > 0.05) {
             ctx.fillStyle = `rgba(13, 148, 136, ${0.25 + boutonPulse * 0.6})`;
@@ -1027,41 +1094,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 3. Render Progressive Traveling Axonal Conduction Waves (Light Traveling Forward Along Curve)
+      // 3. Render Progressive Traveling Axonal Conduction Waves (Light Traveling Forward Along S-Curve)
       for (let p = activePulses.length - 1; p >= 0; p--) {
         const pulse = activePulses[p];
         pulse.progress += pulse.speed;
 
         const nA = pulse.fromNeuron;
         const nB = pulse.toNeuron;
-        const midX = (nA.x + nB.x) * 0.5 + (pulse.curveOffsetX || 0);
-        const midY = (nA.y + nB.y) * 0.5 + (pulse.curveOffsetY || 0);
+        const conn = pulse.conn;
 
-        const waveLen = 0.34;
-        const headT = Math.min(1.0, pulse.progress);
-        const tailT = Math.max(0.0, pulse.progress - waveLen);
+        if (conn) {
+          const cp = getCubicControlPoints(nA, nB, conn);
+          const waveLen = 0.32;
+          const headT = Math.min(1.0, pulse.progress);
+          const tailT = Math.max(0.0, pulse.progress - waveLen);
 
-        if (headT > tailT) {
-          const steps = 10;
-          let prevX = 0, prevY = 0;
-          for (let s = 0; s <= steps; s++) {
-            const fraction = s / steps;
-            const t = tailT + (headT - tailT) * fraction;
-            const invT = 1 - t;
-            const px = invT * invT * nA.x + 2 * invT * t * midX + t * t * nB.x;
-            const py = invT * invT * nA.y + 2 * invT * t * midY + t * t * nB.y;
+          if (headT > tailT) {
+            const steps = 12;
+            let prev = null;
+            for (let s = 0; s <= steps; s++) {
+              const fraction = s / steps;
+              const t = tailT + (headT - tailT) * fraction;
+              const pt = getCubicPoint(nA.x, nA.y, cp.cp1x, cp.cp1y, cp.cp2x, cp.cp2y, nB.x, nB.y, t);
 
-            if (s > 0) {
-              const segAlpha = Math.pow(fraction, 1.6) * 0.85 * pulse.energy;
-              ctx.beginPath();
-              ctx.moveTo(prevX, prevY);
-              ctx.lineTo(px, py);
-              ctx.strokeStyle = `rgba(13, 148, 136, ${segAlpha})`;
-              ctx.lineWidth = 0.7 + fraction * 0.75;
-              ctx.stroke();
+              if (prev) {
+                const segAlpha = Math.pow(fraction, 1.6) * 0.85 * pulse.energy;
+                ctx.beginPath();
+                ctx.moveTo(prev.x, prev.y);
+                ctx.lineTo(pt.x, pt.y);
+                ctx.strokeStyle = `rgba(13, 148, 136, ${segAlpha})`;
+                ctx.lineWidth = 0.7 + fraction * 0.75;
+                ctx.stroke();
+              }
+              prev = pt;
             }
-            prevX = px;
-            prevY = py;
           }
         }
 
