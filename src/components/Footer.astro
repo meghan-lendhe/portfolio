@@ -7,9 +7,42 @@ const { theme = 'light' } = Astro.props;
 const isDark = theme === 'dark';
 ---
 
-<footer class={isDark ? "bg-[#090A0C] text-white border-t border-white/[0.07]" : "bg-[#F3F2EC] text-neutral-900 border-t border-neutral-200"}>
-  <div class="mx-auto max-w-page px-6 md:px-20 pb-16 pt-24 md:pb-24 md:pt-36">
-    <div class={`grid gap-12 pb-20 md:grid-cols-[1fr_1fr] md:items-start md:gap-20 border-b ${isDark ? 'border-white/[0.07]' : 'border-neutral-200'}`}>
+<footer class={`relative overflow-hidden ${isDark ? "bg-[#090A0C] text-white border-t border-white/[0.07]" : "bg-[#F3F2EC] text-neutral-900 border-t border-neutral-200"}`}>
+  <!-- Ambient Atmospheric Light Aura -->
+  <div class="absolute -top-32 left-10 md:left-1/4 w-[500px] h-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(217,119,6,0.055),rgba(13,148,136,0.035),transparent_70%)] pointer-events-none blur-3xl -z-10"></div>
+
+  <!-- Interactive Biosignal Wave Canvas (Sub-Perceptual 58Hz Standing Harmonic Physics) -->
+  <canvas id="footer-bio-field" class="absolute inset-0 w-full h-full pointer-events-none -z-10 opacity-60"></canvas>
+
+  <!-- Ramón y Cajal Histological Pyramidal Neuron Watermark Etching (Archival Vignette) -->
+  <div class="absolute right-6 -bottom-10 md:right-24 md:-bottom-8 pointer-events-none -z-10 select-none opacity-[0.04] text-neutral-900">
+    <svg width="340" height="420" viewBox="0 0 340 420" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <!-- Apical Dendritic Arborization -->
+      <path d="M170,160 C170,110 160,60 150,20 M150,20 C145,10 135,5 125,10 M150,20 C155,10 165,5 175,10" />
+      <path d="M165,100 C150,80 130,65 110,50 M110,50 C95,40 85,35 75,40 M110,50 C115,35 125,25 130,15" />
+      <path d="M175,95 C190,75 210,60 230,45 M230,45 C245,35 255,30 265,35 M230,45 C225,30 215,20 210,10" />
+      <!-- Dendritic Spines -->
+      <path d="M168,140 L162,138 M172,130 L178,128 M166,115 L160,114 M174,105 L180,104 M145,70 L140,65 M195,65 L200,60" />
+      <!-- Pyramidal Soma -->
+      <polygon points="170,160 205,230 135,230" fill="currentColor" fill-opacity="0.25" stroke-width="1.4" />
+      <!-- Organelle Nucleus -->
+      <circle cx="170" cy="205" r="12" fill="currentColor" fill-opacity="0.35" />
+      <!-- Basal Dendrites -->
+      <path d="M140,230 C120,255 90,270 60,285 M60,285 C45,292 35,300 20,305 M60,285 C65,300 70,315 75,330" />
+      <path d="M200,230 C220,255 250,270 280,285 M280,285 C295,292 305,300 320,305 M280,285 C275,300 270,315 265,330" />
+      <path d="M155,230 C145,260 135,285 120,310 M185,230 C195,260 205,285 220,310" />
+      <!-- Primary Axon Shaft -->
+      <path d="M170,230 C170,270 168,310 172,350 C175,380 169,400 170,420" stroke-width="1.5" />
+      <!-- Axon Collaterals with Terminal Boutons -->
+      <path d="M171,310 C150,325 125,335 100,340" />
+      <circle cx="100" cy="340" r="2.5" fill="currentColor" />
+      <path d="M172,340 C195,355 220,365 245,370" />
+      <circle cx="245" cy="370" r="2.5" fill="currentColor" />
+    </svg>
+  </div>
+
+  <div class="mx-auto max-w-page px-6 md:px-20 pb-16 pt-24 md:pb-24 md:pt-36 relative">
+    <div class={`grid gap-12 pb-20 md:grid-cols-[1.1fr_0.9fr] md:items-start md:gap-20 border-b ${isDark ? 'border-white/[0.07]' : 'border-neutral-200'}`}>
       <div>
         <div class="mb-6 flex items-center gap-3">
           <!-- Histological Pyramidal Neuron Colophon -->
@@ -20,7 +53,7 @@ const isDark = theme === 'dark';
             <path d="M12 14v8" />
             <circle cx="12" cy="22" r="0.9" fill="currentColor" />
           </svg>
-          <span class={`inline-block text-[10px] font-mono tracking-[0.28em] uppercase font-medium ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>CONTACT &amp; INQUIRIES</span>
+          <span class={`inline-block text-[10px] font-mono tracking-[0.28em] uppercase font-medium ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>Let’s Connect</span>
         </div>
         <h2 class={`font-serif text-4xl sm:text-6xl font-normal leading-tight tracking-[-0.03em] ${isDark ? 'text-white' : 'text-neutral-950'}`}>
           Let’s start a conversation.
@@ -30,7 +63,7 @@ const isDark = theme === 'dark';
         <p class={`text-lg md:text-xl font-normal leading-relaxed max-w-[44ch] ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
           Open to product design roles, research collaborations, and ambitious work across neural interfaces, biosignal computing, and complex operational systems.
         </p>
-        <div class="flex flex-wrap items-center gap-6 font-mono text-xs">
+        <div class="flex flex-wrap items-center gap-8 font-mono text-xs">
           <a
             href="mailto:meghanlendhe@gmail.com"
             class={`action-potential-link group inline-flex items-center gap-2 pb-1 transition-luxury font-medium ${
@@ -39,14 +72,14 @@ const isDark = theme === 'dark';
                 : 'text-neutral-900 hover:text-amber-800'
             }`}
           >
-            <span>meghanlendhe@gmail.com</span>
+            <span class="text-sm font-sans font-normal">meghanlendhe@gmail.com</span>
             <span class={`transition-luxury ${isDark ? 'text-neutral-400 group-hover:text-amber-300' : 'text-amber-800 group-hover:translate-x-1'}`}>→</span>
           </a>
           <a
             href="https://www.linkedin.com/in/meghanlendhe/"
             target="_blank"
             rel="noopener noreferrer"
-            class={`action-potential-link group inline-flex items-center gap-2 pb-1 transition-luxury font-medium ${
+            class={`action-potential-link group inline-flex items-center gap-1.5 pb-1 transition-luxury font-medium ${
               isDark
                 ? 'text-neutral-400 hover:text-amber-300'
                 : 'text-neutral-700 hover:text-amber-800'
@@ -60,10 +93,107 @@ const isDark = theme === 'dark';
       </div>
     </div>
     <div class={`flex flex-col gap-4 pt-8 text-[10px] font-mono tracking-[0.25em] uppercase sm:flex-row sm:items-center sm:justify-between font-medium ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
-      <span>© 2026 MEGHAN LENDHE · PRODUCT DESIGNER &amp; NEUROHCI RESEARCHER</span>
+      <span>© 2026 MEGHAN LENDHE · MUMBAI, INDIA (19.0760° N, 72.8777° E)</span>
       <a href="#main" class={`w-fit transition-luxury ${isDark ? 'text-neutral-400 hover:text-amber-300' : 'text-neutral-600 hover:text-amber-800'}`}>
         BACK TO TOP ↑
       </a>
     </div>
   </div>
 </footer>
+
+<script is:inline>
+(function() {
+  const canvas = document.getElementById('footer-bio-field');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  let width = 0;
+  let height = 0;
+  let time = 0;
+  let mouseX = -1000;
+  let mouseY = -1000;
+  let targetIntensity = 0.2;
+  let currentIntensity = 0.2;
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    width = rect.width;
+    height = rect.height;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+  }
+
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  const footer = canvas.closest('footer');
+  if (footer) {
+    footer.addEventListener('mousemove', (e) => {
+      const rect = footer.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+      targetIntensity = 0.65;
+    }, { passive: true });
+
+    footer.addEventListener('mouseleave', () => {
+      mouseX = -1000;
+      mouseY = -1000;
+      targetIntensity = 0.2;
+    }, { passive: true });
+  }
+
+  function render() {
+    time += 0.015;
+    currentIntensity += (targetIntensity - currentIntensity) * 0.05;
+
+    ctx.clearRect(0, 0, width, height);
+
+    const midY = height * 0.72;
+    const waves = [
+      { freq: 0.0035, amp: 14 * currentIntensity, speed: 1.0, color: 'rgba(217, 119, 6, 0.15)' },
+      { freq: 0.007, amp: 8 * currentIntensity, speed: -1.3, color: 'rgba(13, 148, 136, 0.12)' },
+      { freq: 0.014, amp: 4 * currentIntensity, speed: 2.1, color: 'rgba(217, 119, 6, 0.08)' }
+    ];
+
+    waves.forEach(w => {
+      ctx.beginPath();
+      ctx.moveTo(0, midY);
+
+      for (let x = 0; x <= width; x += 4) {
+        // Distance modulation from pointer
+        const dist = Math.abs(x - mouseX);
+        const mouseMod = Math.max(0, 1 - dist / 320);
+        const y = midY + 
+          Math.sin(x * w.freq + time * w.speed) * w.amp * (1 + mouseMod * 1.8) +
+          Math.cos(x * w.freq * 0.5 - time * 0.8) * (w.amp * 0.5);
+
+        ctx.lineTo(x, y);
+      }
+
+      ctx.strokeStyle = w.color;
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+    });
+
+    // Faint potential nodes drifting along the standing wave
+    const numNodes = 4;
+    for (let i = 0; i < numNodes; i++) {
+      const offset = (time * 0.25 + i / numNodes) % 1;
+      const x = offset * width;
+      const y = midY + Math.sin(x * 0.0035 + time) * 14 * currentIntensity;
+
+      ctx.beginPath();
+      ctx.arc(x, y, 1.6, 0, Math.PI * 2);
+      ctx.fillStyle = i % 2 === 0 ? 'rgba(217, 119, 6, 0.35)' : 'rgba(13, 148, 136, 0.35)';
+      ctx.fill();
+    }
+
+    requestAnimationFrame(render);
+  }
+
+  render();
+})();
+</script>
