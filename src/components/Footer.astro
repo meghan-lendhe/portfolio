@@ -9,13 +9,13 @@ const isDark = theme === 'dark';
 
 <footer class={`relative overflow-hidden ${isDark ? "bg-[#090A0C] text-white border-t border-white/[0.07]" : "bg-[#F3F2EC] text-neutral-900 border-t border-neutral-200"}`}>
   <!-- Ambient Atmospheric Light Aura -->
-  <div class="absolute -top-32 left-10 md:left-1/4 w-[500px] h-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(217,119,6,0.055),rgba(13,148,136,0.035),transparent_70%)] pointer-events-none blur-3xl -z-10"></div>
+  <div class="absolute -top-32 left-10 md:left-1/4 w-[500px] h-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(217,119,6,0.06),rgba(13,148,136,0.04),transparent_70%)] pointer-events-none blur-3xl z-0"></div>
 
-  <!-- Interactive Biosignal Wave Canvas (Sub-Perceptual 58Hz Standing Harmonic Physics) -->
-  <canvas id="footer-bio-field" class="absolute inset-0 w-full h-full pointer-events-none -z-10 opacity-60"></canvas>
+  <!-- Interactive Biosignal Wave Canvas (Distinct Harmonic Biosignal Physics) -->
+  <canvas id="footer-bio-field" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
   <!-- Ramón y Cajal Histological Pyramidal Neuron Watermark Etching (Archival Vignette) -->
-  <div class="absolute right-6 -bottom-10 md:right-24 md:-bottom-8 pointer-events-none -z-10 select-none opacity-[0.04] text-neutral-900">
+  <div class="absolute right-6 -bottom-10 md:right-24 md:-bottom-8 pointer-events-none z-0 select-none opacity-[0.05] text-neutral-900">
     <svg width="340" height="420" viewBox="0 0 340 420" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <!-- Apical Dendritic Arborization -->
       <path d="M170,160 C170,110 160,60 150,20 M150,20 C145,10 135,5 125,10 M150,20 C155,10 165,5 175,10" />
@@ -41,7 +41,7 @@ const isDark = theme === 'dark';
     </svg>
   </div>
 
-  <div class="mx-auto max-w-page px-6 md:px-20 pb-16 pt-24 md:pb-24 md:pt-36 relative">
+  <div class="mx-auto max-w-page px-6 md:px-20 pb-16 pt-24 md:pb-24 md:pt-36 relative z-10">
     <div class={`grid gap-12 pb-20 md:grid-cols-[1.1fr_0.9fr] md:items-start md:gap-20 border-b ${isDark ? 'border-white/[0.07]' : 'border-neutral-200'}`}>
       <div>
         <div class="mb-6 flex items-center gap-3">
@@ -93,7 +93,7 @@ const isDark = theme === 'dark';
       </div>
     </div>
     <div class={`flex flex-col gap-4 pt-8 text-[10px] font-mono tracking-[0.25em] uppercase sm:flex-row sm:items-center sm:justify-between font-medium ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
-      <span>© 2026 MEGHAN LENDHE · MUMBAI, INDIA (19.0760° N, 72.8777° E)</span>
+      <span>© 2026 MEGHAN LENDHE · MUMBAI, INDIA</span>
       <a href="#main" class={`w-fit transition-luxury ${isDark ? 'text-neutral-400 hover:text-amber-300' : 'text-neutral-600 hover:text-amber-800'}`}>
         BACK TO TOP ↑
       </a>
@@ -135,59 +135,68 @@ const isDark = theme === 'dark';
       const rect = footer.getBoundingClientRect();
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
-      targetIntensity = 0.65;
+      targetIntensity = 1.15;
     }, { passive: true });
 
     footer.addEventListener('mouseleave', () => {
       mouseX = -1000;
       mouseY = -1000;
-      targetIntensity = 0.2;
+      targetIntensity = 0.55;
     }, { passive: true });
   }
 
   function render() {
-    time += 0.015;
-    currentIntensity += (targetIntensity - currentIntensity) * 0.05;
+    time += 0.016;
+    currentIntensity += (targetIntensity - currentIntensity) * 0.06;
 
     ctx.clearRect(0, 0, width, height);
 
-    const midY = height * 0.72;
+    const midY = height * 0.58;
     const waves = [
-      { freq: 0.0035, amp: 14 * currentIntensity, speed: 1.0, color: 'rgba(217, 119, 6, 0.15)' },
-      { freq: 0.007, amp: 8 * currentIntensity, speed: -1.3, color: 'rgba(13, 148, 136, 0.12)' },
-      { freq: 0.014, amp: 4 * currentIntensity, speed: 2.1, color: 'rgba(217, 119, 6, 0.08)' }
+      { freq: 0.0032, amp: 22 * currentIntensity, speed: 1.2, color: 'rgba(217, 119, 6, 0.42)', width: 1.6 },
+      { freq: 0.0064, amp: 14 * currentIntensity, speed: -1.4, color: 'rgba(13, 148, 136, 0.34)', width: 1.2 },
+      { freq: 0.012, amp: 7 * currentIntensity, speed: 2.2, color: 'rgba(23, 23, 23, 0.18)', width: 0.9 }
     ];
 
     waves.forEach(w => {
       ctx.beginPath();
       ctx.moveTo(0, midY);
 
-      for (let x = 0; x <= width; x += 4) {
+      for (let x = 0; x <= width; x += 3) {
         // Distance modulation from pointer
         const dist = Math.abs(x - mouseX);
-        const mouseMod = Math.max(0, 1 - dist / 320);
+        const mouseMod = Math.max(0, 1 - dist / 280);
         const y = midY + 
-          Math.sin(x * w.freq + time * w.speed) * w.amp * (1 + mouseMod * 1.8) +
-          Math.cos(x * w.freq * 0.5 - time * 0.8) * (w.amp * 0.5);
+          Math.sin(x * w.freq + time * w.speed) * w.amp * (1 + mouseMod * 1.6) +
+          Math.cos(x * w.freq * 0.5 - time * 0.9) * (w.amp * 0.45);
 
         ctx.lineTo(x, y);
       }
 
       ctx.strokeStyle = w.color;
-      ctx.lineWidth = 1.0;
+      ctx.lineWidth = w.width;
       ctx.stroke();
     });
 
-    // Faint potential nodes drifting along the standing wave
-    const numNodes = 4;
+    // Drifting synaptic action potential nodes along the wave
+    const numNodes = 5;
     for (let i = 0; i < numNodes; i++) {
-      const offset = (time * 0.25 + i / numNodes) % 1;
+      const offset = (time * 0.18 + i / numNodes) % 1;
       const x = offset * width;
-      const y = midY + Math.sin(x * 0.0035 + time) * 14 * currentIntensity;
+      const dist = Math.abs(x - mouseX);
+      const isNear = dist < 220;
+      const y = midY + Math.sin(x * 0.0032 + time * 1.2) * 22 * currentIntensity;
 
+      // Glow halo
       ctx.beginPath();
-      ctx.arc(x, y, 1.6, 0, Math.PI * 2);
-      ctx.fillStyle = i % 2 === 0 ? 'rgba(217, 119, 6, 0.35)' : 'rgba(13, 148, 136, 0.35)';
+      ctx.arc(x, y, isNear ? 5.5 : 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = i % 2 === 0 ? 'rgba(217, 119, 6, 0.22)' : 'rgba(13, 148, 136, 0.20)';
+      ctx.fill();
+
+      // Core dot
+      ctx.beginPath();
+      ctx.arc(x, y, isNear ? 2.4 : 1.8, 0, Math.PI * 2);
+      ctx.fillStyle = i % 2 === 0 ? '#D97706' : '#0D9488';
       ctx.fill();
     }
 
