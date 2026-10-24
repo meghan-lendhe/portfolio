@@ -68,142 +68,130 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <!-- Broadsheet Spread: Interactive Biosignal Oscilloscope (Left) & Grounded Narrative (Right) -->
-      <div class="grid grid-cols-1 lg:grid-cols-[1.18fr_0.82fr] gap-12 lg:gap-20 mb-16 items-start">
+      <!-- Monumental Headline & Core Proposition -->
+      <div class="max-w-4xl mb-14">
+        <h2 id="monograph-title" class="font-serif text-4xl sm:text-6xl lg:text-[4.25rem] font-normal text-neutral-950 leading-[0.98] tracking-[-0.035em] mb-6 text-balance">
+          Tackling the calibration bottleneck in neural interfaces.
+        </h2>
+        <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-relaxed max-w-[46ch]">
+          Standard brain-computer interfaces demand 20 to 30 minutes of calibration before decoding a single command. If neural interfaces are to become the next generation of computing, utility must begin immediately.
+        </p>
+      </div>
+
+      <!-- THE UNCONSTRAINED LIVING INK WAVEFORM (Broadsheet Object of Intrigue) -->
+      <div class="my-16 py-8 border-y border-neutral-200 relative">
         
-        <!-- Left Column: The Luminous Biosignal Oscilloscope Vitrine (Object of Intrigue) -->
-        <div class="space-y-4">
-          <div class="relative rounded-2xl bg-neutral-950 p-6 md:p-8 overflow-hidden border border-neutral-800/90 shadow-2xl">
-            <!-- Ambient Phosphor Aura -->
-            <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_50%_at_50%_45%,rgba(217,119,6,0.12),rgba(13,148,136,0.06),transparent_75%)]"></div>
-            
-            <!-- Oscilloscope Vitrine Header -->
-            <div class="relative z-10 flex items-center justify-between border-b border-neutral-800/80 pb-4 mb-4">
-              <div class="flex items-center gap-3">
-                <span class="inline-block size-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
-                <span class="text-[10px] font-mono tracking-[0.25em] text-neutral-300 uppercase font-medium">
-                  BIOSIGNAL OSCILLOSCOPE
-                </span>
-              </div>
-              <span id="oscilloscope-status" class="text-[9px] font-mono tracking-[0.2em] text-neutral-400 uppercase font-medium">
-                ZERO-CALIBRATION STREAM
-              </span>
-            </div>
-
-            <!-- Oscilloscope Interactive Canvas -->
-            <div class="relative h-64 md:h-72 w-full cursor-crosshair">
-              <!-- Architectural Background Grid -->
-              <div class="absolute inset-0 pointer-events-none grid grid-cols-6 grid-rows-4 divide-x divide-y divide-neutral-900/60 border border-neutral-900/60">
-                <div></div><div></div><div></div><div></div><div></div><div></div>
-                <div></div><div></div><div></div><div></div><div></div><div></div>
-                <div></div><div></div><div></div><div></div><div></div><div></div>
-                <div></div><div></div><div></div><div></div><div></div><div></div>
-              </div>
-              <canvas id="eeg-oscilloscope" class="relative z-10 w-full h-full"></canvas>
-            </div>
-
-            <!-- Semantic Task Selector Controls -->
-            <div class="relative z-10 pt-5 mt-3 border-t border-neutral-800/80 flex flex-wrap items-center justify-between gap-4">
-              <div class="flex items-center gap-2">
-                <span class="text-[9px] font-mono tracking-widest text-neutral-400 uppercase mr-1">TASK:</span>
-                <button
-                  type="button"
-                  data-eeg-task="motor"
-                  class="eeg-task-btn active px-3 py-1.5 rounded text-[10px] font-mono uppercase tracking-wider transition-luxury text-amber-400 bg-amber-500/15 border border-amber-500/30"
-                >
-                  01 · Motor Imagery
-                </button>
-                <button
-                  type="button"
-                  data-eeg-task="arithmetic"
-                  class="eeg-task-btn px-3 py-1.5 rounded text-[10px] font-mono uppercase tracking-wider transition-luxury text-neutral-400 hover:text-neutral-200 border border-transparent hover:border-neutral-800"
-                >
-                  02 · Mental Math
-                </button>
-                <button
-                  type="button"
-                  data-eeg-task="speech"
-                  class="eeg-task-btn px-3 py-1.5 rounded text-[10px] font-mono uppercase tracking-wider transition-luxury text-neutral-400 hover:text-neutral-200 border border-transparent hover:border-neutral-800"
-                >
-                  03 · Speech
-                </button>
-              </div>
-
-              <div class="text-[9px] font-mono tracking-widest text-neutral-400 uppercase">
-                TOUCH OR HOVER TO DISTURB
-              </div>
-            </div>
-
+        <!-- Top Waveform Control & Telemetry Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-2 border-b border-neutral-200/60 font-mono text-xs">
+          <!-- Typographic Task Selectors (Zero Boxes, Pure Luxury Editorial Links) -->
+          <div class="flex items-center gap-6">
+            <span class="text-[10px] uppercase tracking-[0.25em] text-neutral-400 font-medium">MODALITY:</span>
+            <button
+              type="button"
+              data-eeg-task="motor"
+              class="eeg-task-btn active text-neutral-950 border-b-2 border-amber-600 pb-1 text-xs uppercase tracking-wider font-medium transition-luxury"
+            >
+              01 · Motor Imagery
+            </button>
+            <button
+              type="button"
+              data-eeg-task="arithmetic"
+              class="eeg-task-btn text-neutral-500 hover:text-neutral-900 border-b-2 border-transparent pb-1 text-xs uppercase tracking-wider font-medium transition-luxury"
+            >
+              02 · Mental Math
+            </button>
+            <button
+              type="button"
+              data-eeg-task="speech"
+              class="eeg-task-btn text-neutral-500 hover:text-neutral-900 border-b-2 border-transparent pb-1 text-xs uppercase tracking-wider font-medium transition-luxury"
+            >
+              03 · Speech
+            </button>
           </div>
 
-          <!-- Caption -->
-          <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase px-1">
-            <span>Electrophysiology Simulation</span>
-            <span>Continuous Invariance</span>
+          <!-- Micro-Telemetry Coordinates -->
+          <div class="flex items-center gap-6 text-[10px] text-neutral-500 tracking-[0.2em] uppercase font-medium">
+            <span id="oscilloscope-status" class="text-amber-800">SENSORIMOTOR ALPHA / MU (10 HZ)</span>
+            <span class="hidden sm:inline text-neutral-300">·</span>
+            <span class="hidden sm:inline">ZERO-WARMUP INVARIANCE</span>
           </div>
         </div>
 
-        <!-- Right Column: Grounded Editorial Narrative & Ledger -->
-        <div class="space-y-8">
-          <div>
-            <h2 id="monograph-title" class="font-serif text-3xl sm:text-5xl lg:text-[3.25rem] font-normal text-neutral-950 leading-[1.02] tracking-[-0.035em] mb-6 text-balance">
-              Tackling the calibration bottleneck in neural interfaces.
-            </h2>
-            <div class="text-xs font-mono text-neutral-600 uppercase tracking-[0.2em] mb-8 font-medium">
-              NEURIPS 2026 BRAIN &amp; BODY WORKSHOP CHALLENGE · LEARNING MILESTONE
+        <!-- The Living Waveform Canvas (Drawn directly on the porcelain paper substrate) -->
+        <div class="relative h-44 sm:h-52 w-full cursor-crosshair overflow-hidden">
+          <!-- Archival Voltage Ruler Grids (Whisper-thin hairline ticks) -->
+          <div class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 text-[9px] font-mono text-neutral-400 select-none">
+            <div class="flex justify-between items-center border-b border-neutral-200/50 pb-0.5">
+              <span>+50 μV</span>
+              <span class="tracking-widest">CONTINUOUS TIME-SERIES</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-dashed border-neutral-200/70 pb-0.5">
+              <span>0 μV (BASELINE)</span>
+              <span class="tracking-widest">GLIDE CURSOR TO DISTURB</span>
+            </div>
+            <div class="flex justify-between items-center border-t border-neutral-200/50 pt-0.5">
+              <span>-50 μV</span>
+              <span class="tracking-widest">250 HZ RESAMPLED</span>
             </div>
           </div>
+          <canvas id="eeg-oscilloscope" class="relative z-10 w-full h-full"></canvas>
+        </div>
 
-          <div class="space-y-5 text-neutral-700 font-normal text-base leading-[1.8] max-w-[50ch]">
-            <p class="text-neutral-950 text-lg leading-relaxed">
-              Standard brain-computer interfaces require 20 to 30 minutes of repetitive calibration at the start of every session before decoding a single command. If neural interfaces are to become the next generation of human-computer interaction, they must work the moment you put them on.
-            </p>
-            <p>
-              For the NeurIPS 2026 Brain &amp; Body Workshop Challenge, I’m exploring architectures that classify three distinct cognitive modalities—<strong class="font-medium text-neutral-950">motor imagery</strong>, <strong class="font-medium text-neutral-950">mental arithmetic</strong>, and <strong class="font-medium text-neutral-950">speech</strong>—across different subjects and recording sessions without per-session warmup.
-            </p>
-            <p>
-              This project serves as my hands-on learning milestone to build depth in biosignal processing, feature extraction, and applying machine learning to eliminate calibration barriers.
-            </p>
+        <!-- Archival Subscript -->
+        <div class="pt-4 mt-2 border-t border-neutral-200/60 flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase">
+          <span>Electrophysiology Time-Series Simulation</span>
+          <span>NeurIPS 2026 Brain &amp; Body Foundation Challenge</span>
+        </div>
+      </div>
+
+      <!-- INTEGRATED THREE-COLUMN EDITORIAL SPREAD (Zero Cards, Rhythmic Flow) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 pt-8 items-start">
+        
+        <div class="space-y-4">
+          <div class="text-[10px] font-mono uppercase tracking-[0.25em] text-amber-800 font-medium">
+            01 / THE CALIBRATION BARRIER
           </div>
+          <h3 class="font-serif text-2xl font-normal text-neutral-950 tracking-[-0.02em]">
+            The 30-minute warmup penalty
+          </h3>
+          <p class="text-sm text-neutral-700 font-normal leading-relaxed">
+            Every time a user dons a BCI headset, day-to-day electrode impedance shifts, hair displacement, and neural non-stationarity force a grueling 20–30 minute recalibration sequence. This single bottleneck prevents neural interfaces from moving beyond lab experiments into human daily life.
+          </p>
+        </div>
 
-          <!-- Archival Technical Ledger -->
-          <div class="pt-6 border-t border-neutral-200">
-            <dl class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs font-mono">
-              <div>
-                <dt class="text-neutral-500 text-[10px] tracking-[0.25em] uppercase mb-1 font-medium">CHALLENGE OBJECTIVE</dt>
-                <dd class="text-neutral-900 font-medium text-sm">Cross-Session Zero-Calibration</dd>
-                <dd class="text-neutral-600 font-sans text-xs mt-0.5">Eliminating per-session warmup</dd>
-              </div>
-              <div>
-                <dt class="text-neutral-500 text-[10px] tracking-[0.25em] uppercase mb-1 font-medium">COGNITIVE MODALITIES</dt>
-                <dd class="text-neutral-900 font-medium text-sm">3-Class Continuous</dd>
-                <dd class="text-neutral-600 font-sans text-xs mt-0.5">Motor Imagery · Mental Math · Speech</dd>
-              </div>
-              <div>
-                <dt class="text-neutral-500 text-[10px] tracking-[0.25em] uppercase mb-1 font-medium">PROJECT STAGE</dt>
-                <dd class="text-amber-800 font-medium text-sm">Active Exploration</dd>
-                <dd class="text-neutral-600 font-sans text-xs mt-0.5">Dedicated case study in progress</dd>
-              </div>
-              <div>
-                <dt class="text-neutral-500 text-[10px] tracking-[0.25em] uppercase mb-1 font-medium">WORKSHOP CONTEXT</dt>
-                <dd class="text-neutral-900 font-medium text-sm">NeurIPS 2026</dd>
-                <dd class="text-neutral-600 font-sans text-xs mt-0.5">Brain &amp; Body Foundation Challenge</dd>
-              </div>
-            </dl>
-
-            <div class="pt-8 mt-6 border-t border-neutral-200">
-              <a
-                href="https://neural-interfaces26.github.io/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="action-potential-link inline-flex items-center gap-2 pb-1 text-xs font-mono text-neutral-900 hover:text-amber-800 transition-luxury group font-medium"
-              >
-                <span class="tracking-wider">NEURIPS WORKSHOP CHALLENGE REPO</span>
-                <span class="text-amber-700 font-mono transition-luxury group-hover:translate-x-1">→</span>
-              </a>
-            </div>
+        <div class="space-y-4">
+          <div class="text-[10px] font-mono uppercase tracking-[0.25em] text-neutral-600 font-medium">
+            02 / THE 3-TASK CHALLENGE
           </div>
+          <h3 class="font-serif text-2xl font-normal text-neutral-950 tracking-[-0.02em]">
+            Motor, arithmetic, and speech
+          </h3>
+          <p class="text-sm text-neutral-700 font-normal leading-relaxed">
+            The NeurIPS 2026 Brain &amp; Body Workshop Challenge tasks models with classifying three distinct cognitive modalities—imagined motor action, mental calculation, and covert speech—across different subjects and sessions without any per-session warmup phase.
+          </p>
+        </div>
 
+        <div class="space-y-4">
+          <div class="text-[10px] font-mono uppercase tracking-[0.25em] text-neutral-600 font-medium">
+            03 / THE LEARNING MILESTONE
+          </div>
+          <h3 class="font-serif text-2xl font-normal text-neutral-950 tracking-[-0.02em]">
+            Building biosignal depth
+          </h3>
+          <p class="text-sm text-neutral-700 font-normal leading-relaxed">
+            As a product designer transitioning into NeuroHCI, I’m using this challenge to get a hands-on grasp of raw signal preprocessing, artifact rejection, and modern machine learning architectures. A full, dedicated case study detailing my process and artifacts is in progress.
+          </p>
+          <div class="pt-2">
+            <a
+              href="https://neural-interfaces26.github.io/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="action-potential-link inline-flex items-center gap-2 pb-1 text-xs font-mono text-neutral-900 hover:text-amber-800 transition-luxury group font-medium"
+            >
+              <span class="tracking-wider">WORKSHOP CHALLENGE REPO</span>
+              <span class="text-amber-700 font-mono transition-luxury group-hover:translate-x-1">→</span>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -1208,40 +1196,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     window.addEventListener('resize', resize, { passive: true });
     resize();
 
-    // Harmonics configurations for each cognitive task
+    // Harmonics configurations for each cognitive task (Tailored for warm porcelain broadsheet)
     const taskConfigs = {
       motor: {
         name: '01 · Motor Imagery',
         status: 'ALPHA / MU RHYTHMS (10 HZ) · SENSORIMOTOR STRIP',
-        color: '#F59E0B',
+        color: '#B45309', // Deep amber
+        secondaryColor: 'rgba(23, 23, 23, 0.3)',
         baseFreq: 0.016,
-        baseAmp: 34,
+        baseAmp: 32,
         secondaryFreq: 0.032,
-        noiseAmp: 3.5,
-        speed: 1.8,
-        activeClass: ['text-amber-400', 'bg-amber-500/15', 'border-amber-500/30']
+        noiseAmp: 3.0,
+        speed: 1.8
       },
       arithmetic: {
         name: '02 · Mental Math',
         status: 'HIGH-FREQUENCY BETA / THETA (22 HZ) · FRONTAL COGNITIVE LOAD',
-        color: '#14B8A6',
+        color: '#0D9488', // Deep teal
+        secondaryColor: 'rgba(23, 23, 23, 0.3)',
         baseFreq: 0.038,
-        baseAmp: 26,
+        baseAmp: 24,
         secondaryFreq: 0.076,
-        noiseAmp: 6.5,
-        speed: 2.8,
-        activeClass: ['text-teal-400', 'bg-teal-500/15', 'border-teal-500/30']
+        noiseAmp: 5.5,
+        speed: 2.8
       },
       speech: {
         name: '03 · Speech',
         status: 'CADENCED ENVELOPE MODULATIONS · COVERT SPEECH ARTICULATION',
-        color: '#FBBF24',
+        color: '#D97706', // Champagne amber
+        secondaryColor: 'rgba(23, 23, 23, 0.3)',
         baseFreq: 0.024,
-        baseAmp: 30,
+        baseAmp: 28,
         secondaryFreq: 0.048,
-        noiseAmp: 4.8,
-        speed: 2.1,
-        activeClass: ['text-amber-300', 'bg-amber-400/15', 'border-amber-400/30']
+        noiseAmp: 4.2,
+        speed: 2.1
       }
     };
 
@@ -1263,7 +1251,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       container.addEventListener('pointermove', (e) => {
         const rect = canvas.getBoundingClientRect();
         disturbance.x = e.clientX - rect.left;
-        disturbance.targetAmp = 42;
+        disturbance.targetAmp = 38;
       });
 
       container.addEventListener('pointerleave', () => {
@@ -1273,11 +1261,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       container.addEventListener('pointerdown', (e) => {
         const rect = canvas.getBoundingClientRect();
         disturbance.x = e.clientX - rect.left;
-        disturbance.amp = 65;
+        disturbance.amp = 55;
       });
     }
 
-    // Task button wiring
+    // Task button wiring (Clean, unconstrained typographic tabs)
     const buttons = document.querySelectorAll('.eeg-task-btn');
     const statusEl = document.getElementById('oscilloscope-status');
 
@@ -1288,13 +1276,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         currentTask = taskKey;
         target = { ...taskConfigs[taskKey] };
 
-        // Update button states
+        // Update button states: underline border switch
         buttons.forEach((b) => {
-          b.className = 'eeg-task-btn px-3 py-1.5 rounded text-[10px] font-mono uppercase tracking-wider transition-luxury text-neutral-400 hover:text-neutral-200 border border-transparent hover:border-neutral-800';
+          b.className = 'eeg-task-btn text-neutral-500 hover:text-neutral-900 border-b-2 border-transparent pb-1 text-xs uppercase tracking-wider font-medium transition-luxury';
         });
 
-        const activeStyles = taskConfigs[taskKey].activeClass.join(' ');
-        btn.className = `eeg-task-btn active px-3 py-1.5 rounded text-[10px] font-mono uppercase tracking-wider transition-luxury ${activeStyles}`;
+        btn.className = 'eeg-task-btn active text-neutral-950 border-b-2 border-amber-600 pb-1 text-xs uppercase tracking-wider font-medium transition-luxury';
 
         if (statusEl) {
           statusEl.textContent = taskConfigs[taskKey].status;
@@ -1328,13 +1315,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       const centerY = height / 2;
 
-      // 1. Phosphor background fill gradient
-      const grad = ctx.createLinearGradient(0, centerY - current.baseAmp * 1.5, 0, centerY + current.baseAmp * 1.5);
-      grad.addColorStop(0, 'rgba(217, 119, 6, 0.0)');
-      grad.addColorStop(0.5, target.color === '#14B8A6' ? 'rgba(20, 184, 166, 0.08)' : 'rgba(217, 119, 6, 0.08)');
-      grad.addColorStop(1, 'rgba(217, 119, 6, 0.0)');
-
-      // 2. Primary Waveform Points
+      // 1. Primary Waveform Points (Crisp broadsheet ink with subtle amber radiance)
       ctx.beginPath();
       ctx.moveTo(0, centerY);
 
@@ -1355,13 +1336,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
 
       ctx.strokeStyle = target.color;
-      ctx.lineWidth = 1.8;
+      ctx.lineWidth = 1.6;
       ctx.shadowColor = target.color;
-      ctx.shadowBlur = 10;
+      ctx.shadowBlur = 4;
       ctx.stroke();
       ctx.shadowBlur = 0;
 
-      // 3. Delicate secondary overtone (phase-lagged)
+      // 2. Delicate secondary overtone (phase-lagged, charcoal ink)
       ctx.beginPath();
       ctx.moveTo(0, centerY);
       for (let x = 0; x <= width; x += step * 2) {
@@ -1374,8 +1355,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         let y = centerY + harmonic1 + harmonic2 + ripple;
         ctx.lineTo(x, y);
       }
-      ctx.strokeStyle = target.color === '#14B8A6' ? 'rgba(20, 184, 166, 0.35)' : 'rgba(217, 119, 6, 0.35)';
-      ctx.lineWidth = 0.9;
+      ctx.strokeStyle = target.secondaryColor;
+      ctx.lineWidth = 0.8;
       ctx.stroke();
 
       // 4. Oscilloscope horizontal hairline baseline
