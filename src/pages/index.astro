@@ -1301,13 +1301,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ctx.arc(elX, elY, 1.8 + activation * 0.8, 0, Math.PI * 2);
         ctx.fillStyle = activation > 0.35 ? '#B45309' : 'rgba(23, 23, 23, 0.45)';
         ctx.fill();
-
-        // Archival micro-label for key landmark sensors
-        if (['Cz', 'Fz', 'F7', 'T3', 'C3', 'C4'].includes(el.name)) {
-          ctx.font = '8px "JetBrains Mono", monospace';
-          ctx.fillStyle = activation > 0.35 ? '#78350F' : 'rgba(23, 23, 23, 0.35)';
-          ctx.fillText(el.name, elX + 4, elY - 3);
-        }
       }
 
       requestAnimationFrame(render);
