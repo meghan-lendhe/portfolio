@@ -828,16 +828,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     // Fire action potential (audio-visual biofeedback)
-    function fireNeuron(n, sourceId = -1, hop = 0) {
-      if (hop > 2) return;
+    function fireNeuron(n, sourceId = -1, hop = 0, isIgnition = false) {
+      const maxHops = isIgnition ? 7 : 4;
+      if (hop > maxHops) return;
 
       n.potential = 0.0;
       n.spikeEnergy = 1.0;
-      n.refractory = 56;
-      n.currentThreshold += 0.48;
+      n.refractory = isIgnition ? 22 : 40;
+      n.currentThreshold = n.baseThreshold + (isIgnition ? 0.08 : 0.22);
 
-      const freq = pentatonicScale[n.id % pentatonicScale.length] * (hop === 0 ? 1 : 1.25);
-      playSynapticChime(freq, 0.06);
+      const freq = pentatonicScale[n.id % pentatonicScale.length] * (hop === 0 ? 1 : (hop === 1 ? 1.25 : 1.5));
+      playSynapticChime(freq, isIgnition ? 0.028 : 0.06);
 
       for (let k = 0; k < n.connectedIndices.length; k++) {
         const targetId = n.connectedIndices[k];
@@ -860,12 +861,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           progress: 0.0,
           speed: 0.030 + Math.random() * 0.012,
           hop: hop + 1,
-          energy: Math.max(0.35, 1.0 - hop * 0.32)
+          energy: isIgnition ? Math.max(0.65, 1.0 - hop * 0.06) : Math.max(0.35, 1.0 - hop * 0.22),
+          isIgnition: isIgnition
         });
       }
     }
 
-    // Trigger Theatrical Global Cortical Ignition
+    // Trigger Theatrical Global Cortical Ignition via True Axonal Avalanche
     function triggerGlobalIgnition(originX = width * 0.5, originY = 350) {
       if (isIgniting) return;
       isIgniting = true;
@@ -883,15 +885,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       playIgnitionChord();
 
-      // Fire neurons in organic wave radiating from trigger point
+      // Reset refractory states across the network so the avalanche can sweep through
       neurons.forEach(n => {
-        const d = Math.hypot(n.x - originX, n.y - originY);
-        const delay = d * 0.85;
+        n.refractory = 0;
+        n.currentThreshold = n.baseThreshold;
+      });
+
+      // Find the closest seed neurons directly at the trigger coordinates
+      const sortedByDist = neurons
+        .map(n => ({ neuron: n, d: Math.hypot(n.x - originX, n.y - originY) }))
+        .sort((a, b) => a.d - b.d);
+
+      // Fire the 2 seed neurons at the epicenter to initiate the physical axonal cascade
+      const seeds = sortedByDist.slice(0, 2);
+      seeds.forEach((s, idx) => {
         setTimeout(() => {
-          n.spikeEnergy = 1.0;
-          n.potential = 0.0;
-          n.refractory = 40;
-        }, delay);
+          fireNeuron(s.neuron, -1, 0, true);
+        }, idx * 75);
       });
 
       setTimeout(() => {
@@ -1133,10 +1143,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         if (pulse.progress >= 1.0) {
           const target = pulse.toNeuron;
-          if (target.refractory <= 0) {
-            target.potential += 0.45 * pulse.energy;
-            if (target.potential >= target.currentThreshold) {
-              fireNeuron(target, nA.id, pulse.hop);
+          if (pulse.isIgnition) {
+            // Global Ignition Cascade: reliably recruits downstream neurons along physical axons
+            if (target.refractory <= 0 || isIgniting) {
+              fireNeuron(target, nA.id, pulse.hop, true);
+            }
+          } else {
+            // Natural Synaptic Cascade: multi-hop depolarization
+            if (target.refractory <= 0) {
+              target.potential += 0.65 * pulse.energy;
+              if (target.potential >= target.currentThreshold * 0.70) {
+                fireNeuron(target, nA.id, pulse.hop, false);
+              }
             }
           }
           activePulses.splice(p, 1);
