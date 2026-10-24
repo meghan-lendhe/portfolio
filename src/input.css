@@ -19,25 +19,49 @@
   --color-neutral-800: #2D353E;
   --color-neutral-900: #20262D;
   --color-neutral-950: #151A20;
-  --font-sans: "Libre Franklin", system-ui, sans-serif;
+  --font-sans: "Instrument Sans", system-ui, -apple-system, sans-serif;
   --font-serif: "Newsreader", Georgia, serif;
-  --font-display: "Libre Franklin", system-ui, sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --container-page: calc(var(--spacing) * 275);
   --container-content: calc(var(--spacing) * 180);
 }
 
 @layer base {
+  html {
+    font-family: var(--font-sans);
+    color: #171717;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Optical Sizing for Headlines */
   h1,
   h2,
   h3 {
+    font-family: var(--font-serif);
+    font-variation-settings: 'opsz' 72;
     text-wrap: balance;
+    letter-spacing: -0.035em;
   }
 
   p,
   li {
     line-height: 1.7;
     text-wrap: pretty;
+  }
+
+  /* Accessible Tabular Numerics for Numbers, Dates, Coordinates */
+  .font-mono,
+  .tabular-nums {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  /* High-Contrast Accessible Keyboard Focus Outline */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #B45309;
+    outline-offset: 2px;
   }
 }
 
