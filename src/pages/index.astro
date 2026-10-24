@@ -59,7 +59,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 
     <!-- SECTION 01: NEUROHCI EXPLORATION -->
-    <section id="research" aria-labelledby="monograph-title" class="mb-48 md:mb-56 scroll-mt-32">
+    <section id="research" aria-labelledby="monograph-title" class="mb-44 md:mb-52 scroll-mt-32">
       
       <!-- Section Tag -->
       <div class="pb-5 mb-16 border-b border-neutral-200">
@@ -68,120 +68,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <!-- Monumental Headline & Core Proposition -->
-      <div class="max-w-4xl mb-14">
-        <h2 id="monograph-title" class="font-serif text-4xl sm:text-6xl lg:text-[4.25rem] font-normal text-neutral-950 leading-[0.98] tracking-[-0.035em] mb-6 text-balance">
-          Tackling the calibration bottleneck in neural interfaces.
-        </h2>
-        <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-relaxed max-w-[46ch]">
-          Standard brain-computer interfaces demand 20 to 30 minutes of calibration before decoding a single command. If neural interfaces are to become the next generation of computing, utility must begin immediately.
-        </p>
-      </div>
-
-      <!-- THE UNCONSTRAINED LIVING INK WAVEFORM (Broadsheet Object of Intrigue) -->
-      <div class="my-16 py-8 border-y border-neutral-200 relative">
+      <!-- Broadsheet Spread: Cortical Topography Map (Left) & Distilled Monograph Narrative (Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-20 items-center">
         
-        <!-- Top Waveform Control & Telemetry Bar -->
-        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-2 border-b border-neutral-200/60 font-mono text-xs">
-          <!-- Typographic Task Selectors (Zero Boxes, Pure Luxury Editorial Links) -->
-          <div class="flex items-center gap-6">
-            <span class="text-[10px] uppercase tracking-[0.25em] text-neutral-400 font-medium">MODALITY:</span>
-            <button
-              type="button"
-              data-eeg-task="motor"
-              class="eeg-task-btn active text-neutral-950 border-b-2 border-amber-600 pb-1 text-xs uppercase tracking-wider font-medium transition-luxury"
-            >
-              01 · Motor Imagery
-            </button>
-            <button
-              type="button"
-              data-eeg-task="arithmetic"
-              class="eeg-task-btn text-neutral-500 hover:text-neutral-900 border-b-2 border-transparent pb-1 text-xs uppercase tracking-wider font-medium transition-luxury"
-            >
-              02 · Mental Math
-            </button>
-            <button
-              type="button"
-              data-eeg-task="speech"
-              class="eeg-task-btn text-neutral-500 hover:text-neutral-900 border-b-2 border-transparent pb-1 text-xs uppercase tracking-wider font-medium transition-luxury"
-            >
-              03 · Speech
-            </button>
-          </div>
-
-          <!-- Micro-Telemetry Coordinates -->
-          <div class="flex items-center gap-6 text-[10px] text-neutral-500 tracking-[0.2em] uppercase font-medium">
-            <span id="oscilloscope-status" class="text-amber-800">SENSORIMOTOR ALPHA / MU (10 HZ)</span>
-            <span class="hidden sm:inline text-neutral-300">·</span>
-            <span class="hidden sm:inline">ZERO-WARMUP INVARIANCE</span>
-          </div>
-        </div>
-
-        <!-- The Living Waveform Canvas (Drawn directly on the porcelain paper substrate) -->
-        <div class="relative h-44 sm:h-52 w-full cursor-crosshair overflow-hidden">
-          <!-- Archival Voltage Ruler Grids (Whisper-thin hairline ticks) -->
-          <div class="absolute inset-0 pointer-events-none flex flex-col justify-between py-2 text-[9px] font-mono text-neutral-400 select-none">
-            <div class="flex justify-between items-center border-b border-neutral-200/50 pb-0.5">
-              <span>+50 μV</span>
-              <span class="tracking-widest">CONTINUOUS TIME-SERIES</span>
-            </div>
-            <div class="flex justify-between items-center border-b border-dashed border-neutral-200/70 pb-0.5">
-              <span>0 μV (BASELINE)</span>
-              <span class="tracking-widest">GLIDE CURSOR TO DISTURB</span>
-            </div>
-            <div class="flex justify-between items-center border-t border-neutral-200/50 pt-0.5">
-              <span>-50 μV</span>
-              <span class="tracking-widest">250 HZ RESAMPLED</span>
+        <!-- Left: The Cortical Topography Scalp Field (Object of Intrigue) -->
+        <div class="relative flex flex-col items-center">
+          <div class="relative w-full aspect-square max-w-[420px] mx-auto cursor-crosshair">
+            <canvas id="cortical-topography" class="w-full h-full block"></canvas>
+            
+            <!-- Subtle Archival Coordinate Legend -->
+            <div class="absolute inset-x-0 bottom-1 flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.25em] text-neutral-400 pointer-events-none px-2 select-none">
+              <span>10-20 SENSOR MONTAGE</span>
+              <span>SCALP POTENTIAL CONTOURS</span>
             </div>
           </div>
-          <canvas id="eeg-oscilloscope" class="relative z-10 w-full h-full"></canvas>
         </div>
 
-        <!-- Archival Subscript -->
-        <div class="pt-4 mt-2 border-t border-neutral-200/60 flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-500 uppercase">
-          <span>Electrophysiology Time-Series Simulation</span>
-          <span>NeurIPS 2026 Brain &amp; Body Foundation Challenge</span>
-        </div>
-      </div>
-
-      <!-- INTEGRATED THREE-COLUMN EDITORIAL SPREAD (Zero Cards, Rhythmic Flow) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 pt-8 items-start">
-        
-        <div class="space-y-4">
-          <div class="text-[10px] font-mono uppercase tracking-[0.25em] text-amber-800 font-medium">
-            01 / THE CALIBRATION BARRIER
+        <!-- Right: Distilled Narrative & Archival Coordinates -->
+        <div class="space-y-8">
+          <div>
+            <h2 id="monograph-title" class="font-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-normal text-neutral-950 leading-[1.02] tracking-[-0.035em] mb-4 text-balance">
+              Zero-Calibration Neural Decoding
+            </h2>
+            <div class="text-xs font-mono text-neutral-600 uppercase tracking-[0.2em] font-medium">
+              NEURIPS 2026 BRAIN &amp; BODY WORKSHOP CHALLENGE
+            </div>
           </div>
-          <h3 class="font-serif text-2xl font-normal text-neutral-950 tracking-[-0.02em]">
-            The 30-minute warmup penalty
-          </h3>
-          <p class="text-sm text-neutral-700 font-normal leading-relaxed">
-            Every time a user dons a BCI headset, day-to-day electrode impedance shifts, hair displacement, and neural non-stationarity force a grueling 20–30 minute recalibration sequence. This single bottleneck prevents neural interfaces from moving beyond lab experiments into human daily life.
-          </p>
-        </div>
 
-        <div class="space-y-4">
-          <div class="text-[10px] font-mono uppercase tracking-[0.25em] text-neutral-600 font-medium">
-            02 / THE 3-TASK CHALLENGE
+          <div class="space-y-5 text-neutral-800 font-normal text-base sm:text-lg leading-[1.75] max-w-[48ch]">
+            <p class="text-neutral-950 text-xl leading-relaxed">
+              Classifying three distinct cognitive modalities—motor imagery, mental arithmetic, and speech—from raw electrophysiology across unseen subjects and sessions without pre-session calibration.
+            </p>
+            <p class="text-neutral-600 text-base leading-relaxed">
+              A full, dedicated case study detailing my process and artifacts is in progress.
+            </p>
           </div>
-          <h3 class="font-serif text-2xl font-normal text-neutral-950 tracking-[-0.02em]">
-            Motor, arithmetic, and speech
-          </h3>
-          <p class="text-sm text-neutral-700 font-normal leading-relaxed">
-            The NeurIPS 2026 Brain &amp; Body Workshop Challenge tasks models with classifying three distinct cognitive modalities—imagined motor action, mental calculation, and covert speech—across different subjects and sessions without any per-session warmup phase.
-          </p>
-        </div>
 
-        <div class="space-y-4">
-          <div class="text-[10px] font-mono uppercase tracking-[0.25em] text-neutral-600 font-medium">
-            03 / THE LEARNING MILESTONE
-          </div>
-          <h3 class="font-serif text-2xl font-normal text-neutral-950 tracking-[-0.02em]">
-            Building biosignal depth
-          </h3>
-          <p class="text-sm text-neutral-700 font-normal leading-relaxed">
-            As a product designer transitioning into NeuroHCI, I’m using this challenge to get a hands-on grasp of raw signal preprocessing, artifact rejection, and modern machine learning architectures. A full, dedicated case study detailing my process and artifacts is in progress.
-          </p>
-          <div class="pt-2">
+          <div class="pt-6 border-t border-neutral-200">
+            <dl class="grid grid-cols-2 gap-6 text-xs font-mono mb-8">
+              <div>
+                <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">TASK CLASSIFICATION</dt>
+                <dd class="text-neutral-900 font-medium">3-Class Continuous</dd>
+                <dd class="text-neutral-500 text-xs font-sans mt-0.5">Motor · Math · Speech</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">STATUS</dt>
+                <dd class="text-amber-800 font-medium">Active Exploration</dd>
+                <dd class="text-neutral-500 text-xs font-sans mt-0.5">Case study in progress</dd>
+              </div>
+            </dl>
+
             <a
               href="https://neural-interfaces26.github.io/index.html"
               target="_blank"
@@ -192,6 +128,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <span class="text-amber-700 font-mono transition-luxury group-hover:translate-x-1">→</span>
             </a>
           </div>
+
         </div>
 
       </div>
@@ -1172,9 +1109,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     render();
   })();
 
-  // Luminous Biosignal Oscilloscope Simulator (Tactile Eye Candy & Object of Intrigue)
+  // Cortical Topography Scalp Potential Field Simulation (Direction 3: Spatial Thought Distribution)
   (function() {
-    const canvas = document.getElementById('eeg-oscilloscope');
+    const canvas = document.getElementById('cortical-topography');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
@@ -1196,182 +1133,236 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     window.addEventListener('resize', resize, { passive: true });
     resize();
 
-    // Harmonics configurations for each cognitive task (Tailored for warm porcelain broadsheet)
-    const taskConfigs = {
-      motor: {
-        name: '01 · Motor Imagery',
-        status: 'ALPHA / MU RHYTHMS (10 HZ) · SENSORIMOTOR STRIP',
-        color: '#B45309', // Deep amber
-        secondaryColor: 'rgba(23, 23, 23, 0.3)',
-        baseFreq: 0.016,
-        baseAmp: 32,
-        secondaryFreq: 0.032,
-        noiseAmp: 3.0,
-        speed: 1.8
-      },
-      arithmetic: {
-        name: '02 · Mental Math',
-        status: 'HIGH-FREQUENCY BETA / THETA (22 HZ) · FRONTAL COGNITIVE LOAD',
-        color: '#0D9488', // Deep teal
-        secondaryColor: 'rgba(23, 23, 23, 0.3)',
-        baseFreq: 0.038,
-        baseAmp: 24,
-        secondaryFreq: 0.076,
-        noiseAmp: 5.5,
-        speed: 2.8
-      },
-      speech: {
-        name: '03 · Speech',
-        status: 'CADENCED ENVELOPE MODULATIONS · COVERT SPEECH ARTICULATION',
-        color: '#D97706', // Champagne amber
-        secondaryColor: 'rgba(23, 23, 23, 0.3)',
-        baseFreq: 0.024,
-        baseAmp: 28,
-        secondaryFreq: 0.048,
-        noiseAmp: 4.2,
-        speed: 2.1
-      }
-    };
+    // 10-20 Electrode Montage (Normalized -1 to +1 coordinate space)
+    const electrodes = [
+      { name: 'Fz', x: 0, y: -0.42, zone: 'arithmetic' },
+      { name: 'F3', x: -0.32, y: -0.40, zone: 'arithmetic' },
+      { name: 'F4', x: 0.32, y: -0.40, zone: 'arithmetic' },
+      { name: 'F7', x: -0.65, y: -0.28, zone: 'speech' },
+      { name: 'F8', x: 0.65, y: -0.28, zone: 'arithmetic' },
+      { name: 'Cz', x: 0, y: 0, zone: 'motor' },
+      { name: 'C3', x: -0.42, y: 0, zone: 'motor' },
+      { name: 'C4', x: 0.42, y: 0, zone: 'motor' },
+      { name: 'T3', x: -0.75, y: 0.05, zone: 'speech' },
+      { name: 'T4', x: 0.75, y: 0.05, zone: 'motor' },
+      { name: 'Pz', x: 0, y: 0.42, zone: 'motor' },
+      { name: 'P3', x: -0.32, y: 0.40, zone: 'speech' },
+      { name: 'P4', x: 0.32, y: 0.40, zone: 'motor' },
+      { name: 'T5', x: -0.62, y: 0.42, zone: 'speech' },
+      { name: 'T6', x: 0.62, y: 0.42, zone: 'motor' },
+      { name: 'Oz', x: 0, y: 0.75, zone: 'baseline' }
+    ];
 
-    let currentTask = 'motor';
-    let target = { ...taskConfigs.motor };
-    let current = { ...taskConfigs.motor };
+    // Three natural cognitive poles
+    const cognitivePoles = [
+      { name: 'motor', x: 0, y: 0, color: '#B45309' }, // Sensorimotor strip
+      { name: 'arithmetic', x: 0, y: -0.42, color: '#0D9488' }, // Frontal midline
+      { name: 'speech', x: -0.55, y: -0.15, color: '#D97706' } // Left fronto-temporal (Broca)
+    ];
 
-    // Elastic ripple disturbance physics
-    let disturbance = {
-      x: -1000,
-      amp: 0,
-      targetAmp: 0,
-      decay: 0.94,
-      freq: 0.04
-    };
+    let currentPole = { x: 0, y: 0, color: '#B45309' };
+    let targetPole = { x: 0, y: 0, color: '#B45309' };
+    let mouse = { x: 0, y: 0, active: false };
+    let ripplePulse = 0;
 
     const container = canvas.parentElement;
     if (container) {
       container.addEventListener('pointermove', (e) => {
         const rect = canvas.getBoundingClientRect();
-        disturbance.x = e.clientX - rect.left;
-        disturbance.targetAmp = 38;
+        const rawX = e.clientX - rect.left;
+        const rawY = e.clientY - rect.top;
+        const cx = width / 2;
+        const cy = height / 2;
+        const R = Math.min(width, height) * 0.38;
+
+        mouse.x = (rawX - cx) / R;
+        mouse.y = (rawY - cy) / R;
+        mouse.active = true;
       });
 
       container.addEventListener('pointerleave', () => {
-        disturbance.targetAmp = 0;
+        mouse.active = false;
       });
 
-      container.addEventListener('pointerdown', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        disturbance.x = e.clientX - rect.left;
-        disturbance.amp = 55;
+      container.addEventListener('pointerdown', () => {
+        ripplePulse = 1.0;
       });
     }
 
-    // Task button wiring (Clean, unconstrained typographic tabs)
-    const buttons = document.querySelectorAll('.eeg-task-btn');
-    const statusEl = document.getElementById('oscilloscope-status');
+    let time = 0;
 
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const taskKey = btn.getAttribute('data-eeg-task');
-        if (!taskKey || !taskConfigs[taskKey]) return;
-        currentTask = taskKey;
-        target = { ...taskConfigs[taskKey] };
-
-        // Update button states: underline border switch
-        buttons.forEach((b) => {
-          b.className = 'eeg-task-btn text-neutral-500 hover:text-neutral-900 border-b-2 border-transparent pb-1 text-xs uppercase tracking-wider font-medium transition-luxury';
-        });
-
-        btn.className = 'eeg-task-btn active text-neutral-950 border-b-2 border-amber-600 pb-1 text-xs uppercase tracking-wider font-medium transition-luxury';
-
-        if (statusEl) {
-          statusEl.textContent = taskConfigs[taskKey].status;
-        }
-      });
-    });
-
-    let phase = 0;
-
-    function renderOscilloscope() {
+    function render() {
       if (width === 0 || height === 0) {
-        requestAnimationFrame(renderOscilloscope);
+        requestAnimationFrame(render);
         return;
       }
 
-      // Lerp parameters
-      const lerpFactor = 0.05;
-      current.baseFreq += (target.baseFreq - current.baseFreq) * lerpFactor;
-      current.baseAmp += (target.baseAmp - current.baseAmp) * lerpFactor;
-      current.secondaryFreq += (target.secondaryFreq - current.secondaryFreq) * lerpFactor;
-      current.noiseAmp += (target.noiseAmp - current.noiseAmp) * lerpFactor;
-      current.speed += (target.speed - current.speed) * lerpFactor;
+      time += 0.018;
 
-      // Update disturbance physics
-      disturbance.amp += (disturbance.targetAmp - disturbance.amp) * 0.12;
-      disturbance.targetAmp *= disturbance.decay;
+      // Cycle gently through the 3 cognitive zones
+      const cycleIdx = Math.floor((time * 0.25) % cognitivePoles.length);
+      const nextIdx = (cycleIdx + 1) % cognitivePoles.length;
+      const blend = (Math.sin(time * 0.5) + 1) / 2;
 
-      phase += current.speed * 0.035;
+      const pA = cognitivePoles[cycleIdx];
+      const pB = cognitivePoles[nextIdx];
+
+      targetPole.x = pA.x * (1 - blend) + pB.x * blend;
+      targetPole.y = pA.y * (1 - blend) + pB.y * blend;
+
+      // Cursor influence
+      if (mouse.active) {
+        targetPole.x = targetPole.x * 0.3 + mouse.x * 0.7;
+        targetPole.y = targetPole.y * 0.3 + mouse.y * 0.7;
+      }
+
+      // Smooth interpolation
+      currentPole.x += (targetPole.x - currentPole.x) * 0.06;
+      currentPole.y += (targetPole.y - currentPole.y) * 0.06;
+
+      if (ripplePulse > 0.01) {
+        ripplePulse *= 0.94;
+      } else {
+        ripplePulse = 0;
+      }
 
       ctx.clearRect(0, 0, width, height);
 
-      const centerY = height / 2;
+      const cx = width / 2;
+      const cy = height / 2;
+      const R = Math.min(width, height) * 0.38;
 
-      // 1. Primary Waveform Points (Crisp broadsheet ink with subtle amber radiance)
+      // 1. Draw Scalp Outline & Anatomical Fiducials (Cartier Architectural Precision)
+      ctx.save();
+
+      // Scalp circle
       ctx.beginPath();
-      ctx.moveTo(0, centerY);
-
-      const step = 2.5;
-      for (let x = 0; x <= width; x += step) {
-        // Multi-frequency biosignal harmonics
-        const harmonic1 = Math.sin(x * current.baseFreq + phase) * current.baseAmp;
-        const harmonic2 = Math.sin(x * current.secondaryFreq - phase * 0.8) * (current.baseAmp * 0.42);
-        const microNoise = Math.sin(x * 0.14 + phase * 2.2) * current.noiseAmp;
-
-        // Interactive elastic disturbance
-        const distFromPointer = x - disturbance.x;
-        const gaussian = Math.exp(-(distFromPointer * distFromPointer) / 3600);
-        const ripple = Math.sin(distFromPointer * 0.08 - phase * 4) * disturbance.amp * gaussian;
-
-        let y = centerY + harmonic1 + harmonic2 + microNoise + ripple;
-        ctx.lineTo(x, y);
-      }
-
-      ctx.strokeStyle = target.color;
-      ctx.lineWidth = 1.6;
-      ctx.shadowColor = target.color;
-      ctx.shadowBlur = 4;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-
-      // 2. Delicate secondary overtone (phase-lagged, charcoal ink)
-      ctx.beginPath();
-      ctx.moveTo(0, centerY);
-      for (let x = 0; x <= width; x += step * 2) {
-        const harmonic1 = Math.sin(x * current.baseFreq * 1.05 + phase * 0.95 + 0.3) * (current.baseAmp * 0.65);
-        const harmonic2 = Math.cos(x * current.secondaryFreq * 0.9 - phase * 0.7) * (current.baseAmp * 0.25);
-        const distFromPointer = x - disturbance.x;
-        const gaussian = Math.exp(-(distFromPointer * distFromPointer) / 3600);
-        const ripple = Math.sin(distFromPointer * 0.08 - phase * 4) * (disturbance.amp * 0.5) * gaussian;
-
-        let y = centerY + harmonic1 + harmonic2 + ripple;
-        ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = target.secondaryColor;
-      ctx.lineWidth = 0.8;
+      ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(23, 23, 23, 0.15)';
+      ctx.lineWidth = 1.0;
       ctx.stroke();
 
-      // 4. Oscilloscope horizontal hairline baseline
+      // Nose indicator (Nasion) at top
       ctx.beginPath();
-      ctx.moveTo(0, centerY);
-      ctx.lineTo(width, centerY);
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
+      ctx.moveTo(cx - 10, cy - R + 1);
+      ctx.lineTo(cx, cy - R - 12);
+      ctx.lineTo(cx + 10, cy - R + 1);
+      ctx.strokeStyle = 'rgba(23, 23, 23, 0.25)';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // Left Ear indicator (LPA)
+      ctx.beginPath();
+      ctx.arc(cx - R - 3, cy, 9, Math.PI * 0.5, Math.PI * 1.5, false);
+      ctx.strokeStyle = 'rgba(23, 23, 23, 0.2)';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // Right Ear indicator (RPA)
+      ctx.beginPath();
+      ctx.arc(cx + R + 3, cy, 9, Math.PI * 1.5, Math.PI * 0.5, false);
+      ctx.strokeStyle = 'rgba(23, 23, 23, 0.2)';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // Anatomical Hairline Crosshairs
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - R * 0.95);
+      ctx.lineTo(cx, cy + R * 0.95);
+      ctx.moveTo(cx - R * 0.95, cy);
+      ctx.lineTo(cx + R * 0.95, cy);
+      ctx.strokeStyle = 'rgba(23, 23, 23, 0.05)';
       ctx.lineWidth = 0.8;
       ctx.setLineDash([3, 6]);
       ctx.stroke();
       ctx.setLineDash([]);
 
-      requestAnimationFrame(renderOscilloscope);
+      // Clip subsequent potential field inside cranial contour
+      ctx.beginPath();
+      ctx.arc(cx, cy, R - 1, 0, Math.PI * 2);
+      ctx.clip();
+
+      // 2. Ambient Thermal Scalp Potential Glow
+      const polePxX = cx + currentPole.x * R;
+      const polePxY = cy + currentPole.y * R;
+
+      const thermalGrad = ctx.createRadialGradient(polePxX, polePxY, 4, polePxX, polePxY, R * 0.9);
+      thermalGrad.addColorStop(0, 'rgba(217, 119, 6, 0.14)');
+      thermalGrad.addColorStop(0.45, 'rgba(13, 148, 136, 0.06)');
+      thermalGrad.addColorStop(1, 'rgba(250, 249, 245, 0)');
+
+      ctx.fillStyle = thermalGrad;
+      ctx.fillRect(cx - R, cy - R, R * 2, R * 2);
+
+      // 3. Topographic Scalp Potential Isocontour Rings (Delicate Architectural Curves)
+      const numContours = 9;
+      for (let c = 1; c <= numContours; c++) {
+        const baseRadius = (c / numContours) * R * 0.85;
+        const contourAlpha = Math.max(0.08, 0.42 - (c / numContours) * 0.32);
+
+        ctx.beginPath();
+        const steps = 64;
+        for (let s = 0; s <= steps; s++) {
+          const theta = (s / steps) * Math.PI * 2;
+
+          // Harmonic perturbation to mimic real cortical potential contours
+          const harmonic1 = Math.sin(theta * 3 + time * 1.5) * 4.5;
+          const harmonic2 = Math.cos(theta * 2 - time * 0.8) * 3.0;
+          const rippleMod = ripplePulse > 0 ? Math.sin(theta * 6 - time * 8) * (ripplePulse * 12) : 0;
+
+          const r = baseRadius + harmonic1 + harmonic2 + rippleMod;
+          const ptX = polePxX + Math.cos(theta) * r;
+          const ptY = polePxY + Math.sin(theta) * r;
+
+          if (s === 0) ctx.moveTo(ptX, ptY);
+          else ctx.lineTo(ptX, ptY);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = c % 2 === 0 ? `rgba(217, 119, 6, ${contourAlpha})` : `rgba(23, 23, 23, ${contourAlpha * 0.75})`;
+        ctx.lineWidth = c === 1 ? 1.3 : 0.8;
+        ctx.stroke();
+      }
+
+      ctx.restore();
+
+      // 4. Render 10-20 Electrode Array (Whisper-thin metallic dots & active aura)
+      for (let i = 0; i < electrodes.length; i++) {
+        const el = electrodes[i];
+        const elX = cx + el.x * R;
+        const elY = cy + el.y * R;
+
+        // Distance from active pole
+        const dx = (elX - polePxX) / R;
+        const dy = (elY - polePxY) / R;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const activation = Math.max(0, 1 - dist * 1.6);
+
+        // Active electrode glow ring
+        if (activation > 0.25) {
+          ctx.beginPath();
+          ctx.arc(elX, elY, 3 + activation * 5, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(217, 119, 6, ${activation * 0.6})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+
+        // Electrode core dot
+        ctx.beginPath();
+        ctx.arc(elX, elY, 1.8 + activation * 0.8, 0, Math.PI * 2);
+        ctx.fillStyle = activation > 0.35 ? '#B45309' : 'rgba(23, 23, 23, 0.45)';
+        ctx.fill();
+
+        // Archival micro-label for key landmark sensors
+        if (['Cz', 'Fz', 'F7', 'T3', 'C3', 'C4'].includes(el.name)) {
+          ctx.font = '8px "JetBrains Mono", monospace';
+          ctx.fillStyle = activation > 0.35 ? '#78350F' : 'rgba(23, 23, 23, 0.35)';
+          ctx.fillText(el.name, elX + 4, elY - 3);
+        }
+      }
+
+      requestAnimationFrame(render);
     }
 
-    renderOscilloscope();
+    render();
   })();
 </script>
