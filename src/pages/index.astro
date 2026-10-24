@@ -9,6 +9,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
+<!-- Dynamic Ambient Burst Aura (Positioned at trigger point, soft ambient blur) -->
+<div id="dynamic-ignition-aura" class="absolute pointer-events-none -z-15 w-[850px] max-w-[95vw] h-[540px] rounded-full blur-3xl opacity-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.22),rgba(13,148,136,0.16),transparent_70%)]" style="top: -9999px; left: -9999px; transform: translate(-50%, -50%) scale(0.9);"></div>
+
 <!-- Interactive Histological Neural Simulation Canvas (Thought Scribing, Cascades & Dynamic Trigger Ignition) -->
 <canvas id="synaptic-field" class="absolute top-0 inset-x-0 w-full h-[125vh] pointer-events-none -z-10"></canvas>
 
@@ -329,12 +332,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   // 4. Web Audio Biofeedback (Pythagorean Synaptic Chimes & Ignition Chord Swell)
   (function() {
     const canvas = document.getElementById('synaptic-field');
+    const aura = document.getElementById('dynamic-ignition-aura');
+    let auraTimeout = null;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
     let width, height;
     let mouse = { x: -1000, y: -1000, isDown: false, active: false };
-    const ignitionEvents = [];
 
     // Audio Engine: Tactile Acoustic Physical Synthesizer (Museum-Grade Micro-Acoustics)
     let audioCtx = null;
@@ -795,19 +799,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       if (isIgniting) return;
       isIgniting = true;
 
+      // Dynamic Ambient Blur Burst at Click / Trigger Coordinates
+      if (aura) {
+        aura.style.left = `${originX}px`;
+        aura.style.top = `${originY}px`;
+        aura.style.transform = 'translate(-50%, -50%) scale(0.82)';
+        aura.style.transition = 'none';
+        aura.style.opacity = '1';
+
+        requestAnimationFrame(() => {
+          aura.style.transition = 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 1.9s cubic-bezier(0.16, 1, 0.3, 1)';
+          aura.style.transform = 'translate(-50%, -50%) scale(1.18)';
+        });
+
+        clearTimeout(auraTimeout);
+        auraTimeout = setTimeout(() => {
+          aura.style.transition = 'opacity 1.4s ease-out, transform 1.4s ease-out';
+          aura.style.opacity = '0';
+        }, 1400);
+      }
+
       playIgnitionChord();
 
-      ignitionEvents.push({
-        x: originX,
-        y: originY,
-        radius: 10,
-        maxRadius: Math.max(width, height) * 0.95,
-        speed: 7.5,
-        energy: 1.0,
-        bloomRadius: 28,
-        maxBloomRadius: 320,
-        bloomEnergy: 1.0,
-        stimulatedNeurons: new Set()
+      // Radiate action potentials outward organically from the trigger point through axons
+      neurons.forEach(n => {
+        const d = Math.hypot(n.x - originX, n.y - originY);
+        const delay = d * 0.75;
+        setTimeout(() => {
+          n.spikeEnergy = 1.0;
+          n.potential = 0.0;
+          n.refractory = 36;
+
+          // Propagate signals along connected axons outward through the network
+          for (let k = 0; k < n.connectedIndices.length; k++) {
+            const targetId = n.connectedIndices[k];
+            const targetNeuron = neurons[targetId];
+            const distCurrent = Math.hypot(n.x - originX, n.y - originY);
+            const distTarget = Math.hypot(targetNeuron.x - originX, targetNeuron.y - originY);
+
+            if (distTarget >= distCurrent - 15) {
+              let cOffsetX = 0, cOffsetY = 0;
+              for (let c = 0; c < connections.length; c++) {
+                if ((connections[c].from === n.id && connections[c].to === targetId) ||
+                    (connections[c].from === targetId && connections[c].to === n.id)) {
+                  cOffsetX = connections[c].curveOffsetX;
+                  cOffsetY = connections[c].curveOffsetY;
+                  break;
+                }
+              }
+              activePulses.push({
+                fromNeuron: n,
+                toNeuron: targetNeuron,
+                curveOffsetX: cOffsetX,
+                curveOffsetY: cOffsetY,
+                progress: 0.0,
+                speed: 0.038 + Math.random() * 0.015,
+                hop: 0,
+                energy: 0.95
+              });
+            }
+          }
+        }, delay);
       });
 
       setTimeout(() => {
@@ -949,63 +1001,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 2. Render Atmospheric Bioluminescent Glow Pass (Trigger-Point Blooms, Cortical Waves & Traveling Signal Halos)
-      // A. Dynamic Trigger-Point Blooms & Cortical Wavefronts
-      for (let eIdx = ignitionEvents.length - 1; eIdx >= 0; eIdx--) {
-        const event = ignitionEvents[eIdx];
-        event.radius += event.speed;
-        event.bloomRadius += (event.maxBloomRadius - event.bloomRadius) * 0.045;
-        event.bloomEnergy *= 0.972;
-        event.energy = Math.max(0, 1 - (event.radius / event.maxRadius));
-
-        // Luminous Epicenter Bloom around Trigger Point
-        if (event.bloomEnergy > 0.015) {
-          const bloomGrad = ctx.createRadialGradient(event.x, event.y, 0, event.x, event.y, event.bloomRadius);
-          bloomGrad.addColorStop(0, `rgba(245, 158, 11, ${0.22 * event.bloomEnergy})`);
-          bloomGrad.addColorStop(0.35, `rgba(13, 148, 136, ${0.16 * event.bloomEnergy})`);
-          bloomGrad.addColorStop(0.75, `rgba(13, 148, 136, ${0.05 * event.bloomEnergy})`);
-          bloomGrad.addColorStop(1, 'rgba(13, 148, 136, 0)');
-
-          ctx.fillStyle = bloomGrad;
-          ctx.beginPath();
-          ctx.arc(event.x, event.y, event.bloomRadius, 0, Math.PI * 2);
-          ctx.fill();
-        }
-
-        // Cortical Wavefront Ripple
-        if (event.energy > 0.02) {
-          const innerR = Math.max(0, event.radius - 50);
-          const outerR = event.radius + 50;
-          const waveGrad = ctx.createRadialGradient(event.x, event.y, innerR, event.x, event.y, outerR);
-          waveGrad.addColorStop(0, 'rgba(13, 148, 136, 0)');
-          waveGrad.addColorStop(0.5, `rgba(13, 148, 136, ${0.12 * event.energy})`);
-          waveGrad.addColorStop(1, 'rgba(13, 148, 136, 0)');
-
-          ctx.fillStyle = waveGrad;
-          ctx.beginPath();
-          ctx.arc(event.x, event.y, outerR, 0, Math.PI * 2);
-          ctx.fill();
-        }
-
-        // Wavefront dynamically recruits neurons as it sweeps across the cortex
-        for (let i = 0; i < neurons.length; i++) {
-          if (event.stimulatedNeurons.has(i)) continue;
-          const n = neurons[i];
-          const d = Math.hypot(n.x - event.x, n.y - event.y);
-          if (d <= event.radius + 20) {
-            event.stimulatedNeurons.add(i);
-            n.spikeEnergy = 1.0;
-            n.potential = 0.0;
-            n.refractory = 36;
-          }
-        }
-
-        if (event.energy <= 0.02 && event.bloomEnergy <= 0.015) {
-          ignitionEvents.splice(eIdx, 1);
-        }
-      }
-
-      // B. Traveling Bioluminescent Halos gliding with active signals across axons
+      // 2. Render Atmospheric Bioluminescent Glow Pass (Traveling Signal Halos)
       for (let p = 0; p < activePulses.length; p++) {
         const pulse = activePulses[p];
         const nA = pulse.fromNeuron;
