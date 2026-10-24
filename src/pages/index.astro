@@ -20,14 +20,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- HERO SECTION: Luminous & Grounded Career Opening -->
     <section id="hero" aria-labelledby="hero-title" class="relative mb-36 md:mb-52">
 
-      <!-- Minimal Audio Harmonics Toggle (Clean, Non-Intrusive) -->
-      <div class="flex items-center justify-end pb-3 mb-10">
-        <button type="button" id="audio-toggle-btn" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-neutral-200 bg-white/90 text-[10px] font-mono text-neutral-600 hover:text-amber-800 hover:border-amber-400 transition-luxury shadow-xs" aria-label="Toggle ethereal audio biofeedback">
-          <span id="audio-icon">🔇</span>
-          <span id="audio-label">HARMONICS: OFF</span>
-        </button>
-      </div>
-
       <!-- Monumental Career Motto Headline -->
       <div class="max-w-6xl mb-16 relative">
         <h1 id="hero-title" class="font-serif text-5xl sm:text-7xl lg:text-[6.75rem] font-normal leading-[0.93] tracking-[-0.04em] text-neutral-950 mb-8 text-balance transition-all duration-700">
@@ -354,6 +346,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       if (audioCtx.state === 'suspended') {
         audioCtx.resume();
       }
+      audioEnabled = true;
     }
 
     // Tactile Sub-Threshold Droplet (Subtle bio-acoustic impulse on tap, never a beep)
@@ -506,29 +499,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
 
       } catch(e) {}
-    }
-
-    // Audio Toggle Button
-    const audioBtn = document.getElementById('audio-toggle-btn');
-    const audioIcon = document.getElementById('audio-icon');
-    const audioLabel = document.getElementById('audio-label');
-
-    if (audioBtn) {
-      audioBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        initAudio();
-        audioEnabled = !audioEnabled;
-        if (audioEnabled) {
-          audioIcon.textContent = '🔊';
-          audioLabel.textContent = 'HARMONICS: ON';
-          audioBtn.classList.add('border-amber-400', 'text-amber-800', 'bg-amber-50');
-          playSynapticChime(587.33, 0.07);
-        } else {
-          audioIcon.textContent = '🔇';
-          audioLabel.textContent = 'HARMONICS: OFF';
-          audioBtn.classList.remove('border-amber-400', 'text-amber-800', 'bg-amber-50');
-        }
-      });
     }
 
     function resize() {
