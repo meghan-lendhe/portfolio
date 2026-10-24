@@ -48,15 +48,8 @@ const { theme = 'light' } = Astro.props;
     class="pointer-events-auto fixed inset-0 z-50 flex justify-end bg-neutral-950/20 backdrop-blur-sm transition-opacity duration-300"
   >
     <div class="relative flex h-full w-full max-w-lg flex-col justify-between border-l border-neutral-200 bg-[#FAF9F5] p-8 sm:p-12 shadow-2xl overflow-y-auto">
-      <!-- Drawer Header with Cajal Vignette and Minimal Close Button -->
-      <div class="flex items-center justify-between pb-6 border-b border-neutral-200">
-        <div class="flex items-center gap-3">
-          <svg viewBox="0 0 32 32" class="size-4 text-neutral-700" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-            <path d="M16 2v10M16 12l-5 6h10l-5-6ZM11 18l-4 8M21 18l4 8M16 18v12M14 26h4" />
-            <circle cx="16" cy="14" r="1.5" fill="currentColor" />
-          </svg>
-          <span class="font-mono text-[10px] tracking-[0.28em] uppercase text-neutral-600 font-medium">Index Directory</span>
-        </div>
+      <!-- Drawer Header with Minimal Close Button -->
+      <div class="flex items-center justify-end pb-4">
         <button
           type="button"
           data-menu-close
@@ -68,88 +61,61 @@ const { theme = 'light' } = Astro.props;
         </button>
       </div>
 
-      <!-- Case Studies & Navigation Directory -->
-      <nav aria-label="Portfolio case studies" class="my-auto py-8">
-        <div class="space-y-5">
+      <!-- Pure Typographic Navigation -->
+      <nav aria-label="Portfolio navigation" class="my-auto py-6">
+        <div class="flex flex-col gap-5">
           <a
             href="/"
             data-menu-link
-            class="group flex items-baseline justify-between border-b border-neutral-200/70 pb-3 transition-luxury"
+            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
           >
-            <div class="flex items-baseline gap-4">
-              <span class="font-mono text-xs text-neutral-400 tabular-nums group-hover:text-amber-800 transition-colors font-medium">00</span>
-              <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 group-hover:translate-x-1 transition-luxury">Overview</span>
-            </div>
-            <span class="font-mono text-[10px] tracking-wider uppercase text-neutral-500 group-hover:text-neutral-950 transition-colors">Home</span>
+            Overview
           </a>
 
           <a
             href="/vitals"
             data-menu-link
-            class="group flex items-baseline justify-between border-b border-neutral-200/70 pb-3 transition-luxury"
+            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
           >
-            <div class="flex items-baseline gap-4">
-              <span class="font-mono text-xs text-neutral-400 tabular-nums group-hover:text-amber-800 transition-colors font-medium">01</span>
-              <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 group-hover:translate-x-1 transition-luxury">Vitals</span>
-            </div>
-            <span class="font-mono text-[10px] tracking-wider uppercase text-neutral-500 group-hover:text-neutral-950 transition-colors">Medical ID</span>
+            Vitals
           </a>
 
           <a
             href="/bulkmagic"
             data-menu-link
-            class="group flex items-baseline justify-between border-b border-neutral-200/70 pb-3 transition-luxury"
+            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
           >
-            <div class="flex items-baseline gap-4">
-              <span class="font-mono text-xs text-neutral-400 tabular-nums group-hover:text-amber-800 transition-colors font-medium">02</span>
-              <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 group-hover:translate-x-1 transition-luxury">BulkMagic</span>
-            </div>
-            <span class="font-mono text-[10px] tracking-wider uppercase text-neutral-500 group-hover:text-neutral-950 transition-colors">Campus Pilot</span>
+            BulkMagic
           </a>
 
           <a
             href="/omara"
             data-menu-link
-            class="group flex items-baseline justify-between border-b border-neutral-200/70 pb-3 transition-luxury"
+            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-teal-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
           >
-            <div class="flex items-baseline gap-4">
-              <span class="font-mono text-xs text-neutral-400 tabular-nums group-hover:text-teal-800 transition-colors font-medium">03</span>
-              <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-teal-800 group-hover:translate-x-1 transition-luxury">Omara</span>
-            </div>
-            <span class="font-mono text-[10px] tracking-wider uppercase text-neutral-500 group-hover:text-neutral-950 transition-colors">GovTech Tooling</span>
+            Omara Technologies
           </a>
 
           <a
             href="/cool-school"
             data-menu-link
-            class="group flex items-baseline justify-between border-b border-neutral-200/70 pb-3 transition-luxury"
+            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
           >
-            <div class="flex items-baseline gap-4">
-              <span class="font-mono text-xs text-neutral-400 tabular-nums group-hover:text-amber-800 transition-colors font-medium">04</span>
-              <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 group-hover:translate-x-1 transition-luxury">Cool School</span>
-            </div>
-            <span class="font-mono text-[10px] tracking-wider uppercase text-neutral-500 group-hover:text-neutral-950 transition-colors">Pediatric Game</span>
+            Cool School
           </a>
 
           <a
             href="/alirtify"
             data-menu-link
-            class="group flex items-baseline justify-between border-b border-neutral-200/70 pb-3 transition-luxury"
+            class="font-serif text-3xl sm:text-4xl font-normal text-neutral-950 hover:text-amber-800 transition-luxury hover:translate-x-1.5 inline-block w-fit"
           >
-            <div class="flex items-baseline gap-4">
-              <span class="font-mono text-xs text-neutral-400 tabular-nums group-hover:text-amber-800 transition-colors font-medium">05</span>
-              <span class="font-serif text-2xl sm:text-3xl font-normal text-neutral-950 group-hover:text-amber-800 group-hover:translate-x-1 transition-luxury">Alirtify</span>
-            </div>
-            <span class="font-mono text-[10px] tracking-wider uppercase text-neutral-500 group-hover:text-neutral-950 transition-colors">News Credibility</span>
+            Alirtify
           </a>
         </div>
       </nav>
 
-      <!-- Drawer Footer Contact Details (Pure Typographic Broadsheet, Zero Card Boxes) -->
-      <div class="border-t border-neutral-200 pt-6 space-y-4">
-        <div class="text-[10px] font-mono tracking-[0.28em] uppercase text-neutral-500 font-medium">
-          Direct Inquiries
-        </div>
+      <!-- Drawer Footer Contact Details (Pure Typography, Zero Noise) -->
+      <div class="border-t border-neutral-200 pt-6 space-y-3">
         <div>
           <a
             href="mailto:meghanlendhe@gmail.com"
@@ -159,17 +125,17 @@ const { theme = 'light' } = Astro.props;
             <span class="text-xs font-mono text-neutral-400 group-hover:text-amber-800 group-hover:translate-x-1 transition-luxury">→</span>
           </a>
         </div>
-        <div class="flex items-center justify-between pt-1 font-mono text-xs">
+        <div class="flex items-center justify-between text-xs font-mono text-neutral-600">
           <a
             href="https://www.linkedin.com/in/meghanlendhe/"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-1.5 text-neutral-600 hover:text-amber-800 transition-colors font-medium"
           >
-            <span>LinkedIn Profile</span>
+            <span>LinkedIn</span>
             <span class="text-neutral-400">↗</span>
           </a>
-          <span class="text-[10px] text-neutral-400 uppercase tracking-widest font-medium">Salt Lake City, UT</span>
+          <span class="text-[10px] text-neutral-400 uppercase tracking-widest font-medium">Mumbai, India</span>
         </div>
       </div>
     </div>
