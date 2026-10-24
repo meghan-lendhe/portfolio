@@ -784,8 +784,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         activePulses.push({
           fromNeuron: n,
           toNeuron: targetNeuron,
+          curveOffsetX: cOffsetX,
+          curveOffsetY: cOffsetY,
           progress: 0.0,
-          speed: 0.038 + Math.random() * 0.014,
+          speed: 0.034 + Math.random() * 0.012,
           hop: hop + 1,
           energy: Math.max(0.35, 1.0 - hop * 0.32)
         });
@@ -967,7 +969,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         const nB = neurons[conn.to];
 
         const activeCharge = Math.max(nA.potential, nB.potential);
-        const activeSpike = Math.max(nA.spikeEnergy, nB.spikeEnergy);
 
         const midX = (nA.x + nB.x) * 0.5 + conn.curveOffsetX;
         const midY = (nA.y + nB.y) * 0.5 + conn.curveOffsetY;
@@ -976,10 +977,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ctx.moveTo(nA.x + nA.jitterX, nA.y + nA.jitterY);
         ctx.quadraticCurveTo(midX, midY, nB.x + nB.jitterX, nB.y + nB.jitterY);
 
-        if (activeSpike > 0.08) {
-          ctx.strokeStyle = `rgba(13, 148, 136, ${0.35 + activeSpike * 0.45})`;
-          ctx.lineWidth = 1.1 + activeSpike * 0.7;
-        } else if (nA.isEngramRecruited && nB.isEngramRecruited) {
+        if (nA.isEngramRecruited && nB.isEngramRecruited) {
           ctx.strokeStyle = 'rgba(245, 158, 11, 0.65)';
           ctx.lineWidth = 1.2;
         } else if (activeCharge > 0.15) {
@@ -998,11 +996,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           const bx = invBt * invBt * nA.x + 2 * invBt * bt * midX + bt * bt * nB.x;
           const by = invBt * invBt * nA.y + 2 * invBt * bt * midY + bt * bt * nB.y;
 
+          // Check if any traveling action potential is currently crossing this bouton
+          let boutonPulse = 0;
+          for (let p = 0; p < activePulses.length; p++) {
+            const pulse = activePulses[p];
+            if (pulse.fromNeuron.id === nA.id && pulse.toNeuron.id === nB.id) {
+              const distToBouton = Math.abs(pulse.progress - bt);
+              if (distToBouton < 0.16) {
+                boutonPulse = Math.max(boutonPulse, (1 - distToBouton / 0.16) * pulse.energy);
+              }
+            } else if (pulse.fromNeuron.id === nB.id && pulse.toNeuron.id === nA.id) {
+              const distToBouton = Math.abs((1 - pulse.progress) - bt);
+              if (distToBouton < 0.16) {
+                boutonPulse = Math.max(boutonPulse, (1 - distToBouton / 0.16) * pulse.energy);
+              }
+            }
+          }
+
           ctx.beginPath();
           ctx.arc(bx, by, conn.boutons[b].radius, 0, Math.PI * 2);
 
-          if (activeSpike > 0.08) {
-            ctx.fillStyle = `rgba(13, 148, 136, ${0.6 * activeSpike})`;
+          if (boutonPulse > 0.05) {
+            ctx.fillStyle = `rgba(13, 148, 136, ${0.25 + boutonPulse * 0.6})`;
           } else if (activeCharge > 0.15) {
             ctx.fillStyle = `rgba(217, 119, 6, ${0.25 + activeCharge * 0.4})`;
           } else {
@@ -1012,7 +1027,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 3. Render Thought Scribing Trail (Pointer Engram Canvas)
+      // 3. Render Progressive Traveling Axonal Conduction Waves (Light Traveling Forward Along Curve)
+      for (let p = activePulses.length - 1; p >= 0; p--) {
+        const pulse = activePulses[p];
+        pulse.progress += pulse.speed;
+
+        const nA = pulse.fromNeuron;
+        const nB = pulse.toNeuron;
+        const midX = (nA.x + nB.x) * 0.5 + (pulse.curveOffsetX || 0);
+        const midY = (nA.y + nB.y) * 0.5 + (pulse.curveOffsetY || 0);
+
+        const waveLen = 0.34;
+        const headT = Math.min(1.0, pulse.progress);
+        const tailT = Math.max(0.0, pulse.progress - waveLen);
+
+        if (headT > tailT) {
+          const steps = 10;
+          let prevX = 0, prevY = 0;
+          for (let s = 0; s <= steps; s++) {
+            const fraction = s / steps;
+            const t = tailT + (headT - tailT) * fraction;
+            const invT = 1 - t;
+            const px = invT * invT * nA.x + 2 * invT * t * midX + t * t * nB.x;
+            const py = invT * invT * nA.y + 2 * invT * t * midY + t * t * nB.y;
+
+            if (s > 0) {
+              const segAlpha = Math.pow(fraction, 1.6) * 0.85 * pulse.energy;
+              ctx.beginPath();
+              ctx.moveTo(prevX, prevY);
+              ctx.lineTo(px, py);
+              ctx.strokeStyle = `rgba(13, 148, 136, ${segAlpha})`;
+              ctx.lineWidth = 0.7 + fraction * 0.75;
+              ctx.stroke();
+            }
+            prevX = px;
+            prevY = py;
+          }
+        }
+
+        if (pulse.progress >= 1.0) {
+          const target = pulse.toNeuron;
+          if (target.refractory <= 0) {
+            target.potential += 0.45 * pulse.energy;
+            if (target.potential >= target.currentThreshold) {
+              fireNeuron(target, nA.id, pulse.hop);
+            }
+          }
+          activePulses.splice(p, 1);
+        }
+      }
+
+      // 4. Render Thought Scribing Trail (Pointer Engram Canvas)
       if (mouse.isDown && scribedEngram.length > 1) {
         ctx.beginPath();
         ctx.moveTo(scribedEngram[0].x, scribedEngram[0].y);
@@ -1024,23 +1089,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ctx.setLineDash([4, 4]);
         ctx.stroke();
         ctx.setLineDash([]);
-      }
-
-      // 4. Update Synaptic Conduction Pulses (Biological Latency Propagation)
-      for (let p = activePulses.length - 1; p >= 0; p--) {
-        const pulse = activePulses[p];
-        pulse.progress += pulse.speed;
-
-        if (pulse.progress >= 1.0) {
-          const target = pulse.toNeuron;
-          if (target.refractory <= 0) {
-            target.potential += 0.4 * pulse.energy;
-            if (target.potential >= target.currentThreshold) {
-              fireNeuron(target, pulse.fromNeuron.id, pulse.hop);
-            }
-          }
-          activePulses.splice(p, 1);
-        }
       }
 
       // 5. Render Somas
