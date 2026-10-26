@@ -24,7 +24,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-24 items-start pt-6 border-t border-neutral-200">
         <div>
           <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-[1.75] max-w-[52ch] text-pretty">
-            To get merchants selling quickly, onboarding needs to be painless. In a rapid day-and-a-half sprint, I mapped an adaptive compliance flow that cuts out irrelevant paperwork and built an AI-assisted proof of concept to validate the interaction model.
+            To get merchants selling quickly, onboarding needs to respect their time. In a rapid day-and-a-half sprint, I designed an adaptive onboarding flow that asks only for what is necessary for a seller's business structure, supports multi-session document collection, and built an AI-assisted prototype to validate the interaction model.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Marketplaces can't bypass compliance. Federal and state laws strictly require verifying identities, collecting W-9 tax forms, and tracking sales tax obligations across every operating jurisdiction. When you compile the full checklist of potential legal requirements across all business entity types, it totals 42 separate questions and filings.
         </p>
         <p>
-          Standard compliance portals approach this by presenting all 42 questions as a monolithic form. For a new merchant trying to launch quickly, that creates an immediate wall of legal anxiety.
+          Standard compliance portals approach this by presenting all 42 questions as a monolithic form. For an independent merchant, that creates immediate cognitive overload and hesitation.
         </p>
       </div>
     </div>
@@ -90,14 +90,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="py-20 md:py-28 border-b border-neutral-200 mb-28 md:mb-36">
     <div class="max-w-4xl space-y-6">
       <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 leading-[1.06] tracking-tight font-normal text-balance">
-        28 of those 42 questions were corporate noise.
+        Most compliance questions don't apply to every seller.
       </h2>
       <div class="space-y-5 text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
         <p class="text-neutral-950 font-normal text-xl leading-relaxed">
-          Auditing the statutory requirements revealed that 67% of the friction was artificial. 28 of the 42 requirements—such as Articles of Incorporation, board resolutions, and complex multi-state nexus forecasts—apply strictly to C-Corps and multi-tier entities.
+          Auditing the statutory requirements revealed that 28 of the 42 requirements—such as Articles of Incorporation, board resolutions, and complex multi-state foreign qualifications—apply strictly to C-Corps and multi-tier corporate entities.
         </p>
         <p>
-          The roadblock wasn’t compliance itself. It was the naive assumption that every seller needed to answer every question.
+          For a sole proprietor or single-member LLC, these questions create unnecessary friction. The friction wasn't compliance itself—it was asking sellers to parse rules that don't apply to them.
         </p>
       </div>
     </div>
@@ -107,25 +107,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="py-20 md:py-28 border-b border-neutral-200 mb-32 md:mb-40">
     <div class="max-w-4xl space-y-6 mb-16">
       <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 leading-[1.06] tracking-tight font-normal text-balance">
-        Filtering out the noise so sellers finish in minutes, not days.
+        Reducing cognitive load through adaptive disclosure.
       </h2>
       <div class="space-y-5 text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
         <p class="text-neutral-950 font-normal text-xl leading-relaxed">
-          The solution was to make the flow adaptive. Asking two foundational questions first—business structure and location—immediately hides the 28 corporate requirements that don't apply.
+          The solution was to make the flow adaptive. Asking two foundational questions first—business structure and location—immediately filters the requirements, presenting only the 14 items relevant to that seller's business.
         </p>
         <p>
-          Pairing dynamic filtering with real-time inline validation cuts the field burden from 42 down to 14 and eliminates 7-day manual review cycles. Sellers fix errors as they type and get approved right away.
+          Because gathering tax documents often takes time, the flow supports multi-session completion. A transparent checklist shows required files, validation status, and lets sellers save and return at their own pace without losing progress.
         </p>
       </div>
     </div>
 
-    <!-- Comparative Visual Bars & Feedback Loops -->
-    <div class="space-y-12 border-t border-neutral-200 pt-8 max-w-4xl">
-      
-      <!-- Comparison 1: Input Volume -->
+    <!-- Comparative Visual Bar -->
+    <div class="space-y-8 border-t border-neutral-200 pt-8 max-w-4xl">
       <div class="space-y-4">
         <div class="flex items-baseline justify-between">
-          <span class="text-xs font-mono uppercase tracking-wider text-neutral-600 font-medium">Form Burden Comparison</span>
+          <span class="text-xs font-mono uppercase tracking-wider text-neutral-600 font-medium">Statutory Scope vs Tailored Flow</span>
           <span class="text-xs font-mono text-amber-800 font-medium">From 42 questions down to 14</span>
         </div>
 
@@ -133,7 +131,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- Full Statutory Scope Bar -->
           <div class="space-y-1.5">
             <div class="flex justify-between text-neutral-700 text-[11px]">
-              <span>Exhaustive Legal Checklist (All business types combined)</span>
+              <span>Exhaustive Legal Checklist (All entity types combined)</span>
               <span class="font-medium text-neutral-950">42 Questions</span>
             </div>
             <div class="h-6 w-full rounded bg-neutral-200/80 overflow-hidden flex">
@@ -154,50 +152,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 14 Fields (-67%)
               </div>
               <div class="h-full bg-neutral-100 flex-1 flex items-center px-3 text-[10px] text-neutral-500 font-sans">
-                28 corporate-only questions automatically filtered out
+                Corporate-only filings hidden for typical sellers
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Comparison 2: Error Feedback Cycles -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-neutral-200">
-        <div class="space-y-3">
-          <div class="flex items-baseline justify-between border-b border-neutral-200 pb-2.5">
-            <span class="text-xs font-mono uppercase tracking-wider text-neutral-600 font-medium">Manual Post-Submission Review</span>
-            <span class="font-mono text-xs font-semibold text-neutral-950">7–14 Days Delay</span>
-          </div>
-          <div class="flex items-center gap-2 text-neutral-400 font-mono text-[11px]">
-            <span>Submit form</span>
-            <span>→</span>
-            <span>Manual compliance audit</span>
-            <span>→</span>
-            <span class="text-neutral-800 font-medium">Email rejection</span>
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed">
-            Typo in an EIN or an unreadable certificate triggers an email days later, forcing the seller to recall context and re-upload documents.
-          </p>
-        </div>
-
-        <div class="space-y-3">
-          <div class="flex items-baseline justify-between border-b border-neutral-200 pb-2.5">
-            <span class="text-xs font-mono uppercase tracking-wider text-amber-800 font-medium">BulkMagic Inline Check</span>
-            <span class="font-mono text-xs font-semibold text-amber-800">Instant (0s Latency)</span>
-          </div>
-          <div class="flex items-center gap-2 text-amber-800 font-mono text-[11px]">
-            <span>Type input</span>
-            <span>→</span>
-            <span>Syntax &amp; format check</span>
-            <span>→</span>
-            <span class="text-neutral-950 font-medium">Immediate confirmation</span>
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed">
-            Field formatting, tax ID syntax, and attachments are verified immediately with clear error prompts while the seller is actively typing.
-          </p>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -212,7 +172,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Setting the Rules Based on Business Structure
           </h3>
           <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
-            The first interaction asks two basic questions: what is your business structure, and where do you operate? Answering this upfront sets the rules for the rest of the flow, immediately suppressing 28 corporate tax questions that don't legally apply.
+            The onboarding begins with two straightforward questions: business structure and operating states. Answering this upfront sets the rules for the rest of the flow, ensuring sellers only see the filings required for their specific entity type.
           </p>
         </div>
 
@@ -244,10 +204,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <article class="space-y-8">
         <div class="max-w-3xl space-y-4">
           <h3 class="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-neutral-950 font-normal leading-[1.1] tracking-tight text-balance">
-            An Upfront, Personalized Document Checklist
+            A Transparent Checklist Supporting Multi-Session Progress
           </h3>
           <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
-            Instead of springing document requests mid-flow, the checklist establishes clear expectations before asking for an upload. Sellers see an upfront time budget (&lt;6 minutes) and the exact files needed (like a W-9 and resale certificate), giving them predictability to finish in one sitting.
+            Sellers rarely have every tax certificate or resale permit on hand right away. Instead of surprising them mid-flow with unexpected file requests, a structured checklist outlines the required documents, clearly tracks validation status (Ready, Pending, Missing), and lets sellers save and return across multiple sessions without losing progress.
           </p>
         </div>
 
@@ -270,19 +230,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </button>
           </div>
           <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-3">
-            Dynamic requirements checklist tailored to seller profile
+            Document readiness checklist with transparent validation status
           </figcaption>
         </figure>
       </article>
 
-      <!-- AUTOMATED INLINE VALIDATION -->
+      <!-- FIELD VALIDATION & ERROR PREVENTION -->
       <article class="space-y-8">
         <div class="max-w-3xl space-y-4">
           <h3 class="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-neutral-950 font-normal leading-[1.1] tracking-tight text-balance">
-            Catching Errors Inline Rather Than via Email
+            Field-Level Validation to Catch Errors at the Source
           </h3>
           <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
-            Submitting an application and waiting days only to discover a typo in a tax ID creates instant frustration. Inline validation checks syntax and state nexus rules in real time as the seller types, catching errors when they are easiest to fix.
+            Rather than letting typos in tax IDs or misformatted bank details trigger failed submissions days later, form fields validate syntax and formatting as the seller types. Clear inline prompts guide corrections immediately, ensuring the application is clean before final submission.
           </p>
         </div>
 
@@ -305,7 +265,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </button>
           </div>
           <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-3">
-            Instant error resolution and document validation interface
+            Instant syntax and formatting checks on typed business details
           </figcaption>
         </figure>
       </article>
@@ -359,7 +319,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           In a rapid sprint spanning roughly 36 hours, the goal was to take dense statutory regulations and prove that compliance doesn't have to be a multi-week engineering project before you can validate the experience. Using AI to generate a functional prototype allowed me to stress-test state transitions, uncover edge cases, and capture realistic UI states in hours rather than weeks.
         </p>
         <p class="text-neutral-800">
-          If moving to a production build, the immediate next steps would be running live usability tests with active multi-state sellers to benchmark time-to-completion, tracking drop-off across the document checklist, and load-testing the tax ID validation endpoints for real-time responsiveness.
+          If moving to a production build, the immediate next steps would be running usability sessions with active sellers to test document gathering across multiple sessions, tracking completion drop-off, and collaborating with engineering on realistic document verification pipelines.
         </p>
       </div>
     </div>
