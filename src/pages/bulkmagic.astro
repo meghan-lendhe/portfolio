@@ -44,91 +44,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
 
-    <!-- Hero Stepped Interaction Deck: Sequential Flow Progression -->
+    <!-- Hero Stepped Interaction Deck: Cascading Overlap Stage -->
     <figure class="pt-8 border-t border-neutral-200">
-      <div class="rounded-2xl border border-neutral-200/90 bg-[#F4F2EB]/60 p-4 sm:p-6 lg:p-8">
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-5">
+      <div class="relative py-4 sm:py-8 overflow-hidden lg:overflow-visible">
+        <!-- Horizontal stage that cascades on desktop, smoothly scrolls on mobile -->
+        <div class="flex items-center justify-start lg:justify-center overflow-x-auto lg:overflow-visible no-scrollbar -mx-6 px-6 sm:-mx-16 sm:px-16 lg:mx-0 lg:px-0 py-8">
           
-          <!-- Step 01: Entity Identification -->
-          <div class="group flex flex-col space-y-2.5">
-            <div class="relative aspect-[10/16] overflow-hidden rounded-xl border border-neutral-800/80 bg-[#0E1117] shadow-sm transition-luxury group-hover:border-amber-600/60 group-hover:-translate-y-1">
-              <img
-                src="/assets/bulkmagic/business-info(1).png"
-                alt="Mobile viewport: Business structure and entity identification"
-                class="w-full h-full object-cover object-top block"
-                loading="eager"
-              />
-            </div>
-            <div class="font-mono text-[10px] tracking-wider text-neutral-600 uppercase px-0.5">
-              <span>01 · Entity</span>
-            </div>
+          <!-- Viewport 01: Entity Identification -->
+          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] z-[1] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+            <img
+              src="/assets/bulkmagic/business-info(1).png"
+              alt="Mobile viewport: Business structure and entity identification"
+              class="w-full h-full object-cover object-top block"
+              loading="eager"
+            />
           </div>
 
-          <!-- Step 02: Document Preparation Checklist -->
-          <div class="group flex flex-col space-y-2.5">
-            <div class="relative aspect-[10/16] overflow-hidden rounded-xl border border-neutral-800/80 bg-[#0E1117] shadow-sm transition-luxury group-hover:border-amber-600/60 group-hover:-translate-y-1">
-              <img
-                src="/assets/bulkmagic/document-preparation(1).png"
-                alt="Mobile viewport: Dynamic document readiness checklist"
-                class="w-full h-full object-cover object-top block"
-                loading="eager"
-              />
-            </div>
-            <div class="font-mono text-[10px] tracking-wider text-neutral-600 uppercase px-0.5">
-              <span>02 · Documents</span>
-            </div>
+          <!-- Viewport 02: Document Preparation Checklist -->
+          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-24 z-[2] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+            <img
+              src="/assets/bulkmagic/document-preparation(1).png"
+              alt="Mobile viewport: Dynamic document readiness checklist"
+              class="w-full h-full object-cover object-top block"
+              loading="eager"
+            />
           </div>
 
-          <!-- Step 03: Tax Details & Nexus -->
-          <div class="group flex flex-col space-y-2.5">
-            <div class="relative aspect-[10/16] overflow-hidden rounded-xl border border-neutral-800/80 bg-[#0E1117] shadow-sm transition-luxury group-hover:border-amber-600/60 group-hover:-translate-y-1">
-              <img
-                src="/assets/bulkmagic/tax-details(1).png"
-                alt="Mobile viewport: Tax nexus and compliance details"
-                class="w-full h-full object-cover object-top block"
-                loading="eager"
-              />
-            </div>
-            <div class="font-mono text-[10px] tracking-wider text-neutral-600 uppercase px-0.5">
-              <span>03 · Tax &amp; Nexus</span>
-            </div>
+          <!-- Viewport 03: Tax Details & Nexus -->
+          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-24 z-[3] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+            <img
+              src="/assets/bulkmagic/tax-details(1).png"
+              alt="Mobile viewport: Tax nexus and compliance details"
+              class="w-full h-full object-cover object-top block"
+              loading="eager"
+            />
           </div>
 
-          <!-- Step 04: Banking Details -->
-          <div class="group flex flex-col space-y-2.5">
-            <div class="relative aspect-[10/16] overflow-hidden rounded-xl border border-neutral-800/80 bg-[#0E1117] shadow-sm transition-luxury group-hover:border-amber-600/60 group-hover:-translate-y-1">
-              <img
-                src="/assets/bulkmagic/banking-details(1).png"
-                alt="Mobile viewport: Direct deposit and payout verification"
-                class="w-full h-full object-cover object-top block"
-                loading="eager"
-              />
-            </div>
-            <div class="font-mono text-[10px] tracking-wider text-neutral-600 uppercase px-0.5">
-              <span>04 · Payout</span>
-            </div>
+          <!-- Viewport 04: Banking Details -->
+          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-24 z-[4] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+            <img
+              src="/assets/bulkmagic/banking-details(1).png"
+              alt="Mobile viewport: Direct deposit and payout verification"
+              class="w-full h-full object-cover object-top block"
+              loading="eager"
+            />
           </div>
 
-          <!-- Step 05: Activation & Review -->
-          <div class="group flex flex-col space-y-2.5 col-span-2 sm:col-span-1">
-            <div class="relative aspect-[10/16] overflow-hidden rounded-xl border border-neutral-800/80 bg-[#0E1117] shadow-sm transition-luxury group-hover:border-amber-600/60 group-hover:-translate-y-1">
-              <img
-                src="/assets/bulkmagic/onboarding-success(1).png"
-                alt="Mobile viewport: Account review and live activation"
-                class="w-full h-full object-cover object-top block"
-                loading="eager"
-              />
-            </div>
-            <div class="font-mono text-[10px] tracking-wider text-neutral-600 uppercase px-0.5">
-              <span>05 · Activation</span>
-            </div>
+          <!-- Viewport 05: Activation & Review -->
+          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-24 z-[5] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+            <img
+              src="/assets/bulkmagic/onboarding-success(1).png"
+              alt="Mobile viewport: Account review and live activation"
+              class="w-full h-full object-cover object-top block"
+              loading="eager"
+            />
           </div>
 
         </div>
       </div>
-      <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-4 border-t border-neutral-200 pt-3 flex items-center justify-between">
+      <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-4 border-t border-neutral-200 pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <span>5-Stage Merchant Onboarding Architecture</span>
-        <span class="text-neutral-500 font-normal">Sequential Viewport Progression</span>
+        <span class="text-neutral-500 font-normal">Sequential Viewport Progression · Business Entity to Live Activation</span>
       </figcaption>
     </figure>
   </section>
