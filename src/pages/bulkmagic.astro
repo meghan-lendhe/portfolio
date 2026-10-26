@@ -44,14 +44,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
 
-    <!-- Hero Stepped Interaction Deck: Cascading Overlap Stage -->
+    <!-- Hero Stepped Interaction Deck: 5-Stage Viewport Progression -->
     <figure class="pt-8 border-t border-neutral-200">
-      <div class="relative py-4 sm:py-8 overflow-hidden lg:overflow-visible">
-        <!-- Horizontal stage that cascades on desktop, smoothly scrolls on mobile -->
-        <div class="flex items-center justify-start lg:justify-center overflow-x-auto lg:overflow-visible no-scrollbar -mx-6 px-6 sm:-mx-16 sm:px-16 lg:mx-0 lg:px-0 py-8">
+      <div class="relative py-4 sm:py-6">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-5 py-4">
           
           <!-- Viewport 01: Entity Identification -->
-          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] z-[1] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+          <div class="group relative aspect-[10/16] rounded-xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-sm hover:-translate-y-2 hover:shadow-xl transition-luxury">
             <img
               src="/assets/bulkmagic/business-info(1).png"
               alt="Mobile viewport: Business structure and entity identification"
@@ -61,7 +60,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Viewport 02: Document Preparation Checklist -->
-          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-24 z-[2] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+          <div class="group relative aspect-[10/16] rounded-xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-sm hover:-translate-y-2 hover:shadow-xl transition-luxury">
             <img
               src="/assets/bulkmagic/document-preparation(1).png"
               alt="Mobile viewport: Dynamic document readiness checklist"
@@ -71,7 +70,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Viewport 03: Tax Details & Nexus -->
-          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-24 z-[3] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+          <div class="group relative aspect-[10/16] rounded-xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-sm hover:-translate-y-2 hover:shadow-xl transition-luxury">
             <img
               src="/assets/bulkmagic/tax-details(1).png"
               alt="Mobile viewport: Tax nexus and compliance details"
@@ -81,7 +80,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Viewport 04: Banking Details -->
-          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-24 z-[4] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+          <div class="group relative aspect-[10/16] rounded-xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-sm hover:-translate-y-2 hover:shadow-xl transition-luxury">
             <img
               src="/assets/bulkmagic/banking-details(1).png"
               alt="Mobile viewport: Direct deposit and payout verification"
@@ -91,7 +90,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Viewport 05: Activation & Review -->
-          <div class="relative shrink-0 w-[270px] sm:w-[310px] md:w-[330px] lg:w-[350px] aspect-[10/16] rounded-2xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_16px_40px_rgba(0,0,0,0.12)] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-24 z-[5] hover:z-[20] hover:-translate-y-4 hover:scale-[1.02] hover:shadow-[0_28px_60px_rgba(0,0,0,0.22)] transition-luxury cursor-default">
+          <div class="group relative aspect-[10/16] rounded-xl overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-sm hover:-translate-y-2 hover:shadow-xl transition-luxury col-span-2 sm:col-span-1">
             <img
               src="/assets/bulkmagic/onboarding-success(1).png"
               alt="Mobile viewport: Account review and live activation"
@@ -102,9 +101,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         </div>
       </div>
-      <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-4 border-t border-neutral-200 pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <span>5-Stage Merchant Onboarding Architecture</span>
-        <span class="text-neutral-500 font-normal">Sequential Viewport Progression · Business Entity to Live Activation</span>
+      <figcaption class="text-xs sm:text-sm font-sans text-neutral-600 mt-2 border-t border-neutral-200 pt-3">
+        The five onboarding stages from business entity identification to live account activation.
       </figcaption>
     </figure>
   </section>
@@ -159,134 +157,100 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
 
-    <!-- The Adaptive Contrast Vitrine: Monolithic Burden vs Tailored Path -->
-    <div class="border-t border-neutral-200 pt-10 space-y-8">
-      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-        <span class="text-xs font-mono uppercase tracking-wider text-neutral-600 font-medium">Compliance Architecture Comparison</span>
-        <span class="text-xs font-mono text-neutral-500">42 Statutory Requirements vs 14 Tailored Fields</span>
-      </div>
+    <!-- THREE NEURO-INSPIRED VISUAL CONCEPTS FOR COGNITIVE REDUCTION -->
+    <div class="border-t border-neutral-200 pt-16 space-y-20">
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <!-- CONCEPT 1: THE THALAMIC GATING & SYNAPTIC PRUNING VISUAL (KINETIC CANVAS) -->
+      <div class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-neutral-200 pb-3">
+          <span class="font-mono text-xs text-neutral-950 uppercase tracking-wider font-semibold">Concept 01 · Kinetic Biosignal Gating</span>
+          <span class="font-mono text-xs text-amber-800 font-medium">42 Input Waves → 14 Action Potentials</span>
+        </div>
+        <p class="text-sm text-neutral-600 max-w-[65ch]">
+          An interactive model of thalamic sensory gating. 42 chaotic frequency lines enter the architectural classification gate; 28 non-applicable corporate signals dissolve into ambient baseline noise, while 14 coherent action potentials pulse through to the merchant's workflow.
+        </p>
         
-        <!-- Left: The Monolithic Regulatory Burden (Ghosted & De-emphasized) -->
-        <div class="lg:col-span-5 space-y-4">
-          <div class="flex items-center justify-between pb-2 border-b border-neutral-200">
-            <span class="font-mono text-xs text-neutral-500 uppercase tracking-wider">Monolithic Intake Form</span>
-            <span class="font-mono text-xs text-neutral-500">42 questions</span>
+        <div class="relative rounded-2xl border border-neutral-200/90 bg-white/80 p-6 sm:p-8 overflow-hidden shadow-xs">
+          <div class="flex justify-between items-center text-[10px] font-mono text-neutral-500 uppercase tracking-widest pb-3 border-b border-neutral-100">
+            <span>42 Statutory Inputs (High Entropy)</span>
+            <span class="text-amber-800 font-medium">Adaptive Gating Filter</span>
+            <span>14 Coherent Channels (Low Impedance)</span>
           </div>
-          <p class="text-sm text-neutral-600 leading-normal">
-            Standard platforms present every possible statutory question regardless of entity size, burying small merchants under irrelevant legal filings.
-          </p>
-
-          <!-- Ghosted Wireframe Grid of 42 Items -->
-          <div class="p-5 rounded-xl border border-neutral-200/80 bg-neutral-100/50 space-y-2.5">
-            <div class="font-mono text-[10px] text-neutral-400 uppercase tracking-widest pb-1 border-b border-neutral-200/60">
-              Exhaustive Regulatory Matrix
-            </div>
-            <div class="grid grid-cols-2 gap-x-3 gap-y-1.5 font-mono text-[11px] text-neutral-400/80 leading-tight">
-              <span class="truncate line-through decoration-neutral-300">Articles of Org.</span>
-              <span class="truncate line-through decoration-neutral-300">Foreign Qual. Cert.</span>
-              <span class="truncate line-through decoration-neutral-300">Beneficial Ownership</span>
-              <span class="truncate line-through decoration-neutral-300">Franchise Tax ID</span>
-              <span class="truncate line-through decoration-neutral-300">Director Resolution</span>
-              <span class="truncate line-through decoration-neutral-300">Secondary Officer ID</span>
-              <span class="truncate line-through decoration-neutral-300">Multi-State Resale</span>
-              <span class="truncate line-through decoration-neutral-300">UCC-1 Financing</span>
-              <span class="truncate line-through decoration-neutral-300">Bylaws Attestation</span>
-              <span class="truncate line-through decoration-neutral-300">Nexus Determination</span>
-              <span class="truncate line-through decoration-neutral-300">Share Registry</span>
-              <span class="truncate line-through decoration-neutral-300">Corporate Seal Aff.</span>
-              <span class="truncate line-through decoration-neutral-300">State Withholding</span>
-              <span class="truncate line-through decoration-neutral-300">Excise Tax Permit</span>
-            </div>
-            <div class="pt-2 border-t border-neutral-200/60 flex items-center justify-between text-[11px] font-mono text-neutral-500">
-              <span>+ 28 corporate requirements</span>
-              <span class="text-neutral-400">Omitted</span>
-            </div>
+          <canvas id="thalamic-canvas" class="w-full h-56 sm:h-64 block my-2 cursor-crosshair"></canvas>
+          <div class="flex justify-between items-center text-[10px] font-mono text-neutral-400 pt-2 border-t border-neutral-100">
+            <span>Move pointer across canvas to modulate signal transmission</span>
+            <span>Live Action Potential Physics</span>
           </div>
         </div>
-
-        <!-- Right: The BulkMagic Adaptive Path (High-Contrast, Distilled Clarity) -->
-        <div class="lg:col-span-7 space-y-4">
-          <div class="flex items-center justify-between pb-2 border-b border-neutral-950/20">
-            <span class="font-mono text-xs text-neutral-950 uppercase tracking-wider font-semibold">BulkMagic Adaptive Path</span>
-            <span class="font-mono text-xs text-amber-800 font-semibold">14 tailored fields (−67%)</span>
-          </div>
-          <p class="text-sm text-neutral-700 leading-normal">
-            By establishing business structure and active states in the first step, questions are filtered to only what applies. Sellers can complete them across sessions.
-          </p>
-
-          <!-- Tailored 14-Step Micro-Ledger -->
-          <div class="p-6 rounded-xl border border-neutral-200 bg-white shadow-xs space-y-5">
-            <div class="space-y-4">
-              <!-- Stage 1 -->
-              <div>
-                <div class="flex items-baseline justify-between font-mono text-[11px] pb-1 border-b border-neutral-100">
-                  <span class="font-medium text-neutral-950">1. Entity &amp; Presence</span>
-                  <span class="text-neutral-500">3 fields</span>
-                </div>
-                <div class="grid grid-cols-3 gap-2 pt-2 text-xs text-neutral-700">
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Business Structure</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Primary State</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">DBA / Trade Name</span>
-                </div>
-              </div>
-
-              <!-- Stage 2 -->
-              <div>
-                <div class="flex items-baseline justify-between font-mono text-[11px] pb-1 border-b border-neutral-100">
-                  <span class="font-medium text-neutral-950">2. Tax Identification &amp; Nexus</span>
-                  <span class="text-neutral-500">4 fields</span>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-xs text-neutral-700">
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Federal EIN</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">State Sales Tax ID</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Resale Permit</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Tax Exemption</span>
-                </div>
-              </div>
-
-              <!-- Stage 3 -->
-              <div>
-                <div class="flex items-baseline justify-between font-mono text-[11px] pb-1 border-b border-neutral-100">
-                  <span class="font-medium text-neutral-950">3. Payout Verification &amp; Identity</span>
-                  <span class="text-neutral-500">4 fields</span>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-xs text-neutral-700">
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Routing Number</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Account Number</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Gov. Issued ID</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Proof of Address</span>
-                </div>
-              </div>
-
-              <!-- Stage 4 -->
-              <div>
-                <div class="flex items-baseline justify-between font-mono text-[11px] pb-1 border-b border-neutral-100">
-                  <span class="font-medium text-neutral-950">4. Review &amp; Activation</span>
-                  <span class="text-neutral-500">3 fields</span>
-                </div>
-                <div class="grid grid-cols-3 gap-2 pt-2 text-xs text-neutral-700">
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Terms Attestation</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px]">Authorized Signature</span>
-                  <span class="bg-neutral-50 border border-neutral-200/60 rounded px-2.5 py-1.5 font-mono text-[11px] text-amber-800 font-medium">Instant Submission</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Multi-Session Progress Footer -->
-            <div class="pt-3 border-t border-neutral-100 flex flex-wrap items-center justify-between text-xs font-mono text-neutral-600 gap-2">
-              <span class="flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                Multi-session auto-save enabled
-              </span>
-              <span class="text-neutral-500">Field syntax checked live</span>
-            </div>
-          </div>
-
-        </div>
-
       </div>
+
+      <!-- CONCEPT 2: THE CORTICAL IMPEDANCE & ENTROPY DUAL SPECTROGRAM -->
+      <div class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-neutral-200 pb-3">
+          <span class="font-mono text-xs text-neutral-950 uppercase tracking-wider font-semibold">Concept 02 · Dual-Spectrum Cognitive Spectrogram</span>
+          <span class="font-mono text-xs text-neutral-500 font-medium">Entropy H = 4.2 bits vs H = 1.4 bits</span>
+        </div>
+        <p class="text-sm text-neutral-600 max-w-[65ch]">
+          A Swiss architectural spectrogram comparing cognitive impedance. The monolithic 42-question intake generates desynchronized high-frequency friction loops, while the 14-field adaptive flow resolves into a synchronized, laminar 10Hz alpha harmonic.
+        </p>
+
+        <div class="rounded-2xl border border-neutral-200/90 bg-white/80 p-6 sm:p-8 space-y-6 shadow-xs">
+          <!-- Monolithic Waveform -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs font-mono text-neutral-600">
+              <span class="font-medium text-neutral-900">Monolithic Intake (42 Questions) · Desynchronized High Entropy (H = 4.2 bits)</span>
+              <span class="text-neutral-500">Hesitation Loops &amp; Drop-off</span>
+            </div>
+            <div class="h-16 w-full rounded-lg bg-neutral-100/80 border border-neutral-200/60 p-2 flex items-center overflow-hidden">
+              <svg class="w-full h-full" viewBox="0 0 1000 60" preserveAspectRatio="none">
+                <path d="M 0,30 Q 15,10 30,50 T 60,15 T 90,45 T 120,5 T 150,55 T 180,20 T 210,48 T 240,10 T 270,52 T 300,18 T 330,42 T 360,8 T 390,52 T 420,25 T 450,45 T 480,12 T 510,50 T 540,15 T 570,48 T 600,8 T 630,54 T 660,20 T 690,46 T 720,12 T 750,50 T 780,16 T 810,48 T 840,10 T 870,52 T 900,22 T 930,45 T 960,15 T 1000,30" fill="none" stroke="#9CA3AF" stroke-width="1.2" stroke-dasharray="2 2" />
+                <path d="M 0,30 Q 20,45 40,12 T 80,48 T 120,8 T 160,52 T 200,15 T 240,48 T 280,10 T 320,50 T 360,20 T 400,45 T 440,12 T 480,50 T 520,15 T 560,48 T 600,10 T 640,52 T 680,18 T 720,45 T 760,12 T 800,50 T 840,15 T 880,48 T 920,10 T 960,50 T 1000,30" fill="none" stroke="#71717A" stroke-width="1.5" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Adaptive Waveform -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs font-mono text-neutral-600">
+              <span class="font-medium text-amber-900">Adaptive Flow (14 Fields) · Synchronized Alpha Rhythm (H = 1.4 bits)</span>
+              <span class="text-amber-800 font-medium">Laminar Cognitive Fluency</span>
+            </div>
+            <div class="h-16 w-full rounded-lg bg-amber-50/40 border border-amber-200/60 p-2 flex items-center overflow-hidden">
+              <svg class="w-full h-full" viewBox="0 0 1000 60" preserveAspectRatio="none">
+                <path d="M 0,30 Q 35,5 71,30 T 142,30 T 213,30 T 284,30 T 355,30 T 426,30 T 497,30 T 568,30 T 639,30 T 710,30 T 781,30 T 852,30 T 923,30 T 1000,30" fill="none" stroke="#D97706" stroke-width="2.5" />
+                <path d="M 0,30 Q 35,15 71,30 T 142,30 T 213,30 T 284,30 T 355,30 T 426,30 T 497,30 T 568,30 T 639,30 T 710,30 T 781,30 T 852,30 T 923,30 T 1000,30" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONCEPT 3: THE SANTIAGO RAMÓN Y CAJAL SYNAPTIC ARBORIZATION PRINT -->
+      <div class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-neutral-200 pb-3">
+          <span class="font-mono text-xs text-neutral-950 uppercase tracking-wider font-semibold">Concept 03 · Santiago Ramón y Cajal Histological Etching</span>
+          <span class="font-mono text-xs text-neutral-500 font-medium">Archival Pruning Print</span>
+        </div>
+        <p class="text-sm text-neutral-600 max-w-[65ch]">
+          A classical histological plate in the visual style of Santiago Ramón y Cajal. The tangled dendritic arborization of 42 statutory requirements naturally prunes through the gating threshold into 14 streamlined, parallel axonal pathways.
+        </p>
+
+        <figure class="rounded-2xl border border-neutral-200/90 bg-[#F4F2EB]/50 p-4 sm:p-6 shadow-xs overflow-hidden">
+          <div class="rounded-xl overflow-hidden border border-neutral-300/70 shadow-sm">
+            <img
+              src="/assets/bulkmagic/cajal-synaptic-pruning.jpg"
+              alt="Santiago Ramón y Cajal histological copperplate illustration of synaptic arborization and axonal pruning"
+              class="w-full h-auto object-cover block"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-4 pt-2 border-t border-neutral-200 flex justify-between items-center">
+            <span>Plate · Cortical Arborization Pruning Model</span>
+            <span class="text-neutral-500">Archival Copperplate Etching</span>
+          </figcaption>
+        </figure>
+      </div>
+
     </div>
   </section>
 
@@ -436,4 +400,116 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
 </main>
+
+<script is:inline>
+  // Thalamic Biosignal Gating Canvas Physics
+  function initThalamicCanvas() {
+    const canvas = document.getElementById('thalamic-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let t = 0;
+    const mouse = { x: -1000, y: -1000, active: false };
+
+    function resize() {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.resetTransform?.();
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    });
+    canvas.addEventListener('mouseleave', () => {
+      mouse.active = false;
+    });
+
+    const totalLines = 42;
+
+    function render() {
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const gateX = w * 0.42;
+
+      // Draw Gate Hairline
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(217, 119, 6, 0.45)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 3]);
+      ctx.moveTo(gateX, 8);
+      ctx.lineTo(gateX, h - 8);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      const spacing = (h - 36) / totalLines;
+      t += 0.022;
+
+      for (let i = 0; i < totalLines; i++) {
+        const baseY = 18 + i * spacing;
+        const isRetained = i % 3 === 0; // Exactly 14 of 42 lines retained
+        
+        ctx.beginPath();
+        for (let x = 0; x <= w; x += 4) {
+          const amp = 3.2;
+          const freq = 0.038;
+          const phase = i * 0.38;
+          
+          if (x < gateX) {
+            // Before gate: all 42 lines have chaotic noise
+            const noise = Math.sin(x * freq + t * 2 + phase) * amp;
+            const y = baseY + noise;
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          } else {
+            // After gate: non-retained lines decay to 0, retained lines become harmonic
+            const progress = (x - gateX) / (w - gateX);
+            if (isRetained) {
+              let mouseBonus = 0;
+              if (mouse.active) {
+                const dist = Math.hypot(x - mouse.x, baseY - mouse.y);
+                if (dist < 100) mouseBonus = Math.sin(dist * 0.1 - t * 4) * 5 * (1 - dist / 100);
+              }
+              const harmonic = Math.sin(x * 0.028 + t * 2.2 + phase * 0.15) * 4.5 + mouseBonus;
+              const y = baseY + harmonic;
+              ctx.lineTo(x, y);
+            } else {
+              const decay = Math.max(0, 1 - progress * 2.4);
+              const noise = Math.sin(x * freq + t * 2 + phase) * amp * decay;
+              const y = baseY + noise;
+              ctx.lineTo(x, y);
+            }
+          }
+        }
+
+        if (isRetained) {
+          ctx.strokeStyle = 'rgba(180, 83, 9, 0.85)';
+          ctx.lineWidth = 1.25;
+        } else {
+          ctx.strokeStyle = 'rgba(170, 170, 170, 0.22)';
+          ctx.lineWidth = 0.75;
+        }
+        ctx.stroke();
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    }
+    render();
+  }
+  document.addEventListener('DOMContentLoaded', initThalamicCanvas);
+  // Also call immediately if already loaded
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initThalamicCanvas();
+  }
+</script>
 </BaseLayout>
