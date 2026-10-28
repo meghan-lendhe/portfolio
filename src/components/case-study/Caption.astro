@@ -1,0 +1,20 @@
+---
+interface Props {
+  as?: 'figcaption' | 'p';
+  bleed?: boolean;
+  hairline?: boolean;
+  class?: string;
+}
+
+const { as: Tag = 'figcaption', bleed = false, hairline = false, class: className = '' } = Astro.props;
+---
+
+<Tag class:list={[
+  "text-xs text-neutral-600 font-sans leading-relaxed",
+  hairline ? "mt-4 border-t border-neutral-200 pt-3" : "mt-3",
+  bleed ? "mx-6 md:mx-16 lg:mx-20" : "",
+  className
+]}>
+  <slot />
+</Tag>
+

@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ChapterMarker from '../components/case-study/ChapterMarker.astro';
+import StepEyebrow from '../components/case-study/StepEyebrow.astro';
+import Vitrine from '../components/case-study/Vitrine.astro';
+import Caption from '../components/case-study/Caption.astro';
 ---
 
 <BaseLayout title="BulkMagic — Streamlining Multi-State Seller Onboarding" theme="light">
@@ -101,186 +105,164 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <figcaption class="text-xs sm:text-sm font-sans text-neutral-600 mt-2 border-t border-neutral-200 pt-3 mx-6 md:mx-16 lg:mx-20">
-        The five onboarding stages from business entity identification to live account activation.
-      </figcaption>
+      <Caption bleed>
+        The five core onboarding stages from business entity identification to live account activation.
+      </Caption>
     </figure>
   </section>
 
-  <!-- THE CONSTRAINT -->
-  <section class="py-20 md:py-28 border-y border-neutral-200 mb-28 md:mb-36">
+  <!-- SECTION 01: THE COMPLIANCE CHALLENGE -->
+  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
+    <ChapterMarker number="01" title="The Compliance Challenge" />
+
     <div class="max-w-4xl space-y-6">
-      <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 leading-[1.06] tracking-tight font-normal text-balance">
-        42 legal questions stood between a new seller and their first sale.
+      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance">
+        Navigating compliance across 50 jurisdictions created severe onboarding drop-off.
       </h2>
-      <div class="space-y-5 text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
-        <p class="text-neutral-950 font-normal text-xl leading-relaxed">
-          Marketplaces must verify identity, collect tax certificates, and document operating authority across jurisdictions. Across all possible business entity types, the statutory matrix encompasses 42 potential requirements—from basic tax IDs to multi-tier corporate resolutions.
-        </p>
-        <p>
-          The core challenge was preventing sellers from getting bogged down in requirements that have nothing to do with their business structure. An independent seller shouldn't have to parse complex multi-state corporate rules just to figure out what files they actually need to submit.
+      <div class="text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
+        <p class="text-xl sm:text-2xl text-neutral-950 font-normal leading-relaxed">
+          Federal and state regulations require marketplaces to verify entities, collect tax filings, and document sales tax obligations across every operating jurisdiction. Presenting this as an intimidating, monolithic form overwhelmed independent sellers with corporate rules that had nothing to do with their business.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- THE DISCOVERY -->
-  <section class="py-20 md:py-28 border-b border-neutral-200 mb-28 md:mb-36">
-    <div class="max-w-4xl space-y-6">
-      <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 leading-[1.06] tracking-tight font-normal text-balance">
-        Most compliance questions don't apply to every seller.
-      </h2>
-      <div class="space-y-5 text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
-        <p class="text-neutral-950 font-normal text-xl leading-relaxed">
-          Auditing the statutory requirements revealed that 28 of the 42 requirements—such as Articles of Incorporation, board resolutions, and complex multi-state foreign qualifications—apply strictly to C-Corps and multi-tier corporate entities.
-        </p>
-        <p>
-          For a sole proprietor or single-member LLC, these questions create unnecessary friction. The friction wasn't compliance itself—it was asking sellers to parse rules that don't apply to them.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE ADAPTIVE ARCHITECTURE -->
-  <section class="py-20 md:py-28 border-b border-neutral-200 mb-32 md:mb-40">
-    <div class="max-w-4xl space-y-6">
-      <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 leading-[1.06] tracking-tight font-normal text-balance">
-        Reducing cognitive load through adaptive disclosure.
-      </h2>
-      <div class="space-y-5 text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
-        <p class="text-neutral-950 font-normal text-xl leading-relaxed">
-          The solution was to make the flow adaptive. Asking two foundational questions first—business structure and location—immediately filters the requirements, presenting only the 14 items relevant to that seller's business.
-        </p>
-        <p>
-          Because gathering tax documents often takes time, the flow supports multi-session completion. A transparent checklist shows required files, validation status, and lets sellers save and return at their own pace without losing progress.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERACTION WALKTHROUGH -->
+  <!-- SECTION 02: ADAPTIVE ONBOARDING ARCHITECTURE -->
   <section class="mb-48 md:mb-56">
+    <ChapterMarker number="02" title="Adaptive Onboarding Architecture" />
+
     <div class="space-y-36 md:space-y-48">
 
-      <!-- ENTITY CLASSIFICATION & ROUTING -->
+      <!-- STEP 01: ENTITY CLASSIFICATION & ROUTING -->
       <article class="space-y-8">
         <div class="max-w-3xl space-y-4">
-          <h3 class="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-neutral-950 font-normal leading-[1.1] tracking-tight text-balance">
-            Setting the Rules Based on Business Structure
-          </h3>
+          <div class="space-y-2">
+            <StepEyebrow number="01" />
+            <h3 class="text-3xl font-serif text-neutral-950 font-normal">
+              Setting the Rules Based on Business Structure
+            </h3>
+          </div>
           <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
             The onboarding begins with two straightforward questions: business structure and operating states. Answering this upfront sets the rules for the rest of the flow, ensuring sellers only see the filings required for their specific entity type.
           </p>
         </div>
 
         <figure>
-          <div class="rounded-xl border border-neutral-200/90 bg-white shadow-xs overflow-hidden">
+          <Vitrine>
             <img
               src="/assets/bulkmagic/progressive-disclosure.png"
               alt="Business structure identification and progressive disclosure routing interface"
               class="w-full h-auto object-contain block"
               loading="lazy"
             />
-          </div>
-          <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-3">
-            Step-by-step business structure identification &amp; routing
-          </figcaption>
+          </Vitrine>
+          <Caption>
+            Two upfront classification questions immediately establish statutory rules, filtering out non-applicable corporate filing requirements.
+          </Caption>
         </figure>
       </article>
 
-      <!-- DYNAMIC REQUIREMENTS CHECKLIST -->
+      <!-- STEP 02: DYNAMIC REQUIREMENTS CHECKLIST -->
       <article class="space-y-8">
         <div class="max-w-3xl space-y-4">
-          <h3 class="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-neutral-950 font-normal leading-[1.1] tracking-tight text-balance">
-            A Transparent Checklist Supporting Multi-Session Progress
-          </h3>
+          <div class="space-y-2">
+            <StepEyebrow number="02" />
+            <h3 class="text-3xl font-serif text-neutral-950 font-normal">
+              A Transparent Checklist Supporting Multi-Session Progress
+            </h3>
+          </div>
           <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
             Sellers rarely have every tax certificate or resale permit on hand right away. Instead of surprising them mid-flow with unexpected file requests, a structured checklist outlines the required documents, clearly tracks validation status (Ready, Pending, Missing), and lets sellers save and return across multiple sessions without losing progress.
           </p>
         </div>
 
         <figure>
-          <div class="rounded-xl border border-neutral-200/90 bg-white shadow-xs overflow-hidden">
+          <Vitrine>
             <img
               src="/assets/bulkmagic/document-checklist.png"
               alt="Dynamic document checklist adapting in real time to entity type and location"
               class="w-full h-auto object-contain block"
               loading="lazy"
             />
-          </div>
-          <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-3">
-            Document readiness checklist with transparent validation status
-          </figcaption>
+          </Vitrine>
+          <Caption>
+            The adaptive document readiness checklist tracks real-time validation status (Ready, Pending, Missing) and supports multi-session completion.
+          </Caption>
         </figure>
       </article>
 
-      <!-- FIELD VALIDATION & ERROR PREVENTION -->
+      <!-- STEP 03: FIELD VALIDATION & ERROR PREVENTION -->
       <article class="space-y-8">
         <div class="max-w-3xl space-y-4">
-          <h3 class="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-neutral-950 font-normal leading-[1.1] tracking-tight text-balance">
-            Field-Level Validation to Catch Errors at the Source
-          </h3>
+          <div class="space-y-2">
+            <StepEyebrow number="03" />
+            <h3 class="text-3xl font-serif text-neutral-950 font-normal">
+              Field-Level Validation to Catch Errors at the Source
+            </h3>
+          </div>
           <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
             Rather than letting typos in tax IDs or misformatted bank details trigger failed submissions days later, form fields validate syntax and formatting as the seller types. Clear inline prompts guide corrections immediately, ensuring the application is clean before final submission.
           </p>
         </div>
 
         <figure>
-          <div class="rounded-xl border border-neutral-200/90 bg-white shadow-xs overflow-hidden">
+          <Vitrine>
             <img
               src="/assets/bulkmagic/automated-validation.png"
               alt="Real-time inline syntax validation and economic nexus threshold checks"
               class="w-full h-auto object-contain block"
               loading="lazy"
             />
-          </div>
-          <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-3">
-            Instant syntax and formatting checks on typed business details
-          </figcaption>
+          </Vitrine>
+          <Caption>
+            Inline field validation catches formatting errors and syntax mistakes as sellers type, preventing downstream application rejection.
+          </Caption>
         </figure>
       </article>
 
-      <!-- TRANSPARENT REVIEW & ACTIVATION -->
+      <!-- STEP 04: TRANSPARENT REVIEW & ACTIVATION -->
       <article class="space-y-8">
         <div class="max-w-3xl space-y-4">
-          <h3 class="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-neutral-950 font-normal leading-[1.1] tracking-tight text-balance">
-            In-Place Edits Before Final Activation
-          </h3>
+          <div class="space-y-2">
+            <StepEyebrow number="04" />
+            <h3 class="text-3xl font-serif text-neutral-950 font-normal">
+              In-Place Edits Before Final Activation
+            </h3>
+          </div>
           <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
             A single summary screen confirms registered details, tax nexuses, and bank payout information in a clean ledger. Sellers can edit details directly in place without clicking "back" through multiple screens, leading immediately into active selling.
           </p>
         </div>
 
         <figure>
-          <div class="rounded-xl border border-neutral-200/90 bg-white shadow-xs overflow-hidden">
+          <Vitrine>
             <img
               src="/assets/bulkmagic/onboarding-success.png"
               alt="Account activation confirmation and success screen"
               class="w-full h-auto object-contain block"
               loading="lazy"
             />
-          </div>
-          <figcaption class="text-[11px] font-mono tracking-wider text-neutral-600 uppercase mt-3">
-            Account activation confirmation and live status review
-          </figcaption>
+          </Vitrine>
+          <Caption>
+            A single summary ledger enables in-place edits before activation, eliminating multi-screen back-navigation.
+          </Caption>
         </figure>
       </article>
 
     </div>
   </section>
 
-  <!-- SPRINT REFLECTION -->
-  <section class="py-20 md:py-28 border-y border-neutral-200 mb-36 md:mb-48">
+  <!-- SECTION 03: SPRINT REFLECTION -->
+  <section class="pt-24 pb-8 border-t border-neutral-200 mb-36 md:mb-48">
+    <ChapterMarker number="03" title="Sprint Reflection" />
+
     <div class="max-w-4xl space-y-6">
-      <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 font-normal leading-tight">
+      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance">
         Rapid prototyping as a compliance stress-test.
       </h2>
-      <div class="space-y-5 text-base sm:text-lg text-neutral-700 font-normal leading-[1.8] max-w-[54ch]">
-        <p>
-          In a rapid sprint spanning roughly 36 hours, the goal was to take dense statutory regulations and prove that compliance doesn't have to be a multi-week engineering project before you can validate the experience. Using AI to generate a functional prototype allowed me to stress-test state transitions, uncover edge cases, and capture realistic UI states in hours rather than weeks.
-        </p>
-        <p class="text-neutral-800">
-          If moving to a production build, the immediate next steps would be running usability sessions with active sellers to test document gathering across multiple sessions, tracking completion drop-off, and collaborating with engineering on realistic document verification pipelines.
+      <div class="text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
+        <p class="text-xl text-neutral-950 font-normal leading-relaxed">
+          In a 36-hour sprint, generating a functional prototype allowed me to stress-test statutory edge cases and validate state transitions without waiting weeks for backend infrastructure. Moving toward production would focus on testing document drop-off with active merchants across multi-session collection flows.
         </p>
       </div>
     </div>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  label?: string;
+  number?: string | number;
+  accent?: boolean;
+  class?: string;
+}
+
+const { label = 'STEP', number, accent = false, class: className = '' } = Astro.props;
+const formattedNumber = number !== undefined 
+  ? (typeof number === 'number' ? String(number).padStart(2, '0') : number) 
+  : '';
+---
+
+<span class:list={[
+  "text-[10px] font-mono uppercase tracking-widest block font-medium",
+  accent ? "text-amber-800" : "text-neutral-600",
+  className
+]}>
+  {label}{formattedNumber ? ` ${formattedNumber}` : ''}
+</span>
+

@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ChapterMarker from '../components/case-study/ChapterMarker.astro';
+import StepEyebrow from '../components/case-study/StepEyebrow.astro';
+import Vitrine from '../components/case-study/Vitrine.astro';
+import Caption from '../components/case-study/Caption.astro';
 ---
 
 <BaseLayout title="Vitals — Trust-First Onboarding for Emergency Medical ID" theme="light" includeCaseStudyScript>
@@ -49,27 +53,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
 
     <!-- Hero Image Spread -->
-    <div class="relative overflow-hidden pt-8 border-t border-neutral-200">
-      <div class="w-full overflow-hidden rounded-xs bg-neutral-100/60 border border-neutral-200/80">
+    <div class="relative overflow-hidden pt-12">
+      <Vitrine>
         <img
           src="/assets/vitals/cover.png"
           alt="Vitals digital medical ID 4-step onboarding journey progression"
           class="w-full h-auto object-contain hover:scale-[1.008] transition-luxury duration-700"
         />
-      </div>
-      <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+      </Vitrine>
+      <Caption as="p">
         The redesigned onboarding sequence establishes emergency responder visibility and local coverage before asking for sensitive medical details.
-      </p>
+      </Caption>
     </div>
   </section>
 
   <!-- SECTION 01: THE FIRST RESPONDER REALITY (CONTEXT) -->
   <section class="mb-48 md:mb-60">
-    <div class="pb-5 mb-20 border-b border-neutral-200">
-      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium">
-        01 / The Emergency Context
-      </div>
-    </div>
+    <ChapterMarker number="01" title="The Emergency Context" />
 
     <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 lg:gap-24 items-start">
       <div class="space-y-8">
@@ -84,25 +84,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="relative overflow-hidden">
-        <div class="w-full flex items-center justify-center bg-neutral-100/60 border border-neutral-200/80 rounded-xs p-4 sm:p-8">
+        <Vitrine padded class="p-4 sm:p-8">
           <img
             src="/assets/vitals/sample-id.png"
             alt="Sample emergency medical profile accessed by first responders"
             class="max-h-[580px] w-auto object-contain hover:scale-[1.015] transition-luxury duration-700"
           />
-        </div>
-        <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+        </Vitrine>
+        <Caption as="p">
           The emergency beacon profile gives first responders immediate de-escalation protocols and critical medical history on dispatch.
-        </p>
+        </Caption>
       </div>
     </div>
   </section>
 
   <!-- SECTION 02: THE OPERATIONAL BARRIER -->
-  <section class="py-24 border-y border-neutral-200 mb-36 md:mb-52">
-    <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase mb-12 font-medium">
-      02 / The Operational Barrier
-    </div>
+  <section class="pt-24 pb-8 border-t border-neutral-200 mb-36 md:mb-52">
+    <ChapterMarker number="02" title="The Operational Barrier" class="mb-12" />
 
     <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-baseline">
       <div class="space-y-3">
@@ -125,11 +123,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- SECTION 03: RESEARCH FINDINGS -->
   <section class="mb-48 md:mb-60">
-    <div class="pb-5 mb-20 border-b border-neutral-200">
-      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium">
-        03 / What We Learned from Users
-      </div>
-    </div>
+    <ChapterMarker number="03" title="What We Learned from Users" />
 
     <div class="max-w-4xl mb-24 space-y-6">
       <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 font-normal text-balance">
@@ -147,21 +141,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Finding 01: Lack of Trust -->
       <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
         <div class="relative overflow-hidden">
-          <div class="w-full overflow-hidden bg-neutral-100/60 border border-neutral-200/80 rounded-xs">
+          <Vitrine>
             <img
               src="/assets/vitals/findings/trust-issue.png"
               alt="Legacy signup flow demanding personal details immediately after splash"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+          </Vitrine>
+          <Caption as="p">
             The original sign-up flow demanded intimate medical diagnoses immediately after registration, before establishing responder protocols.
-          </p>
+          </Caption>
         </div>
 
         <div class="space-y-6 lg:pt-2">
           <div class="space-y-2">
-            <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">DIAGNOSTIC 01</span>
+            <StepEyebrow label="DIAGNOSTIC" number="01" accent />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Premature personal questions broke trust
             </h3>
@@ -176,7 +170,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Seven in ten interviewed caregivers expressed acute hesitation disclosing neurological conditions, medications, or behavioral triggers before understanding how data was protected or who held authority to view it.
           </p>
 
-          <blockquote class="font-serif italic text-lg text-neutral-900 border-l-2 border-amber-800/40 pl-4 py-1">
+          <blockquote class="font-serif italic text-xl text-neutral-900 leading-snug">
             “Why do you need my daughter’s diagnosis before you’ve even shown me how a police officer will see it?”
           </blockquote>
         </div>
@@ -186,7 +180,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <article class="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-16 items-start group">
         <div class="space-y-6 order-2 lg:order-1 lg:pt-2">
           <div class="space-y-2">
-            <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">DIAGNOSTIC 02</span>
+            <StepEyebrow label="DIAGNOSTIC" number="02" accent />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Geographic coverage ambiguity
             </h3>
@@ -196,43 +190,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Users faced a dense pricing table without knowing whether the service functioned in their specific county or city. Caregivers worried they would pay for an emergency ID that local first responders couldn't actually scan.
           </p>
 
-          <blockquote class="font-serif italic text-lg text-neutral-900 border-l-2 border-amber-800/40 pl-4 py-1">
+          <blockquote class="font-serif italic text-xl text-neutral-900 leading-snug">
             “I don't know what 'Standard Statewide' vs 'Regional' means if my dad travels across state lines.”
           </blockquote>
         </div>
 
         <div class="order-1 lg:order-2 relative overflow-hidden">
-          <div class="w-full overflow-hidden bg-neutral-100/60 border border-neutral-200/80 rounded-xs">
+          <Vitrine>
             <img
               src="/assets/vitals/findings/plan-confusion.png"
               alt="Legacy pricing buttons lacking geographic verification"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+          </Vitrine>
+          <Caption as="p">
             The legacy pricing screen forced users to choose statewide vs. regional plans without confirming whether local responders supported the beacon.
-          </p>
+          </Caption>
         </div>
       </article>
 
       <!-- Finding 03: Buried Reassurance -->
       <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
         <div class="relative overflow-hidden">
-          <div class="w-full overflow-hidden bg-neutral-100/60 border border-neutral-200/80 rounded-xs">
+          <Vitrine>
             <img
               src="/assets/vitals/findings/visual-hierarchy.png"
               alt="Legacy screen hiding free trial and cancellation terms below the fold"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+          </Vitrine>
+          <Caption as="p">
             Crucial trial terms, cancellation policies, and ID card previews were buried below the fold, creating fear of financial commitment.
-          </p>
+          </Caption>
         </div>
 
         <div class="space-y-6 lg:pt-2">
           <div class="space-y-2">
-            <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">DIAGNOSTIC 03</span>
+            <StepEyebrow label="DIAGNOSTIC" number="03" accent />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Concealed safety nets
             </h3>
@@ -248,7 +242,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- EDITORIAL INTERLUDE -->
-  <section class="py-28 md:py-36 my-20 border-y border-neutral-200 text-center relative overflow-hidden">
+  <section class="py-24 md:py-32 my-16 text-center relative overflow-hidden">
     <div class="max-w-4xl mx-auto px-6 space-y-6">
       <span class="text-[10px] font-mono tracking-[0.28em] text-amber-800 uppercase font-medium">DESIGN PRINCIPLE</span>
       <blockquote class="font-serif italic text-3xl sm:text-5xl text-neutral-950 font-normal leading-[1.25] text-balance">
@@ -262,11 +256,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- SECTION 04: THE REDESIGNED EXPERIENCE -->
   <section class="mb-48 md:mb-60">
-    <div class="pb-5 mb-20 border-b border-neutral-200">
-      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium">
-        04 / The Redesigned Experience
-      </div>
-    </div>
+    <ChapterMarker number="04" title="The Redesigned Experience" />
 
     <div class="max-w-4xl mb-24">
       <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 mb-6 font-normal text-balance">
@@ -282,21 +272,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Feature 01: Building Foundational Trust -->
       <article class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-start group">
         <div class="relative overflow-hidden">
-          <div class="w-full flex items-center justify-center bg-neutral-100/60 border border-neutral-200/80 rounded-xs p-6 sm:p-10">
+          <Vitrine padded class="p-6 sm:p-10">
             <img
               src="/assets/vitals/solutions/trust-screen.png"
               alt="Trust-centered welcome screen with sample profile preview and security assurances"
               class="max-h-[560px] w-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+          </Vitrine>
+          <Caption as="p">
             A value-first entry screen previewing what first responders see, paired with explicit clinical governance and encryption assurances.
-          </p>
+          </Caption>
         </div>
 
         <div class="space-y-6 lg:pt-8">
           <div class="space-y-2">
-            <span class="text-[10px] font-mono text-neutral-600 uppercase tracking-widest block font-medium">INTERVENTION 01</span>
+            <StepEyebrow label="INTERVENTION" number="01" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Funnel inversion: protection before credentials
             </h3>
@@ -311,7 +301,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <article class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start group">
         <div class="space-y-6 order-2 lg:order-1 lg:pt-8">
           <div class="space-y-2">
-            <span class="text-[10px] font-mono text-neutral-600 uppercase tracking-widest block font-medium">INTERVENTION 02</span>
+            <StepEyebrow label="INTERVENTION" number="02" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Dynamic location verification
             </h3>
@@ -322,37 +312,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <div class="order-1 lg:order-2 relative overflow-hidden">
-          <div class="w-full overflow-hidden bg-neutral-100/60 border border-neutral-200/80 rounded-xs">
+          <Vitrine>
             <img
               src="/assets/vitals/solutions/plan-selection.png"
               alt="Side-by-side plan comparison with real-time location check"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+          </Vitrine>
+          <Caption as="p">
             Real-time coverage validation confirms local 911 dispatcher participation before presenting plan selection.
-          </p>
+          </Caption>
         </div>
       </article>
 
       <!-- Feature 03: Progressive Clinical Data Collection -->
       <article class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 items-start group">
         <div class="relative overflow-hidden">
-          <div class="w-full overflow-hidden bg-neutral-100/60 border border-neutral-200/80 rounded-xs">
+          <Vitrine>
             <img
               src="/assets/vitals/solutions/data-collection.png"
               alt="Deconstructed progressive intake steps with explicit verification context"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+          </Vitrine>
+          <Caption as="p">
             Lengthy profile intake is deconstructed into single-question steps that explain why each field is needed.
-          </p>
+          </Caption>
         </div>
 
         <div class="space-y-6 lg:pt-8">
           <div class="space-y-2">
-            <span class="text-[10px] font-mono text-neutral-600 uppercase tracking-widest block font-medium">INTERVENTION 03</span>
+            <StepEyebrow label="INTERVENTION" number="03" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Deconstructed micro-pacing
             </h3>
@@ -367,7 +357,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <article class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start group">
         <div class="space-y-6 order-2 lg:order-1 lg:pt-8">
           <div class="space-y-2">
-            <span class="text-[10px] font-mono text-neutral-600 uppercase tracking-widest block font-medium">INTERVENTION 04</span>
+            <StepEyebrow label="INTERVENTION" number="04" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Persistent contextual support
             </h3>
@@ -378,16 +368,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <div class="order-1 lg:order-2 relative overflow-hidden">
-          <div class="w-full overflow-hidden bg-neutral-100/60 border border-neutral-200/80 rounded-xs">
+          <Vitrine>
             <img
               src="/assets/vitals/solutions/help-access.png"
               alt="Persistent in-flow help triggers reducing drop-off anxiety"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
-          </div>
-          <p class="text-xs text-neutral-600 font-sans leading-relaxed mt-4 border-t border-neutral-200 pt-3">
+          </Vitrine>
+          <Caption as="p">
             Persistent 'Get Help' and 'Contact Support' actions allow caregivers to resolve questions without losing their progress.
-          </p>
+          </Caption>
         </div>
       </article>
 
@@ -395,12 +385,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- SECTION 05: PROJECTED OUTCOME -->
-  <section class="py-24 border-t border-neutral-200 mb-32 md:mb-48">
-    <div class="pb-5 mb-16 border-b border-neutral-200">
-      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium">
-        05 / Projected Outcome
-      </div>
-    </div>
+  <section class="pt-24 pb-12 border-t border-neutral-200 mb-32 md:mb-48">
+    <ChapterMarker number="05" title="Projected Outcome" />
 
     <!-- The Business Payoff -->
     <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-baseline">
