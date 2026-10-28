@@ -5,6 +5,7 @@ import StepEyebrow from '../components/case-study/StepEyebrow.astro';
 import Vitrine from '../components/case-study/Vitrine.astro';
 import Caption from '../components/case-study/Caption.astro';
 import BrowserFrame from '../components/case-study/BrowserFrame.astro';
+import PhoneFrame from '../components/case-study/PhoneFrame.astro';
 ---
 
 <BaseLayout title="BulkMagic — Streamlining Multi-State Seller Onboarding" theme="light">
@@ -49,14 +50,43 @@ import BrowserFrame from '../components/case-study/BrowserFrame.astro';
       </div>
     </div>
 
-    <!-- Hero Stepped Interaction Spread -->
+    <!-- Hero Stepped Interaction Spread: 3-Stage Progression in Vitrine -->
     <div class="relative overflow-hidden pt-12">
       <Vitrine>
-        <img
-          src="/assets/bulkmagic/cover.png"
-          alt="BulkMagic 3-step merchant onboarding journey progression"
-          class="w-full h-auto object-contain hover:scale-[1.008] transition-luxury duration-700"
-        />
+        <div
+          id="hero-panorama-track"
+          class="w-full overflow-x-auto lg:overflow-visible no-scrollbar flex items-center justify-start lg:justify-center gap-5 sm:gap-7 lg:gap-9 px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-14 select-none"
+        >
+          <!-- Stage 01: Entity Classification -->
+          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
+            <img
+              src="/assets/bulkmagic/flow-step-1.png"
+              alt="Mobile viewport: Business structure and entity identification"
+              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
+              loading="eager"
+            />
+          </PhoneFrame>
+
+          <!-- Stage 02: Dynamic Document Preparation Checklist -->
+          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
+            <img
+              src="/assets/bulkmagic/flow-step-2.png"
+              alt="Mobile viewport: Dynamic document readiness checklist"
+              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
+              loading="eager"
+            />
+          </PhoneFrame>
+
+          <!-- Stage 03: Live Activation & Review -->
+          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
+            <img
+              src="/assets/bulkmagic/flow-step-5.png"
+              alt="Mobile viewport: Account review and live activation"
+              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
+              loading="eager"
+            />
+          </PhoneFrame>
+        </div>
       </Vitrine>
 
       <Caption as="p">
@@ -240,5 +270,46 @@ import BrowserFrame from '../components/case-study/BrowserFrame.astro';
   </section>
 
 </main>
+
+<script is:inline>
+  // Hero Panorama Track Drag-to-Scroll
+  function initPanoramaDrag() {
+    const track = document.getElementById('hero-panorama-track');
+    if (!track) return;
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    track.addEventListener('mousedown', (e) => {
+      isDown = true;
+      track.classList.add('cursor-grabbing');
+      track.classList.remove('cursor-grab');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isDown) return;
+      isDown = false;
+      track.classList.remove('cursor-grabbing');
+      track.classList.add('cursor-grab');
+    });
+
+    track.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.6;
+      track.scrollLeft = scrollLeft - walk;
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initPanoramaDrag();
+  });
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initPanoramaDrag();
+  }
+</script>
 
 </BaseLayout>
