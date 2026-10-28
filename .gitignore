@@ -14,3 +14,11 @@ blob-report/
 
 # Local agent context and instructions
 AGENTS.md
+WORKFLOW.md
+scripts/
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
