@@ -4,6 +4,7 @@ import ChapterMarker from '../components/case-study/ChapterMarker.astro';
 import StepEyebrow from '../components/case-study/StepEyebrow.astro';
 import Vitrine from '../components/case-study/Vitrine.astro';
 import Caption from '../components/case-study/Caption.astro';
+import BrowserFrame from '../components/case-study/BrowserFrame.astro';
 ---
 
 <BaseLayout title="BulkMagic — Streamlining Multi-State Seller Onboarding" theme="light">
@@ -48,67 +49,20 @@ import Caption from '../components/case-study/Caption.astro';
       </div>
     </div>
 
-    <!-- Hero Stepped Interaction Deck: Full-Width Horizontal Cinematic Panorama -->
-    <figure class="pt-8 border-t border-neutral-200 -mx-6 md:-mx-16 lg:-mx-20">
-      <div
-        id="hero-panorama-track"
-        class="overflow-x-auto no-scrollbar scroll-smooth flex items-stretch gap-6 md:gap-8 px-6 md:px-16 lg:px-20 py-6 cursor-grab select-none"
-      >
-        <!-- Viewport 01: Entity Identification -->
-        <div class="group shrink-0 w-[300px] sm:w-[360px] md:w-[410px] lg:w-[450px] aspect-[10/17] rounded-lg overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_20px_50px_rgba(0,0,0,0.14)] hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,0,0,0.22)] transition-luxury">
-          <img
-            src="/assets/bulkmagic/flow-step-1.png"
-            alt="Mobile viewport: Business structure and entity identification"
-            class="w-full h-full object-cover object-top block pointer-events-none"
-            loading="eager"
-          />
-        </div>
+    <!-- Hero Stepped Interaction Spread -->
+    <div class="relative overflow-hidden pt-12">
+      <Vitrine>
+        <img
+          src="/assets/bulkmagic/cover.png"
+          alt="BulkMagic 3-step merchant onboarding journey progression"
+          class="w-full h-auto object-contain hover:scale-[1.008] transition-luxury duration-700"
+        />
+      </Vitrine>
 
-        <!-- Viewport 02: Document Preparation Checklist -->
-        <div class="group shrink-0 w-[300px] sm:w-[360px] md:w-[410px] lg:w-[450px] aspect-[10/17] rounded-lg overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_20px_50px_rgba(0,0,0,0.14)] hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,0,0,0.22)] transition-luxury">
-          <img
-            src="/assets/bulkmagic/flow-step-2.png"
-            alt="Mobile viewport: Dynamic document readiness checklist"
-            class="w-full h-full object-cover object-top block pointer-events-none"
-            loading="eager"
-          />
-        </div>
-
-        <!-- Viewport 03: Tax Details & Nexus -->
-        <div class="group shrink-0 w-[300px] sm:w-[360px] md:w-[410px] lg:w-[450px] aspect-[10/17] rounded-lg overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_20px_50px_rgba(0,0,0,0.14)] hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,0,0,0.22)] transition-luxury">
-          <img
-            src="/assets/bulkmagic/flow-step-3.png"
-            alt="Mobile viewport: Tax nexus and compliance details"
-            class="w-full h-full object-cover object-top block pointer-events-none"
-            loading="eager"
-          />
-        </div>
-
-        <!-- Viewport 04: Banking Details -->
-        <div class="group shrink-0 w-[300px] sm:w-[360px] md:w-[410px] lg:w-[450px] aspect-[10/17] rounded-lg overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_20px_50px_rgba(0,0,0,0.14)] hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,0,0,0.22)] transition-luxury">
-          <img
-            src="/assets/bulkmagic/flow-step-4.png"
-            alt="Mobile viewport: Direct deposit and payout verification"
-            class="w-full h-full object-cover object-top block pointer-events-none"
-            loading="eager"
-          />
-        </div>
-
-        <!-- Viewport 05: Activation & Review -->
-        <div class="group shrink-0 w-[300px] sm:w-[360px] md:w-[410px] lg:w-[450px] aspect-[10/17] rounded-lg overflow-hidden border border-neutral-800/80 bg-[#0E1117] shadow-[0_20px_50px_rgba(0,0,0,0.14)] hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,0,0,0.22)] transition-luxury">
-          <img
-            src="/assets/bulkmagic/flow-step-5.png"
-            alt="Mobile viewport: Account review and live activation"
-            class="w-full h-full object-cover object-top block pointer-events-none"
-            loading="eager"
-          />
-        </div>
-      </div>
-
-      <Caption bleed>
-        The five core onboarding stages from business entity identification to live account activation.
+      <Caption as="p">
+        The three key onboarding phases: business entity classification, dynamic document readiness, and live account activation.
       </Caption>
-    </figure>
+    </div>
   </section>
 
   <!-- SECTION 01: THE COMPLIANCE CHALLENGE -->
@@ -148,14 +102,14 @@ import Caption from '../components/case-study/Caption.astro';
         </div>
 
         <figure>
-          <Vitrine>
+          <BrowserFrame url="marketplace.com/seller-onboarding/entity">
             <img
               src="/assets/bulkmagic/progressive-disclosure.png"
               alt="Business structure identification and progressive disclosure routing interface"
-              class="w-full h-auto object-contain block"
+              class="w-full h-auto block select-none"
               loading="lazy"
             />
-          </Vitrine>
+          </BrowserFrame>
           <Caption>
             Two upfront classification questions immediately establish statutory rules, filtering out non-applicable corporate filing requirements.
           </Caption>
@@ -177,14 +131,14 @@ import Caption from '../components/case-study/Caption.astro';
         </div>
 
         <figure>
-          <Vitrine>
+          <BrowserFrame url="marketplace.com/seller-onboarding/documents">
             <img
               src="/assets/bulkmagic/document-checklist.png"
               alt="Dynamic document checklist adapting in real time to entity type and location"
-              class="w-full h-auto object-contain block"
+              class="w-full h-auto block select-none"
               loading="lazy"
             />
-          </Vitrine>
+          </BrowserFrame>
           <Caption>
             The adaptive document readiness checklist tracks real-time validation status (Ready, Pending, Missing) and supports multi-session completion.
           </Caption>
@@ -206,14 +160,14 @@ import Caption from '../components/case-study/Caption.astro';
         </div>
 
         <figure>
-          <Vitrine>
+          <BrowserFrame url="marketplace.com/seller-onboarding/tax-nexus">
             <img
               src="/assets/bulkmagic/automated-validation.png"
               alt="Real-time inline syntax validation and economic nexus threshold checks"
-              class="w-full h-auto object-contain block"
+              class="w-full h-auto block select-none"
               loading="lazy"
             />
-          </Vitrine>
+          </BrowserFrame>
           <Caption>
             Inline field validation catches formatting errors and syntax mistakes as sellers type, preventing downstream application rejection.
           </Caption>
@@ -235,14 +189,14 @@ import Caption from '../components/case-study/Caption.astro';
         </div>
 
         <figure>
-          <Vitrine>
+          <BrowserFrame url="marketplace.com/seller-onboarding/activation">
             <img
               src="/assets/bulkmagic/onboarding-success.png"
               alt="Account activation confirmation and success screen"
-              class="w-full h-auto object-contain block"
+              class="w-full h-auto block select-none"
               loading="lazy"
             />
-          </Vitrine>
+          </BrowserFrame>
           <Caption>
             A single summary ledger enables in-place edits before activation, eliminating multi-screen back-navigation.
           </Caption>
@@ -287,44 +241,4 @@ import Caption from '../components/case-study/Caption.astro';
 
 </main>
 
-<script is:inline>
-  // Hero Panorama Track Drag-to-Scroll
-  function initPanoramaDrag() {
-    const track = document.getElementById('hero-panorama-track');
-    if (!track) return;
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    track.addEventListener('mousedown', (e) => {
-      isDown = true;
-      track.classList.add('cursor-grabbing');
-      track.classList.remove('cursor-grab');
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-    });
-
-    window.addEventListener('mouseup', () => {
-      if (!isDown) return;
-      isDown = false;
-      track.classList.remove('cursor-grabbing');
-      track.classList.add('cursor-grab');
-    });
-
-    track.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.6;
-      track.scrollLeft = scrollLeft - walk;
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    initPanoramaDrag();
-  });
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    initPanoramaDrag();
-  }
-</script>
 </BaseLayout>

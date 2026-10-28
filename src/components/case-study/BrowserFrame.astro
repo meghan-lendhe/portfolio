@@ -1,0 +1,58 @@
+---
+interface Props {
+  url?: string;
+  heightClass?: string;
+  class?: string;
+}
+
+const {
+  url = 'marketplace.com/seller-onboarding',
+  heightClass = 'h-[360px] sm:h-[520px] lg:h-[640px]',
+  class: className = ''
+} = Astro.props;
+---
+
+<div class:list={[
+  "w-full overflow-hidden rounded-xs bg-[#030712] border border-neutral-300/80 shadow-[0_20px_50px_rgba(0,0,0,0.10)] flex flex-col relative group/frame transition-luxury",
+  heightClass,
+  className
+]}>
+  <!-- Minimalist Architectural Browser Chrome -->
+  <div class="shrink-0 flex items-center justify-between px-4 py-2.5 bg-[#111827] border-b border-neutral-800/90 select-none z-10">
+    <!-- Window Control Pips -->
+    <div class="flex items-center gap-1.5 w-14">
+      <span class="size-2 rounded-full bg-neutral-600/70 inline-block"></span>
+      <span class="size-2 rounded-full bg-neutral-600/70 inline-block"></span>
+      <span class="size-2 rounded-full bg-neutral-600/70 inline-block"></span>
+    </div>
+
+    <!-- URL / Location Bar Pill -->
+    <div class="flex items-center gap-2 px-3 py-1 rounded-xs bg-[#030712] border border-neutral-800/80 text-[11px] font-mono text-neutral-400 max-w-[280px] sm:max-w-md w-full justify-center truncate">
+      <svg class="size-3 text-emerald-500/90 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+      <span class="truncate">{url}</span>
+    </div>
+
+    <!-- Right Spacer to Keep Location Bar Centered -->
+    <div class="w-14"></div>
+  </div>
+
+  <!-- Internally Scrollable Viewport -->
+  <div class="browser-viewport relative flex-1 overflow-y-auto overscroll-contain scroll-smooth bg-[#030712] [scrollbar-width:thin] [scrollbar-color:#374151_transparent]">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .browser-viewport::-webkit-scrollbar {
+    width: 6px;
+  }
+  .browser-viewport::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .browser-viewport::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 3px;
+  }
+</style>
