@@ -9,7 +9,11 @@ const { number, title, class: className = '' } = Astro.props;
 const formattedNumber = typeof number === 'number' ? String(number).padStart(2, '0') : number;
 ---
 
-<div class:list={["text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium mb-12 md:mb-16", className]}>
+<div
+  data-chapter-marker
+  data-chapter-num={formattedNumber}
+  data-chapter-title={title}
+  class:list={["chapter-marker text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium mb-12 md:mb-16 scroll-mt-24", className]}
+>
   {formattedNumber} / {title}
 </div>
-

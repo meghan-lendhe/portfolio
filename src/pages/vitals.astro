@@ -4,19 +4,15 @@ import ChapterMarker from '../components/case-study/ChapterMarker.astro';
 import StepEyebrow from '../components/case-study/StepEyebrow.astro';
 import Vitrine from '../components/case-study/Vitrine.astro';
 import Caption from '../components/case-study/Caption.astro';
+import RestingRule from '../components/case-study/RestingRule.astro';
 ---
 
 <BaseLayout title="Vitals — Trust-First Onboarding for Emergency Medical ID" theme="light" includeCaseStudyScript>
-<!-- Luminous Gallery Atmosphere: Layered Warm Ambient Gradients -->
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[#FAF9F5]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_75%_55%_at_70%_10%,rgba(217,119,6,0.045),transparent_65%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
 <main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-20 md:pt-32 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
   <!-- HERO SECTION: Monumental Headline & Narrative Scale Bridge -->
-  <section class="mb-32 md:mb-48">
+  <section class="mb-32 md:mb-48 relative">
     <div class="max-w-6xl mb-20">
       <h1 class="font-serif text-5xl sm:text-7xl lg:text-[6.5rem] font-normal leading-[0.94] tracking-[-0.04em] text-neutral-950 mb-10 text-balance">
         Overcoming the 92% Drop-off Barrier.
@@ -67,6 +63,9 @@ import Caption from '../components/case-study/Caption.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-32 md:mb-44" />
+
   <!-- SECTION 01: THE FIRST RESPONDER REALITY (CONTEXT) -->
   <section class="mb-48 md:mb-60">
     <ChapterMarker number="01" title="The Emergency Context" />
@@ -98,8 +97,11 @@ import Caption from '../components/case-study/Caption.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- SECTION 02: THE OPERATIONAL BARRIER -->
-  <section class="pt-24 pb-8 border-t border-neutral-200 mb-36 md:mb-52">
+  <section class="pt-8 pb-8 mb-36 md:mb-52">
     <ChapterMarker number="02" title="The Operational Barrier" class="mb-12" />
 
     <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-baseline">
@@ -120,6 +122,8 @@ import Caption from '../components/case-study/Caption.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
 
   <!-- SECTION 03: RESEARCH FINDINGS -->
   <section class="mb-48 md:mb-60">
@@ -138,13 +142,13 @@ import Caption from '../components/case-study/Caption.astro';
 
     <div class="space-y-40">
       
-      <!-- Finding 01: Lack of Trust -->
+      <!-- Finding 01: Premature Data Collection -->
       <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
         <div class="relative overflow-hidden">
           <Vitrine>
             <img
-              src="/assets/vitals/findings/trust-issue.png"
-              alt="Legacy signup flow demanding personal details immediately after splash"
+              src="/assets/vitals/findings/premature-data.png"
+              alt="Legacy signup screen asking for intimate diagnoses immediately"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
           </Vitrine>
@@ -254,6 +258,9 @@ import Caption from '../components/case-study/Caption.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- SECTION 04: THE REDESIGNED EXPERIENCE -->
   <section class="mb-48 md:mb-60">
     <ChapterMarker number="04" title="The Redesigned Experience" />
@@ -269,74 +276,74 @@ import Caption from '../components/case-study/Caption.astro';
 
     <div class="space-y-48">
       
-      <!-- Feature 01: Building Foundational Trust -->
-      <article class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-start group">
-        <div class="relative overflow-hidden">
-          <Vitrine padded class="p-6 sm:p-10">
-            <img
-              src="/assets/vitals/solutions/trust-screen.png"
-              alt="Trust-centered welcome screen with sample profile preview and security assurances"
-              class="max-h-[560px] w-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
-            />
-          </Vitrine>
-          <Caption as="p">
-            A value-first entry screen previewing what first responders see, paired with explicit clinical governance and encryption assurances.
-          </Caption>
-        </div>
-
+      <!-- Feature 01: Value-First Landing Page -->
+      <article class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-16 items-start group">
         <div class="space-y-6 lg:pt-8">
           <div class="space-y-2">
             <StepEyebrow label="INTERVENTION" number="01" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
-              Funnel inversion: protection before credentials
+              Showing the beacon in action before signup
             </h3>
           </div>
           <p class="text-base text-neutral-700 font-normal leading-[1.75]">
-            The new entry screen shows caregivers an instant preview of what a first responder will see—demonstrating immediate value before asking for a single piece of user data. Explicit CCPA, GDPR, and FirstNet encryption assurances are front and center, establishing clinical governance before account creation begins.
+            Before asking for an email or password, the revised landing experience demonstrates how local police and paramedics scan the digital ID card. Families immediately see how their vulnerable loved ones are safeguarded, replacing mystery with tangible relief.
           </p>
+        </div>
+
+        <div class="relative overflow-hidden">
+          <Vitrine>
+            <img
+              src="/assets/vitals/solutions/value-landing.png"
+              alt="Redesigned landing screen establishing immediate responder value and local trust"
+              class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
+            />
+          </Vitrine>
+          <Caption as="p">
+            Caregivers preview exactly what first responders will see during a call, removing ambiguity around data access.
+          </Caption>
         </div>
       </article>
 
-      <!-- Feature 02: Transparent Plan Selection -->
+      <!-- Feature 02: Geographic Verification & Plan Selection -->
       <article class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start group">
         <div class="space-y-6 order-2 lg:order-1 lg:pt-8">
           <div class="space-y-2">
             <StepEyebrow label="INTERVENTION" number="02" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
-              Dynamic location verification
+              Transparent plans with local verification
             </h3>
           </div>
           <p class="text-base text-neutral-700 font-normal leading-[1.75]">
-            We eliminated coverage anxiety by integrating live location validation directly into plan selection. Caregivers can verify in real time whether their local 911 dispatchers participate in the Vitals network. If a region lacks active coverage, the interface explicitly alerts the user rather than charging for an unusable service.
+            Plan selection now begins with entering the user's primary zip code to immediately verify local 911 coverage. Transparent card tiers outline regional versus statewide capabilities, with sample responder previews and clear 30-day trial assurances directly beside the action button.
           </p>
         </div>
 
         <div class="order-1 lg:order-2 relative overflow-hidden">
           <Vitrine>
             <img
-              src="/assets/vitals/solutions/plan-selection.png"
-              alt="Side-by-side plan comparison with real-time location check"
+              src="/assets/vitals/solutions/plans-pricing.png"
+              alt="Zip code coverage verification and clear transparent plan tiers"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
           </Vitrine>
           <Caption as="p">
-            Real-time coverage validation confirms local 911 dispatcher participation before presenting plan selection.
+            Zip-code verification confirms active first-responder partnerships before users commit to a subscription.
           </Caption>
         </div>
       </article>
 
-      <!-- Feature 03: Progressive Clinical Data Collection -->
-      <article class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 items-start group">
+      <!-- Feature 03: Progressive Clinical Disclosure -->
+      <article class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-16 items-start group">
         <div class="relative overflow-hidden">
           <Vitrine>
             <img
-              src="/assets/vitals/solutions/data-collection.png"
-              alt="Deconstructed progressive intake steps with explicit verification context"
+              src="/assets/vitals/solutions/step-by-step.png"
+              alt="Focused single-question registration steps with clear purpose explanation"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
           </Vitrine>
           <Caption as="p">
-            Lengthy profile intake is deconstructed into single-question steps that explain why each field is needed.
+            Single-question progressive disclosure cards explain why each data field is needed and who is authorized to view it.
           </Caption>
         </div>
 
@@ -344,7 +351,7 @@ import Caption from '../components/case-study/Caption.astro';
           <div class="space-y-2">
             <StepEyebrow label="INTERVENTION" number="03" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
-              Deconstructed micro-pacing
+              Progressive disclosure for personal data
             </h3>
           </div>
           <p class="text-base text-neutral-700 font-normal leading-[1.75]">
@@ -384,8 +391,11 @@ import Caption from '../components/case-study/Caption.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- SECTION 05: PROJECTED OUTCOME -->
-  <section class="pt-24 pb-12 border-t border-neutral-200 mb-32 md:mb-48">
+  <section class="pt-8 pb-12 mb-32 md:mb-48">
     <ChapterMarker number="05" title="Projected Outcome" />
 
     <!-- The Business Payoff -->
@@ -406,7 +416,6 @@ import Caption from '../components/case-study/Caption.astro';
       </div>
     </div>
   </section>
-
 
   <!-- CHAPTER NAVIGATION -->
   <section class="pt-16 border-t border-neutral-200">

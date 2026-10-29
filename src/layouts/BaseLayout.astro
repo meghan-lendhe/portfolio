@@ -2,6 +2,8 @@
 import '../input.css';
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
+import AmbientSubstrate from '../components/telemetry/AmbientSubstrate.astro';
+import GutterArbor from '../components/telemetry/GutterArbor.astro';
 
 interface Props {
   title: string;
@@ -61,12 +63,24 @@ const ogImageUrl = 'https://meghan.in/assets/og-image.png';
   </head>
   <body class={isDark ? "bg-[#111215] text-neutral-100 font-sans selection:bg-amber-400/20 selection:text-amber-200 antialiased" : "bg-neutral-50 text-black font-sans antialiased"}>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:outline-2 focus:outline-secondary">Skip to main content</a>
+    
+    <!-- Luminous Porcelain Gallery Substrate -->
+    <AmbientSubstrate theme={theme} />
+
+    <!-- Peaceful Gutter Neural Arbor & Living Drift (Strictly outside content column) -->
+    <GutterArbor theme={theme} />
+
     <Navbar theme={theme} />
     <div aria-hidden="true" class="h-8 md:h-12"></div>
     <slot />
     <Footer theme={theme} />
+
+    <!-- Shared Micro-Acoustics, Global Dendritic Cursor & Tactile Interactions -->
+    <script is:inline src="/assets/js/neuro-audio.js"></script>
+    <script is:inline src="/assets/js/dendritic-cursor.js"></script>
     <script is:inline src="/assets/js/contact.js"></script>
     {includeCaseStudyScript && <script is:inline src="/assets/js/case-study.js"></script>}
+
     <script is:inline>
       // Action-Potential Cursor Tracking on Underlines
       document.addEventListener('pointermove', (e) => {

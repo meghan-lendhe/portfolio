@@ -14,10 +14,10 @@ const { theme = 'light' } = Astro.props;
       href="/"
       class="pointer-events-auto group flex items-center gap-3 rounded-full border border-neutral-200/80 bg-[#FAF9F5]/90 backdrop-blur-md px-3.5 py-2 shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all duration-200 hover:border-neutral-300 hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-amber-700"
     >
-      <!-- Cajal Pyramidal Neuron Motif 1 Vignette -->
+      <!-- Cajal Pyramidal Neuron Motif 1 Vignette with Active Bouton Pulse -->
       <svg viewBox="0 0 32 32" class="size-4 shrink-0 text-neutral-800 group-hover:text-amber-700 transition-colors" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
         <path d="M16 2v10M16 12l-5 6h10l-5-6ZM11 18l-4 8M21 18l4 8M16 18v12M14 26h4" />
-        <circle cx="16" cy="14" r="1.5" fill="currentColor" />
+        <circle cx="16" cy="14" r="1.5" class="fill-current group-hover:fill-amber-600 transition-colors" />
       </svg>
       <span class="font-mono text-[10px] tracking-[0.28em] uppercase text-neutral-900 group-hover:text-amber-700 transition-colors">
         Meghan Lendhe
@@ -48,8 +48,9 @@ const { theme = 'light' } = Astro.props;
     class="pointer-events-auto fixed inset-0 z-50 flex justify-end bg-neutral-950/20 backdrop-blur-sm transition-opacity duration-300"
   >
     <div class="relative flex h-full w-full max-w-lg flex-col justify-between border-l border-neutral-200 bg-[#FAF9F5] p-8 sm:p-12 shadow-2xl overflow-y-auto">
+      
       <!-- Drawer Header with Minimal Close Button -->
-      <div class="flex items-center justify-end pb-4">
+      <div class="flex items-center justify-end pb-4 border-b border-neutral-200/60">
         <button
           type="button"
           data-menu-close
@@ -162,6 +163,7 @@ const { theme = 'light' } = Astro.props;
       drawer.hidden = false;
       toggleBtn && toggleBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
+      if (window.NeuroAudio) window.NeuroAudio.playMallet(0.028);
     }
   }
 
@@ -170,6 +172,7 @@ const { theme = 'light' } = Astro.props;
       drawer.hidden = true;
       toggleBtn && toggleBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+      if (window.NeuroAudio) window.NeuroAudio.playMallet(0.022);
     }
   }
 
@@ -191,7 +194,10 @@ const { theme = 'light' } = Astro.props;
   }
 
   document.querySelectorAll('[data-menu-link]').forEach(link => {
-    link.addEventListener('click', closeDrawer);
+    link.addEventListener('click', () => {
+      if (window.NeuroAudio) window.NeuroAudio.playCelesta(587.33, 0.035);
+      closeDrawer();
+    });
   });
 
   document.addEventListener('keydown', (e) => {

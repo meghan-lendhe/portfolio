@@ -1,0 +1,573 @@
+---
+interface Props {
+  theme?: 'light' | 'dark';
+}
+
+const { theme = 'light' } = Astro.props;
+const isDark = theme === 'dark';
+---
+
+<!-- LIVING HISTOLOGICAL FOLIO SUBSTRATE (Desktop Gutters >= 1240px — Unified with Hero Cytology) -->
+<div class="hidden xl:block fixed inset-0 pointer-events-none select-none -z-10 overflow-hidden" aria-hidden="true">
+  <canvas id="gutter-arbor-canvas" class="w-full h-full block"></canvas>
+</div>
+
+<script is:inline>
+(function() {
+  if (window.innerWidth < 1240) return;
+
+  const canvas = document.getElementById('gutter-arbor-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let gutterWidth = 0;
+  let contentLeft = 0;
+  let contentRight = 0;
+
+  // Parallax and cursor tracking
+  let scrollY = window.scrollY;
+  let targetScrollY = window.scrollY;
+  const mouse = { x: -1000, y: -1000, active: false };
+
+  window.addEventListener('scroll', () => {
+    targetScrollY = window.scrollY;
+  }, { passive: true });
+
+  window.addEventListener('pointermove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    mouse.active = true;
+  }, { passive: true });
+
+  window.addEventListener('pointerleave', () => {
+    mouse.active = false;
+    mouse.x = -1000;
+    mouse.y = -1000;
+  }, { passive: true });
+
+  // Cubic Bézier calculation (Exact same formula as hero)
+  function getCubicPoint(x0, y0, cp1x, cp1y, cp2x, cp2y, x1, y1, t) {
+    const invT = 1 - t;
+    const c0 = invT * invT * invT;
+    const c1 = 3 * invT * invT * t;
+    const c2 = 3 * invT * t * t;
+    const c3 = t * t * t;
+    return {
+      x: c0 * x0 + c1 * cp1x + c2 * cp2x + c3 * x1,
+      y: c0 * y0 + c1 * cp1y + c2 * cp2y + c3 * y1
+    };
+  }
+
+  // 1. Soft Histological Soma Rendering (100% Identical to Hero Cytology)
+  function drawSoftHistologicalSoma(ctx, x, y, r, angle, excitation, spike, type) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+
+    const grad = ctx.createRadialGradient(0, 0, r * 0.15, 0, 0, r * 2.4);
+
+    if (spike > 0.05) {
+      grad.addColorStop(0, `rgba(255, 255, 255, ${0.95 * spike})`);
+      grad.addColorStop(0.25, `rgba(245, 158, 11, ${0.85 * spike})`);
+      grad.addColorStop(0.65, `rgba(13, 148, 136, ${0.45 * spike})`);
+      grad.addColorStop(1, 'rgba(13, 148, 136, 0)');
+    } else if (excitation > 0.1) {
+      grad.addColorStop(0, `rgba(217, 119, 6, ${0.35 + excitation * 0.45})`);
+      grad.addColorStop(0.5, `rgba(245, 158, 11, ${0.18 + excitation * 0.3})`);
+      grad.addColorStop(1, 'rgba(245, 158, 11, 0)');
+    } else {
+      // Whisper-quiet ghost resting state (never competes with reading)
+      grad.addColorStop(0, 'rgba(130, 120, 110, 0.085)');
+      grad.addColorStop(0.6, 'rgba(175, 165, 155, 0.025)');
+      grad.addColorStop(1, 'rgba(175, 165, 155, 0)');
+    }
+
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    if (type === 'pyramidal') {
+      ctx.moveTo(0, -r * 1.6);
+      ctx.quadraticCurveTo(r * 1.3, r * 0.3, r * 0.9, r * 1.2);
+      ctx.quadraticCurveTo(0, r * 1.5, -r * 0.9, r * 1.2);
+      ctx.quadraticCurveTo(-r * 1.3, r * 0.3, 0, -r * 1.6);
+    } else if (type === 'bipolar') {
+      ctx.ellipse(0, 0, r * 0.75, r * 1.6, 0, 0, Math.PI * 2);
+    } else {
+      ctx.arc(0, 0, r * 1.3, 0, Math.PI * 2);
+    }
+    ctx.fill();
+
+    // Nucleus
+    const nucleusR = Math.max(1.1, r * 0.36);
+    ctx.beginPath();
+    ctx.arc(0, 0, nucleusR, 0, Math.PI * 2);
+    if (spike > 0.05) {
+      ctx.fillStyle = `rgba(255, 255, 255, ${0.95 * spike})`;
+    } else if (excitation > 0.1) {
+      ctx.fillStyle = `rgba(217, 119, 6, ${0.5 + excitation * 0.35})`;
+    } else {
+      ctx.fillStyle = 'rgba(110, 100, 92, 0.10)';
+    }
+    ctx.fill();
+
+    // Delicate dendritic roots (short, whisper-quiet)
+    ctx.beginPath();
+    if (type === 'pyramidal') {
+      ctx.moveTo(0, -r * 1.2);
+      ctx.quadraticCurveTo(r * 0.3, -r * 2.2, 0, -r * 3.2);
+      ctx.moveTo(0, -r * 3.2);
+      ctx.quadraticCurveTo(-r * 0.6, -r * 4.0, -r * 0.9, -r * 4.6);
+      ctx.moveTo(0, -r * 3.2);
+      ctx.quadraticCurveTo(r * 0.6, -r * 4.0, r * 0.9, -r * 4.6);
+      ctx.moveTo(-r * 0.8, r * 1.0);
+      ctx.quadraticCurveTo(-r * 1.6, r * 1.8, -r * 2.4, r * 2.5);
+      ctx.moveTo(r * 0.8, r * 1.0);
+      ctx.quadraticCurveTo(r * 1.6, r * 1.8, r * 2.4, r * 2.5);
+    } else if (type === 'bipolar') {
+      ctx.moveTo(0, -r * 1.4);
+      ctx.quadraticCurveTo(r * 0.4, -r * 2.4, 0, -r * 3.4);
+      ctx.moveTo(0, r * 1.4);
+      ctx.quadraticCurveTo(-r * 0.4, r * 2.4, 0, r * 3.4);
+    } else {
+      const branches = 4;
+      for (let b = 0; b < branches; b++) {
+        const ba = (b * Math.PI * 2) / branches;
+        const sx = Math.cos(ba) * r * 0.9;
+        const sy = Math.sin(ba) * r * 0.9;
+        const mx = Math.cos(ba + 0.3) * r * 2.0;
+        const my = Math.sin(ba + 0.3) * r * 2.0;
+        const ex = Math.cos(ba - 0.15) * r * 3.0;
+        const ey = Math.sin(ba - 0.15) * r * 3.0;
+        ctx.moveTo(sx, sy);
+        ctx.quadraticCurveTo(mx, my, ex, ey);
+      }
+    }
+
+    ctx.strokeStyle = spike > 0.05
+      ? `rgba(13, 148, 136, ${0.45 + spike * 0.4})`
+      : (excitation > 0.1 ? `rgba(217, 119, 6, ${0.18 + excitation * 0.4})` : 'rgba(165, 155, 145, 0.04)');
+    ctx.lineWidth = 0.55;
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  // 2. Histological Mesh Generator for Side Gutters
+  const leftMesh = { neurons: [], axons: [], pulses: [], nextPulse: 0 };
+  const rightMesh = { neurons: [], axons: [], pulses: [], nextPulse: 0 };
+  const gutterSparks = [];
+
+  function buildGutterNetwork(side, gutterW, contentBoundX) {
+    const isLeft = side === 'left';
+    const neurons = [];
+    const axons = [];
+    const pulses = [];
+
+    const innerPadding = 24;
+    const outerPadding = 20;
+    const effectiveW = Math.max(30, gutterW - innerPadding - outerPadding);
+
+    const minX = isLeft ? outerPadding : contentBoundX + innerPadding;
+    const maxX = isLeft ? contentBoundX - innerPadding : width - outerPadding;
+
+    // Distribute 12 neurons vertically along the loop height
+    const count = 12;
+    const loopH = height * 1.6;
+    const ySpacing = loopH / count;
+
+    for (let i = 0; i < count; i++) {
+      const normY = (i + 0.3 + (Math.sin(i * 1.7) * 0.25)) * ySpacing;
+      const xRatio = Math.sin(i * 1.4 + (isLeft ? 0 : 2.0)) * 0.35 + 0.5;
+      const posX = minX + xRatio * (maxX - minX);
+
+      const rand = Math.random();
+      const type = rand < 0.45 ? 'pyramidal' : (rand < 0.80 ? 'stellate' : 'bipolar');
+      const depthLayer = 0.65 + Math.random() * 0.5; // Multi-plane parallax factor
+
+      let angle = -Math.PI * 0.5 + (Math.random() - 0.5) * 0.8;
+      if (type === 'pyramidal') {
+        angle = isLeft ? -Math.PI * 0.45 : -Math.PI * 0.55;
+      }
+
+      neurons.push({
+        id: `${side}-${i}`,
+        type: type,
+        side: side,
+        baseX: posX,
+        baseY: normY,
+        x: posX,
+        y: normY,
+        angle: angle,
+        driftPhase: Math.random() * Math.PI * 2,
+        driftSpeed: 0.0004 + Math.random() * 0.0005,
+        driftRadius: 2.2 + Math.random() * 3.0,
+        parallaxSpeed: depthLayer,
+        radius: type === 'pyramidal' ? 4.2 : (type === 'stellate' ? 3.4 : 2.8),
+        potential: 0.0,
+        spikeEnergy: 0.0,
+        refractory: 0
+      });
+    }
+
+    // Connect adjacent vertical neighbors with curvilinear sinuous axons
+    for (let i = 0; i < neurons.length - 1; i++) {
+      const from = neurons[i];
+      const targets = [neurons[i + 1]];
+      if (i + 2 < neurons.length && Math.random() > 0.45) {
+        targets.push(neurons[i + 2]);
+      }
+
+      targets.forEach(to => {
+        const sign = Math.random() > 0.5 ? 1 : -1;
+        const curveOffset = sign * (12 + Math.random() * (effectiveW * 0.4));
+
+        // 2 micro synaptic boutons along axon
+        const boutons = [
+          { t: 0.32 + Math.random() * 0.15, radius: 1.1 },
+          { t: 0.65 + Math.random() * 0.15, radius: 1.1 }
+        ];
+
+        axons.push({
+          fromId: from.id,
+          toId: to.id,
+          cpOffset1: curveOffset,
+          cpOffset2: -curveOffset * 0.7,
+          boutons: boutons
+        });
+      });
+    }
+
+    return {
+      neurons,
+      axons,
+      pulses,
+      nextPulse: performance.now() + 4000 + Math.random() * 6000
+    };
+  }
+
+  // 3. Bioluminescent Drift Spores (Subtle & Quiet)
+  function createSpore(side, initial = false) {
+    const isLeft = side === 'left';
+    const minX = isLeft ? 16 : contentRight + 20;
+    const maxX = isLeft ? contentLeft - 20 : width - 16;
+    const rangeX = Math.max(10, maxX - minX);
+
+    return {
+      side: side,
+      x: minX + Math.random() * rangeX,
+      y: initial ? Math.random() * height : height + 10 + Math.random() * 40,
+      vx: (Math.random() - 0.5) * 0.18,
+      vy: -0.20 - Math.random() * 0.22,
+      wobbleSpeed: 0.009 + Math.random() * 0.010,
+      wobbleAmp: 0.4 + Math.random() * 0.5,
+      wobblePhase: Math.random() * Math.PI * 2,
+      life: initial ? Math.floor(Math.random() * 400) : 0,
+      maxLife: 480 + Math.random() * 280,
+      radius: 1.1 + Math.random() * 1.2
+    };
+  }
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const contentMaxW = Math.min(width, 1120);
+    gutterWidth = Math.max(60, (width - contentMaxW) / 2);
+    contentLeft = (width - contentMaxW) / 2;
+    contentRight = width - contentLeft;
+
+    if (gutterWidth >= 70) {
+      const leftNet = buildGutterNetwork('left', gutterWidth, contentLeft);
+      leftMesh.neurons = leftNet.neurons;
+      leftMesh.axons = leftNet.axons;
+      leftMesh.pulses = leftNet.pulses;
+      leftMesh.nextPulse = leftNet.nextPulse;
+
+      const rightNet = buildGutterNetwork('right', gutterWidth, contentRight);
+      rightMesh.neurons = rightNet.neurons;
+      rightMesh.axons = rightNet.axons;
+      rightMesh.pulses = rightNet.pulses;
+      rightMesh.nextPulse = rightNet.nextPulse;
+
+      gutterSparks.length = 0;
+      for (let i = 0; i < 4; i++) {
+        gutterSparks.push(createSpore('left', true));
+        gutterSparks.push(createSpore('right', true));
+      }
+    } else {
+      leftMesh.neurons.length = 0;
+      rightMesh.neurons.length = 0;
+      gutterSparks.length = 0;
+    }
+  }
+
+  // Trigger Sinuous Action Potential Wave (Exact Hero Conduction Physics)
+  function triggerGutterWave(mesh, axon) {
+    if (!axon) return;
+    mesh.pulses.push({
+      fromId: axon.fromId,
+      toId: axon.toId,
+      axon: axon,
+      progress: 0.0,
+      speed: 0.022 + Math.random() * 0.010,
+      energy: 0.95
+    });
+  }
+
+  window.addEventListener('resize', resize, { passive: true });
+  resize();
+
+  let time = 0;
+
+  // Render loop
+  function render(now) {
+    ctx.clearRect(0, 0, width, height);
+
+    time += 0.005;
+    scrollY += (targetScrollY - scrollY) * 0.07;
+
+    if (gutterWidth >= 70) {
+      // Check if index hero is present and visible (never compete with hero's own synaptic field)
+      const heroEl = document.getElementById('hero') || document.getElementById('synaptic-field');
+      let heroFade = 1.0;
+
+      if (heroEl) {
+        const heroRect = heroEl.getBoundingClientRect();
+        if (heroRect.bottom > 0) {
+          heroFade = 0;
+        } else {
+          heroFade = Math.max(0, Math.min(1.0, -heroRect.bottom / 200));
+        }
+      }
+
+      if (heroFade <= 0.001) {
+        requestAnimationFrame(render);
+        return;
+      }
+
+      ctx.save();
+      ctx.globalAlpha = heroFade;
+
+      const loopHeight = height * 1.6;
+
+      // Render Left and Right Histological Meshes
+      [leftMesh, rightMesh].forEach(mesh => {
+        if (!mesh.neurons.length) return;
+
+        // Spontaneous Serene Conduction Wave
+        if (now > mesh.nextPulse) {
+          if (mesh.axons.length) {
+            const randomAxon = mesh.axons[Math.floor(Math.random() * mesh.axons.length)];
+            triggerGutterWave(mesh, randomAxon);
+          }
+          mesh.nextPulse = now + 8000 + Math.random() * 10000;
+        }
+
+        // Update positions with drift, parallax, and wrap
+        const neuronMap = new Map();
+        mesh.neurons.forEach(n => {
+          n.driftPhase += n.driftSpeed;
+          const driftX = Math.cos(n.driftPhase) * n.driftRadius;
+          const driftY = Math.sin(n.driftPhase) * n.driftRadius;
+
+          const scrollShift = scrollY * 0.04 * n.parallaxSpeed;
+          let screenY = ((n.baseY - scrollShift) % loopHeight + loopHeight) % loopHeight - (height * 0.3);
+
+          n.x = n.baseX + driftX;
+          n.y = screenY + driftY;
+
+          // Cursor proximity (membrane depolarization)
+          if (mouse.active) {
+            const dist = Math.hypot(mouse.x - n.x, mouse.y - n.y);
+            if (dist < 120) {
+              const stimulus = Math.pow(1 - dist / 120, 2) * 0.02;
+              n.potential = Math.min(1.0, n.potential + stimulus);
+              if (dist < 45 && n.refractory <= 0) {
+                const connectedAxon = mesh.axons.find(a => a.fromId === n.id || a.toId === n.id);
+                if (connectedAxon) {
+                  triggerGutterWave(mesh, connectedAxon);
+                }
+                n.refractory = 250;
+              }
+            }
+          }
+
+          if (n.refractory > 0) n.refractory--;
+          n.potential *= 0.985;
+          if (n.spikeEnergy > 0) n.spikeEnergy *= 0.90;
+
+          neuronMap.set(n.id, n);
+        });
+
+        // A. Render Curvilinear Sinuous Axons (Ghost Hairstyle: 0.045 opacity at rest)
+        mesh.axons.forEach(a => {
+          const fn = neuronMap.get(a.fromId);
+          const tn = neuronMap.get(a.toId);
+          if (!fn || !tn) return;
+
+          if (Math.abs(fn.y - tn.y) > height * 0.75) return;
+
+          const cp1x = fn.x + a.cpOffset1;
+          const cp1y = fn.y + (tn.y - fn.y) * 0.33;
+          const cp2x = tn.x + a.cpOffset2;
+          const cp2y = fn.y + (tn.y - fn.y) * 0.66;
+
+          a.cp = { cp1x, cp1y, cp2x, cp2y };
+
+          const activeCharge = Math.max(fn.potential, tn.potential);
+
+          ctx.beginPath();
+          ctx.moveTo(fn.x, fn.y);
+          ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, tn.x, tn.y);
+
+          // Near-invisible ghost at rest (0.045), warming up only during active depolarization
+          if (activeCharge > 0.15) {
+            ctx.strokeStyle = `rgba(217, 119, 6, ${0.12 + activeCharge * 0.35})`;
+            ctx.lineWidth = 0.8 + activeCharge * 0.3;
+          } else {
+            ctx.strokeStyle = 'rgba(170, 160, 150, 0.045)';
+            ctx.lineWidth = 0.55;
+          }
+          ctx.stroke();
+
+          // Render micro synaptic boutons along axon
+          for (let b = 0; b < a.boutons.length; b++) {
+            const bt = a.boutons[b].t;
+            const bPt = getCubicPoint(fn.x, fn.y, cp1x, cp1y, cp2x, cp2y, tn.x, tn.y, bt);
+
+            // Bouton excitation check
+            let boutonPulse = 0;
+            for (let p = 0; p < mesh.pulses.length; p++) {
+              const pulse = mesh.pulses[p];
+              if (pulse.axon === a) {
+                const distToBouton = Math.abs(pulse.progress - bt);
+                if (distToBouton < 0.16) {
+                  boutonPulse = Math.max(boutonPulse, (1 - distToBouton / 0.16) * pulse.energy);
+                }
+              }
+            }
+
+            ctx.beginPath();
+            ctx.arc(bPt.x, bPt.y, a.boutons[b].radius, 0, Math.PI * 2);
+
+            if (boutonPulse > 0.05) {
+              ctx.fillStyle = `rgba(13, 148, 136, ${0.25 + boutonPulse * 0.6})`;
+            } else if (activeCharge > 0.15) {
+              ctx.fillStyle = `rgba(217, 119, 6, ${0.20 + activeCharge * 0.35})`;
+            } else {
+              ctx.fillStyle = 'rgba(170, 162, 154, 0.05)';
+            }
+            ctx.fill();
+          }
+        });
+
+        // B. Render Somas (Exact Hero Cytology)
+        mesh.neurons.forEach(n => {
+          if (n.y < -80 || n.y > height + 80) return;
+          drawSoftHistologicalSoma(ctx, n.x, n.y, n.radius, n.angle, n.potential, n.spikeEnergy, n.type);
+        });
+
+        // C. Render Traveling Axonal Conduction Waves (Exact Hero 12-Segment Tapered Emerald Wave)
+        for (let p = mesh.pulses.length - 1; p >= 0; p--) {
+          const pulse = mesh.pulses[p];
+          pulse.progress += pulse.speed;
+
+          const fn = neuronMap.get(pulse.fromId);
+          const tn = neuronMap.get(pulse.toId);
+          const cp = pulse.axon.cp;
+
+          if (!fn || !tn || !cp) {
+            mesh.pulses.splice(p, 1);
+            continue;
+          }
+
+          const waveLen = 0.30;
+          const headT = Math.min(1.0, pulse.progress);
+          const tailT = Math.max(0.0, pulse.progress - waveLen);
+
+          if (headT > tailT) {
+            const steps = 12;
+            let prev = null;
+            for (let s = 0; s <= steps; s++) {
+              const fraction = s / steps;
+              const t = tailT + (headT - tailT) * fraction;
+              const pt = getCubicPoint(fn.x, fn.y, cp.cp1x, cp.cp1y, cp.cp2x, cp.cp2y, tn.x, tn.y, t);
+
+              if (prev) {
+                const segAlpha = Math.pow(fraction, 1.6) * 0.80 * pulse.energy;
+                ctx.beginPath();
+                ctx.moveTo(prev.x, prev.y);
+                ctx.lineTo(pt.x, pt.y);
+                // Emerald fluid conduction wave (identical to hero)
+                ctx.strokeStyle = `rgba(13, 148, 136, ${segAlpha})`;
+                ctx.lineWidth = 0.7 + fraction * 0.75;
+                ctx.stroke();
+              }
+              prev = pt;
+            }
+          }
+
+          if (pulse.progress >= 1.0) {
+            const target = neuronMap.get(pulse.toId);
+            if (target) {
+              target.potential = Math.min(1.0, target.potential + 0.4 * pulse.energy);
+              target.spikeEnergy = 0.65 * pulse.energy;
+            }
+            mesh.pulses.splice(p, 1);
+          }
+        }
+      });
+
+      // 3. Render Bioluminescent Spores (Subtle & Quiet)
+      for (let i = gutterSparks.length - 1; i >= 0; i--) {
+        const s = gutterSparks[i];
+        s.life++;
+        s.wobblePhase += s.wobbleSpeed;
+        s.x += s.vx + Math.sin(s.wobblePhase) * s.wobbleAmp;
+        s.y += s.vy;
+
+        if (s.side === 'left' && s.x > contentLeft - 16) {
+          s.x = contentLeft - 16;
+          s.vx = -Math.abs(s.vx);
+        } else if (s.side === 'right' && s.x < contentRight + 16) {
+          s.x = contentRight + 16;
+          s.vx = Math.abs(s.vx);
+        }
+
+        const progress = s.life / s.maxLife;
+        const alpha = Math.sin(progress * Math.PI) * 0.28;
+
+        if (alpha > 0.01) {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(13, 148, 136, ${alpha})`;
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.radius * 2.8, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(13, 148, 136, ${alpha * 0.14})`;
+          ctx.fill();
+        }
+
+        if (s.life >= s.maxLife || s.y < -20) {
+          gutterSparks.splice(i, 1);
+          gutterSparks.push(createSpore(s.side, false));
+        }
+      }
+
+      ctx.restore();
+    }
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+})();
+</script>

@@ -6,19 +6,15 @@ import Vitrine from '../components/case-study/Vitrine.astro';
 import Caption from '../components/case-study/Caption.astro';
 import BrowserFrame from '../components/case-study/BrowserFrame.astro';
 import PhoneFrame from '../components/case-study/PhoneFrame.astro';
+import RestingRule from '../components/case-study/RestingRule.astro';
 ---
 
-<BaseLayout title="BulkMagic — Streamlining Multi-State Seller Onboarding" theme="light">
-<!-- Luminous Gallery Atmosphere: Layered Warm Ambient Gradients -->
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[#FAF9F5]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_75%_55%_at_70%_10%,rgba(217,119,6,0.045),transparent_65%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
+<BaseLayout title="BulkMagic — Streamlining Multi-State Seller Onboarding" theme="light" includeCaseStudyScript>
 
 <main id="main" class="relative max-w-page mx-auto px-6 md:px-16 lg:px-20 pb-72 pt-20 md:pt-32 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
   <!-- HERO SECTION: Grounded Headline & Sprint Scope -->
-  <section class="mb-32 md:mb-44">
+  <section class="mb-32 md:mb-44 relative">
     <div class="max-w-6xl mb-16">
       <h1 class="font-serif text-5xl sm:text-7xl lg:text-[6.25rem] font-normal leading-[0.94] tracking-[-0.04em] text-neutral-950 mb-10 text-balance">
         Designing Multi-State Merchant Onboarding.
@@ -58,95 +54,127 @@ import PhoneFrame from '../components/case-study/PhoneFrame.astro';
           class="w-full overflow-x-auto lg:overflow-visible no-scrollbar flex items-center justify-start lg:justify-center gap-5 sm:gap-7 lg:gap-9 px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-14 select-none"
         >
           <!-- Stage 01: Entity Classification -->
-          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
-            <img
-              src="/assets/bulkmagic/flow-step-1.png"
-              alt="Mobile viewport: Business structure and entity identification"
-              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
-              loading="eager"
-            />
-          </PhoneFrame>
+          <div class="flex-none w-[260px] sm:w-[280px] lg:w-[290px]">
+            <PhoneFrame>
+              <img
+                src="/assets/bulkmagic/screen-business-type.png"
+                alt="Entity classification screen asking for business structure"
+                class="w-full h-auto block"
+                loading="eager"
+              />
+            </PhoneFrame>
+          </div>
 
-          <!-- Stage 02: Dynamic Document Preparation Checklist -->
-          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
-            <img
-              src="/assets/bulkmagic/flow-step-2.png"
-              alt="Mobile viewport: Dynamic document readiness checklist"
-              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
-              loading="eager"
-            />
-          </PhoneFrame>
+          <!-- Stage 02: Adaptive Document Readiness -->
+          <div class="flex-none w-[260px] sm:w-[280px] lg:w-[290px]">
+            <PhoneFrame>
+              <img
+                src="/assets/bulkmagic/screen-checklist.png"
+                alt="Adaptive document readiness checklist tailored to selected entity"
+                class="w-full h-auto block"
+                loading="eager"
+              />
+            </PhoneFrame>
+          </div>
 
-          <!-- Stage 03: Live Activation & Review -->
-          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
-            <img
-              src="/assets/bulkmagic/flow-step-5.png"
-              alt="Mobile viewport: Account review and live activation"
-              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
-              loading="eager"
-            />
-          </PhoneFrame>
+          <!-- Stage 03: Field-Level Validation & Submission -->
+          <div class="flex-none w-[260px] sm:w-[280px] lg:w-[290px]">
+            <PhoneFrame>
+              <img
+                src="/assets/bulkmagic/screen-ein-validation.png"
+                alt="Field-level inline validation catching syntax errors immediately"
+                class="w-full h-auto block"
+                loading="eager"
+              />
+            </PhoneFrame>
+          </div>
         </div>
       </Vitrine>
-
-      <Caption as="p">
-        The three key onboarding phases: business entity classification, dynamic document readiness, and live account activation.
+      <Caption>
+        The 3-stage adaptive onboarding progression: business entity classification, dynamic document readiness checklist, and real-time inline compliance validation.
       </Caption>
     </div>
   </section>
 
-  <!-- SECTION 01: THE COMPLIANCE CHALLENGE -->
-  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
-    <ChapterMarker number="01" title="The Compliance Challenge" />
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
 
-    <div class="max-w-4xl space-y-6">
-      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance">
-        Navigating compliance across 50 jurisdictions created severe onboarding drop-off.
-      </h2>
-      <div class="text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
-        <p class="text-xl sm:text-2xl text-neutral-950 font-normal leading-relaxed">
-          Federal and state regulations require marketplaces to verify entities, collect tax filings, and document sales tax obligations across every operating jurisdiction. Presenting this as an intimidating, monolithic form overwhelmed independent sellers with corporate rules that had nothing to do with their business.
+  <!-- SECTION 01: SPRINT CONTEXT & COMPLIANCE ARCHITECTURE -->
+  <section class="pt-8 pb-8 mb-36 md:mb-52">
+    <ChapterMarker number="01" title="The Compliance Problem" class="mb-12" />
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-start">
+      <div class="space-y-6">
+        <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 leading-[1.08] tracking-tight font-normal text-balance">
+          Different businesses require different rules.
+        </h2>
+        <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
+          A sole proprietor selling handmade goods from one state faces radically different statutory requirements than a multi-state LLC with inventory in three fulfillment centers. Standard onboarding forms fail because they treat every merchant identically—bombarding sole proprietors with irrelevant tax questions while leaving enterprise sellers confused about physical versus economic nexus obligations.
         </p>
+      </div>
+
+      <!-- Architectural Rule Ledger -->
+      <div class="border border-neutral-200/80 bg-neutral-100/50 p-6 sm:p-8 rounded-xs space-y-6">
+        <div class="text-[10px] font-mono tracking-widest text-neutral-500 uppercase font-medium">
+          Adaptive Rule Engine · Logic Matrix
+        </div>
+        <dl class="space-y-4 text-xs font-mono">
+          <div class="border-b border-neutral-200/60 pb-3">
+            <dt class="text-neutral-900 font-semibold mb-1">SOLE PROPRIETOR</dt>
+            <dd class="text-neutral-600">SSN or single EIN · Basic home state business license · Single tax nexus confirmation</dd>
+          </div>
+          <div class="border-b border-neutral-200/60 pb-3">
+            <dt class="text-neutral-900 font-semibold mb-1">DOMESTIC LLC / CORP</dt>
+            <dd class="text-neutral-600">Federal EIN · Articles of Organization · Operating agreement · State sales tax permits per nexus</dd>
+          </div>
+          <div>
+            <dt class="text-neutral-900 font-semibold mb-1">MULTI-STATE ENTERPRISE</dt>
+            <dd class="text-neutral-600">Physical warehouse nexus declarations · Economic nexus threshold trackers · Resale exemptions</dd>
+          </div>
+        </dl>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 02: ADAPTIVE ONBOARDING ARCHITECTURE -->
-  <section class="mb-48 md:mb-56">
-    <ChapterMarker number="02" title="Adaptive Onboarding Architecture" />
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
 
-    <div class="space-y-36 md:space-y-48">
+  <!-- SECTION 02: THE ADAPTIVE WALKTHROUGH -->
+  <section class="pt-8 pb-8 mb-36 md:mb-52">
+    <ChapterMarker number="02" title="The Adaptive Flow" class="mb-12" />
 
-      <!-- STEP 01: ENTITY CLASSIFICATION & ROUTING -->
+    <div class="space-y-32 md:space-y-44">
+      
+      <!-- STEP 01: PROGRESSIVE ENTITY CLASSIFICATION -->
       <article class="space-y-8">
         <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
             <StepEyebrow number="01" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
-              Setting the Rules Based on Business Structure
+              Progressive Entity Classification
             </h3>
           </div>
           <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
-            The onboarding begins with two straightforward questions: business structure and operating states. Answering this upfront sets the rules for the rest of the flow, ensuring sellers only see the filings required for their specific entity type.
+            By identifying the seller's legal structure upfront—sole proprietorship, LLC, or corporation—the interface prunes irrelevant tax schedules and questions before the merchant even encounters them.
           </p>
         </div>
 
         <figure>
-          <BrowserFrame url="marketplace.com/seller-onboarding/entity">
+          <BrowserFrame url="marketplace.com/seller-onboarding/entity-type">
             <img
-              src="/assets/bulkmagic/progressive-disclosure.png"
-              alt="Business structure identification and progressive disclosure routing interface"
+              src="/assets/bulkmagic/entity-selection.png"
+              alt="Entity classification selection interface with clear explanations of required tax documents"
               class="w-full h-auto block select-none"
               loading="lazy"
             />
           </BrowserFrame>
           <Caption>
-            Two upfront classification questions immediately establish statutory rules, filtering out non-applicable corporate filing requirements.
+            Clear entity radio cards with inline explanations of required documentation allow merchants to self-identify accurately.
           </Caption>
         </figure>
       </article>
 
-      <!-- STEP 02: DYNAMIC REQUIREMENTS CHECKLIST -->
+      <!-- STEP 02: ADAPTIVE DOCUMENT READINESS CHECKLIST -->
       <article class="space-y-8">
         <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
@@ -236,8 +264,11 @@ import PhoneFrame from '../components/case-study/PhoneFrame.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- SECTION 03: SPRINT REFLECTION -->
-  <section class="pt-24 pb-8 border-t border-neutral-200 mb-36 md:mb-48">
+  <section class="pt-8 pb-8 mb-36 md:mb-48 relative overflow-hidden">
     <ChapterMarker number="03" title="Sprint Reflection" />
 
     <div class="max-w-4xl space-y-6">

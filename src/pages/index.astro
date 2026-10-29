@@ -1,25 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import RestingRule from '../components/case-study/RestingRule.astro';
 ---
 
 <BaseLayout title="Meghan Lendhe — Product Designer & NeuroHCI Researcher" theme="light">
-<!-- Luminous Gallery Atmosphere: Layered Warm Ambient Gradients -->
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[#FAF9F5]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_75%_55%_at_70%_10%,rgba(217,119,6,0.045),transparent_65%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
 <!-- Theatrical Global Ignition Aura (Single simple ambient blur, centered dynamically at trigger point) -->
 <div id="ignition-aura" class="absolute pointer-events-none -z-15 w-[90vw] max-w-5xl h-[420px] rounded-full blur-3xl opacity-0 transition-opacity duration-1000 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.18),rgba(13,148,136,0.12),transparent_70%)]" style="top: 350px; left: 50%; transform: translate(-50%, -50%);"></div>
 
 <!-- Interactive Histological Neural Simulation Canvas (Thought Scribing, Cascades & Ignition) -->
-<canvas id="synaptic-field" class="absolute top-0 inset-x-0 w-full h-[125vh] pointer-events-none -z-10"></canvas>
+<canvas id="synaptic-field" class="absolute top-0 inset-x-0 w-full pointer-events-none -z-10"></canvas>
 
 <main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-28 md:pt-40 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
     <!-- HERO SECTION: Luminous & Grounded Career Opening -->
-    <section id="hero" aria-labelledby="hero-title" class="relative mb-36 md:mb-52">
-
+    <section id="hero" aria-labelledby="hero-title" class="relative mb-32 md:mb-48">
       <!-- Monumental Career Headline -->
       <div class="max-w-6xl mb-16 relative">
         <h1 id="hero-title" class="font-serif text-5xl sm:text-7xl lg:text-[6.75rem] font-normal leading-[0.93] tracking-[-0.04em] text-neutral-950 mb-8 text-balance transition-all duration-700">
@@ -57,9 +52,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     </section>
 
+    <!-- Architectural Section Divider -->
+    <RestingRule class="mb-32 md:mb-40" />
 
     <!-- SECTION 01: NEUROHCI EXPLORATION -->
-    <section id="research" aria-labelledby="monograph-title" class="mb-48 md:mb-60 scroll-mt-32">
+    <section id="research" aria-labelledby="monograph-title" class="mb-36 md:mb-48 scroll-mt-32">
       
       <!-- Broadsheet Spread: Cortical Topography Map (Left) & Distilled Monograph Narrative (Right) -->
       <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-20 items-center">
@@ -71,8 +68,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
 
-        <!-- Right: Distilled Narrative & Archival Link -->
-        <div class="space-y-8">
+        <!-- Right: Distilled Narrative & Archival Specimen Link -->
+        <div class="space-y-8 relative">
           <div>
             <h2 id="monograph-title" class="font-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-normal text-neutral-950 leading-[1.02] tracking-[-0.035em] text-balance">
               Zero-Calibration Neural Decoding
@@ -92,6 +89,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
     </section>
+
+    <!-- Architectural Section Divider -->
+    <RestingRule class="mb-24 md:mb-32" />
 
     <!-- SECTION 02: PRODUCT DESIGN & COMPLEX WORKFLOWS -->
     <section id="product-design" aria-labelledby="product-title" class="pt-8">
@@ -209,9 +209,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   // Advanced Theatrical Histological Neural Simulation Suite
   // Features:
   // 1. Biological Cytology & Varicose Axons
-  // 2. Thought Scribing (Pointer Drag -> Custom Engram Circuit Formation)
-  // 3. Global Cortical Ignition (Triggered via Rapid Interaction & Engram Resonance)
-  // 4. Web Audio Biofeedback (Pythagorean Synaptic Chimes & Ignition Chord Swell)
+  // 2. Unmyelinated Dendritic Cursor Trailing (Tapers & Dissolves <150ms)
+  // 3. Thought Scribing (Pointer Drag -> Custom Engram Circuit Formation)
+  // 4. Global Cortical Ignition (Triggered via Rapid Interaction & Engram Resonance)
+  // 5. Web Audio Biofeedback (Pythagorean Synaptic Chimes & Ignition Chord Swell)
   (function() {
     const canvas = document.getElementById('synaptic-field');
     const aura = document.getElementById('ignition-aura');
@@ -221,11 +222,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     let width, height;
     let mouse = { x: -1000, y: -1000, isDown: false, active: false };
+    const neurons = [];
+    const connections = [];
+    const activePulses = [];
 
     // Audio Engine: Tactile Acoustic Physical Synthesizer (Museum-Grade Micro-Acoustics)
     let audioCtx = null;
     let audioEnabled = false;
-    // Luminous, tranquil pentatonic scale (D4, E4, F#4, A4, B4, D5, E5)
     const pentatonicScale = [293.66, 329.63, 369.99, 440.00, 493.88, 587.33, 659.25];
 
     function initAudio() {
@@ -239,7 +242,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       audioEnabled = true;
     }
 
-    // Tactile Sub-Threshold Droplet (Subtle bio-acoustic impulse on tap, never a beep)
+    // Tactile Sub-Threshold Droplet
     function playTactileStimulus(intensity = 0.032) {
       if (!audioEnabled || !audioCtx) return;
       try {
@@ -268,19 +271,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       } catch(e) {}
     }
 
-    // Crystalline Celesta / Rhodes Tine Synaptic Chime (Warm physical harmonics, zero digital beep)
+    // Crystalline Celesta / Rhodes Tine Synaptic Chime
     function playSynapticChime(freq = 440, volume = 0.065) {
       if (!audioEnabled || !audioCtx) return;
       try {
         const now = audioCtx.currentTime;
-
-        // Warm analog low-pass shaping filter
         const filter = audioCtx.createBiquadFilter();
         filter.type = 'lowpass';
         filter.frequency.setValueAtTime(2200, now);
         filter.Q.setValueAtTime(0.9, now);
 
-        // 1. Fundamental acoustic body
         const oscBody = audioCtx.createOscillator();
         const gainBody = audioCtx.createGain();
         oscBody.type = 'sine';
@@ -290,7 +290,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         gainBody.gain.linearRampToValueAtTime(volume, now + 0.006);
         gainBody.gain.exponentialRampToValueAtTime(0.0001, now + 0.52);
 
-        // 2. High celesta bell overtone (inharmonic 2.76x ratio for delicate crystalline shimmer)
         const oscTine = audioCtx.createOscillator();
         const gainTine = audioCtx.createGain();
         oscTine.type = 'sine';
@@ -300,7 +299,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         gainTine.gain.linearRampToValueAtTime(volume * 0.24, now + 0.004);
         gainTine.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
 
-        // 3. Tactile felt mallet transient
         const oscMallet = audioCtx.createOscillator();
         const gainMallet = audioCtx.createGain();
         oscMallet.type = 'triangle';
@@ -310,35 +308,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         gainMallet.gain.setValueAtTime(volume * 0.32, now);
         gainMallet.gain.exponentialRampToValueAtTime(0.0001, now + 0.038);
 
-        // Routing
         oscBody.connect(gainBody);
         gainBody.connect(filter);
-
         oscTine.connect(gainTine);
         gainTine.connect(filter);
-
         oscMallet.connect(gainMallet);
         gainMallet.connect(filter);
-
         filter.connect(audioCtx.destination);
 
         oscBody.start(now);
         oscTine.start(now);
         oscMallet.start(now);
-
         oscBody.stop(now + 0.55);
         oscTine.stop(now + 0.1);
         oscMallet.stop(now + 0.045);
       } catch(e) {}
     }
 
-    // Graceful Cinematic Global Ignition Chord (Deep tranquil swell + spaced celestial harp sparkles)
+    // Graceful Cinematic Global Ignition Chord
     function playIgnitionChord() {
       if (!audioEnabled || !audioCtx) return;
       try {
         const now = audioCtx.currentTime;
-
-        // Shared dynamic filter: sweeps open gently like dawn light, then settles into warm embers
         const filter = audioCtx.createBiquadFilter();
         filter.type = 'lowpass';
         filter.frequency.setValueAtTime(280, now);
@@ -347,13 +338,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         const masterGain = audioCtx.createGain();
         masterGain.gain.setValueAtTime(0, now);
-        masterGain.gain.linearRampToValueAtTime(0.07, now + 0.9); // Silky, unhurried swell
-        masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 3.9); // Long, peaceful decay
+        masterGain.gain.linearRampToValueAtTime(0.07, now + 0.9);
+        masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 3.9);
 
         filter.connect(masterGain);
         masterGain.connect(audioCtx.destination);
 
-        // Expansive, serene open chord (D major 9th / D - A - E - F# - A - D)
         const chordTones = [146.83, 220.00, 329.63, 369.99, 440.00, 587.33];
         chordTones.forEach((freq, idx) => {
           const osc = audioCtx.createOscillator();
@@ -361,7 +351,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           osc.type = 'sine';
           osc.frequency.setValueAtTime(freq, now);
 
-          // Subtle staggered voice entry for natural breath
           const voiceDelay = idx * 0.04;
           noteGain.gain.setValueAtTime(0, now);
           noteGain.gain.linearRampToValueAtTime(0.18, now + 0.8 + voiceDelay);
@@ -369,12 +358,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           osc.connect(noteGain);
           noteGain.connect(filter);
-
           osc.start(now);
           osc.stop(now + 3.9);
         });
 
-        // 4 Spaced Crystalline Sparkles following the wavefront (pure grace, zero cacophony)
         const sparkles = [
           { time: 0.18, freq: 587.33 },
           { time: 0.48, freq: 739.99 },
@@ -394,7 +381,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = window.innerWidth;
-      height = Math.max(window.innerHeight * 1.25, 950);
+      const heroEl = document.getElementById('hero');
+      if (heroEl) {
+        const heroRect = heroEl.getBoundingClientRect();
+        height = Math.max(550, Math.round(heroRect.bottom + window.scrollY));
+      } else {
+        height = Math.max(550, Math.min(window.innerHeight, 750));
+      }
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = width + 'px';
@@ -405,11 +398,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     resize();
     window.addEventListener('resize', resize);
 
-    // Track mouse & pointer for Thought Scribing
+    // Track mouse & pointer for Thought Scribing & Dendritic Trailing
     const scribedEngram = [];
+    const cursorTrail = [];
     let isIgniting = false;
-
-    // Rapid Interaction Monitor (Triggers Global Ignition organically on rapid stimulation)
     let rapidStimulusCount = 0;
     let lastStimulusTime = 0;
 
@@ -417,6 +409,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       mouse.x = e.clientX;
       mouse.y = e.clientY + window.scrollY;
       mouse.active = true;
+
+
 
       if (mouse.isDown) {
         scribedEngram.push({ x: mouse.x, y: mouse.y, time: Date.now() });
@@ -435,6 +429,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     window.addEventListener('pointerleave', () => {
       mouse.active = false;
       mouse.isDown = false;
+      cursorTrail.length = 0;
     });
 
     // Pointerdown: Stimulus Injection & Rapid Summation Check
@@ -444,7 +439,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const clickX = e.clientX;
       const clickY = e.clientY + window.scrollY;
 
-      // Restrict neural interactions to hero canvas zone to prevent lower section misfiring
       if (clickY > height + 40) {
         rapidStimulusCount = 0;
         return;
@@ -455,7 +449,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       initAudio();
 
-      // Check for rapid successive clicks to trigger Global Ignition organically at trigger point
       const now = Date.now();
       if (now - lastStimulusTime < 750) {
         rapidStimulusCount++;
@@ -507,7 +500,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             }, idx * 60);
           });
 
-          // If a large engram is formed (>= 4 neurons), trigger Global Cortical Ignition at engram centroid!
           if (recruited.length >= 4 && !isIgniting) {
             const avgX = recruited.reduce((sum, n) => sum + n.x, 0) / recruited.length;
             const avgY = recruited.reduce((sum, n) => sum + n.y, 0) / recruited.length;
@@ -523,17 +515,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     const morphTypes = ['pyramidal', 'multipolar', 'bipolar'];
     const numNeurons = 66;
-    const neurons = [];
-    const connections = [];
-    const activePulses = [];
 
     for (let i = 0; i < numNeurons; i++) {
+      const maxSpawnY = (height || 720) * 0.85;
       const baseX = Math.random() * (width || window.innerWidth);
-      const baseY = Math.random() * (height || 950);
+      const baseY = Math.random() * maxSpawnY;
       const type = morphTypes[i % morphTypes.length];
       const baseRadius = 4.0 + Math.random() * 2.5;
 
-      // Morphological orientation: subtle vertical/columnar polarity for pyramidal cells
       let angle = Math.random() * Math.PI * 2;
       if (type === 'pyramidal') {
         angle = -Math.PI * 0.5 + (Math.random() - 0.5) * 0.75;
@@ -612,8 +601,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const dy = neurons[j].baseY - neurons[i].baseY;
       const d = Math.hypot(dx, dy) || 1;
 
-      // Authentic Santiago Ramón y Cajal S-curve tortuosity:
-      // Alternating normal offsets create undulating inflection (biological S-meander)
       const sign = Math.random() > 0.5 ? 1 : -1;
       const maxOffset = Math.min(d * 0.35, 48);
       const offset1 = sign * (18 + Math.random() * (maxOffset - 18));
@@ -640,7 +627,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       });
     }
 
-    // Sparse, purposeful histological arborization (eliminates constellation mesh)
+    // Sparse, purposeful histological arborization
     for (let i = 0; i < neurons.length; i++) {
       if (neurons[i].connectedIndices.length >= 2) continue;
 
@@ -657,18 +644,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       candidates.sort((a, b) => a.d - b.d);
 
-      // Primary axonal shaft
       if (candidates.length > 0 && neurons[candidates[0].id].connectedIndices.length < 3) {
         addAxonalConnection(i, candidates[0].id, false);
       }
 
-      // Secondary collateral branchlet
       if (candidates.length > 1 && neurons[candidates[1].id].connectedIndices.length < 3 && Math.random() < 0.8) {
         addAxonalConnection(i, candidates[1].id, true);
       }
     }
 
-    // Guarantee Zero Lonely Neurons
+    // Guarantee zero lonely neurons
     for (let i = 0; i < neurons.length; i++) {
       while (neurons[i].connectedIndices.length < 2) {
         let closestDist = Infinity;
@@ -732,7 +717,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       if (isIgniting) return;
       isIgniting = true;
 
-      // Awaken single simple ambient blur aura at trigger coordinates
       if (aura) {
         aura.style.left = `${originX}px`;
         aura.style.top = `${originY}px`;
@@ -745,18 +729,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       playIgnitionChord();
 
-      // Reset refractory states across the network so the avalanche can sweep through
       neurons.forEach(n => {
         n.refractory = 0;
         n.currentThreshold = n.baseThreshold;
       });
 
-      // Find the closest seed neurons directly at the trigger coordinates
       const sortedByDist = neurons
         .map(n => ({ neuron: n, d: Math.hypot(n.x - originX, n.y - originY) }))
         .sort((a, b) => a.d - b.d);
 
-      // Fire the 2 seed neurons at the epicenter to initiate the physical axonal cascade
       const seeds = sortedByDist.slice(0, 2);
       seeds.forEach((s, idx) => {
         setTimeout(() => {
@@ -810,7 +791,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
       ctx.fill();
 
-      // Organelle Nucleus
       const nucleusR = Math.max(1.2, r * 0.38);
       ctx.beginPath();
       ctx.arc(0, 0, nucleusR, 0, Math.PI * 2);
@@ -823,7 +803,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
       ctx.fill();
 
-      // Dendritic Arborization
       ctx.beginPath();
       if (type === 'pyramidal') {
         ctx.moveTo(0, -r * 1.2);
@@ -879,7 +858,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         n.x = n.baseX + Math.sin(time * n.driftSpeed * 100 + n.phase) * n.driftRadius;
         n.y = n.baseY + Math.cos(time * n.driftSpeed * 80 + n.phase) * (n.driftRadius * 0.65);
 
-        // Hover proximity induction
         if (mouse.active && !mouse.isDown) {
           const dist = Math.hypot(mouse.x - n.x, mouse.y - n.y);
           if (dist < 135 && n.refractory <= 0) {
@@ -928,12 +906,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
         ctx.stroke();
 
-        // Boutons placed directly along the cubic curve
         for (let b = 0; b < conn.boutons.length; b++) {
           const bt = conn.boutons[b].t;
           const bPt = getCubicPoint(nA.x, nA.y, cp.cp1x, cp.cp1y, cp.cp2x, cp.cp2y, nB.x, nB.y, bt);
 
-          // Check if any traveling action potential is currently crossing this bouton
           let boutonPulse = 0;
           for (let p = 0; p < activePulses.length; p++) {
             const pulse = activePulses[p];
@@ -964,7 +940,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 3. Render Progressive Traveling Axonal Conduction Waves (Light Traveling Forward Along S-Curve)
+      // 3. Render Traveling Axonal Conduction Waves
       for (let p = activePulses.length - 1; p >= 0; p--) {
         const pulse = activePulses[p];
         pulse.progress += pulse.speed;
@@ -1004,12 +980,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         if (pulse.progress >= 1.0) {
           const target = pulse.toNeuron;
           if (pulse.isIgnition) {
-            // Global Ignition Cascade: reliably recruits downstream neurons along physical axons
             if (target.refractory <= 0 || isIgniting) {
               fireNeuron(target, nA.id, pulse.hop, true);
             }
           } else {
-            // Natural Synaptic Cascade: multi-hop depolarization
             if (target.refractory <= 0) {
               target.potential += 0.65 * pulse.energy;
               if (target.potential >= target.currentThreshold * 0.70) {
@@ -1021,7 +995,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
       }
 
-      // 4. Render Thought Scribing Trail (Pointer Engram Canvas)
+      // 4A. Render Thought Scribing Trail (Pointer Engram Canvas)
       if (mouse.isDown && scribedEngram.length > 1) {
         ctx.beginPath();
         ctx.moveTo(scribedEngram[0].x, scribedEngram[0].y);
@@ -1034,6 +1008,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ctx.stroke();
         ctx.setLineDash([]);
       }
+
+
 
       // 5. Render Somas
       for (let i = 0; i < neurons.length; i++) {
@@ -1051,7 +1027,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     render();
   })();
 
-  // Cortical Topography Scalp Potential Field Simulation (Direction 3: Spatial Thought Distribution)
+  // Cortical Topography Scalp Potential Field Simulation
   (function() {
     const canvas = document.getElementById('cortical-topography');
     if (!canvas) return;
@@ -1075,7 +1051,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     window.addEventListener('resize', resize, { passive: true });
     resize();
 
-    // 10-20 Electrode Montage (Normalized -1 to +1 coordinate space)
     const electrodes = [
       { name: 'Fz', x: 0, y: -0.42, zone: 'arithmetic' },
       { name: 'F3', x: -0.32, y: -0.40, zone: 'arithmetic' },
@@ -1095,11 +1070,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       { name: 'Oz', x: 0, y: 0.75, zone: 'baseline' }
     ];
 
-    // Three natural cognitive poles
     const cognitivePoles = [
-      { name: 'motor', x: 0, y: 0, color: '#B45309' }, // Sensorimotor strip
-      { name: 'arithmetic', x: 0, y: -0.42, color: '#0D9488' }, // Frontal midline
-      { name: 'speech', x: -0.55, y: -0.15, color: '#D97706' } // Left fronto-temporal (Broca)
+      { name: 'motor', x: 0, y: 0, color: '#B45309' },
+      { name: 'arithmetic', x: 0, y: -0.42, color: '#0D9488' },
+      { name: 'speech', x: -0.55, y: -0.15, color: '#D97706' }
     ];
 
     let currentPole = { x: 0, y: 0, color: '#B45309' };
@@ -1141,7 +1115,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       time += 0.018;
 
-      // Cycle gently through the 3 cognitive zones
       const cycleIdx = Math.floor((time * 0.25) % cognitivePoles.length);
       const nextIdx = (cycleIdx + 1) % cognitivePoles.length;
       const blend = (Math.sin(time * 0.5) + 1) / 2;
@@ -1152,13 +1125,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       targetPole.x = pA.x * (1 - blend) + pB.x * blend;
       targetPole.y = pA.y * (1 - blend) + pB.y * blend;
 
-      // Cursor influence
       if (mouse.active) {
         targetPole.x = targetPole.x * 0.3 + mouse.x * 0.7;
         targetPole.y = targetPole.y * 0.3 + mouse.y * 0.7;
       }
 
-      // Smooth interpolation
       currentPole.x += (targetPole.x - currentPole.x) * 0.06;
       currentPole.y += (targetPole.y - currentPole.y) * 0.06;
 
@@ -1174,17 +1145,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const cy = height / 2;
       const R = Math.min(width, height) * 0.38;
 
-      // 1. Draw Scalp Outline & Anatomical Fiducials (Cartier Architectural Precision)
       ctx.save();
 
-      // Scalp circle
       ctx.beginPath();
       ctx.arc(cx, cy, R, 0, Math.PI * 2);
       ctx.strokeStyle = 'rgba(23, 23, 23, 0.15)';
       ctx.lineWidth = 1.0;
       ctx.stroke();
 
-      // Nose indicator (Nasion) at top
       ctx.beginPath();
       ctx.moveTo(cx - 10, cy - R + 1);
       ctx.lineTo(cx, cy - R - 12);
@@ -1193,21 +1161,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       ctx.lineWidth = 1.0;
       ctx.stroke();
 
-      // Left Ear indicator (LPA)
       ctx.beginPath();
       ctx.arc(cx - R - 3, cy, 9, Math.PI * 0.5, Math.PI * 1.5, false);
       ctx.strokeStyle = 'rgba(23, 23, 23, 0.2)';
       ctx.lineWidth = 1.0;
       ctx.stroke();
 
-      // Right Ear indicator (RPA)
       ctx.beginPath();
       ctx.arc(cx + R + 3, cy, 9, Math.PI * 1.5, Math.PI * 0.5, false);
       ctx.strokeStyle = 'rgba(23, 23, 23, 0.2)';
       ctx.lineWidth = 1.0;
       ctx.stroke();
 
-      // Anatomical Hairline Crosshairs
       ctx.beginPath();
       ctx.moveTo(cx, cy - R * 0.95);
       ctx.lineTo(cx, cy + R * 0.95);
@@ -1219,12 +1184,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       ctx.stroke();
       ctx.setLineDash([]);
 
-      // Clip subsequent potential field inside cranial contour
       ctx.beginPath();
       ctx.arc(cx, cy, R - 1, 0, Math.PI * 2);
       ctx.clip();
 
-      // 2. Ambient Thermal Scalp Potential Glow
       const polePxX = cx + currentPole.x * R;
       const polePxY = cy + currentPole.y * R;
 
@@ -1236,7 +1199,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       ctx.fillStyle = thermalGrad;
       ctx.fillRect(cx - R, cy - R, R * 2, R * 2);
 
-      // 3. Topographic Scalp Potential Isocontour Rings (Delicate Architectural Curves)
       const numContours = 9;
       for (let c = 1; c <= numContours; c++) {
         const baseRadius = (c / numContours) * R * 0.85;
@@ -1246,8 +1208,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         const steps = 64;
         for (let s = 0; s <= steps; s++) {
           const theta = (s / steps) * Math.PI * 2;
-
-          // Harmonic perturbation to mimic real cortical potential contours
           const harmonic1 = Math.sin(theta * 3 + time * 1.5) * 4.5;
           const harmonic2 = Math.cos(theta * 2 - time * 0.8) * 3.0;
           const rippleMod = ripplePulse > 0 ? Math.sin(theta * 6 - time * 8) * (ripplePulse * 12) : 0;
@@ -1267,19 +1227,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       ctx.restore();
 
-      // 4. Render 10-20 Electrode Array (Whisper-thin metallic dots & active aura)
       for (let i = 0; i < electrodes.length; i++) {
         const el = electrodes[i];
         const elX = cx + el.x * R;
         const elY = cy + el.y * R;
 
-        // Distance from active pole
         const dx = (elX - polePxX) / R;
         const dy = (elY - polePxY) / R;
         const dist = Math.sqrt(dx * dx + dy * dy);
         const activation = Math.max(0, 1 - dist * 1.6);
 
-        // Active electrode glow ring
         if (activation > 0.25) {
           ctx.beginPath();
           ctx.arc(elX, elY, 3 + activation * 5, 0, Math.PI * 2);
@@ -1288,7 +1245,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           ctx.stroke();
         }
 
-        // Electrode core dot
         ctx.beginPath();
         ctx.arc(elX, elY, 1.8 + activation * 0.8, 0, Math.PI * 2);
         ctx.fillStyle = activation > 0.35 ? '#B45309' : 'rgba(23, 23, 23, 0.45)';

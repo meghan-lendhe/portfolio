@@ -1,0 +1,21 @@
+---
+interface Props {
+  theme?: 'light' | 'dark';
+}
+
+const { theme = 'light' } = Astro.props;
+const isDark = theme === 'dark';
+---
+
+<!-- AMBIENT SUBSTRATE: Luminous Warm Porcelain (Calm Broadsheet Canvas) -->
+<div class="fixed inset-0 pointer-events-none -z-20 overflow-hidden select-none" aria-hidden="true">
+  <!-- Solid Substrate Base -->
+  <div class={`absolute inset-0 ${isDark ? 'bg-[#111215]' : 'bg-[#FAF9F5]'}`}></div>
+
+  <!-- Whisper-Quiet Ambient Radial Gradients (Calm, Breathing Lighting) -->
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_75%_12%,rgba(217,119,6,0.04),transparent_70%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_15%_35%,rgba(13,148,136,0.03),transparent_65%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_85%_85%,rgba(217,119,6,0.03),transparent_75%)]"></div>
+  </div>
+</div>

@@ -2,19 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ChapterMarker from '../components/case-study/ChapterMarker.astro';
 import StepEyebrow from '../components/case-study/StepEyebrow.astro';
+import RestingRule from '../components/case-study/RestingRule.astro';
 ---
 
-<BaseLayout title="Omara Technologies — Public Welfare Systems & Design-System Tooling" theme="light">
-<!-- Luminous Gallery Atmosphere: Layered Warm Ambient Gradients -->
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[#FAF9F5]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_75%_55%_at_70%_10%,rgba(217,119,6,0.045),transparent_65%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
+<BaseLayout title="Omara Technologies — Public Welfare Systems & Design-System Tooling" theme="light" includeCaseStudyScript>
 
 <main id="main" class="relative max-w-page mx-auto px-6 md:px-16 lg:px-20 pb-72 pt-20 md:pt-32 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
   <!-- HERO SECTION: Executive Masthead & Operational Scope -->
-  <section class="mb-32 md:mb-48">
+  <section class="mb-32 md:mb-48 relative">
     <div class="max-w-6xl mb-20">
       <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-500 uppercase font-medium mb-6">
         Tenure Retrospective · Operational Systems &amp; Tooling
@@ -104,8 +100,11 @@ import StepEyebrow from '../components/case-study/StepEyebrow.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- CHAPTER 01: DUAL OPERATIONAL WORKFLOWS -->
-  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
+  <section class="pt-8 pb-8 mb-32 md:mb-48">
     <ChapterMarker number="01" title="Dual Operational Workflows" />
 
     <div class="max-w-4xl mb-16">
@@ -147,8 +146,11 @@ import StepEyebrow from '../components/case-study/StepEyebrow.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- CHAPTER 02: VERIFICATION & STATUTORY LEGAL WORKFLOWS -->
-  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
+  <section class="pt-8 pb-8 mb-32 md:mb-48">
     <ChapterMarker number="02" title="Verification & Statutory Workflows" />
 
     <div class="max-w-4xl mb-16">
@@ -197,45 +199,36 @@ import StepEyebrow from '../components/case-study/StepEyebrow.astro';
           Affidavits, NOCs, Bonds
         </div>
       </div>
-
-      <div class="py-6 grid grid-cols-1 md:grid-cols-[1.2fr_2fr_1fr] gap-4 md:gap-8 items-baseline">
-        <div class="font-mono text-xs text-neutral-950 font-medium uppercase tracking-wider">
-          Physical Document Digitization
-        </div>
-        <p class="text-neutral-700 leading-relaxed">
-          Engineered field-counter ingestion flows enabling caseworkers to rapidly scan, OCR-index, and stitch handwritten physical citizen applications into the digital adjudication stream.
-        </p>
-        <div class="font-mono text-xs text-neutral-500">
-          Paper Scan + OCR Ingestion
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- CHAPTER 03: THE COMPONENT SYSTEM & GIGW COMPLIANCE -->
-  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
-    <ChapterMarker number="03" title="Design System & GIGW Compliance" />
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
+  <!-- CHAPTER 03: GOVTECH PATTERNS & GIGW GOVERNANCE -->
+  <section class="pt-8 pb-8 mb-32 md:mb-48">
+    <ChapterMarker number="03" title="GovTech Patterns & GIGW Governance" />
 
     <div class="max-w-4xl mb-16">
       <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance mb-8">
-        A resilient design system built for statutory diversity.
+        Scalable design components for public infrastructure.
       </h2>
       <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-[1.75] max-w-[54ch] text-pretty">
-        Because Indian government welfare schemes span agriculture, education, healthcare, and social welfare, the component system had to accommodate wildly different data schemas. I audited statutory scheme requirements across ministries to build standardized, reusable domain patterns while ensuring strict compliance with Guidelines for Indian Government Websites (GIGW).
+        Designed an enterprise-grade component library tailored for state and national government services, adhering strictly to Guidelines for Indian Government Websites (GIGW) and WCAG 2.1 accessibility standards.
       </p>
     </div>
 
-    <!-- Domain Patterns & Compliance Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-neutral-200 pt-10">
-      <div class="space-y-4">
+    <!-- GovTech System Pattern Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      <div class="space-y-4 border-t border-neutral-200 pt-8">
         <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">Domain Pattern 01</span>
-        <h3 class="text-2xl font-serif text-neutral-950 font-normal">Land &amp; Property Structures</h3>
+        <h3 class="text-2xl font-serif text-neutral-950 font-normal">Complex Land &amp; Property Ledgers</h3>
         <p class="text-base text-neutral-700 leading-relaxed font-normal">
-          Designed dedicated input components for rural land parcel identification, khata/patta registration numbers, crop survey demarcations, and joint ownership splits required for agricultural subsidy schemes.
+          Designed multi-tier parcel hierarchy selectors (Survey/Khasra numbers, Sub-division, Mauza/Village boundary mapping) capable of handling disputed ownership claims and joint titleholders.
         </p>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-4 border-t border-neutral-200 pt-8">
         <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">Domain Pattern 02</span>
         <h3 class="text-2xl font-serif text-neutral-950 font-normal">Family &amp; Demographic Mapping</h3>
         <p class="text-base text-neutral-700 leading-relaxed font-normal">
@@ -261,8 +254,11 @@ import StepEyebrow from '../components/case-study/StepEyebrow.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- CHAPTER 04: AGENTIC DESIGN AUTOMATION -->
-  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
+  <section class="pt-8 pb-8 mb-32 md:mb-48 relative overflow-hidden">
     <ChapterMarker number="04" title="Agentic Design Automation" />
 
     <div class="max-w-4xl mb-16">

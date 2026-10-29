@@ -307,3 +307,27 @@
 }
 
 
+
+/* Infra-Slow Cortical Oscillation (10-minute rhythmic phase shift, <0.1 Hz) */
+@keyframes infra-slow-cortical-drift {
+  0%, 100% {
+    opacity: 0.85;
+    transform: translate(0, 0) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  33% {
+    opacity: 1.05;
+    transform: translate(-1.5%, 1%) scale(1.03);
+    filter: hue-rotate(6deg);
+  }
+  66% {
+    opacity: 0.90;
+    transform: translate(1.5%, -1%) scale(0.98);
+    filter: hue-rotate(-8deg);
+  }
+}
+
+.infra-slow-drift {
+  animation: infra-slow-cortical-drift 75s ease-in-out infinite;
+  will-change: transform, opacity;
+}

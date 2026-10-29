@@ -1,18 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ChapterMarker from '../components/case-study/ChapterMarker.astro';
+import RestingRule from '../components/case-study/RestingRule.astro';
 ---
 
 <BaseLayout title="Alirtify — Designing a Data-Driven UX for News Validation" theme="light" includeCaseStudyScript>
-<!-- Luminous Gallery Atmosphere: Layered Warm Ambient Gradients -->
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[#FAF9F5]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_75%_55%_at_70%_10%,rgba(217,119,6,0.045),transparent_65%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
-<div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
 <main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-20 md:pt-32 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
   <!-- HERO SECTION: Monumental Headline & Narrative Scale Bridge -->
-  <section class="mb-32 md:mb-48">
+  <section class="mb-32 md:mb-48 relative">
     <div class="max-w-6xl mb-20">
       <h1 class="font-serif text-5xl sm:text-7xl lg:text-[6.5rem] font-normal leading-[0.94] tracking-[-0.04em] text-neutral-950 mb-10 text-balance">
         Designing Data-Driven UX for Information Credibility.
@@ -26,7 +23,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-[1.75] max-w-[52ch] text-pretty mb-8">
             News aggregator Alirtify was founded on the hypothesis that social engagement counts could indicate article credibility. However, viral metrics often amplify sensationalism rather than veracity. <span class="text-neutral-950 font-normal underline decoration-neutral-300 underline-offset-8">Our research team partnered with the CEO</span> to dismantle this assumption and design provenance-based validation affordances.
           </p>
-          <div class="font-serif italic text-2xl sm:text-3xl text-neutral-900 leading-relaxed max-w-[46ch]">
+          <div class="font-serif italic text-2xl sm:text-3xl text-neutral-900 leading-relaxed max-w-[46ch] relative">
             “In an era of hyper-sensationalism, credibility cannot be manufactured through engagement volume—it must be grounded in transparency, provenance, and neutral framing.”
           </div>
         </div>
@@ -61,19 +58,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         />
       </div>
       <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-600 uppercase mt-4 border-t border-neutral-200 pt-3 font-medium">
-        <span>News Credibility Platform</span>
+        <span>Source Provenance &amp; Verification Signals</span>
         <span>Real-Time Validation &amp; Provenance Interface</span>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 01: RESEARCH SCOPE & METHODOLOGY -->
-  <section class="py-24 border-y border-neutral-200 mb-36 md:mb-52">
-    <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase mb-16 font-medium">
-      01 / Research Scope &amp; Methodology
-    </div>
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
+  <!-- SECTION 01: RESEARCH SCOPE & METHODOLOGY -->
+  <section class="py-8 mb-36 md:mb-52">
+    <ChapterMarker number="01" title="Research Scope & Methodology" />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 border-t border-neutral-200 pt-12">
       <div class="space-y-4">
         <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-normal text-neutral-950 tracking-tight tabular-nums">
           7<span class="text-amber-800 font-sans text-4xl sm:text-5xl font-medium"> Cohorts</span>
@@ -106,13 +104,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- SECTION 02: THE CREDIBILITY DILEMMA -->
   <section class="mb-48 md:mb-60">
-    <div class="pb-5 mb-20 border-b border-neutral-200">
-      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium">
-        02 / Why Engagement Counts Mislead Readers
-      </div>
-    </div>
+    <ChapterMarker number="02" title="Why Engagement Misleads" />
 
     <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-24 items-start">
       <div class="space-y-8">
@@ -149,53 +146,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Architectural Section Divider -->
+  <RestingRule class="mb-24 md:mb-36" />
+
   <!-- SECTION 03: FIVE ETHICAL UX INTERVENTIONS -->
   <section class="mb-48 md:mb-60">
-    <div class="pb-5 mb-20 border-b border-neutral-200">
-      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium">
-        03 / Five Core Design Interventions
-      </div>
-    </div>
+    <ChapterMarker number="03" title="Five Core Interventions" />
 
     <div class="max-w-4xl mb-24">
       <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 mb-6 font-normal text-balance">
-        Replacing vanity metrics with cognitive validation signals.
+        Replacing vanity counts with verified provenance.
       </h2>
       <p class="text-xl text-neutral-800 font-normal leading-[1.7] max-w-[52ch]">
-        We architected five distinct UX interventions designed to empower reader skepticism, provide multi-perspective context, and restore provenance.
+        We re-architected the feed around five ethical affordances that empower readers to verify claims independently before sharing.
       </p>
     </div>
 
     <div class="space-y-48">
       
-      <!-- Feature 01: Social Circle Validation -->
+      <!-- Feature 01: Multi-Dimensional Sentiment Analysis -->
       <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
         <div class="relative overflow-hidden">
           <div class="aspect-[16/10] overflow-hidden bg-white/90 border border-neutral-200/90 shadow-xs flex items-center justify-center p-6">
             <img
-              src="/assets/alirtify/news-feed.svg"
-              alt="Social-circle validation signals surfaced alongside global counts"
+              src="/assets/alirtify/sentiment-analysis.svg"
+              alt="Multi-dimensional emotion and sentiment spectrum indicator"
               class="w-full max-w-[22rem] max-h-[85%] h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
           </div>
           <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-600 uppercase mt-4 border-t border-neutral-200 pt-3 font-medium">
-            <span>Social Provenance</span>
-            <span>Circle Endorsements vs. Global Counts</span>
+            <span>Emotion Spectrum</span>
+            <span>Multi-Tone Sentiment Calibration</span>
           </div>
         </div>
 
         <div class="space-y-5 lg:pt-2">
           <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">INTERVENTION 01</span>
           <h3 class="text-3xl font-serif text-neutral-950 group-hover:text-amber-800 transition-colors font-normal">
-            Social-Circle Validation
+            Multi-Tone Sentiment Spectrum
           </h3>
           <p class="text-base text-neutral-700 font-normal leading-[1.75]">
-            Surfaced engagement from a reader's trusted connections (friends, domain experts, verified colleagues) alongside broader platform counts, transforming arbitrary numbers into meaningful human context.
+            Rather than binary positive/negative scoring, the interface displays an analytical emotion spectrum (Joy, Fear, Neutrality, Urgency), alerting readers when an article relies on inflammatory emotional priming.
           </p>
         </div>
       </article>
 
-      <!-- Feature 02: AI Neutral Headlines -->
+      <!-- Feature 02: AI Neutral Headline Summaries -->
       <article class="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-16 items-start group">
         <div class="space-y-5 order-2 lg:order-1 lg:pt-2">
           <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">INTERVENTION 02</span>
