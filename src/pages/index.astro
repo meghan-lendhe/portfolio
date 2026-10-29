@@ -109,85 +109,91 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="space-y-36 md:space-y-48">
         
         <!-- Case Study 01: Omara Technologies -->
-        <article class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-16 items-start group">
+        <article class="flex flex-col gap-8 lg:gap-10 group">
           <div class="relative overflow-hidden bg-neutral-100 rounded-xl border border-neutral-200/80">
-            <a href="/omara" class="block aspect-[16/10] overflow-hidden">
+            <a href="/omara" class="block aspect-[16/9.5] overflow-hidden">
               <img
                 src="/assets/experience/omara-cover.png"
                 alt="Omara welfare application review and design-system tooling"
-                class="w-full h-full object-cover group-hover:scale-[1.015] transition-luxury duration-700"
+                class="w-full h-full object-cover group-hover:scale-[1.012] transition-luxury duration-700"
               />
             </a>
           </div>
 
-          <div class="space-y-5 lg:pt-3">
-            <h3 class="text-3xl sm:text-4xl font-serif font-normal text-neutral-950 tracking-[-0.03em] group-hover:text-amber-800 transition-colors">
+          <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-6 lg:gap-16 items-start pt-2">
+            <h3 class="text-3xl sm:text-4xl lg:text-[2.6rem] font-serif font-normal text-neutral-950 tracking-[-0.03em] leading-[1.1] group-hover:text-amber-800 transition-colors">
               Omara: Public Welfare Systems &amp; Design Automation
             </h3>
-            <p class="text-base text-neutral-700 font-normal leading-[1.75]">
-              Designed synchronized citizen and caseworker platforms for welfare schemes while engineering agentic Figma skills for GIGW-compliant governance.
-            </p>
-            <div class="pt-2">
-              <a href="/omara" class="action-potential-link inline-flex items-center gap-1.5 text-xs font-mono text-neutral-900 hover:text-amber-800 pb-1 transition-luxury group font-medium">
-                <span>View Operational Retrospective</span>
-                <span class="group-hover:translate-x-1 transition-luxury">→</span>
-              </a>
+            <div class="space-y-4">
+              <p class="text-base sm:text-lg text-neutral-700 font-normal leading-[1.75]">
+                Designed synchronized citizen and caseworker platforms for welfare schemes while engineering agentic Figma skills for GIGW-compliant governance.
+              </p>
+              <div>
+                <a href="/omara" class="action-potential-link inline-flex items-center gap-1.5 text-xs font-mono text-neutral-900 hover:text-amber-800 pb-1 transition-luxury group font-medium">
+                  <span>View Operational Retrospective</span>
+                  <span class="group-hover:translate-x-1 transition-luxury">→</span>
+                </a>
+              </div>
             </div>
           </div>
         </article>
 
         <!-- Case Study 02: BulkMagic -->
-        <article class="grid grid-cols-1 lg:grid-cols-[0.65fr_1.35fr] gap-16 items-start group">
-          <div class="space-y-5 order-2 lg:order-1 lg:pt-3">
-            <h3 class="text-3xl sm:text-4xl font-serif font-normal text-neutral-950 tracking-[-0.03em] group-hover:text-amber-800 transition-colors">
-              BulkMagic: Merchant Onboarding Sprint
-            </h3>
-            <p class="text-base text-neutral-700 font-normal leading-[1.75]">
-              In a rapid sprint spanning just over a day, translated statutory tax compliance, entity structures, and economic nexus rules into an adaptive, progressive disclosure onboarding journey for marketplace sellers.
-            </p>
-            <div class="pt-2">
-              <a href="/bulkmagic" class="action-potential-link inline-flex items-center gap-1.5 text-xs font-mono text-neutral-900 hover:text-amber-800 pb-1 transition-luxury group font-medium">
-                <span>View BulkMagic Sprint</span>
-                <span class="group-hover:translate-x-1 transition-luxury">→</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="order-1 lg:order-2 relative overflow-hidden bg-neutral-100 rounded-xl border border-neutral-200/80">
-            <a href="/bulkmagic" class="block aspect-[16/10] overflow-hidden">
+        <article class="flex flex-col gap-8 lg:gap-10 group">
+          <div class="relative overflow-hidden bg-neutral-100 rounded-xl border border-neutral-200/80">
+            <a href="/bulkmagic" class="block aspect-[16/9.5] overflow-hidden">
               <img
                 src="/assets/bulkmagic/cover-vitrine.png"
                 alt="BulkMagic multi-state merchant onboarding interface suite overview"
-                class="w-full h-full object-cover group-hover:scale-[1.015] transition-luxury duration-700"
+                class="w-full h-full object-cover group-hover:scale-[1.012] transition-luxury duration-700"
               />
             </a>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-6 lg:gap-16 items-start pt-2">
+            <h3 class="text-3xl sm:text-4xl lg:text-[2.6rem] font-serif font-normal text-neutral-950 tracking-[-0.03em] leading-[1.1] group-hover:text-amber-800 transition-colors">
+              BulkMagic: Merchant Onboarding Sprint
+            </h3>
+            <div class="space-y-4">
+              <p class="text-base sm:text-lg text-neutral-700 font-normal leading-[1.75]">
+                In a rapid sprint spanning just over a day, translated statutory tax compliance, entity structures, and economic nexus rules into an adaptive, progressive disclosure onboarding journey for marketplace sellers.
+              </p>
+              <div>
+                <a href="/bulkmagic" class="action-potential-link inline-flex items-center gap-1.5 text-xs font-mono text-neutral-900 hover:text-amber-800 pb-1 transition-luxury group font-medium">
+                  <span>View BulkMagic Sprint</span>
+                  <span class="group-hover:translate-x-1 transition-luxury">→</span>
+                </a>
+              </div>
+            </div>
           </div>
         </article>
 
         <!-- Case Study 03: Vitals Digital Medical ID -->
-        <article class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-16 items-start group">
+        <article class="flex flex-col gap-8 lg:gap-10 group">
           <div class="relative overflow-hidden bg-neutral-100 rounded-xl border border-neutral-200/80">
-            <a href="/vitals" class="block aspect-[16/10] overflow-hidden">
+            <a href="/vitals" class="block aspect-[16/9.5] overflow-hidden">
               <img
                 src="/assets/vitals/cover.png"
                 alt="Vitals medical ID onboarding"
-                class="w-full h-full object-cover group-hover:scale-[1.015] transition-luxury duration-700"
+                class="w-full h-full object-cover group-hover:scale-[1.012] transition-luxury duration-700"
               />
             </a>
           </div>
 
-          <div class="space-y-5 lg:pt-3">
-            <h3 class="text-3xl sm:text-4xl font-serif font-normal text-neutral-950 tracking-[-0.03em] group-hover:text-amber-800 transition-colors">
+          <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-6 lg:gap-16 items-start pt-2">
+            <h3 class="text-3xl sm:text-4xl lg:text-[2.6rem] font-serif font-normal text-neutral-950 tracking-[-0.03em] leading-[1.1] group-hover:text-amber-800 transition-colors">
               Vitals: Digital Medical ID
             </h3>
-            <p class="text-base text-neutral-700 font-normal leading-[1.75]">
-              Redesigned emergency medical onboarding to solve a 92% drop-off barrier for vulnerable patients, establishing foundational trust and clear privacy control before requesting sensitive medical history.
-            </p>
-            <div class="pt-2">
-              <a href="/vitals" class="action-potential-link inline-flex items-center gap-1.5 text-xs font-mono text-neutral-900 hover:text-amber-800 pb-1 transition-luxury group font-medium">
-                <span>View Vitals Case Study</span>
-                <span class="group-hover:translate-x-1 transition-luxury">→</span>
-              </a>
+            <div class="space-y-4">
+              <p class="text-base sm:text-lg text-neutral-700 font-normal leading-[1.75]">
+                Redesigned emergency medical onboarding to solve a 92% drop-off barrier for vulnerable patients, establishing foundational trust and clear privacy control before requesting sensitive medical history.
+              </p>
+              <div>
+                <a href="/vitals" class="action-potential-link inline-flex items-center gap-1.5 text-xs font-mono text-neutral-900 hover:text-amber-800 pb-1 transition-luxury group font-medium">
+                  <span>View Vitals Case Study</span>
+                  <span class="group-hover:translate-x-1 transition-luxury">→</span>
+                </a>
+              </div>
             </div>
           </div>
         </article>
@@ -195,7 +201,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-</main>
+  </main>
+
 </BaseLayout>
 
 <script is:inline>
