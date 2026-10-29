@@ -1,190 +1,307 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ChapterMarker from '../components/case-study/ChapterMarker.astro';
+import StepEyebrow from '../components/case-study/StepEyebrow.astro';
 ---
 
-<BaseLayout title="Omara Technologies — GovTech Welfare Review & Design-System Skills" theme="light" includeCaseStudyScript>
+<BaseLayout title="Omara Technologies — Public Welfare Systems & Design-System Tooling" theme="light">
 <!-- Luminous Gallery Atmosphere: Layered Warm Ambient Gradients -->
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[#FAF9F5]"></div>
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_75%_55%_at_70%_10%,rgba(217,119,6,0.045),transparent_65%)]"></div>
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_60%_45%_at_15%_25%,rgba(13,148,136,0.035),transparent_60%)]"></div>
 <div class="fixed inset-0 pointer-events-none -z-20 bg-[radial-gradient(ellipse_55%_40%_at_85%_75%,rgba(217,119,6,0.03),transparent_70%)]"></div>
 
-<main id="main" class="relative max-w-page mx-auto px-6 md:px-20 pb-72 pt-20 md:pt-32 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
+<main id="main" class="relative max-w-page mx-auto px-6 md:px-16 lg:px-20 pb-72 pt-20 md:pt-32 font-sans text-neutral-800 selection:bg-amber-500/20 selection:text-neutral-900">
 
-  <!-- HERO SECTION: Monumental Headline & Narrative Scale Bridge -->
+  <!-- HERO SECTION: Executive Masthead & Operational Scope -->
   <section class="mb-32 md:mb-48">
     <div class="max-w-6xl mb-20">
-      <h1 class="font-serif text-5xl sm:text-7xl lg:text-[6.5rem] font-normal leading-[0.94] tracking-[-0.04em] text-neutral-950 mb-10 text-balance">
-        Clearer Reviews, Faster Design Workflows.
+      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-500 uppercase font-medium mb-6">
+        Tenure Retrospective · Operational Systems &amp; Tooling
+      </div>
+      <h1 class="font-serif text-5xl sm:text-7xl lg:text-[6.25rem] font-normal leading-[0.94] tracking-[-0.04em] text-neutral-950 mb-10 text-balance">
+        Public Welfare Systems &amp; Design Automation.
       </h1>
-      <p class="text-2xl sm:text-3xl text-neutral-800 font-normal leading-snug tracking-tight mb-14 max-w-[50ch]">
-        Designing caseworker triage interfaces for offline welfare applications while engineering automated design-system verification skills.
+      <p class="text-2xl sm:text-3xl text-neutral-800 font-normal leading-snug tracking-tight mb-14 max-w-[52ch]">
+        Designing synchronized citizen and caseworker platforms for welfare schemes while engineering agentic Figma skills for GIGW-compliant governance.
       </p>
 
-      <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-24 items-start pt-6 border-t border-neutral-200">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-24 items-start pt-8 border-t border-neutral-200">
         <div>
-          <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-[1.75] max-w-[52ch] text-pretty mb-8">
-            Government welfare programs process thousands of physical, offline citizen applications weekly. When documents are incomplete or illegible, caseworkers face severe administrative backlogs. <span class="text-neutral-950 font-normal underline decoration-neutral-300 underline-offset-8">I designed an officer-facing review engine</span> to resolve citizen information gaps while simultaneously engineering automated skills to verify UI component fidelity.
+          <p class="text-xl sm:text-2xl text-neutral-900 font-normal leading-[1.75] max-w-[52ch] text-pretty">
+            Administering public welfare requires reconciling rigid statutory constraints with messy, real-world documentation. At Omara, I led design across citizen application portals and administrative triage engines, while engineering agentic tooling to automate component validation and interactive prototyping.
           </p>
-          <div class="font-serif italic text-2xl sm:text-3xl text-neutral-900 leading-relaxed max-w-[46ch]">
-            “Public sector software succeeds when it respects the cognitive load of caseworkers—turning bureaucratic backlog into structured, compassionate triage.”
-          </div>
         </div>
 
-        <!-- Margin Ledger: Project Specifications (Pure Broadsheet Typography) -->
-        <div class="lg:pt-2 pl-0 lg:pl-10">
-          <dl class="space-y-5 text-xs font-mono">
+        <!-- Margin Ledger: Broadsheet Archival Coordinates -->
+        <div class="lg:pt-1 pl-0 lg:pl-10">
+          <dl class="space-y-4 text-xs font-mono">
             <div>
-              <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">CLIENT</dt>
+              <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">ORGANIZATION</dt>
               <dd class="text-neutral-950 text-sm font-medium">Omara Technologies</dd>
             </div>
             <div>
               <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">MY ROLE</dt>
-              <dd class="text-neutral-950 text-sm font-medium">Product Designer &amp; Tooling Eng</dd>
+              <dd class="text-neutral-950 text-sm font-medium">Product Designer &amp; Tooling Engineer</dd>
             </div>
             <div>
-              <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">DELIVERABLES</dt>
-              <dd class="text-neutral-950 text-sm font-medium">Caseworker Portal &amp; AI Tooling</dd>
+              <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">COMPLIANCE STANDARD</dt>
+              <dd class="text-neutral-950 text-sm font-medium">GIGW (Guidelines for Indian Govt Websites)</dd>
+            </div>
+            <div>
+              <dt class="text-neutral-500 text-[10px] tracking-[0.22em] uppercase mb-1 font-medium">CORE SYSTEMS</dt>
+              <dd class="text-neutral-950 text-sm font-medium">Dual Portals &amp; Figma AI Tooling</dd>
             </div>
           </dl>
         </div>
       </div>
     </div>
 
-    <!-- Monumental Hero Image Spread -->
-    <div class="relative overflow-hidden pt-8 border-t border-neutral-200">
-      <div class="aspect-[16/10] overflow-hidden bg-white/90 border border-neutral-200/90 shadow-xs flex items-center justify-center p-6 md:p-12">
-        <img
-          src="/assets/experience/omara-workflows.svg"
-          alt="Concepts for welfare application review and design-system workflows"
-          class="w-full h-auto max-h-[85%] object-contain hover:scale-[1.01] transition-luxury duration-700"
-        />
+    <!-- Executive Architecture Matrix: The Dual-Portal Operational Ecosystem -->
+    <div class="pt-8 border-t border-neutral-200">
+      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-500 uppercase font-medium mb-6">
+        Ecosystem Architecture · Dual-Portal Synchrony
       </div>
-      <div class="flex items-center justify-between text-[10px] font-mono tracking-widest text-neutral-600 uppercase mt-4 border-t border-neutral-200 pt-3 font-medium">
-        <span>Caseworker Triage Platform</span>
-        <span>Offline Welfare Intake &amp; Verification</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 01: KEY METRICS & SYSTEM IMPACT -->
-  <section class="py-24 border-y border-neutral-200 mb-36 md:mb-52">
-    <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase mb-16 font-medium">
-      01 / Key Impact &amp; System Metrics
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
-      <div class="space-y-4">
-        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-normal text-neutral-950 tracking-tight tabular-nums">
-          100<span class="text-amber-800 font-sans text-4xl sm:text-5xl font-medium">%</span>
-        </div>
-        <div class="text-[10px] font-mono uppercase tracking-[0.28em] text-neutral-600 font-medium">OFFLINE APPLICATION COVERAGE</div>
-        <p class="text-sm text-neutral-700 font-normal leading-relaxed max-w-[32ch]">
-          Unified digital review interface digitizing paper-based welfare submissions across regional field offices.
-        </p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-normal text-neutral-950 tracking-tight tabular-nums">
-          2<span class="text-amber-800 font-sans text-4xl sm:text-5xl font-medium"> Skills</span>
-        </div>
-        <div class="text-[10px] font-mono uppercase tracking-[0.28em] text-neutral-600 font-medium">DESIGN-SYSTEM AUTOMATION SKILLS</div>
-        <p class="text-sm text-neutral-700 font-normal leading-relaxed max-w-[32ch]">
-          Custom CLI-integrated agentic verification workflows validating component tokens and accessibility standards.
-        </p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="font-serif text-6xl sm:text-7xl lg:text-8xl font-normal text-neutral-950 tracking-tight tabular-nums">
-          ~85<span class="text-amber-800 font-sans text-4xl sm:text-5xl font-medium">%</span>
-        </div>
-        <div class="text-[10px] font-mono uppercase tracking-[0.28em] text-neutral-600 font-medium">PROTOTYPE ASSEMBLY TIME</div>
-        <p class="text-sm text-neutral-700 font-normal leading-relaxed max-w-[32ch]">
-          Accelerated design-to-Figma component assembly from hours of manual configuration to minutes.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 02: WELFARE APPLICATION REVIEW -->
-  <section class="mb-48 md:mb-60">
-    <div class="pb-5 mb-20 border-b border-neutral-200">
-      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium">
-        02 / Human-Centered Caseworker Review
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-24 items-start">
-      <div class="space-y-8">
-        <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance">
-          Resolving applicant gaps with structured clarification loops.
-        </h2>
-        <div class="space-y-6 text-neutral-700 font-normal text-lg leading-[1.8] max-w-[54ch]">
-          <p class="text-neutral-950 font-normal text-xl leading-relaxed">
-            When citizens apply for social benefits offline, missing documents or illegible forms traditionally trigger full rejections. Caseworkers were trapped between strict compliance rules and a desire to help vulnerable applicants.
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div class="border-t border-neutral-300 pt-6 space-y-4">
+          <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">SUBSYSTEM 01</span>
+          <h2 class="text-2xl font-serif text-neutral-950 font-normal">Citizen Application Portal</h2>
+          <p class="text-sm text-neutral-700 leading-relaxed font-normal">
+            A responsive web application enabling citizens to discover welfare schemes, complete self-guided eligibility evaluations, upload statutory proofs, and track application lifecycles.
           </p>
-          <p class="text-neutral-700">
-            I designed an intuitive clarification request mechanism directly into the caseworker portal. Rather than denying an application outright, officers can pinpoint exact gaps—requesting targeted supplementary verification with a single action, protecting citizen access to vital aid.
-          </p>
+          <ul class="space-y-2 text-xs font-mono text-neutral-600 pt-2 border-t border-neutral-200">
+            <li class="flex items-center gap-2">
+              <span class="text-amber-800 font-semibold">→</span> Guided offline paper digitization intake
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-amber-800 font-semibold">→</span> In-browser biometric liveness &amp; KYC
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-amber-800 font-semibold">→</span> Real-time clarification response channels
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <div class="space-y-6 font-mono text-xs text-neutral-700 pt-2 border-t border-neutral-200">
-        <div class="text-[10px] uppercase tracking-[0.28em] text-neutral-600 font-medium">CORE WORKFLOW PILLARS</div>
-        <div class="space-y-4">
-          <div class="flex items-start gap-4">
-            <span class="text-amber-800 font-semibold tabular-nums">01</span>
-            <span>Structured document discrepancy highlighting for caseworkers.</span>
-          </div>
-          <div class="flex items-start gap-4">
-            <span class="text-amber-800 font-semibold tabular-nums">02</span>
-            <span>One-click clarification notices sent to citizens via SMS/Mail.</span>
-          </div>
-          <div class="flex items-start gap-4">
-            <span class="text-amber-800 font-semibold tabular-nums">03</span>
-            <span>Audit-ready audit trails compliant with statutory welfare regulations.</span>
-          </div>
+        <div class="border-t border-neutral-300 pt-6 space-y-4">
+          <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">SUBSYSTEM 02</span>
+          <h2 class="text-2xl font-serif text-neutral-950 font-normal">Caseworker Adjudication Engine</h2>
+          <p class="text-sm text-neutral-700 leading-relaxed font-normal">
+            A high-throughput administrative portal for field officers and adjudicators to review incoming submissions, verify legal documentation, and resolve discrepancies without outright rejection.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-neutral-600 pt-2 border-t border-neutral-200">
+            <li class="flex items-center gap-2">
+              <span class="text-amber-800 font-semibold">→</span> Split-screen digitized document verification
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-amber-800 font-semibold">→</span> Single-click targeted citizen clarification loops
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-amber-800 font-semibold">→</span> Statutory audit trails compliant with welfare laws
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 03: DESIGN-SYSTEM AUTOMATION -->
-  <section class="mb-48 md:mb-60">
-    <div class="pb-5 mb-20 border-b border-neutral-200">
-      <div class="text-[10px] font-mono tracking-[0.28em] text-neutral-600 uppercase font-medium">
-        03 / Design System Automation
-      </div>
-    </div>
+  <!-- CHAPTER 01: DUAL OPERATIONAL WORKFLOWS -->
+  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
+    <ChapterMarker number="01" title="Dual Operational Workflows" />
 
-    <div class="max-w-4xl mb-24">
-      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 mb-6 font-normal text-balance">
-        Turning design-system maintenance into reusable agentic skills.
+    <div class="max-w-4xl mb-16">
+      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance mb-8">
+        Eliminating the dead-end rejection cycle.
       </h2>
-      <p class="text-xl text-neutral-800 font-normal leading-[1.7] max-w-[52ch]">
-        To maintain rigorous UI quality without slowing feature delivery, I engineered two Claude Code agentic skills that automate governance, accessibility audits, and prototype assembly.
+      <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-[1.75] max-w-[54ch] text-pretty">
+        Traditional welfare administration forces caseworkers to reject entire applications when a single document is unreadable or missing. I designed a synchronized bi-directional review workflow that allows officers to pause an application, request targeted supplementary verification, and let citizens resolve gaps without restarting.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-neutral-200 pt-16">
-      <div class="space-y-5">
-        <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">Tool 01 · Verification</span>
-        <h3 class="text-3xl font-serif text-neutral-950 font-normal">
-          Component Audit &amp; Linting
-        </h3>
-        <p class="text-base text-neutral-700 font-normal leading-[1.75]">
-          A specialized skill that audits React/HTML component implementations against internal design tokens, contrast ratios, and spacing scales. It automatically surfaces discrepancies and generates precise pull requests to fix drift.
+    <!-- Operational Workflow Ledger -->
+    <div class="border-t border-neutral-200 pt-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12">
+        <div class="space-y-3">
+          <div class="font-mono text-xs text-amber-800 font-semibold tracking-wider uppercase">01 / DISCREPANCY ISOLATION</div>
+          <h3 class="font-serif text-2xl text-neutral-950 font-normal">Targeted Gap Flagging</h3>
+          <p class="text-sm text-neutral-700 leading-relaxed">
+            Caseworkers pinpoint exact field discrepancies (e.g., blurred income proof or mismatched identity spellings) directly on the digitized application canvas.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="font-mono text-xs text-amber-800 font-semibold tracking-wider uppercase">02 / CITIZEN NOTIFICATION</div>
+          <h3 class="font-serif text-2xl text-neutral-950 font-normal">Multi-Channel Notice</h3>
+          <p class="text-sm text-neutral-700 leading-relaxed">
+            Citizens receive contextual SMS and portal alerts with a direct upload link, explaining precisely what proof is required within a statutory response window.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="font-mono text-xs text-amber-800 font-semibold tracking-wider uppercase">03 / IN-LINE RESOLUTION</div>
+          <h3 class="font-serif text-2xl text-neutral-950 font-normal">Preserved State Queue</h3>
+          <p class="text-sm text-neutral-700 leading-relaxed">
+            Uploaded supplementary documents attach directly to the existing case file, allowing the assigned officer to resume adjudication without queuing behind fresh submissions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 02: VERIFICATION & STATUTORY LEGAL WORKFLOWS -->
+  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
+    <ChapterMarker number="02" title="Verification & Statutory Workflows" />
+
+    <div class="max-w-4xl mb-16">
+      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance mb-8">
+        Reconciling high-stakes legal proofs and fraud defense.
+      </h2>
+      <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-[1.75] max-w-[54ch] text-pretty">
+        Public benefit distribution carries stringent anti-fraud requirements and complex legal prerequisites. I architected end-to-end verification flows that handled statutory affidavits, banking validation, and identity assurance directly inside the digital intake sequence.
+      </p>
+    </div>
+
+    <!-- Statutory Verification Ledger: Tabular Swiss Matrix -->
+    <div class="border-t border-neutral-200 divide-y divide-neutral-200 text-sm">
+      <div class="py-6 grid grid-cols-1 md:grid-cols-[1.2fr_2fr_1fr] gap-4 md:gap-8 items-baseline">
+        <div class="font-mono text-xs text-neutral-950 font-medium uppercase tracking-wider">
+          Identity Assurance &amp; Fraud Defense
+        </div>
+        <p class="text-neutral-700 leading-relaxed">
+          Integrated in-browser liveness checks and deepfake detection heuristics to confirm applicant physical presence during remote onboarding, preventing synthetic identity fraud across high-value subsidy programs.
+        </p>
+        <div class="font-mono text-xs text-neutral-500">
+          Liveness + Deepfake Heuristics
+        </div>
+      </div>
+
+      <div class="py-6 grid grid-cols-1 md:grid-cols-[1.2fr_2fr_1fr] gap-4 md:gap-8 items-baseline">
+        <div class="font-mono text-xs text-neutral-950 font-medium uppercase tracking-wider">
+          Financial &amp; Direct Benefit Transfer
+        </div>
+        <p class="text-neutral-700 leading-relaxed">
+          Architected penny-drop bank account verification and automated IFSC reconciliation workflows, confirming active account ownership before disbursing social security or educational grants.
+        </p>
+        <div class="font-mono text-xs text-neutral-500">
+          Penny-Drop + IFSC Lookup
+        </div>
+      </div>
+
+      <div class="py-6 grid grid-cols-1 md:grid-cols-[1.2fr_2fr_1fr] gap-4 md:gap-8 items-baseline">
+        <div class="font-mono text-xs text-neutral-950 font-medium uppercase tracking-wider">
+          Statutory Legal Instruments
+        </div>
+        <p class="text-neutral-700 leading-relaxed">
+          Standardized document intake schemas accommodating sworn affidavits, No Objection Certificates (NOC), indemnity bonds, and formal disability/medical certificates with notary stamp verification cues.
+        </p>
+        <div class="font-mono text-xs text-neutral-500">
+          Affidavits, NOCs, Bonds
+        </div>
+      </div>
+
+      <div class="py-6 grid grid-cols-1 md:grid-cols-[1.2fr_2fr_1fr] gap-4 md:gap-8 items-baseline">
+        <div class="font-mono text-xs text-neutral-950 font-medium uppercase tracking-wider">
+          Physical Document Digitization
+        </div>
+        <p class="text-neutral-700 leading-relaxed">
+          Engineered field-counter ingestion flows enabling caseworkers to rapidly scan, OCR-index, and stitch handwritten physical citizen applications into the digital adjudication stream.
+        </p>
+        <div class="font-mono text-xs text-neutral-500">
+          Paper Scan + OCR Ingestion
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 03: THE COMPONENT SYSTEM & GIGW COMPLIANCE -->
+  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
+    <ChapterMarker number="03" title="Design System & GIGW Compliance" />
+
+    <div class="max-w-4xl mb-16">
+      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance mb-8">
+        A resilient design system built for statutory diversity.
+      </h2>
+      <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-[1.75] max-w-[54ch] text-pretty">
+        Because Indian government welfare schemes span agriculture, education, healthcare, and social welfare, the component system had to accommodate wildly different data schemas. I audited statutory scheme requirements across ministries to build standardized, reusable domain patterns while ensuring strict compliance with Guidelines for Indian Government Websites (GIGW).
+      </p>
+    </div>
+
+    <!-- Domain Patterns & Compliance Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-neutral-200 pt-10">
+      <div class="space-y-4">
+        <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">Domain Pattern 01</span>
+        <h3 class="text-2xl font-serif text-neutral-950 font-normal">Land &amp; Property Structures</h3>
+        <p class="text-base text-neutral-700 leading-relaxed font-normal">
+          Designed dedicated input components for rural land parcel identification, khata/patta registration numbers, crop survey demarcations, and joint ownership splits required for agricultural subsidy schemes.
         </p>
       </div>
 
-      <div class="space-y-5">
-        <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">Tool 02 · Generation</span>
-        <h3 class="text-3xl font-serif text-neutral-950 font-normal">
-          High-Fidelity Prototype Assembly
-        </h3>
-        <p class="text-base text-neutral-700 font-normal leading-[1.75]">
-          An automated generation pipeline that converts structured user flow descriptions into token-accurate, interactive layout structures—reducing prototype creation time from multiple hours to minutes.
+      <div class="space-y-4">
+        <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">Domain Pattern 02</span>
+        <h3 class="text-2xl font-serif text-neutral-950 font-normal">Family &amp; Demographic Mapping</h3>
+        <p class="text-base text-neutral-700 leading-relaxed font-normal">
+          Created dynamic family composition components supporting joint household structures, dependent categorization, ration card hierarchies, and guardian verification for child welfare programs.
         </p>
+      </div>
+
+      <div class="space-y-4 border-t border-neutral-200 pt-8">
+        <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">Domain Pattern 03</span>
+        <h3 class="text-2xl font-serif text-neutral-950 font-normal">Income &amp; Asset Attestation</h3>
+        <p class="text-base text-neutral-700 leading-relaxed font-normal">
+          Standardized multi-source income capture flows, BPL/EWS economic category validation, and asset self-declaration matrices with automated cross-field consistency checks.
+        </p>
+      </div>
+
+      <div class="space-y-4 border-t border-neutral-200 pt-8">
+        <span class="text-[10px] font-mono text-amber-800 uppercase tracking-widest block font-medium">Governance &amp; Accessibility</span>
+        <h3 class="text-2xl font-serif text-neutral-950 font-normal">GIGW &amp; Linguistic Inclusivity</h3>
+        <p class="text-base text-neutral-700 leading-relaxed font-normal">
+          Architected color tokens and typographic scales adhering to WCAG AAA contrast ratios, keyboard-navigable focus states, and multilingual layouts accommodating variable script lengths across Indic languages.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 04: AGENTIC DESIGN AUTOMATION -->
+  <section class="pt-24 pb-8 border-t border-neutral-200 mb-32 md:mb-48">
+    <ChapterMarker number="04" title="Agentic Design Automation" />
+
+    <div class="max-w-4xl mb-16">
+      <h2 class="font-serif text-4xl sm:text-6xl text-neutral-950 leading-[1.05] tracking-tight font-normal text-balance mb-8">
+        Automating design governance and prototype synthesis.
+      </h2>
+      <p class="text-xl sm:text-2xl text-neutral-800 font-normal leading-[1.75] max-w-[54ch] text-pretty">
+        Manually auditing hundreds of Figma components against statutory guidelines and building complex multi-state form animations was a major operational bottleneck. I engineered two custom agentic skills that automated component quality assurance, documentation generation, and prototype assembly.
+      </p>
+    </div>
+
+    <!-- Agentic Skills Ledger -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-neutral-200 pt-10">
+      <div class="space-y-6">
+        <StepEyebrow label="AGENTIC SKILL" number="01" accent />
+        <h3 class="text-3xl font-serif text-neutral-950 font-normal">
+          Figma Component Auditor &amp; Doc Generator
+        </h3>
+        <p class="text-base text-neutral-700 font-normal leading-relaxed">
+          An agentic skill that traverses Figma component nodes via API, evaluating them against internal token standards, autolayout constraints, and GIGW accessibility ratios. When discrepancies are detected, it automatically applies structural corrections in Figma and writes comprehensive, structured component specifications directly into Notion.
+        </p>
+        <div class="bg-neutral-100/70 border border-neutral-200/80 p-5 rounded-xs font-mono text-xs text-neutral-700 space-y-2">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">EXECUTION CYCLE</div>
+          <div class="text-neutral-950 font-medium">Node Inspection → Token Validation → Auto-Fix → Notion Spec Sync</div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <StepEyebrow label="AGENTIC SKILL" number="02" accent />
+        <h3 class="text-3xl font-serif text-neutral-950 font-normal">
+          Doc-Driven Prototype Synthesizer
+        </h3>
+        <p class="text-base text-neutral-700 font-normal leading-relaxed">
+          An automated generation skill that ingests structured user journey documentation and form specifications from Notion, programmatically instantiating token-accurate component variants in Figma and linking multi-frame interactive animation transitions—saving days of manual, frame-by-frame prototype wiring.
+        </p>
+        <div class="bg-neutral-100/70 border border-neutral-200/80 p-5 rounded-xs font-mono text-xs text-neutral-700 space-y-2">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">EXECUTION CYCLE</div>
+          <div class="text-neutral-950 font-medium">Notion Schema → Variant Resolution → Frame Composition → Animation Linkage</div>
+        </div>
       </div>
     </div>
   </section>
