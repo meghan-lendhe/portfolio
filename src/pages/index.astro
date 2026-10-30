@@ -226,160 +226,31 @@ import RestingRule from '../components/case-study/RestingRule.astro';
     const connections = [];
     const activePulses = [];
 
-    // Audio Engine: Tactile Acoustic Physical Synthesizer (Museum-Grade Micro-Acoustics)
-    let audioCtx = null;
-    let audioEnabled = false;
-    const pentatonicScale = [293.66, 329.63, 369.99, 440.00, 493.88, 587.33, 659.25];
+    // Micro-Acoustics Biofeedback (Leveraging global window.NeuroAudio)
+    const pentatonicScale = (window.NeuroAudio && window.NeuroAudio.scale) || [293.66, 329.63, 369.99, 440.00, 493.88, 587.33, 659.25];
 
-    function initAudio() {
-      if (!audioCtx) {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        audioCtx = new AudioContext();
-      }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-      audioEnabled = true;
-    }
-
-    // Tactile Sub-Threshold Droplet
     function playTactileStimulus(intensity = 0.032) {
-      if (!audioEnabled || !audioCtx) return;
-      try {
-        const now = audioCtx.currentTime;
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        const filter = audioCtx.createBiquadFilter();
-
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(320, now);
-
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(150, now);
-        osc.frequency.exponentialRampToValueAtTime(70, now + 0.065);
-
-        gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(intensity, now + 0.004);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.075);
-
-        osc.connect(gain);
-        gain.connect(filter);
-        filter.connect(audioCtx.destination);
-
-        osc.start(now);
-        osc.stop(now + 0.08);
-      } catch(e) {}
+      if (window.NeuroAudio) window.NeuroAudio.playMallet(intensity);
     }
 
-    // Crystalline Celesta / Rhodes Tine Synaptic Chime
     function playSynapticChime(freq = 440, volume = 0.065) {
-      if (!audioEnabled || !audioCtx) return;
-      try {
-        const now = audioCtx.currentTime;
-        const filter = audioCtx.createBiquadFilter();
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(2200, now);
-        filter.Q.setValueAtTime(0.9, now);
-
-        const oscBody = audioCtx.createOscillator();
-        const gainBody = audioCtx.createGain();
-        oscBody.type = 'sine';
-        oscBody.frequency.setValueAtTime(freq, now);
-
-        gainBody.gain.setValueAtTime(0, now);
-        gainBody.gain.linearRampToValueAtTime(volume, now + 0.006);
-        gainBody.gain.exponentialRampToValueAtTime(0.0001, now + 0.52);
-
-        const oscTine = audioCtx.createOscillator();
-        const gainTine = audioCtx.createGain();
-        oscTine.type = 'sine';
-        oscTine.frequency.setValueAtTime(freq * 2.76, now);
-
-        gainTine.gain.setValueAtTime(0, now);
-        gainTine.gain.linearRampToValueAtTime(volume * 0.24, now + 0.004);
-        gainTine.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
-
-        const oscMallet = audioCtx.createOscillator();
-        const gainMallet = audioCtx.createGain();
-        oscMallet.type = 'triangle';
-        oscMallet.frequency.setValueAtTime(freq * 0.5, now);
-        oscMallet.frequency.exponentialRampToValueAtTime(90, now + 0.035);
-
-        gainMallet.gain.setValueAtTime(volume * 0.32, now);
-        gainMallet.gain.exponentialRampToValueAtTime(0.0001, now + 0.038);
-
-        oscBody.connect(gainBody);
-        gainBody.connect(filter);
-        oscTine.connect(gainTine);
-        gainTine.connect(filter);
-        oscMallet.connect(gainMallet);
-        gainMallet.connect(filter);
-        filter.connect(audioCtx.destination);
-
-        oscBody.start(now);
-        oscTine.start(now);
-        oscMallet.start(now);
-        oscBody.stop(now + 0.55);
-        oscTine.stop(now + 0.1);
-        oscMallet.stop(now + 0.045);
-      } catch(e) {}
+      if (window.NeuroAudio) window.NeuroAudio.playCelesta(freq, volume);
     }
 
-    // Graceful Cinematic Global Ignition Chord
+    // Graceful Cinematic Global Ignition Cascade
     function playIgnitionChord() {
-      if (!audioEnabled || !audioCtx) return;
-      try {
-        const now = audioCtx.currentTime;
-        const filter = audioCtx.createBiquadFilter();
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(280, now);
-        filter.frequency.exponentialRampToValueAtTime(1300, now + 1.1);
-        filter.frequency.exponentialRampToValueAtTime(240, now + 3.8);
-
-        const masterGain = audioCtx.createGain();
-        masterGain.gain.setValueAtTime(0, now);
-        masterGain.gain.linearRampToValueAtTime(0.07, now + 0.9);
-        masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 3.9);
-
-        filter.connect(masterGain);
-        masterGain.connect(audioCtx.destination);
-
-        const chordTones = [146.83, 220.00, 329.63, 369.99, 440.00, 587.33];
-        chordTones.forEach((freq, idx) => {
-          const osc = audioCtx.createOscillator();
-          const noteGain = audioCtx.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, now);
-
-          const voiceDelay = idx * 0.04;
-          noteGain.gain.setValueAtTime(0, now);
-          noteGain.gain.linearRampToValueAtTime(0.18, now + 0.8 + voiceDelay);
-          noteGain.gain.exponentialRampToValueAtTime(0.0001, now + 3.8);
-
-          osc.connect(noteGain);
-          noteGain.connect(filter);
-          osc.start(now);
-          osc.stop(now + 3.9);
-        });
-
-        const sparkles = [
-          { time: 0.18, freq: 587.33 },
-          { time: 0.48, freq: 739.99 },
-          { time: 0.82, freq: 880.00 },
-          { time: 1.20, freq: 1174.66 }
-        ];
-
-        sparkles.forEach(s => {
-          setTimeout(() => {
-            playSynapticChime(s.freq, 0.035);
-          }, s.time * 1000);
-        });
-
-      } catch(e) {}
+      if (!window.NeuroAudio) return;
+      const chordTones = [293.66, 369.99, 440.00, 587.33, 739.99, 880.00];
+      chordTones.forEach((f, idx) => {
+        setTimeout(() => {
+          window.NeuroAudio.playCelesta(f, 0.035);
+        }, idx * 70);
+      });
     }
 
     function resize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const isMobile = window.innerWidth < 768;
+      const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2);
       width = window.innerWidth;
       const heroEl = document.getElementById('hero');
       if (heroEl) {
@@ -392,15 +263,14 @@ import RestingRule from '../components/case-study/RestingRule.astro';
       canvas.height = height * dpr;
       canvas.style.width = width + 'px';
       canvas.style.height = height + 'px';
-      ctx.scale(dpr, dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
     resize();
     window.addEventListener('resize', resize);
 
-    // Track mouse & pointer for Thought Scribing & Dendritic Trailing
+    // Track mouse & pointer for Thought Scribing
     const scribedEngram = [];
-    const cursorTrail = [];
     let isIgniting = false;
     let rapidStimulusCount = 0;
     let lastStimulusTime = 0;
@@ -409,8 +279,6 @@ import RestingRule from '../components/case-study/RestingRule.astro';
       mouse.x = e.clientX;
       mouse.y = e.clientY + window.scrollY;
       mouse.active = true;
-
-
 
       if (mouse.isDown) {
         scribedEngram.push({ x: mouse.x, y: mouse.y, time: Date.now() });
@@ -429,7 +297,6 @@ import RestingRule from '../components/case-study/RestingRule.astro';
     window.addEventListener('pointerleave', () => {
       mouse.active = false;
       mouse.isDown = false;
-      cursorTrail.length = 0;
     });
 
     // Pointerdown: Stimulus Injection & Rapid Summation Check
@@ -446,8 +313,6 @@ import RestingRule from '../components/case-study/RestingRule.astro';
 
       mouse.isDown = true;
       scribedEngram.length = 0;
-
-      initAudio();
 
       const now = Date.now();
       if (now - lastStimulusTime < 750) {
@@ -513,8 +378,9 @@ import RestingRule from '../components/case-study/RestingRule.astro';
       neurons.forEach(n => n.isEngramRecruited = false);
     });
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
     const morphTypes = ['pyramidal', 'multipolar', 'bipolar'];
-    const numNeurons = 66;
+    const numNeurons = isMobile ? 24 : 66;
 
     for (let i = 0; i < numNeurons; i++) {
       const maxSpawnY = (height || 720) * 0.85;
@@ -1021,10 +887,44 @@ import RestingRule from '../components/case-study/RestingRule.astro';
         drawSoftHistologicalSoma(ctx, posX, posY, effectiveR, n.angle, n.potential, n.spikeEnergy, n.type, n.isEngramRecruited);
       }
 
-      requestAnimationFrame(render);
+      if (isVisible) {
+        animId = requestAnimationFrame(render);
+      }
     }
 
-    render();
+    let isVisible = true;
+    let animId = null;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        const nextVisible = entry.isIntersecting && !document.hidden;
+        if (nextVisible && !isVisible) {
+          isVisible = true;
+          if (!animId) animId = requestAnimationFrame(render);
+        } else if (!nextVisible && isVisible) {
+          isVisible = false;
+          if (animId) {
+            cancelAnimationFrame(animId);
+            animId = null;
+          }
+        }
+      }, { rootMargin: '120px 0px' });
+      observer.observe(canvas);
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && animId) {
+        isVisible = false;
+        cancelAnimationFrame(animId);
+        animId = null;
+      } else if (!document.hidden && !animId) {
+        isVisible = true;
+        animId = requestAnimationFrame(render);
+      }
+    });
+
+    animId = requestAnimationFrame(render);
   })();
 
   // Cortical Topography Scalp Potential Field Simulation
@@ -1251,9 +1151,43 @@ import RestingRule from '../components/case-study/RestingRule.astro';
         ctx.fill();
       }
 
-      requestAnimationFrame(render);
+      if (isVisible) {
+        animId = requestAnimationFrame(render);
+      }
     }
 
-    render();
+    let isVisible = true;
+    let animId = null;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        const nextVisible = entry.isIntersecting && !document.hidden;
+        if (nextVisible && !isVisible) {
+          isVisible = true;
+          if (!animId) animId = requestAnimationFrame(render);
+        } else if (!nextVisible && isVisible) {
+          isVisible = false;
+          if (animId) {
+            cancelAnimationFrame(animId);
+            animId = null;
+          }
+        }
+      }, { rootMargin: '120px 0px' });
+      observer.observe(canvas);
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && animId) {
+        isVisible = false;
+        cancelAnimationFrame(animId);
+        animId = null;
+      } else if (!document.hidden && !animId) {
+        isVisible = true;
+        animId = requestAnimationFrame(render);
+      }
+    });
+
+    animId = requestAnimationFrame(render);
   })();
 </script>

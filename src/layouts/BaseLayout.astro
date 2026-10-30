@@ -8,14 +8,12 @@ import GutterArbor from '../components/telemetry/GutterArbor.astro';
 interface Props {
   title: string;
   description?: string;
-  includeCaseStudyScript?: boolean;
   theme?: 'light' | 'dark';
 }
 
 const {
   title,
   description = "Product Designer & NeuroHCI Researcher specializing in neural interfaces, biosignal computing (EEG/EMG), and high-complexity human-system operational workflows.",
-  includeCaseStudyScript = false,
   theme = 'light'
 } = Astro.props;
 
@@ -58,7 +56,14 @@ const ogImageUrl = 'https://meghan.in/assets/og-image.png';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet" />
     <script is:inline>
-      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","yfijkirjjz");
+      const loadClarity = () => {
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","yfijkirjjz");
+      };
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadClarity, { timeout: 3000 });
+      } else {
+        window.addEventListener('load', loadClarity, { once: true });
+      }
     </script>
   </head>
   <body class={isDark ? "bg-[#111215] text-neutral-100 font-sans selection:bg-amber-400/20 selection:text-amber-200 antialiased" : "bg-neutral-50 text-black font-sans antialiased"}>
@@ -79,18 +84,19 @@ const ogImageUrl = 'https://meghan.in/assets/og-image.png';
     <script is:inline src="/assets/js/neuro-audio.js"></script>
     <script is:inline src="/assets/js/dendritic-cursor.js"></script>
     <script is:inline src="/assets/js/contact.js"></script>
-    {includeCaseStudyScript && <script is:inline src="/assets/js/case-study.js"></script>}
 
     <script is:inline>
-      // Action-Potential Cursor Tracking on Underlines
-      document.addEventListener('pointermove', (e) => {
-        const link = e.target && e.target.closest && e.target.closest('.action-potential-link');
-        if (link) {
-          const rect = link.getBoundingClientRect();
-          const x = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
-          link.style.setProperty('--pulse-x', `${x}px`);
-        }
-      }, { passive: true });
+      // Action-Potential Cursor Tracking on Underlines (Desktop fine pointer only)
+      if (window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('pointermove', (e) => {
+          const link = e.target && e.target.closest && e.target.closest('.action-potential-link');
+          if (link) {
+            const rect = link.getBoundingClientRect();
+            const x = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+            link.style.setProperty('--pulse-x', `${x}px`);
+          }
+        }, { passive: true });
+      }
     </script>
   </body>
 </html>

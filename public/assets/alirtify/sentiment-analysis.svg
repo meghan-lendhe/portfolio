@@ -1,0 +1,47 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Card Background -->
+  <rect width="480" height="320" rx="4" fill="#FAF9F5"/>
+  <rect x="0.5" y="0.5" width="479" height="319" rx="3.5" stroke="#E5E5E5"/>
+
+  <!-- Masthead Header -->
+  <text x="32" y="44" fill="#737373" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" letter-spacing="0.2em">CALIBRATED SPECTRUM · ARTICLE TONE</text>
+  <text x="448" y="44" text-anchor="end" fill="#0D9488" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" letter-spacing="0.1em">STATUS: NEUTRAL</text>
+  <line x1="32" y1="58" x2="448" y2="58" stroke="#E5E5E5" stroke-width="1"/>
+
+  <!-- Headline Mock -->
+  <text x="32" y="86" fill="#171717" font-family="'Newsreader', Georgia, serif" font-size="18" font-weight="400">Analysis of Public Health Spending Allocations</text>
+  <text x="32" y="106" fill="#737373" font-family="'Instrument Sans', sans-serif" font-size="12">Assessing emotional resonance across 14 statutory statements</text>
+
+  <!-- Metric Bar 01: Neutrality (Dominant) -->
+  <g transform="translate(32, 132)">
+    <text x="0" y="12" fill="#171717" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">NEUTRALITY</text>
+    <text x="416" y="12" text-anchor="end" fill="#171717" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">72%</text>
+    <rect y="20" width="416" height="6" rx="1" fill="#E5E5E5"/>
+    <rect y="20" width="300" height="6" rx="1" fill="#0D9488"/>
+  </g>
+
+  <!-- Metric Bar 02: Urgency -->
+  <g transform="translate(32, 174)">
+    <text x="0" y="12" fill="#525252" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">URGENCY</text>
+    <text x="416" y="12" text-anchor="end" fill="#525252" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">18%</text>
+    <rect y="20" width="416" height="6" rx="1" fill="#E5E5E5"/>
+    <rect y="20" width="75" height="6" rx="1" fill="#D97706"/>
+  </g>
+
+  <!-- Metric Bar 03: Joy -->
+  <g transform="translate(32, 216)">
+    <text x="0" y="12" fill="#737373" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">JOY</text>
+    <text x="416" y="12" text-anchor="end" fill="#737373" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">6%</text>
+    <rect y="20" width="416" height="6" rx="1" fill="#E5E5E5"/>
+    <rect y="20" width="25" height="6" rx="1" fill="#737373"/>
+  </g>
+
+  <!-- Metric Bar 04: Fear / Outrage (Low Priming Alert) -->
+  <g transform="translate(32, 258)">
+    <text x="0" y="12" fill="#737373" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">FEAR / PRIMING</text>
+    <text x="416" y="12" text-anchor="end" fill="#737373" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">4%</text>
+    <rect y="20" width="416" height="6" rx="1" fill="#E5E5E5"/>
+    <rect y="20" width="16" height="6" rx="1" fill="#737373"/>
+  </g>
+</svg>
+
