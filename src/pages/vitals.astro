@@ -144,24 +144,11 @@ import RestingRule from '../components/case-study/RestingRule.astro';
       </div>
     </div>
 
-    <div class="space-y-40">
+    <div class="space-y-36 md:space-y-48">
       
       <!-- Finding 01: Premature Data Collection -->
-      <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
-        <div class="relative overflow-hidden">
-          <Vitrine>
-            <img
-              src="/assets/vitals/findings/trust-issue.png"
-              alt="Legacy signup flow demanding personal details immediately after splash"
-              class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
-            />
-          </Vitrine>
-          <Caption as="p">
-            The original sign-up flow demanded intimate medical diagnoses immediately after registration, before establishing responder protocols.
-          </Caption>
-        </div>
-
-        <div class="space-y-6 lg:pt-2">
+      <article class="space-y-8 group">
+        <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
             <StepEyebrow label="DIAGNOSTIC" number="01" accent />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
@@ -174,7 +161,7 @@ import RestingRule from '../components/case-study/RestingRule.astro';
             <span class="text-xs font-mono uppercase tracking-widest text-neutral-600 font-medium">DISCLOSURE RESISTANCE</span>
           </div>
 
-          <p class="text-base text-neutral-700 font-normal leading-[1.75]">
+          <p class="text-lg text-neutral-700 font-normal leading-relaxed">
             Seven in ten interviewed caregivers expressed acute hesitation disclosing neurological conditions, medications, or behavioral triggers before understanding how data was protected or who held authority to view it.
           </p>
 
@@ -182,11 +169,25 @@ import RestingRule from '../components/case-study/RestingRule.astro';
             “Why do you need my daughter’s diagnosis before you’ve even shown me how a police officer will see it?”
           </blockquote>
         </div>
+
+        <figure class="w-full">
+          <Vitrine>
+            <img
+              src="/assets/vitals/findings/trust-issue.png"
+              alt="Legacy signup flow demanding personal details immediately after splash"
+              class="w-full h-auto object-contain block group-hover:scale-[1.005] transition-luxury duration-700"
+              loading="lazy"
+            />
+          </Vitrine>
+          <Caption as="p">
+            The original sign-up flow demanded intimate medical diagnoses immediately after registration, before establishing responder protocols.
+          </Caption>
+        </figure>
       </article>
 
       <!-- Finding 02: Plan Selection Cognitive Load -->
-      <article class="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-16 items-start group">
-        <div class="space-y-6 order-2 lg:order-1 lg:pt-2">
+      <article class="space-y-8 group">
+        <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
             <StepEyebrow label="DIAGNOSTIC" number="02" accent />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
@@ -194,7 +195,7 @@ import RestingRule from '../components/case-study/RestingRule.astro';
             </h3>
           </div>
 
-          <p class="text-base text-neutral-700 font-normal leading-[1.75]">
+          <p class="text-lg text-neutral-700 font-normal leading-relaxed">
             Users faced a dense pricing table without knowing whether the service functioned in their specific county or city. Caregivers worried they would pay for an emergency ID that local first responders couldn't actually scan.
           </p>
 
@@ -203,36 +204,24 @@ import RestingRule from '../components/case-study/RestingRule.astro';
           </blockquote>
         </div>
 
-        <div class="order-1 lg:order-2 relative overflow-hidden">
+        <figure class="w-full">
           <Vitrine>
             <img
               src="/assets/vitals/findings/plan-confusion.png"
               alt="Legacy pricing buttons lacking geographic verification"
-              class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
+              class="w-full h-auto object-contain block group-hover:scale-[1.005] transition-luxury duration-700"
+              loading="lazy"
             />
           </Vitrine>
           <Caption as="p">
             The legacy pricing screen forced users to choose statewide vs. regional plans without confirming whether local responders supported the beacon.
           </Caption>
-        </div>
+        </figure>
       </article>
 
       <!-- Finding 03: Buried Reassurance -->
-      <article class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start group">
-        <div class="relative overflow-hidden">
-          <Vitrine>
-            <img
-              src="/assets/vitals/findings/visual-hierarchy.png"
-              alt="Legacy screen hiding free trial and cancellation terms below the fold"
-              class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
-            />
-          </Vitrine>
-          <Caption as="p">
-            Crucial trial terms, cancellation policies, and ID card previews were buried below the fold, creating fear of financial commitment.
-          </Caption>
-        </div>
-
-        <div class="space-y-6 lg:pt-2">
+      <article class="space-y-8 group">
+        <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
             <StepEyebrow label="DIAGNOSTIC" number="03" accent />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
@@ -240,10 +229,24 @@ import RestingRule from '../components/case-study/RestingRule.astro';
             </h3>
           </div>
 
-          <p class="text-base text-neutral-700 font-normal leading-[1.75]">
+          <p class="text-lg text-neutral-700 font-normal leading-relaxed">
             Essential reassurances—including a 30-day trial, sample ID previews, and cancel-anytime policies—were buried in fine print below the fold. Users assumed they were locking into an immediate, irreversible financial trap.
           </p>
         </div>
+
+        <figure class="w-full">
+          <Vitrine>
+            <img
+              src="/assets/vitals/findings/visual-hierarchy.png"
+              alt="Legacy screen hiding free trial and cancellation terms below the fold"
+              class="w-full h-auto object-contain block group-hover:scale-[1.005] transition-luxury duration-700"
+              loading="lazy"
+            />
+          </Vitrine>
+          <Caption as="p">
+            Crucial trial terms, cancellation policies, and ID card previews were buried below the fold, creating fear of financial commitment.
+          </Caption>
+        </figure>
       </article>
 
     </div>
@@ -278,118 +281,122 @@ import RestingRule from '../components/case-study/RestingRule.astro';
       </p>
     </div>
 
-    <div class="space-y-48">
+    <div class="space-y-36 md:space-y-48">
       
       <!-- Feature 01: Value-First Landing Page -->
-      <article class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-16 items-start group">
-        <div class="space-y-6 lg:pt-8">
+      <article class="space-y-8 group">
+        <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
             <StepEyebrow label="INTERVENTION" number="01" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Showing the beacon in action before signup
             </h3>
           </div>
-          <p class="text-base text-neutral-700 font-normal leading-[1.75]">
+          <p class="text-lg text-neutral-700 font-normal leading-relaxed">
             Before asking for an email or password, the revised landing experience demonstrates how local police and paramedics scan the digital ID card. Families immediately see how their vulnerable loved ones are safeguarded, replacing mystery with tangible relief.
           </p>
         </div>
 
-        <div class="relative overflow-hidden">
-          <Vitrine padded class="p-6 sm:p-10">
+        <figure class="w-full">
+          <Vitrine padded class="p-8 sm:p-12 flex justify-center items-center">
             <img
               src="/assets/vitals/solutions/trust-screen.png"
               alt="Trust-centered welcome screen with sample profile preview and security assurances"
-              class="max-h-[560px] w-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
+              class="w-full max-w-[420px] h-auto object-contain mx-auto block group-hover:scale-[1.01] transition-luxury duration-700"
+              loading="lazy"
             />
           </Vitrine>
           <Caption as="p">
             Caregivers preview exactly what first responders will see during a call, removing ambiguity around data access.
           </Caption>
-        </div>
+        </figure>
       </article>
 
       <!-- Feature 02: Geographic Verification & Plan Selection -->
-      <article class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start group">
-        <div class="space-y-6 order-2 lg:order-1 lg:pt-8">
+      <article class="space-y-8 group">
+        <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
             <StepEyebrow label="INTERVENTION" number="02" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Transparent plans with local verification
             </h3>
           </div>
-          <p class="text-base text-neutral-700 font-normal leading-[1.75]">
+          <p class="text-lg text-neutral-700 font-normal leading-relaxed">
             Plan selection now begins with entering the user's primary zip code to immediately verify local 911 coverage. Transparent card tiers outline regional versus statewide capabilities, with sample responder previews and clear 30-day trial assurances directly beside the action button.
           </p>
         </div>
 
-        <div class="order-1 lg:order-2 relative overflow-hidden">
+        <figure class="w-full">
           <Vitrine>
             <img
               src="/assets/vitals/solutions/plan-selection.png"
               alt="Zip code coverage verification and clear transparent plan tiers"
-              class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
+              class="w-full h-auto object-contain block group-hover:scale-[1.005] transition-luxury duration-700"
+              loading="lazy"
             />
           </Vitrine>
           <Caption as="p">
             Zip-code verification confirms active first-responder partnerships before users commit to a subscription.
           </Caption>
-        </div>
+        </figure>
       </article>
 
       <!-- Feature 03: Progressive Clinical Disclosure -->
-      <article class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-16 items-start group">
-        <div class="relative overflow-hidden">
-          <Vitrine>
-            <img
-              src="/assets/vitals/solutions/data-collection.png"
-              alt="Focused single-question registration steps with clear purpose explanation"
-              class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
-            />
-          </Vitrine>
-          <Caption as="p">
-            Single-question progressive disclosure cards explain why each data field is needed and who is authorized to view it.
-          </Caption>
-        </div>
-
-        <div class="space-y-6 lg:pt-8">
+      <article class="space-y-8 group">
+        <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
             <StepEyebrow label="INTERVENTION" number="03" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Progressive disclosure for personal data
             </h3>
           </div>
-          <p class="text-base text-neutral-700 font-normal leading-[1.75]">
+          <p class="text-lg text-neutral-700 font-normal leading-relaxed">
             We divided lengthy registration forms into focused, single-question steps. Each input field explicitly explains why the data is requested—distinguishing between urgent security verification and plan management notifications—so users never wonder why their contact details are needed.
           </p>
         </div>
+
+        <figure class="w-full">
+          <Vitrine>
+            <img
+              src="/assets/vitals/solutions/data-collection.png"
+              alt="Focused single-question registration steps with clear purpose explanation"
+              class="w-full h-auto object-contain block group-hover:scale-[1.005] transition-luxury duration-700"
+              loading="lazy"
+            />
+          </Vitrine>
+          <Caption as="p">
+            Single-question progressive disclosure cards explain why each data field is needed and who is authorized to view it.
+          </Caption>
+        </figure>
       </article>
 
       <!-- Feature 04: Persistent Contextual Support -->
-      <article class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start group">
-        <div class="space-y-6 order-2 lg:order-1 lg:pt-8">
+      <article class="space-y-8 group">
+        <div class="max-w-3xl space-y-4">
           <div class="space-y-2">
             <StepEyebrow label="INTERVENTION" number="04" />
             <h3 class="text-3xl font-serif text-neutral-950 font-normal">
               Persistent contextual support
             </h3>
           </div>
-          <p class="text-base text-neutral-700 font-normal leading-[1.75]">
+          <p class="text-lg text-neutral-700 font-normal leading-relaxed">
             Persistent in-flow help triggers—including "Get Help" and "Contact Support"—are anchored directly into every step. Caregivers can clarify questions or verify details without abandoning the flow or losing their place in the enrollment journey.
           </p>
         </div>
 
-        <div class="order-1 lg:order-2 relative overflow-hidden">
+        <figure class="w-full">
           <Vitrine>
             <img
               src="/assets/vitals/solutions/help-access.png"
               alt="Persistent in-flow help triggers reducing drop-off anxiety"
-              class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
+              class="w-full h-auto object-contain block group-hover:scale-[1.005] transition-luxury duration-700"
+              loading="lazy"
             />
           </Vitrine>
           <Caption as="p">
             Persistent 'Get Help' and 'Contact Support' actions allow caregivers to resolve questions without losing their progress.
           </Caption>
-        </div>
+        </figure>
       </article>
 
     </div>
