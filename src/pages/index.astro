@@ -910,8 +910,7 @@ import RestingRule from '../components/case-study/RestingRule.astro';
         const posX = n.x + n.jitterX;
         const posY = n.y + n.jitterY;
 
-        const effectiveR = n.radius * (1.0 + n.potential * 0.2 + n.spikeEnergy * 0.5);
-        drawSoftHistologicalSoma(ctx, posX, posY, effectiveR, n.angle, n.potential, n.spikeEnergy, n.type, n.isEngramRecruited);
+        drawSoftHistologicalSoma(ctx, posX, posY, n.radius, n.angle, n.potential, n.spikeEnergy, n.type, n.isEngramRecruited);
       }
 
       if (isVisible) {
