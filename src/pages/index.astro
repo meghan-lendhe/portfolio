@@ -468,24 +468,26 @@ import RestingRule from '../components/case-study/RestingRule.astro';
       const d = Math.hypot(dx, dy) || 1;
 
       const sign = Math.random() > 0.5 ? 1 : -1;
-      const maxOffset = Math.min(d * 0.35, 48);
-      const offset1 = sign * (18 + Math.random() * (maxOffset - 18));
-      const offset2 = -sign * (16 + Math.random() * (maxOffset - 16));
+      // Taut, elegant biological bowing along perpendicular normal vector:
+      // Subtle 5px to 12px deflection with matching signs (No opposing S-curves)
+      const bow = sign * (4.5 + Math.random() * Math.min(d * 0.08, 7.5));
+      const offset1 = bow;
+      const offset2 = bow * (0.85 + (Math.random() - 0.5) * 0.15); // SAME SIGN!
 
-      const numBoutons = 2 + Math.floor(Math.random() * 3);
+      const numBoutons = 2 + Math.floor(Math.random() * 2);
       const boutons = [];
       for (let b = 0; b < numBoutons; b++) {
         boutons.push({
-          t: 0.22 + Math.random() * 0.56,
-          radius: 1.1 + Math.random() * 0.7
+          t: 0.25 + Math.random() * 0.50,
+          radius: 1.1 + Math.random() * 0.5
         });
       }
 
       connections.push({
         from: i,
         to: j,
-        t1: 0.32 + (Math.random() - 0.5) * 0.08,
-        t2: 0.68 + (Math.random() - 0.5) * 0.08,
+        t1: 0.35 + (Math.random() - 0.5) * 0.05,
+        t2: 0.65 + (Math.random() - 0.5) * 0.05,
         offset1: offset1,
         offset2: offset2,
         boutons: boutons,
@@ -669,35 +671,60 @@ import RestingRule from '../components/case-study/RestingRule.astro';
       }
       ctx.fill();
 
+      // Delicate dendritic arbor with Cajal gemmules (dendritic spines)
       ctx.beginPath();
       if (type === 'pyramidal') {
+        // Apical dendritic trunk
         ctx.moveTo(0, -r * 1.2);
-        ctx.quadraticCurveTo(r * 0.3, -r * 2.2, 0, -r * 3.2);
-        ctx.moveTo(0, -r * 3.2);
-        ctx.quadraticCurveTo(-r * 0.6, -r * 4.0, -r * 0.9, -r * 4.6);
-        ctx.moveTo(0, -r * 3.2);
-        ctx.quadraticCurveTo(r * 0.6, -r * 4.0, r * 0.9, -r * 4.6);
+        ctx.quadraticCurveTo(r * 0.25, -r * 2.2, 0, -r * 3.4);
+
+        // Apical gemmules / dendritic spines (micro-spines along shaft)
+        ctx.moveTo(-0.4, -r * 1.8); ctx.lineTo(-r * 0.65, -r * 1.95);
+        ctx.moveTo(0.4, -r * 2.4);  ctx.lineTo(r * 0.65, -r * 2.55);
+        ctx.moveTo(-0.4, -r * 2.9); ctx.lineTo(-r * 0.60, -r * 3.05);
+
+        // Terminal apical bifurcation
+        ctx.moveTo(0, -r * 3.4);
+        ctx.quadraticCurveTo(-r * 0.55, -r * 4.1, -r * 0.95, -r * 4.7);
+        ctx.moveTo(0, -r * 3.4);
+        ctx.quadraticCurveTo(r * 0.55, -r * 4.1, r * 0.95, -r * 4.7);
+
+        // Basal dendritic skirt
         ctx.moveTo(-r * 0.8, r * 1.0);
-        ctx.quadraticCurveTo(-r * 1.6, r * 1.8, -r * 2.4, r * 2.5);
+        ctx.quadraticCurveTo(-r * 1.5, r * 1.7, -r * 2.3, r * 2.4);
+        ctx.moveTo(-r * 1.5, r * 1.7);
+        ctx.lineTo(-r * 2.1, r * 1.4);
+
         ctx.moveTo(r * 0.8, r * 1.0);
-        ctx.quadraticCurveTo(r * 1.6, r * 1.8, r * 2.4, r * 2.5);
+        ctx.quadraticCurveTo(r * 1.5, r * 1.7, r * 2.3, r * 2.4);
+        ctx.moveTo(r * 1.5, r * 1.7);
+        ctx.lineTo(r * 2.1, r * 1.4);
       } else if (type === 'bipolar') {
+        // Superior and inferior poles with fine spines
         ctx.moveTo(0, -r * 1.4);
-        ctx.quadraticCurveTo(r * 0.4, -r * 2.4, 0, -r * 3.4);
+        ctx.quadraticCurveTo(r * 0.35, -r * 2.4, 0, -r * 3.5);
+        ctx.moveTo(-0.4, -r * 2.2); ctx.lineTo(-r * 0.55, -r * 2.35);
+
         ctx.moveTo(0, r * 1.4);
-        ctx.quadraticCurveTo(-r * 0.4, r * 2.4, 0, r * 3.4);
+        ctx.quadraticCurveTo(-r * 0.35, r * 2.4, 0, -r * 3.5);
+        ctx.moveTo(0.4, r * 2.2); ctx.lineTo(r * 0.55, r * 2.35);
       } else {
+        // Stellate / Multipolar radiating arbor
         const branches = 4;
         for (let b = 0; b < branches; b++) {
           const ba = (b * Math.PI * 2) / branches;
           const sx = Math.cos(ba) * r * 0.9;
           const sy = Math.sin(ba) * r * 0.9;
-          const mx = Math.cos(ba + 0.3) * r * 2.0;
-          const my = Math.sin(ba + 0.3) * r * 2.0;
-          const ex = Math.cos(ba - 0.15) * r * 3.0;
-          const ey = Math.sin(ba - 0.15) * r * 3.0;
+          const mx = Math.cos(ba + 0.25) * r * 2.0;
+          const my = Math.sin(ba + 0.25) * r * 2.0;
+          const ex = Math.cos(ba - 0.12) * r * 3.1;
+          const ey = Math.sin(ba - 0.12) * r * 3.1;
           ctx.moveTo(sx, sy);
           ctx.quadraticCurveTo(mx, my, ex, ey);
+
+          // Micro-twig on branch
+          ctx.moveTo(mx, my);
+          ctx.lineTo(mx + Math.cos(ba + 0.8) * r * 0.9, my + Math.sin(ba + 0.8) * r * 0.9);
         }
       }
 
