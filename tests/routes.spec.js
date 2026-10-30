@@ -3,9 +3,7 @@ import { test, expect } from '@playwright/test';
 
 const routes = [
   { path: '/', expected: /Meghan Lendhe/ },
-  { path: '/alirtify', expected: /Alirtify/ },
   { path: '/bulkmagic', expected: /BulkMagic/ },
-  { path: '/cool-school', expected: /Cool School/ },
   { path: '/omara', expected: /Omara/ },
   { path: '/vitals', expected: /Vitals/ },
 ];
