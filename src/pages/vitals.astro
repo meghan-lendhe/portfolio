@@ -4,6 +4,7 @@ import ChapterMarker from '../components/case-study/ChapterMarker.astro';
 import StepEyebrow from '../components/case-study/StepEyebrow.astro';
 import Vitrine from '../components/case-study/Vitrine.astro';
 import Caption from '../components/case-study/Caption.astro';
+import PhoneFrame from '../components/case-study/PhoneFrame.astro';
 import RestingRule from '../components/case-study/RestingRule.astro';
 ---
 
@@ -83,12 +84,15 @@ import RestingRule from '../components/case-study/RestingRule.astro';
       </div>
 
       <div class="relative overflow-hidden">
-        <Vitrine padded class="p-4 sm:p-8">
-          <img
-            src="/assets/vitals/sample-id.png"
-            alt="Sample emergency medical profile accessed by first responders"
-            class="max-h-[580px] w-auto object-contain hover:scale-[1.015] transition-luxury duration-700"
-          />
+        <Vitrine padded class="p-6 sm:p-10 flex items-center justify-center">
+          <PhoneFrame class="w-[240px] sm:w-[270px] lg:w-[290px] h-[435px] sm:h-[490px] lg:h-[525px]">
+            <img
+              src="/assets/vitals/sample-id-screen.png"
+              alt="Sample emergency medical profile accessed by first responders"
+              class="w-full h-full object-contain block pointer-events-none select-none"
+              loading="lazy"
+            />
+          </PhoneFrame>
         </Vitrine>
         <Caption as="p">
           The emergency beacon profile gives first responders immediate de-escalation protocols and critical medical history on dispatch.
@@ -147,8 +151,8 @@ import RestingRule from '../components/case-study/RestingRule.astro';
         <div class="relative overflow-hidden">
           <Vitrine>
             <img
-              src="/assets/vitals/findings/premature-data.png"
-              alt="Legacy signup screen asking for intimate diagnoses immediately"
+              src="/assets/vitals/findings/trust-issue.png"
+              alt="Legacy signup flow demanding personal details immediately after splash"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
           </Vitrine>
@@ -291,11 +295,11 @@ import RestingRule from '../components/case-study/RestingRule.astro';
         </div>
 
         <div class="relative overflow-hidden">
-          <Vitrine>
+          <Vitrine padded class="p-6 sm:p-10">
             <img
-              src="/assets/vitals/solutions/value-landing.png"
-              alt="Redesigned landing screen establishing immediate responder value and local trust"
-              class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
+              src="/assets/vitals/solutions/trust-screen.png"
+              alt="Trust-centered welcome screen with sample profile preview and security assurances"
+              class="max-h-[560px] w-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
           </Vitrine>
           <Caption as="p">
@@ -321,7 +325,7 @@ import RestingRule from '../components/case-study/RestingRule.astro';
         <div class="order-1 lg:order-2 relative overflow-hidden">
           <Vitrine>
             <img
-              src="/assets/vitals/solutions/plans-pricing.png"
+              src="/assets/vitals/solutions/plan-selection.png"
               alt="Zip code coverage verification and clear transparent plan tiers"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />
@@ -337,7 +341,7 @@ import RestingRule from '../components/case-study/RestingRule.astro';
         <div class="relative overflow-hidden">
           <Vitrine>
             <img
-              src="/assets/vitals/solutions/step-by-step.png"
+              src="/assets/vitals/solutions/data-collection.png"
               alt="Focused single-question registration steps with clear purpose explanation"
               class="w-full h-auto object-contain group-hover:scale-[1.01] transition-luxury duration-700"
             />

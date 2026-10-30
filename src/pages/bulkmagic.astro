@@ -54,44 +54,38 @@ import RestingRule from '../components/case-study/RestingRule.astro';
           class="w-full overflow-x-auto lg:overflow-visible no-scrollbar flex items-center justify-start lg:justify-center gap-5 sm:gap-7 lg:gap-9 px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-14 select-none"
         >
           <!-- Stage 01: Entity Classification -->
-          <div class="flex-none w-[260px] sm:w-[280px] lg:w-[290px]">
-            <PhoneFrame>
-              <img
-                src="/assets/bulkmagic/screen-business-type.png"
-                alt="Entity classification screen asking for business structure"
-                class="w-full h-auto block"
-                loading="eager"
-              />
-            </PhoneFrame>
-          </div>
+          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
+            <img
+              src="/assets/bulkmagic/flow-step-1.png"
+              alt="Mobile viewport: Business structure and entity identification"
+              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
+              loading="eager"
+            />
+          </PhoneFrame>
 
-          <!-- Stage 02: Adaptive Document Readiness -->
-          <div class="flex-none w-[260px] sm:w-[280px] lg:w-[290px]">
-            <PhoneFrame>
-              <img
-                src="/assets/bulkmagic/screen-checklist.png"
-                alt="Adaptive document readiness checklist tailored to selected entity"
-                class="w-full h-auto block"
-                loading="eager"
-              />
-            </PhoneFrame>
-          </div>
+          <!-- Stage 02: Dynamic Document Preparation Checklist -->
+          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
+            <img
+              src="/assets/bulkmagic/flow-step-2.png"
+              alt="Mobile viewport: Dynamic document readiness checklist"
+              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
+              loading="eager"
+            />
+          </PhoneFrame>
 
-          <!-- Stage 03: Field-Level Validation & Submission -->
-          <div class="flex-none w-[260px] sm:w-[280px] lg:w-[290px]">
-            <PhoneFrame>
-              <img
-                src="/assets/bulkmagic/screen-ein-validation.png"
-                alt="Field-level inline validation catching syntax errors immediately"
-                class="w-full h-auto block"
-                loading="eager"
-              />
-            </PhoneFrame>
-          </div>
+          <!-- Stage 03: Live Activation & Review -->
+          <PhoneFrame class="w-[215px] sm:w-[225px] lg:w-[235px] h-[460px] sm:h-[480px] lg:h-[500px]">
+            <img
+              src="/assets/bulkmagic/flow-step-5.png"
+              alt="Mobile viewport: Account review and live activation"
+              class="w-full h-auto object-cover object-top block pointer-events-none select-none"
+              loading="eager"
+            />
+          </PhoneFrame>
         </div>
       </Vitrine>
       <Caption>
-        The 3-stage adaptive onboarding progression: business entity classification, dynamic document readiness checklist, and real-time inline compliance validation.
+        The 3-stage adaptive onboarding progression: business entity classification, dynamic document readiness checklist, and live account activation.
       </Caption>
     </div>
   </section>
@@ -103,36 +97,13 @@ import RestingRule from '../components/case-study/RestingRule.astro';
   <section class="pt-8 pb-8 mb-36 md:mb-52">
     <ChapterMarker number="01" title="The Compliance Problem" class="mb-12" />
 
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-start">
-      <div class="space-y-6">
-        <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 leading-[1.08] tracking-tight font-normal text-balance">
-          Different businesses require different rules.
-        </h2>
-        <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
-          A sole proprietor selling handmade goods from one state faces radically different statutory requirements than a multi-state LLC with inventory in three fulfillment centers. Standard onboarding forms fail because they treat every merchant identically—bombarding sole proprietors with irrelevant tax questions while leaving enterprise sellers confused about physical versus economic nexus obligations.
-        </p>
-      </div>
-
-      <!-- Architectural Rule Ledger -->
-      <div class="border border-neutral-200/80 bg-neutral-100/50 p-6 sm:p-8 rounded-xs space-y-6">
-        <div class="text-[10px] font-mono tracking-widest text-neutral-500 uppercase font-medium">
-          Adaptive Rule Engine · Logic Matrix
-        </div>
-        <dl class="space-y-4 text-xs font-mono">
-          <div class="border-b border-neutral-200/60 pb-3">
-            <dt class="text-neutral-900 font-semibold mb-1">SOLE PROPRIETOR</dt>
-            <dd class="text-neutral-600">SSN or single EIN · Basic home state business license · Single tax nexus confirmation</dd>
-          </div>
-          <div class="border-b border-neutral-200/60 pb-3">
-            <dt class="text-neutral-900 font-semibold mb-1">DOMESTIC LLC / CORP</dt>
-            <dd class="text-neutral-600">Federal EIN · Articles of Organization · Operating agreement · State sales tax permits per nexus</dd>
-          </div>
-          <div>
-            <dt class="text-neutral-900 font-semibold mb-1">MULTI-STATE ENTERPRISE</dt>
-            <dd class="text-neutral-600">Physical warehouse nexus declarations · Economic nexus threshold trackers · Resale exemptions</dd>
-          </div>
-        </dl>
-      </div>
+    <div class="max-w-4xl space-y-6">
+      <h2 class="font-serif text-3xl sm:text-5xl text-neutral-950 leading-[1.08] tracking-tight font-normal text-balance">
+        Different businesses require different rules.
+      </h2>
+      <p class="text-lg sm:text-xl text-neutral-700 font-normal leading-relaxed max-w-[54ch]">
+        A sole proprietor selling handmade goods from one state faces radically different statutory requirements than a multi-state LLC with inventory in three fulfillment centers. Standard onboarding forms fail because they treat every merchant identically—bombarding sole proprietors with irrelevant tax questions while leaving enterprise sellers confused about physical versus economic nexus obligations.
+      </p>
     </div>
   </section>
 
@@ -162,8 +133,8 @@ import RestingRule from '../components/case-study/RestingRule.astro';
         <figure>
           <BrowserFrame url="marketplace.com/seller-onboarding/entity-type">
             <img
-              src="/assets/bulkmagic/entity-selection.png"
-              alt="Entity classification selection interface with clear explanations of required tax documents"
+              src="/assets/bulkmagic/progressive-disclosure.png"
+              alt="Business structure identification and progressive disclosure routing interface"
               class="w-full h-auto block select-none"
               loading="lazy"
             />
