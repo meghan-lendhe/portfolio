@@ -8,17 +8,6 @@ const isDark = theme === 'dark';
 ---
 
 <footer class={`relative overflow-hidden ${isDark ? "bg-[#090A0C] text-white border-t border-white/[0.07]" : "bg-[#F3F2EC] text-neutral-900 border-t border-neutral-200"}`}>
-  <!-- Ambient Atmospheric Substrate (Calm Stationary Gallery Glow) -->
-  <div
-    class="absolute -top-32 left-10 md:left-1/4 w-[640px] h-[640px] rounded-full pointer-events-none blur-3xl opacity-80"
-    style={`background: ${
-      isDark
-        ? "radial-gradient(ellipse at center, rgba(217,119,6,0.16), rgba(13,148,136,0.09) 45%, rgba(13,148,136,0.02) 70%, transparent 85%)"
-        : "radial-gradient(ellipse at center, rgba(217,119,6,0.12), rgba(245,158,11,0.07) 40%, rgba(13,148,136,0.04) 65%, transparent 80%)"
-    };`}
-    aria-hidden="true"
-  ></div>
-
   <div class="mx-auto max-w-page px-6 md:px-20 pb-16 pt-24 md:pb-24 md:pt-36 relative z-10">
     <div class={`grid gap-12 pb-20 md:grid-cols-[1.1fr_0.9fr] md:items-start md:gap-20 border-b ${isDark ? 'border-white/[0.07]' : 'border-neutral-200'}`}>
       
