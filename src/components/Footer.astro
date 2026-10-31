@@ -8,11 +8,17 @@ const isDark = theme === 'dark';
 ---
 
 <footer class={`relative overflow-hidden ${isDark ? "bg-[#090A0C] text-white border-t border-white/[0.07]" : "bg-[#F3F2EC] text-neutral-900 border-t border-neutral-200"}`}>
-  <!-- Ambient Atmospheric Gallery Spotlight (Ultra-Damped Cursor Track) -->
+  <!-- Ambient Atmospheric Gallery Spotlight (Luminous Warm Amber / Emerald Damped Spotlight) -->
   <div
     id="footer-ambient-aura"
-    class="absolute w-[620px] h-[620px] rounded-full pointer-events-none blur-3xl opacity-75 transition-opacity duration-1000 -translate-x-1/2 -translate-y-1/2"
-    style="background: radial-gradient(ellipse at center, rgba(217,119,6,0.065), rgba(13,148,136,0.038), transparent 70%); top: 35%; left: 35%;"
+    class={`absolute w-[760px] h-[760px] rounded-full pointer-events-none blur-2xl transition-opacity duration-700 -translate-x-1/2 -translate-y-1/2 ${
+      isDark ? "opacity-90" : "opacity-100"
+    }`}
+    style={`background: ${
+      isDark
+        ? "radial-gradient(ellipse at center, rgba(217,119,6,0.30), rgba(13,148,136,0.18) 42%, rgba(13,148,136,0.04) 70%, transparent 85%)"
+        : "radial-gradient(ellipse at center, rgba(217,119,6,0.25), rgba(245,158,11,0.16) 38%, rgba(13,148,136,0.12) 65%, transparent 85%)"
+    }; top: 40%; left: 35%;`}
     aria-hidden="true"
   ></div>
 
@@ -84,7 +90,7 @@ const isDark = theme === 'dark';
         </p>
 
         <div class="flex flex-wrap items-center gap-8 font-mono text-xs">
-          <!-- Direct Email Channel with Tactile One-Click Copy -->
+          <!-- Direct Email Channel with Zero-Shift Tactile Copy -->
           <a
             href="mailto:meghanlendhe@gmail.com"
             id="footer-email-link"
@@ -95,8 +101,32 @@ const isDark = theme === 'dark';
                 : 'text-neutral-900 hover:text-amber-800'
             }`}
           >
-            <span id="footer-email-label" class="text-sm font-sans font-normal transition-all duration-300">meghanlendhe@gmail.com</span>
-            <span id="footer-email-arrow" class={`inline-block transition-transform duration-500 ease-luxury ${isDark ? 'text-neutral-400 group-hover:text-amber-300 group-hover:translate-x-1' : 'text-amber-800 group-hover:translate-x-1'}`}>→</span>
+            <!-- Dual-State Grid Container (Zero Layout Shift) -->
+            <span class="inline-grid grid-cols-1 grid-rows-1 items-center">
+              <span
+                id="footer-email-text"
+                class="col-start-1 row-start-1 text-sm font-sans font-normal transition-all duration-300 transform opacity-100 translate-y-0"
+              >
+                meghanlendhe@gmail.com
+              </span>
+              <span
+                id="footer-email-copied"
+                class={`col-start-1 row-start-1 text-sm font-sans font-normal transition-all duration-300 transform opacity-0 -translate-y-1 pointer-events-none ${
+                  isDark ? 'text-amber-300' : 'text-amber-800'
+                }`}
+              >
+                Copied to clipboard
+              </span>
+            </span>
+
+            <span
+              id="footer-email-arrow"
+              class={`inline-block transition-transform duration-500 ease-luxury ${
+                isDark ? 'text-neutral-400 group-hover:text-amber-300 group-hover:translate-x-1' : 'text-amber-800 group-hover:translate-x-1'
+              }`}
+            >
+              →
+            </span>
             <!-- Luxury Animated Hairline Underline -->
             <span class={`absolute bottom-0 left-0 h-[1px] w-0 transition-all duration-500 ease-luxury group-hover:w-full ${isDark ? 'bg-amber-400/80' : 'bg-amber-800/70'}`}></span>
           </a>
@@ -216,31 +246,24 @@ const isDark = theme === 'dark';
 
   if (footerEl && aura) {
     let targetX = footerEl.offsetWidth * 0.35;
-    let targetY = footerEl.offsetHeight * 0.35;
+    let targetY = footerEl.offsetHeight * 0.40;
     let currentX = targetX;
     let currentY = targetY;
-    let isHovering = false;
 
     footerEl.addEventListener('pointermove', (e) => {
       const rect = footerEl.getBoundingClientRect();
       targetX = e.clientX - rect.left;
       targetY = e.clientY - rect.top;
-      if (!isHovering) {
-        isHovering = true;
-        aura.style.opacity = '0.95';
-      }
     }, { passive: true });
 
     footerEl.addEventListener('pointerleave', () => {
-      isHovering = false;
       targetX = footerEl.offsetWidth * 0.35;
-      targetY = footerEl.offsetHeight * 0.35;
-      aura.style.opacity = '0.75';
+      targetY = footerEl.offsetHeight * 0.40;
     }, { passive: true });
 
     function updateAura() {
-      currentX += (targetX - currentX) * 0.045;
-      currentY += (targetY - currentY) * 0.045;
+      currentX += (targetX - currentX) * 0.05;
+      currentY += (targetY - currentY) * 0.05;
       aura.style.left = `${currentX}px`;
       aura.style.top = `${currentY}px`;
       requestAnimationFrame(updateAura);
@@ -249,13 +272,13 @@ const isDark = theme === 'dark';
     updateAura();
   }
 
-  // 3. Tactile Email Copy Affordance with Harmonic Celesta Tone
+  // 3. Tactile Email Copy Affordance with Harmonic Celesta Tone & Zero Layout Shift
   const emailLink = document.getElementById('footer-email-link');
-  const emailLabel = document.getElementById('footer-email-label');
-  const emailArrow = document.getElementById('footer-email-arrow');
+  const emailText = document.getElementById('footer-email-text');
+  const emailCopied = document.getElementById('footer-email-copied');
   let copyTimeout = null;
 
-  if (emailLink && emailLabel) {
+  if (emailLink && emailText && emailCopied) {
     emailLink.addEventListener('click', (e) => {
       if (!e.metaKey && !e.ctrlKey) {
         e.preventDefault();
@@ -267,14 +290,19 @@ const isDark = theme === 'dark';
         }
 
         clearTimeout(copyTimeout);
-        emailLabel.textContent = 'Copied to clipboard';
-        emailLabel.classList.add('font-mono', 'text-xs', 'tracking-wider');
-        if (emailArrow) emailArrow.style.opacity = '0';
+        // Seamless cross-fade with zero layout shift
+        emailText.classList.remove('opacity-100', 'translate-y-0');
+        emailText.classList.add('opacity-0', 'translate-y-1');
+
+        emailCopied.classList.remove('opacity-0', '-translate-y-1');
+        emailCopied.classList.add('opacity-100', 'translate-y-0');
 
         copyTimeout = setTimeout(() => {
-          emailLabel.textContent = 'meghanlendhe@gmail.com';
-          emailLabel.classList.remove('font-mono', 'text-xs', 'tracking-wider');
-          if (emailArrow) emailArrow.style.opacity = '1';
+          emailCopied.classList.remove('opacity-100', 'translate-y-0');
+          emailCopied.classList.add('opacity-0', '-translate-y-1');
+
+          emailText.classList.remove('opacity-0', 'translate-y-1');
+          emailText.classList.add('opacity-100', 'translate-y-0');
         }, 2200);
       }).catch(() => {
         window.location.href = 'mailto:meghanlendhe@gmail.com';
