@@ -7,7 +7,7 @@ const { theme = 'light' } = Astro.props;
 const isDark = theme === 'dark';
 ---
 
-<!-- LIVING HISTOLOGICAL FOLIO SUBSTRATE (Desktop Gutters >= 1240px: Unified with Hero Cytology) -->
+<!-- LIVING HISTOLOGICAL FOLIO SUBSTRATE (Desktop Gutters >= 1240px: Quiet Broadsheet Margins) -->
 <div class="hidden xl:block fixed inset-0 pointer-events-none select-none -z-10 overflow-hidden" aria-hidden="true">
   <canvas id="gutter-arbor-canvas" class="w-full h-full block"></canvas>
 </div>
@@ -28,13 +28,12 @@ const isDark = theme === 'dark';
   let contentLeft = 0;
   let contentRight = 0;
 
-  // Parallax and cursor tracking
+  // Parallax and subtle cursor tracking (Zero scroll excitation)
   let scrollY = window.scrollY;
-  let targetScrollY = window.scrollY;
   const mouse = { x: -1000, y: -1000, active: false };
 
   window.addEventListener('scroll', () => {
-    targetScrollY = window.scrollY;
+    scrollY = window.scrollY;
   }, { passive: true });
 
   window.addEventListener('pointermove', (e) => {
@@ -49,7 +48,7 @@ const isDark = theme === 'dark';
     mouse.y = -1000;
   }, { passive: true });
 
-  // Cubic Bézier calculation (Exact same formula as hero)
+  // Cubic Bézier calculation
   function getCubicPoint(x0, y0, cp1x, cp1y, cp2x, cp2y, x1, y1, t) {
     const invT = 1 - t;
     const c0 = invT * invT * invT;
@@ -62,7 +61,7 @@ const isDark = theme === 'dark';
     };
   }
 
-  // Taut biological axon control points with gentle normal-vector bowing (Never opposing S-curves)
+  // Taut biological axon control points with gentle normal-vector bowing
   function getAxonControlPoints(fn, tn, a) {
     const dx = tn.x - fn.x;
     const dy = tn.y - fn.y;
@@ -87,19 +86,19 @@ const isDark = theme === 'dark';
     const grad = ctx.createRadialGradient(0, 0, r * 0.15, 0, 0, r * 2.4);
 
     if (spike > 0.05) {
-      grad.addColorStop(0, `rgba(255, 255, 255, ${0.95 * spike})`);
-      grad.addColorStop(0.25, `rgba(245, 158, 11, ${0.85 * spike})`);
+      grad.addColorStop(0, `rgba(255, 255, 255, ${0.90 * spike})`);
+      grad.addColorStop(0.25, `rgba(245, 158, 11, ${0.75 * spike})`);
       grad.addColorStop(0.65, `rgba(13, 148, 136, ${0.45 * spike})`);
       grad.addColorStop(1, 'rgba(13, 148, 136, 0)');
     } else if (excitation > 0.1) {
-      grad.addColorStop(0, `rgba(217, 119, 6, ${0.35 + excitation * 0.45})`);
-      grad.addColorStop(0.5, `rgba(245, 158, 11, ${0.18 + excitation * 0.3})`);
+      grad.addColorStop(0, `rgba(217, 119, 6, ${0.30 + excitation * 0.35})`);
+      grad.addColorStop(0.5, `rgba(245, 158, 11, ${0.16 + excitation * 0.25})`);
       grad.addColorStop(1, 'rgba(245, 158, 11, 0)');
     } else {
-      // Resting cytology (matched to index hero)
-      grad.addColorStop(0, 'rgba(130, 120, 110, 0.11)');
-      grad.addColorStop(0.6, 'rgba(175, 165, 155, 0.035)');
-      grad.addColorStop(1, 'rgba(175, 165, 155, 0)');
+      // Quiet, serene sepia silver-nitrate tone
+      grad.addColorStop(0, 'rgba(130, 118, 106, 0.15)');
+      grad.addColorStop(0.6, 'rgba(155, 143, 132, 0.04)');
+      grad.addColorStop(1, 'rgba(155, 143, 132, 0)');
     }
 
     ctx.fillStyle = grad;
@@ -121,11 +120,11 @@ const isDark = theme === 'dark';
     ctx.beginPath();
     ctx.arc(0, 0, nucleusR, 0, Math.PI * 2);
     if (spike > 0.05) {
-      ctx.fillStyle = `rgba(255, 255, 255, ${0.95 * spike})`;
+      ctx.fillStyle = `rgba(255, 255, 255, ${0.90 * spike})`;
     } else if (excitation > 0.1) {
-      ctx.fillStyle = `rgba(217, 119, 6, ${0.5 + excitation * 0.35})`;
+      ctx.fillStyle = `rgba(217, 119, 6, ${0.45 + excitation * 0.30})`;
     } else {
-      ctx.fillStyle = 'rgba(110, 100, 92, 0.15)';
+      ctx.fillStyle = 'rgba(95, 84, 74, 0.22)';
     }
     ctx.fill();
 
@@ -136,7 +135,7 @@ const isDark = theme === 'dark';
       ctx.moveTo(0, -r * 1.2);
       ctx.quadraticCurveTo(r * 0.25, -r * 2.2, 0, -r * 3.4);
       
-      // Apical gemmules / dendritic spines (micro-spines along shaft)
+      // Apical gemmules / dendritic spines
       ctx.moveTo(-0.4, -r * 1.8); ctx.lineTo(-r * 0.65, -r * 1.95);
       ctx.moveTo(0.4, -r * 2.4);  ctx.lineTo(r * 0.65, -r * 2.55);
       ctx.moveTo(-0.4, -r * 2.9); ctx.lineTo(-r * 0.60, -r * 3.05);
@@ -158,7 +157,6 @@ const isDark = theme === 'dark';
       ctx.moveTo(r * 1.5, r * 1.7);
       ctx.lineTo(r * 2.1, r * 1.4);
     } else if (type === 'bipolar') {
-      // Superior and inferior poles with fine spines
       ctx.moveTo(0, -r * 1.4);
       ctx.quadraticCurveTo(r * 0.35, -r * 2.4, 0, -r * 3.5);
       ctx.moveTo(-0.4, -r * 2.2); ctx.lineTo(-r * 0.55, -r * 2.35);
@@ -188,17 +186,16 @@ const isDark = theme === 'dark';
 
     ctx.strokeStyle = spike > 0.05
       ? `rgba(13, 148, 136, ${0.45 + spike * 0.4})`
-      : (excitation > 0.1 ? `rgba(217, 119, 6, ${0.18 + excitation * 0.4})` : 'rgba(165, 155, 145, 0.06)');
+      : (excitation > 0.1 ? `rgba(217, 119, 6, ${0.20 + excitation * 0.35})` : 'rgba(145, 135, 125, 0.10)');
     ctx.lineWidth = 0.55;
     ctx.stroke();
 
     ctx.restore();
   }
 
-  // 2. Histological Constellation Generator for Side Gutters (Micro-Plexuses with Breathing Room)
+  // 2. Histological Network Generator (Isolated Micro-Plexus Islands with Generous Breathing Room)
   const leftMesh = { neurons: [], axons: [], terminalBranches: [], pulses: [], nextPulse: 0 };
   const rightMesh = { neurons: [], axons: [], terminalBranches: [], pulses: [], nextPulse: 0 };
-  const gutterSparks = [];
 
   function buildGutterNetwork(side, gutterW, contentBoundX, totalDocHeight) {
     const isLeft = side === 'left';
@@ -207,43 +204,116 @@ const isDark = theme === 'dark';
     const terminalBranches = [];
     const pulses = [];
 
-    const innerPadding = 26;
-    const outerPadding = 22;
+    const innerPadding = 24;
+    const outerPadding = 20;
     const minX = isLeft ? outerPadding : contentBoundX + innerPadding;
     const maxX = isLeft ? contentBoundX - innerPadding : width - outerPadding;
     const channelW = Math.max(30, maxX - minX);
 
-    // Spacing between histological micro-plexuses (clusters)
-    // Generous breathing room of 180-280px between constellations
-    let currentY = 130 + Math.random() * 50;
+    // Balanced organic spacing between constellations: 115px to 190px
+    let currentY = 120 + Math.random() * 60;
     let neuronId = 0;
     const clusters = [];
 
-    while (currentY < totalDocHeight - 160) {
-      // 2 or 3 neurons per constellation
-      const clusterSize = Math.random() < 0.65 ? 2 : 3;
+    // Distinct architectural archetypes for rich morphological variety
+    const archetypePool = [
+      'horizontal_bridge',   // 2 cells bridging sideways across the channel
+      'triangular_triad',    // 3 cells forming a 2D triangular polygon
+      'pyramidal_satellite', // 1 dominant pyramidal cell with satellite interneuron
+      'vertical_tandem',     // 2 slender cells aligned vertically
+      'solitary_specimen'    // 1 iconic solitary neuron with full dendritic arbor
+    ];
+
+    while (currentY < totalDocHeight - 120) {
+      // Pick archetype with weighted variety
+      const roll = Math.random();
+      const archetype = roll < 0.26 ? 'horizontal_bridge' :
+                        roll < 0.52 ? 'triangular_triad' :
+                        roll < 0.74 ? 'pyramidal_satellite' :
+                        roll < 0.88 ? 'vertical_tandem' : 'solitary_specimen';
+
       const clusterNeurons = [];
+      const clusterAxonsToCreate = [];
 
-      // Center X of constellation
-      const clusterCenterX = minX + (0.22 + Math.random() * 0.56) * channelW;
+      // Randomized horizontal anchor across the breadth of the gutter channel
+      const clusterCenterX = minX + (0.18 + Math.random() * 0.64) * channelW;
 
-      for (let k = 0; k < clusterSize; k++) {
-        // Taut vertical offset: 38-68px between sibling cells within the cluster
-        const docY = currentY + k * (42 + Math.random() * 26) + (Math.random() - 0.5) * 14;
-        if (docY >= totalDocHeight - 80) break;
+      if (archetype === 'horizontal_bridge') {
+        // Archetype 1: Wide horizontal bridge (2 cells across channel)
+        const spread = 22 + Math.random() * 24;
+        const x1 = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX - spread));
+        const x2 = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX + spread));
+        const y1 = currentY + (Math.random() - 0.5) * 12;
+        const y2 = currentY + 14 + (Math.random() - 0.5) * 14;
 
-        // Clustered organic horizontal placement
-        const docX = Math.max(minX + 6, Math.min(maxX - 6, clusterCenterX + (Math.random() - 0.5) * 32));
+        const n1 = makeNeuron(x1, y1, 'stellate', 3.8, isLeft ? -Math.PI * 0.45 : -Math.PI * 0.55);
+        const n2 = makeNeuron(x2, y2, 'pyramidal', 4.6, isLeft ? -Math.PI * 0.50 : -Math.PI * 0.50);
+        clusterNeurons.push(n1, n2);
+        clusterAxonsToCreate.push([n1, n2, false]);
 
-        const rand = Math.random();
-        const type = rand < 0.50 ? 'pyramidal' : (rand < 0.82 ? 'stellate' : 'bipolar');
+      } else if (archetype === 'triangular_triad') {
+        // Archetype 2: 2D Triangular Triad (3 cells forming an organic triangle)
+        const apexX = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX + (Math.random() - 0.5) * 16));
+        const apexY = currentY;
 
-        let angle = -Math.PI * 0.5 + (Math.random() - 0.5) * 0.45;
-        if (type === 'pyramidal') {
-          angle = isLeft ? -Math.PI * 0.48 : -Math.PI * 0.52;
+        const leftSpread = 20 + Math.random() * 20;
+        const rightSpread = 20 + Math.random() * 20;
+        const leftX = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX - leftSpread));
+        const rightX = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX + rightSpread));
+        const baseY = currentY + 38 + Math.random() * 16;
+        const leftY = baseY + (Math.random() - 0.5) * 12;
+        const rightY = baseY + 6 + (Math.random() - 0.5) * 12;
+
+        const apexN = makeNeuron(apexX, apexY, 'pyramidal', 4.8, isLeft ? -Math.PI * 0.48 : -Math.PI * 0.52);
+        const leftN = makeNeuron(leftX, leftY, 'stellate', 3.6, -Math.PI * 0.5);
+        const rightN = makeNeuron(rightX, rightY, 'bipolar', 3.2, -Math.PI * 0.5);
+
+        clusterNeurons.push(apexN, leftN, rightN);
+        clusterAxonsToCreate.push([apexN, leftN, false]);
+        clusterAxonsToCreate.push([apexN, rightN, false]);
+        if (Math.random() < 0.35) {
+          clusterAxonsToCreate.push([leftN, rightN, true]);
         }
 
-        const neuron = {
+      } else if (archetype === 'pyramidal_satellite') {
+        // Archetype 3: Monumental Pyramidal Cell + Small Basal Satellite Interneuron
+        const pyrX = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX));
+        const pyrY = currentY;
+
+        const offsetDir = Math.random() > 0.5 ? 1 : -1;
+        const satX = Math.max(minX + 8, Math.min(maxX - 8, pyrX + offsetDir * (22 + Math.random() * 16)));
+        const satY = pyrY + 32 + Math.random() * 14;
+
+        const pyrN = makeNeuron(pyrX, pyrY, 'pyramidal', 5.2, isLeft ? -Math.PI * 0.48 : -Math.PI * 0.52);
+        const satN = makeNeuron(satX, satY, 'stellate', 3.0, -Math.PI * 0.5);
+
+        clusterNeurons.push(pyrN, satN);
+        clusterAxonsToCreate.push([pyrN, satN, false]);
+
+      } else if (archetype === 'vertical_tandem') {
+        // Archetype 4: Slender Vertical Tandem (2 vertically aligned cells)
+        const x1 = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX + (Math.random() - 0.5) * 10));
+        const y1 = currentY;
+        const x2 = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX + (Math.random() - 0.5) * 14));
+        const y2 = currentY + 46 + Math.random() * 16;
+
+        const n1 = makeNeuron(x1, y1, 'bipolar', 3.4, isLeft ? -Math.PI * 0.46 : -Math.PI * 0.54);
+        const n2 = makeNeuron(x2, y2, 'pyramidal', 4.4, isLeft ? -Math.PI * 0.48 : -Math.PI * 0.52);
+
+        clusterNeurons.push(n1, n2);
+        clusterAxonsToCreate.push([n1, n2, false]);
+
+      } else {
+        // Archetype 5: Solitary Iconic Specimen (single large neuron with maximum breathing room)
+        const x = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX));
+        const y = currentY;
+        const type = Math.random() < 0.65 ? 'pyramidal' : 'stellate';
+        const n = makeNeuron(x, y, type, 5.0, isLeft ? -Math.PI * 0.48 : -Math.PI * 0.52);
+        clusterNeurons.push(n);
+      }
+
+      function makeNeuron(docX, docY, type, radius, angle) {
+        return {
           id: `${side}-${neuronId++}`,
           clusterIndex: clusters.length,
           type: type,
@@ -255,23 +325,28 @@ const isDark = theme === 'dark';
           angle: angle,
           driftPhase: Math.random() * Math.PI * 2,
           driftSpeed: 0.00025 + Math.random() * 0.00035,
-          driftRadius: 1.2 + Math.random() * 1.8,
-          radius: type === 'pyramidal' ? 4.4 : (type === 'stellate' ? 3.5 : 2.9),
+          driftRadius: 1.2 + Math.random() * 1.6,
+          radius: radius,
           potential: 0.0,
           spikeEnergy: 0.0,
           refractory: 0
         };
-
-        neurons.push(neuron);
-        clusterNeurons.push(neuron);
       }
 
       if (clusterNeurons.length > 0) {
-        clusters.push(clusterNeurons);
-      }
+        clusterNeurons.forEach(n => neurons.push(n));
+        clusters.push({ neurons: clusterNeurons, archetype: archetype, axonsToCreate: clusterAxonsToCreate });
 
-      // Natural histological breathing room before the next cluster: 180-280px
-      currentY += (clusterSize * 48) + 180 + Math.random() * 100;
+        // Calculate actual vertical footprint of this specific cluster
+        const minY = Math.min(...clusterNeurons.map(n => n.docY));
+        const maxY = Math.max(...clusterNeurons.map(n => n.docY));
+        const clusterSpan = Math.max(20, maxY - minY);
+
+        // Organic negative space to next cluster: 115px to 190px of serene porcelain
+        currentY += clusterSpan + 115 + Math.random() * 75;
+      } else {
+        currentY += 140;
+      }
     }
 
     function createAxon(from, to, isCollateral = false) {
@@ -280,18 +355,17 @@ const isDark = theme === 'dark';
       const d = Math.hypot(dx, dy) || 1;
       const sign = Math.random() > 0.5 ? 1 : -1;
       
-      // Taut, delicate biological bow along the perpendicular normal vector:
-      // only 3.5 to 7.5px deflection! (Never wild 35px S-curves)
+      // Taut, delicate biological normal-vector bowing
       const bow = sign * (3.5 + Math.random() * Math.min(d * 0.07, 5.0));
       const bow1 = bow;
-      const bow2 = bow * (0.85 + (Math.random() - 0.5) * 0.2); // SAME SIGN!
+      const bow2 = bow * (0.85 + (Math.random() - 0.5) * 0.2);
 
       const boutons = [];
       const numBoutons = 1 + Math.floor(Math.random() * 2);
       for (let b = 0; b < numBoutons; b++) {
         boutons.push({
           t: 0.30 + Math.random() * 0.40,
-          radius: 1.05 + Math.random() * 0.35
+          radius: 1.1 + Math.random() * 0.25
         });
       }
 
@@ -307,9 +381,8 @@ const isDark = theme === 'dark';
     }
 
     function createTerminalBranch(neuron) {
-      // Radiating terminal branch ending in synaptic bouton bouquet
       const angle = (neuron.angle + Math.PI + (Math.random() - 0.5) * 0.7);
-      const len = 24 + Math.random() * 20;
+      const len = 24 + Math.random() * 18;
       
       const dx1 = Math.cos(angle) * (len * 0.55);
       const dy1 = Math.sin(angle) * (len * 0.55);
@@ -337,31 +410,16 @@ const isDark = theme === 'dark';
       });
     }
 
-    // Connect neurons strictly within each micro-plexus, with occasional inter-cluster bridge
-    clusters.forEach((cl, clIdx) => {
-      if (cl.length === 2) {
-        createAxon(cl[0], cl[1], false);
-      } else if (cl.length >= 3) {
-        createAxon(cl[0], cl[1], false);
-        createAxon(cl[1], cl[2], false);
-        if (Math.random() < 0.35) {
-          createAxon(cl[0], cl[2], true);
-        }
-      }
+    // Connect neurons strictly according to each cluster's architectural archetype
+    // Zero inter-cluster connections: clusters remain autonomous, floating specimen islands
+    clusters.forEach((cl) => {
+      cl.axonsToCreate.forEach(([from, to, isCollateral]) => {
+        createAxon(from, to, isCollateral);
+      });
 
-      // Free-ending terminal arborization with synaptic bouton bouquet
-      const rootNeuron = cl[Math.floor(Math.random() * cl.length)];
-      createTerminalBranch(rootNeuron);
-
-      // Sparse inter-cluster projection: only ~30% of clusters send an ascending/descending fiber
-      if (clIdx < clusters.length - 1 && Math.random() < 0.30) {
-        const nextCl = clusters[clIdx + 1];
-        const fromN = cl[cl.length - 1];
-        const toN = nextCl[0];
-        const dist = Math.hypot(toN.docX - fromN.docX, toN.docY - fromN.docY);
-        if (dist < 320) {
-          createAxon(fromN, toN, true);
-        }
+      // 1 free-ending terminal branch bouquet per cluster
+      if (cl.neurons.length > 0) {
+        createTerminalBranch(cl.neurons[0]);
       }
     });
 
@@ -370,29 +428,7 @@ const isDark = theme === 'dark';
       axons,
       terminalBranches,
       pulses,
-      nextPulse: performance.now() + 2000 + Math.random() * 4000
-    };
-  }
-
-  // 3. Bioluminescent Drift Spores (Subtle & Quiet)
-  function createSpore(side, initial = false) {
-    const isLeft = side === 'left';
-    const minX = isLeft ? 16 : contentRight + 20;
-    const maxX = isLeft ? contentLeft - 20 : width - 16;
-    const rangeX = Math.max(10, maxX - minX);
-
-    return {
-      side: side,
-      x: minX + Math.random() * rangeX,
-      y: initial ? Math.random() * height : height + 10 + Math.random() * 40,
-      vx: (Math.random() - 0.5) * 0.18,
-      vy: -0.20 - Math.random() * 0.22,
-      wobbleSpeed: 0.009 + Math.random() * 0.010,
-      wobbleAmp: 0.4 + Math.random() * 0.5,
-      wobblePhase: Math.random() * Math.PI * 2,
-      life: initial ? Math.floor(Math.random() * 400) : 0,
-      maxLife: 480 + Math.random() * 280,
-      radius: 1.1 + Math.random() * 1.2
+      nextPulse: performance.now() + 4000 + Math.random() * 4000
     };
   }
 
@@ -430,13 +466,7 @@ const isDark = theme === 'dark';
       rightMesh.axons = rightNet.axons;
       rightMesh.terminalBranches = rightNet.terminalBranches;
       rightMesh.pulses = rightNet.pulses;
-      rightMesh.nextPulse = rightNet.nextPulse;
-
-      gutterSparks.length = 0;
-      for (let i = 0; i < 4; i++) {
-        gutterSparks.push(createSpore('left', true));
-        gutterSparks.push(createSpore('right', true));
-      }
+      rightMesh.nextPulse = rightNet.nextPulse + 2500;
     } else {
       leftMesh.neurons.length = 0;
       leftMesh.axons.length = 0;
@@ -444,11 +474,10 @@ const isDark = theme === 'dark';
       rightMesh.neurons.length = 0;
       rightMesh.axons.length = 0;
       rightMesh.terminalBranches.length = 0;
-      gutterSparks.length = 0;
     }
   }
 
-  // Trigger Sinuous Action Potential Wave (Exact Hero Conduction Physics)
+  // Trigger Sinuous Action Potential Wave
   function triggerGutterWave(mesh, axon) {
     if (!axon) return;
     mesh.pulses.push({
@@ -456,15 +485,15 @@ const isDark = theme === 'dark';
       toId: axon.toId,
       axon: axon,
       progress: 0.0,
-      speed: 0.022 + Math.random() * 0.010,
-      energy: 0.95
+      speed: 0.020 + Math.random() * 0.008,
+      energy: 0.85
     });
   }
 
   window.addEventListener('resize', resize, { passive: true });
   window.addEventListener('load', () => {
     const curH = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight, height * 2);
-    if (Math.abs(curH - cachedDocHeight) > 200) {
+    if (Math.abs(curH - cachedDocHeight) > 180) {
       resize();
     }
   }, { passive: true });
@@ -481,7 +510,7 @@ const isDark = theme === 'dark';
     const currentScrollY = window.scrollY;
 
     if (gutterWidth >= 70) {
-      // Check if index hero is present and visible (never compete with hero's own synaptic field)
+      // 1. Index Hero Suppression: Zero gutter arbor in index hero
       const heroEl = document.getElementById('hero') || document.getElementById('synaptic-field');
       let heroFade = 1.0;
 
@@ -490,10 +519,12 @@ const isDark = theme === 'dark';
         if (heroRect.bottom > 0) {
           heroFade = 0;
         } else {
+          // Smooth fade in once past the hero
           heroFade = Math.max(0, Math.min(1.0, -heroRect.bottom / 200));
         }
       }
 
+      // If in index hero, suppress completely
       if (heroFade <= 0.001) {
         requestAnimationFrame(render);
         return;
@@ -506,8 +537,6 @@ const isDark = theme === 'dark';
       [leftMesh, rightMesh].forEach(mesh => {
         if (!mesh.neurons.length) return;
 
-        // 1. Update positions anchored to document coordinates with natural scroll & drift
-        // Viewport culling: only keep active map of neurons in/near viewport
         const visibleNeuronMap = new Map();
 
         for (let i = 0; i < mesh.neurons.length; i++) {
@@ -523,18 +552,18 @@ const isDark = theme === 'dark';
           if (n.y >= -120 && n.y <= height + 120) {
             visibleNeuronMap.set(n.id, n);
 
-            // Cursor proximity (membrane depolarization)
+            // Subtle cursor proximity (local membrane depolarization only when nearby)
             if (mouse.active) {
               const dist = Math.hypot(mouse.x - n.x, mouse.y - n.y);
-              if (dist < 120) {
-                const stimulus = Math.pow(1 - dist / 120, 2) * 0.02;
+              if (dist < 110) {
+                const stimulus = Math.pow(1 - dist / 110, 2) * 0.02;
                 n.potential = Math.min(1.0, n.potential + stimulus);
-                if (dist < 45 && n.refractory <= 0) {
+                if (dist < 42 && n.refractory <= 0) {
                   const connectedAxon = mesh.axons.find(a => a.fromId === n.id || a.toId === n.id);
                   if (connectedAxon) {
                     triggerGutterWave(mesh, connectedAxon);
                   }
-                  n.refractory = 250;
+                  n.refractory = 240;
                 }
               }
             }
@@ -545,14 +574,14 @@ const isDark = theme === 'dark';
           }
         }
 
-        // Spontaneous Serene Conduction Wave among currently visible axons
+        // Spontaneous Calm Conduction Wave (Infrequent: every 6 to 12 seconds)
         if (now > mesh.nextPulse) {
           const visibleAxons = [];
           for (let a = 0; a < mesh.axons.length; a++) {
             const ax = mesh.axons[a];
             const fn = visibleNeuronMap.get(ax.fromId);
             const tn = visibleNeuronMap.get(ax.toId);
-            if (fn && tn && fn.y >= -30 && fn.y <= height + 30) {
+            if (fn && tn && fn.y >= -20 && fn.y <= height + 20) {
               visibleAxons.push(ax);
             }
           }
@@ -560,10 +589,10 @@ const isDark = theme === 'dark';
             const randomAxon = visibleAxons[Math.floor(Math.random() * visibleAxons.length)];
             triggerGutterWave(mesh, randomAxon);
           }
-          mesh.nextPulse = now + 5000 + Math.random() * 7000;
+          mesh.nextPulse = now + 6500 + Math.random() * 6500;
         }
 
-        // A. Render Taut Curvilinear Axons (Gentle normal-vector bowing; no S-curves)
+        // A. Render Taut Curvilinear Axons
         mesh.axons.forEach(a => {
           const fn = visibleNeuronMap.get(a.fromId);
           const tn = visibleNeuronMap.get(a.toId);
@@ -578,13 +607,13 @@ const isDark = theme === 'dark';
           ctx.moveTo(fn.x, fn.y);
           ctx.bezierCurveTo(cp.cp1x, cp.cp1y, cp.cp2x, cp.cp2y, tn.x, tn.y);
 
-          // Resting axon stroke matched to index hero (0.075)
+          // Quiet resting ink stroke
           if (activeCharge > 0.15) {
-            ctx.strokeStyle = `rgba(217, 119, 6, ${0.12 + activeCharge * 0.35})`;
+            ctx.strokeStyle = `rgba(217, 119, 6, ${0.14 + activeCharge * 0.35})`;
             ctx.lineWidth = 0.8 + activeCharge * 0.3;
           } else {
-            ctx.strokeStyle = a.isCollateral ? 'rgba(175, 165, 155, 0.05)' : 'rgba(170, 160, 150, 0.075)';
-            ctx.lineWidth = a.isCollateral ? 0.45 : 0.6;
+            ctx.strokeStyle = a.isCollateral ? 'rgba(155, 145, 135, 0.08)' : 'rgba(145, 135, 125, 0.12)';
+            ctx.lineWidth = a.isCollateral ? 0.50 : 0.65;
           }
           ctx.stroke();
 
@@ -593,7 +622,6 @@ const isDark = theme === 'dark';
             const bt = a.boutons[b].t;
             const bPt = getCubicPoint(fn.x, fn.y, cp.cp1x, cp.cp1y, cp.cp2x, cp.cp2y, tn.x, tn.y, bt);
 
-            // Bouton excitation check
             let boutonPulse = 0;
             for (let p = 0; p < mesh.pulses.length; p++) {
               const pulse = mesh.pulses[p];
@@ -609,17 +637,17 @@ const isDark = theme === 'dark';
             ctx.arc(bPt.x, bPt.y, a.boutons[b].radius, 0, Math.PI * 2);
 
             if (boutonPulse > 0.05) {
-              ctx.fillStyle = `rgba(13, 148, 136, ${0.25 + boutonPulse * 0.6})`;
+              ctx.fillStyle = `rgba(13, 148, 136, ${0.30 + boutonPulse * 0.55})`;
             } else if (activeCharge > 0.15) {
-              ctx.fillStyle = `rgba(217, 119, 6, ${0.20 + activeCharge * 0.35})`;
+              ctx.fillStyle = `rgba(217, 119, 6, ${0.22 + activeCharge * 0.35})`;
             } else {
-              ctx.fillStyle = 'rgba(170, 162, 154, 0.08)';
+              ctx.fillStyle = 'rgba(150, 140, 130, 0.13)';
             }
             ctx.fill();
           }
         });
 
-        // B. Render Free-Ending Terminal Axonal Arborizations (Cajal Synaptic Bouquets)
+        // B. Render Free-Ending Terminal Axonal Arborizations
         mesh.terminalBranches.forEach(tb => {
           const fn = visibleNeuronMap.get(tb.neuronId);
           if (!fn) return;
@@ -634,11 +662,11 @@ const isDark = theme === 'dark';
           ctx.quadraticCurveTo(midX, midY, tipX, tipY);
 
           if (fn.potential > 0.15) {
-            ctx.strokeStyle = `rgba(217, 119, 6, ${0.12 + fn.potential * 0.30})`;
+            ctx.strokeStyle = `rgba(217, 119, 6, ${0.14 + fn.potential * 0.30})`;
             ctx.lineWidth = 0.75;
           } else {
-            ctx.strokeStyle = 'rgba(175, 165, 155, 0.055)';
-            ctx.lineWidth = 0.50;
+            ctx.strokeStyle = 'rgba(155, 145, 135, 0.09)';
+            ctx.lineWidth = 0.52;
           }
           ctx.stroke();
 
@@ -651,32 +679,31 @@ const isDark = theme === 'dark';
             ctx.moveTo(tipX, tipY);
             ctx.lineTo(bx, by);
             ctx.strokeStyle = fn.potential > 0.15
-              ? `rgba(217, 119, 6, ${0.15 + fn.potential * 0.25})`
-              : 'rgba(175, 165, 155, 0.055)';
-            ctx.lineWidth = 0.45;
+              ? `rgba(217, 119, 6, ${0.16 + fn.potential * 0.25})`
+              : 'rgba(155, 145, 135, 0.09)';
+            ctx.lineWidth = 0.46;
             ctx.stroke();
 
-            // Terminal synaptic bouton
             ctx.beginPath();
             ctx.arc(bx, by, tw.boutonR, 0, Math.PI * 2);
             if (fn.spikeEnergy > 0.1) {
-              ctx.fillStyle = `rgba(13, 148, 136, ${0.30 + fn.spikeEnergy * 0.5})`;
+              ctx.fillStyle = `rgba(13, 148, 136, ${0.35 + fn.spikeEnergy * 0.5})`;
             } else if (fn.potential > 0.15) {
-              ctx.fillStyle = `rgba(217, 119, 6, ${0.20 + fn.potential * 0.30})`;
+              ctx.fillStyle = `rgba(217, 119, 6, ${0.22 + fn.potential * 0.30})`;
             } else {
-              ctx.fillStyle = 'rgba(170, 162, 154, 0.08)';
+              ctx.fillStyle = 'rgba(150, 140, 130, 0.13)';
             }
             ctx.fill();
           });
         });
 
-        // C. Render Somas & Dendritic Spines (Exact Hero Cytology)
+        // C. Render Somas & Dendritic Spines
         visibleNeuronMap.forEach(n => {
           if (n.y < -80 || n.y > height + 80) return;
           drawSoftHistologicalSoma(ctx, n.x, n.y, n.radius, n.angle, n.potential, n.spikeEnergy, n.type);
         });
 
-        // D. Render Traveling Axonal Conduction Waves (Exact Hero 12-Segment Tapered Emerald Wave)
+        // D. Render Traveling Axonal Conduction Waves (Serene, Tapered Emerald Wave)
         for (let p = mesh.pulses.length - 1; p >= 0; p--) {
           const pulse = mesh.pulses[p];
           pulse.progress += pulse.speed;
@@ -703,13 +730,12 @@ const isDark = theme === 'dark';
               const pt = getCubicPoint(fn.x, fn.y, cp.cp1x, cp.cp1y, cp.cp2x, cp.cp2y, tn.x, tn.y, t);
 
               if (prev) {
-                const segAlpha = Math.pow(fraction, 1.6) * 0.80 * pulse.energy;
+                const segAlpha = Math.pow(fraction, 1.5) * 0.75 * pulse.energy;
                 ctx.beginPath();
                 ctx.moveTo(prev.x, prev.y);
                 ctx.lineTo(pt.x, pt.y);
-                // Emerald fluid conduction wave (identical to hero)
                 ctx.strokeStyle = `rgba(13, 148, 136, ${segAlpha})`;
-                ctx.lineWidth = 0.7 + fraction * 0.75;
+                ctx.lineWidth = 0.70 + fraction * 0.70;
                 ctx.stroke();
               }
               prev = pt;
@@ -719,50 +745,13 @@ const isDark = theme === 'dark';
           if (pulse.progress >= 1.0) {
             const target = visibleNeuronMap.get(pulse.toId);
             if (target) {
-              target.potential = Math.min(1.0, target.potential + 0.4 * pulse.energy);
-              target.spikeEnergy = 0.65 * pulse.energy;
+              target.potential = Math.min(1.0, target.potential + 0.35 * pulse.energy);
+              target.spikeEnergy = 0.60 * pulse.energy;
             }
             mesh.pulses.splice(p, 1);
           }
         }
       });
-
-      // 3. Render Bioluminescent Spores (Subtle & Quiet)
-      for (let i = gutterSparks.length - 1; i >= 0; i--) {
-        const s = gutterSparks[i];
-        s.life++;
-        s.wobblePhase += s.wobbleSpeed;
-        s.x += s.vx + Math.sin(s.wobblePhase) * s.wobbleAmp;
-        s.y += s.vy;
-
-        if (s.side === 'left' && s.x > contentLeft - 16) {
-          s.x = contentLeft - 16;
-          s.vx = -Math.abs(s.vx);
-        } else if (s.side === 'right' && s.x < contentRight + 16) {
-          s.x = contentRight + 16;
-          s.vx = Math.abs(s.vx);
-        }
-
-        const progress = s.life / s.maxLife;
-        const alpha = Math.sin(progress * Math.PI) * 0.28;
-
-        if (alpha > 0.01) {
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(13, 148, 136, ${alpha})`;
-          ctx.fill();
-
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.radius * 2.8, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(13, 148, 136, ${alpha * 0.14})`;
-          ctx.fill();
-        }
-
-        if (s.life >= s.maxLife || s.y < -20) {
-          gutterSparks.splice(i, 1);
-          gutterSparks.push(createSpore(s.side, false));
-        }
-      }
 
       ctx.restore();
     }
