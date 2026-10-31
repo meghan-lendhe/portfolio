@@ -8,15 +8,14 @@ const isDark = theme === 'dark';
 ---
 
 <footer class={`relative overflow-hidden ${isDark ? "bg-[#090A0C] text-white border-t border-white/[0.07]" : "bg-[#F3F2EC] text-neutral-900 border-t border-neutral-200"}`}>
-  <!-- Ambient Atmospheric Gallery Spotlight (Quiet Warm Champagne / Emerald Haze) -->
+  <!-- Ambient Atmospheric Substrate (Calm Stationary Gallery Glow) -->
   <div
-    id="footer-ambient-aura"
-    class="absolute w-[680px] h-[680px] rounded-full pointer-events-none blur-3xl opacity-80 transition-opacity duration-700 -translate-x-1/2 -translate-y-1/2"
+    class="absolute -top-32 left-10 md:left-1/4 w-[640px] h-[640px] rounded-full pointer-events-none blur-3xl opacity-80"
     style={`background: ${
       isDark
         ? "radial-gradient(ellipse at center, rgba(217,119,6,0.16), rgba(13,148,136,0.09) 45%, rgba(13,148,136,0.02) 70%, transparent 85%)"
         : "radial-gradient(ellipse at center, rgba(217,119,6,0.12), rgba(245,158,11,0.07) 40%, rgba(13,148,136,0.04) 65%, transparent 80%)"
-    }; top: 40%; left: 35%;`}
+    };`}
     aria-hidden="true"
   ></div>
 
@@ -238,39 +237,7 @@ const isDark = theme === 'dark';
     colophon.addEventListener('click', () => triggerConductionPulse(true));
   }
 
-  // 2. Ambient Gallery Substrate Spotlight (Damped Cursor Tracking)
-  const footerEl = document.querySelector('footer');
-  const aura = document.getElementById('footer-ambient-aura');
-
-  if (footerEl && aura) {
-    let targetX = footerEl.offsetWidth * 0.35;
-    let targetY = footerEl.offsetHeight * 0.40;
-    let currentX = targetX;
-    let currentY = targetY;
-
-    footerEl.addEventListener('pointermove', (e) => {
-      const rect = footerEl.getBoundingClientRect();
-      targetX = e.clientX - rect.left;
-      targetY = e.clientY - rect.top;
-    }, { passive: true });
-
-    footerEl.addEventListener('pointerleave', () => {
-      targetX = footerEl.offsetWidth * 0.35;
-      targetY = footerEl.offsetHeight * 0.40;
-    }, { passive: true });
-
-    function updateAura() {
-      currentX += (targetX - currentX) * 0.05;
-      currentY += (targetY - currentY) * 0.05;
-      aura.style.left = `${currentX}px`;
-      aura.style.top = `${currentY}px`;
-      requestAnimationFrame(updateAura);
-    }
-
-    updateAura();
-  }
-
-  // 3. Tactile Email Copy Affordance with Harmonic Celesta Tone & Zero Layout Shift
+  // 2. Tactile Email Copy Affordance with Harmonic Celesta Tone & Zero Layout Shift
   const emailLink = document.getElementById('footer-email-link');
   const emailText = document.getElementById('footer-email-text');
   const emailCopied = document.getElementById('footer-email-copied');
