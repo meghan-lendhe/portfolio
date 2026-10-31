@@ -210,33 +210,58 @@ const isDark = theme === 'dark';
     const maxX = isLeft ? contentBoundX - innerPadding : width - outerPadding;
     const channelW = Math.max(30, maxX - minX);
 
-    // Balanced organic spacing between constellations: 115px to 190px
-    let currentY = 120 + Math.random() * 60;
+    // Stagger initial Y between left and right gutters to break vertical symmetry
+    let currentY = isLeft ? (90 + Math.random() * 80) : (210 + Math.random() * 150);
     let neuronId = 0;
     const clusters = [];
 
-    // Distinct architectural archetypes for rich morphological variety
-    const archetypePool = [
-      'horizontal_bridge',   // 2 cells bridging sideways across the channel
-      'triangular_triad',    // 3 cells forming a 2D triangular polygon
-      'pyramidal_satellite', // 1 dominant pyramidal cell with satellite interneuron
-      'vertical_tandem',     // 2 slender cells aligned vertically
-      'solitary_specimen'    // 1 iconic solitary neuron with full dendritic arbor
-    ];
-
     while (currentY < totalDocHeight - 120) {
-      // Pick archetype with weighted variety
-      const roll = Math.random();
-      const archetype = roll < 0.26 ? 'horizontal_bridge' :
-                        roll < 0.52 ? 'triangular_triad' :
-                        roll < 0.74 ? 'pyramidal_satellite' :
-                        roll < 0.88 ? 'vertical_tandem' : 'solitary_specimen';
+      // Macro-density modulation wave (biological cortical laminar rhythm, ~900px wavelength)
+      // Left and right gutters are phased out of step (~2.6 radians) so dense zones and glades alternate
+      const layerPhase = (currentY / 480) + (isLeft ? 0.0 : 2.6);
+      const densityWave = Math.sin(layerPhase);
+
+      // Archetype selection calibrated to density regime
+      const archetypeRoll = Math.random();
+      let archetype;
+
+      if (densityWave < -0.28) {
+        // Editorial glade: favor solitary specimens and delicate micro-interneurons
+        archetype = archetypeRoll < 0.52 ? 'solitary_specimen' :
+                    archetypeRoll < 0.82 ? 'delicate_interneuron' : 'vertical_tandem';
+      } else if (densityWave > 0.28) {
+        // Dense plexus zone: favor multi-cellular networks and bridges
+        archetype = archetypeRoll < 0.26 ? 'triangular_triad' :
+                    archetypeRoll < 0.50 ? 'horizontal_bridge' :
+                    archetypeRoll < 0.72 ? 'diagonal_duet' :
+                    archetypeRoll < 0.88 ? 'pyramidal_satellite' : 'solitary_specimen';
+      } else {
+        // Transitional zone: rich balanced variety across all 7 archetypes
+        archetype = archetypeRoll < 0.18 ? 'horizontal_bridge' :
+                    archetypeRoll < 0.36 ? 'triangular_triad' :
+                    archetypeRoll < 0.52 ? 'pyramidal_satellite' :
+                    archetypeRoll < 0.66 ? 'diagonal_duet' :
+                    archetypeRoll < 0.78 ? 'vertical_tandem' :
+                    archetypeRoll < 0.89 ? 'solitary_specimen' : 'delicate_interneuron';
+      }
 
       const clusterNeurons = [];
       const clusterAxonsToCreate = [];
 
-      // Randomized horizontal anchor across the breadth of the gutter channel
-      const clusterCenterX = minX + (0.18 + Math.random() * 0.64) * channelW;
+      // Dynamic horizontal positioning: distribute clusters across rim, center, and hairline
+      const hBandRoll = Math.random();
+      let hRatio;
+      if (hBandRoll < 0.32) {
+        // Outer rim (hugging the viewport boundary)
+        hRatio = isLeft ? (0.08 + Math.random() * 0.22) : (0.70 + Math.random() * 0.22);
+      } else if (hBandRoll < 0.66) {
+        // Central channel float
+        hRatio = 0.36 + Math.random() * 0.28;
+      } else {
+        // Inner hairline (nestled quietly near the content margin)
+        hRatio = isLeft ? (0.70 + Math.random() * 0.22) : (0.08 + Math.random() * 0.22);
+      }
+      const clusterCenterX = minX + hRatio * channelW;
 
       if (archetype === 'horizontal_bridge') {
         // Archetype 1: Wide horizontal bridge (2 cells across channel)
@@ -303,8 +328,32 @@ const isDark = theme === 'dark';
         clusterNeurons.push(n1, n2);
         clusterAxonsToCreate.push([n1, n2, false]);
 
+      } else if (archetype === 'diagonal_duet') {
+        // Archetype 5: Expressive Diagonal Duet (asymmetric diagonal bridge)
+        const slopeDir = Math.random() > 0.5 ? 1 : -1;
+        const dx = (26 + Math.random() * 26) * slopeDir;
+        const dy = 36 + Math.random() * 24;
+        const x1 = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX - dx * 0.5));
+        const y1 = currentY;
+        const x2 = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX + dx * 0.5));
+        const y2 = currentY + dy;
+
+        const n1 = makeNeuron(x1, y1, 'pyramidal', 4.5, isLeft ? -Math.PI * 0.48 : -Math.PI * 0.52);
+        const n2 = makeNeuron(x2, y2, 'bipolar', 3.4, isLeft ? -Math.PI * 0.52 : -Math.PI * 0.48);
+
+        clusterNeurons.push(n1, n2);
+        clusterAxonsToCreate.push([n1, n2, false]);
+
+      } else if (archetype === 'delicate_interneuron') {
+        // Archetype 6: Delicate Micro-Interneuron (whisper-scale punctate specimen)
+        const x = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX));
+        const y = currentY;
+        const type = Math.random() < 0.5 ? 'bipolar' : 'stellate';
+        const n = makeNeuron(x, y, type, 2.5 + Math.random() * 0.4, isLeft ? -Math.PI * 0.46 : -Math.PI * 0.54);
+        clusterNeurons.push(n);
+
       } else {
-        // Archetype 5: Solitary Iconic Specimen (single large neuron with maximum breathing room)
+        // Archetype 7: Solitary Iconic Specimen (single large neuron with maximum breathing room)
         const x = Math.max(minX + 8, Math.min(maxX - 8, clusterCenterX));
         const y = currentY;
         const type = Math.random() < 0.65 ? 'pyramidal' : 'stellate';
@@ -342,8 +391,36 @@ const isDark = theme === 'dark';
         const maxY = Math.max(...clusterNeurons.map(n => n.docY));
         const clusterSpan = Math.max(20, maxY - minY);
 
-        // Organic negative space to next cluster: 115px to 190px of serene porcelain
-        currentY += clusterSpan + 115 + Math.random() * 75;
+        // Non-uniform spacing engine: dynamic cadence modulated by laminar density wave
+        let interClusterSpacing;
+        const cadenceRoll = Math.random();
+
+        if (densityWave > 0.28) {
+          // Dense cortical strata: tight rhythmic pairings / duets
+          if (cadenceRoll < 0.62) {
+            interClusterSpacing = 42 + Math.random() * 46; // 42px to 88px (intimate neighborhood)
+          } else {
+            interClusterSpacing = 95 + Math.random() * 60; // 95px to 155px
+          }
+        } else if (densityWave < -0.28) {
+          // Editorial glade: expansive, serene broadsheet clearing
+          if (cadenceRoll < 0.72) {
+            interClusterSpacing = 320 + Math.random() * 240; // 320px to 560px (vast breathing room)
+          } else {
+            interClusterSpacing = 210 + Math.random() * 100; // 210px to 310px
+          }
+        } else {
+          // Transitional zone: mixed organic intervals
+          if (cadenceRoll < 0.20) {
+            interClusterSpacing = 50 + Math.random() * 42; // occasional surprise tight step
+          } else if (cadenceRoll < 0.48) {
+            interClusterSpacing = 280 + Math.random() * 130; // occasional surprise breath
+          } else {
+            interClusterSpacing = 135 + Math.random() * 95; // standard 135px to 230px
+          }
+        }
+
+        currentY += clusterSpan + interClusterSpacing;
       } else {
         currentY += 140;
       }
