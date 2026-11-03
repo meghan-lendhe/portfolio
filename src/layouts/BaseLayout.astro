@@ -8,18 +8,21 @@ import GutterArbor from '../components/telemetry/GutterArbor.astro';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
   theme?: 'light' | 'dark';
+  includeCaseStudyScript?: boolean;
 }
 
 const {
   title,
   description = "Product Designer & NeuroHCI Researcher specializing in neural interfaces, biosignal computing (EEG/EMG), and high-complexity human-system operational workflows.",
+  image = '/assets/og-image.png',
   theme = 'light'
 } = Astro.props;
 
 const isDark = theme === 'dark';
 const canonicalUrl = new URL(Astro.url.pathname, 'https://meghan.in').href;
-const ogImageUrl = 'https://meghan.in/assets/og-image.png';
+const ogImageUrl = new URL(image, 'https://meghan.in').href;
 ---
 
 <!doctype html>
@@ -44,7 +47,7 @@ const ogImageUrl = 'https://meghan.in/assets/og-image.png';
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Meghan Lendhe: Product Designer & NeuroHCI Researcher" />
+    <meta property="og:image:alt" content={title} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
