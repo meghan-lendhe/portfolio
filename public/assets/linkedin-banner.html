@@ -107,7 +107,7 @@
     .content-area {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       padding-left: 360px;
     }
 
@@ -120,23 +120,16 @@
       max-width: 980px;
     }
 
-    .sub-discipline {
+    .subtitle {
       font-family: 'Instrument Sans', sans-serif;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 400;
       color: #525252;
       letter-spacing: -0.01em;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      line-height: 1.25;
     }
 
-    .sub-dot {
-      color: #D97706;
-      font-size: 14px;
-    }
-
-    /* Bottom Strip: Clean coordinates, right-aligned away from avatar */
+    /* Bottom Strip */
     .bottom-strip {
       display: flex;
       align-items: center;
@@ -168,7 +161,7 @@
   </svg>
 
   <div class="banner-frame">
-    <!-- Top Strip -->
+    <!-- Top Strip: Seal lockup on left, clean open breathing room on right -->
     <div class="top-strip">
       <div class="seal-lockup">
         <svg class="seal-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
@@ -177,19 +170,12 @@
         </svg>
         <span class="mono-coord">Meghan Lendhe</span>
       </div>
-      <span class="mono-coord">Product Designer &amp; NeuroHCI Researcher</span>
     </div>
 
     <!-- Main Content Area: Clears profile avatar overlay -->
     <div class="content-area">
       <h1 class="headline">Closing the distance between<br>intent and interface.</h1>
-      <div class="sub-discipline">
-        <span>Product Design</span>
-        <span class="sub-dot">·</span>
-        <span>NeuroHCI &amp; Biosignals</span>
-        <span class="sub-dot">·</span>
-        <span>Complex Systems</span>
-      </div>
+      <p class="subtitle">Product Designer &amp; NeuroHCI Researcher</p>
     </div>
 
     <!-- Bottom Strip: Clean coordinates, right-aligned away from avatar -->
